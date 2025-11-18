@@ -1,0 +1,67 @@
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-luxury-darker border-t border-warmGray">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 className="text-2xl font-bold text-gold mb-4">ELITE ESTATES</h3>
+            <p className="text-muted-foreground mb-4">
+              Your gateway to premium real estate investments in Oman
+            </p>
+            <div className="flex gap-3">
+              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
+                <Youtube className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Home</a></li>
+              <li><a href="#properties" className="text-muted-foreground hover:text-gold transition-colors">Properties</a></li>
+              <li><a href="#projects" className="text-muted-foreground hover:text-gold transition-colors">Projects</a></li>
+              <li><a href="#about" className="text-muted-foreground hover:text-gold transition-colors">About Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Services</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Buy Property</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Sell Property</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Property Management</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Investment Consulting</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>Muscat, Oman</li>
+              <li><a href="tel:+96871555067" className="hover:text-gold transition-colors">+968 7155 5067</a></li>
+              <li><a href="mailto:info@omanproperty.com" className="hover:text-gold transition-colors">info@omanproperty.com</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-warmGray mt-8 pt-8 text-center text-muted-foreground">
+          <p>&copy; 2025 Elite Estates. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
