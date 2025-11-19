@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 const FeaturedProperties = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
+  const [selectedPropertyType, setSelectedPropertyType] = useState<string>("all");
   const [tempLocation, setTempLocation] = useState<string>("all");
   const sectionRef = useRef<HTMLElement>(null);
   
@@ -16,21 +17,26 @@ const FeaturedProperties = () => {
     page: currentPage,
     pageSize: 9,
     location: selectedLocation,
+    propertyType: selectedPropertyType,
   });
 
   // Listen for hero filter events
   useEffect(() => {
     const handleHeroFilter = (event: CustomEvent) => {
-      const { location } = event.detail;
+      const { location, propertyType } = event.detail;
       if (location) {
         setSelectedLocation(location);
         setTempLocation(location);
-        setCurrentPage(1);
       }
+      if (propertyType) {
+        setSelectedPropertyType(propertyType);
+      }
+      setCurrentPage(1);
     };
 
     const handleFilterReset = () => {
       setSelectedLocation("all");
+      setSelectedPropertyType("all");
       setTempLocation("all");
       setCurrentPage(1);
     };

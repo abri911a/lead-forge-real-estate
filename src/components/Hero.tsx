@@ -7,13 +7,16 @@ import { useState } from "react";
 
 const Hero = () => {
   const [location, setLocation] = useState("");
+  const [propertyType, setPropertyType] = useState("");
 
   const handleSearch = () => {
     const propertiesSection = document.getElementById("properties");
     if (propertiesSection) {
       propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
       // Dispatch custom event with filter data
-      const event = new CustomEvent("hero-filter-search", { detail: { location } });
+      const event = new CustomEvent("hero-filter-search", { 
+        detail: { location, propertyType } 
+      });
       window.dispatchEvent(event);
     }
   };
@@ -54,15 +57,15 @@ const Hero = () => {
           {/* Quick search form */}
           <div className="bg-card/95 backdrop-blur-sm p-6 rounded-lg shadow-2xl">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <Select>
+              <Select value={propertyType} onValueChange={setPropertyType}>
                 <SelectTrigger>
                   <SelectValue placeholder="Property Type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="villa">Villa</SelectItem>
-                  <SelectItem value="apartment">Apartment</SelectItem>
-                  <SelectItem value="townhouse">Townhouse</SelectItem>
-                  <SelectItem value="land">Land</SelectItem>
+                  <SelectItem value="Villa">Villa</SelectItem>
+                  <SelectItem value="Apartment">Apartment</SelectItem>
+                  <SelectItem value="Townhouse">Townhouse</SelectItem>
+                  <SelectItem value="Land">Land</SelectItem>
                 </SelectContent>
               </Select>
 
