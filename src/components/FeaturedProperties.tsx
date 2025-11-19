@@ -1,42 +1,82 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
 import { Button } from "./ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { Skeleton } from "./ui/skeleton";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 
 const FeaturedProperties = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedLocation, setSelectedLocation] = useState<string>("all");
+  const sectionRef = useRef<HTMLElement>(null);
+  
   const { data, isLoading, error } = useProperties({
     page: currentPage,
     pageSize: 9,
+    location: selectedLocation,
   });
+
+  useEffect(() => {
+    if (selectedLocation !== "all" && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedLocation]);
 
   const handlePreviousPage = () => {
     setCurrentPage((prev) => Math.max(1, prev - 1));
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const handleNextPage = () => {
     if (data && currentPage < data.totalPages) {
       setCurrentPage((prev) => prev + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (sectionRef.current) {
+        sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
+  const handleLocationChange = (value: string) => {
+    setSelectedLocation(value);
+    setCurrentPage(1);
+  };
+
   return (
-    <section id="properties" className="py-20 bg-luxury-dark">
+    <section ref={sectionRef} id="properties" className="py-20 bg-luxury-dark">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Featured <span className="text-gold">Properties</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
             Explore our handpicked selection of premium properties across Oman's most desirable locations
           </p>
+          
+          {/* Location Filter */}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <MapPin className="h-5 w-5 text-gold" />
+            <Select value={selectedLocation} onValueChange={handleLocationChange}>
+              <SelectTrigger className="w-[280px] border-gold/30 focus:border-gold">
+                <SelectValue placeholder="Filter by location" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Locations</SelectItem>
+                <SelectItem value="Muscat">Muscat</SelectItem>
+                <SelectItem value="Salalah">Salalah</SelectItem>
+                <SelectItem value="Sohar">Sohar</SelectItem>
+                <SelectItem value="Nizwa">Nizwa</SelectItem>
+                <SelectItem value="Sur">Sur</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
           {data && (
             <p className="text-muted-foreground text-sm mt-2">
               Showing {((currentPage - 1) * 9) + 1}-{Math.min(currentPage * 9, data.totalCount)} of {data.totalCount} properties
+              {selectedLocation !== "all" && ` in ${selectedLocation}`}
             </p>
           )}
         </div>
