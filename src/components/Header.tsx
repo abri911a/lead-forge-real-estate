@@ -8,9 +8,9 @@ const Header = () => {
         {/* Top bar with contact info */}
         <div className="flex items-center justify-between py-2 text-sm border-b border-warmGray">
           <div className="flex items-center gap-6">
-            <a href="tel:+96871555067" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
+            <a href="tel:+96879136646" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
               <Phone className="h-4 w-4" />
-              <span>+968 7155 5067</span>
+              <span>+968 79136646</span>
             </a>
             <a href="mailto:info@omanproperty.com" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
               <Mail className="h-4 w-4" />
