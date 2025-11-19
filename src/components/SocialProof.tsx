@@ -9,7 +9,7 @@ const SocialProof = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-4 py-2 rounded-full mb-4">
             <CheckCircle className="h-5 w-5 text-gold" />
-            <span className="text-gold font-semibold">Trusted by 50,000+ Followers</span>
+            <span className="text-gold font-semibold">Verified Real Estate Expert</span>
           </div>
           <h2 className="text-4xl font-bold text-gold mb-4">
             Expert Insights from Oman's Leading Real Estate Influencer
@@ -23,10 +23,10 @@ const SocialProof = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           <div className="bg-card border border-gold/20 rounded-lg p-6 text-center">
             <div className="flex justify-center mb-3">
-              <Users className="h-8 w-8 text-gold" />
+              <Instagram className="h-8 w-8 text-gold" />
             </div>
-            <div className="text-3xl font-bold text-gold mb-1">50K+</div>
-            <div className="text-sm text-muted-foreground">Active Followers</div>
+            <div className="text-3xl font-bold text-gold mb-1">Growing</div>
+            <div className="text-sm text-muted-foreground">Community</div>
           </div>
 
           <div className="bg-card border border-gold/20 rounded-lg p-6 text-center">
@@ -41,16 +41,16 @@ const SocialProof = () => {
             <div className="flex justify-center mb-3">
               <TrendingUp className="h-8 w-8 text-gold" />
             </div>
-            <div className="text-3xl font-bold text-gold mb-1">95%</div>
-            <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+            <div className="text-3xl font-bold text-gold mb-1">Daily</div>
+            <div className="text-sm text-muted-foreground">Content Updates</div>
           </div>
 
           <div className="bg-card border border-gold/20 rounded-lg p-6 text-center">
             <div className="flex justify-center mb-3">
               <CheckCircle className="h-8 w-8 text-gold" />
             </div>
-            <div className="text-3xl font-bold text-gold mb-1">1000+</div>
-            <div className="text-sm text-muted-foreground">Successful Deals</div>
+            <div className="text-3xl font-bold text-gold mb-1">Expert</div>
+            <div className="text-sm text-muted-foreground">Market Analysis</div>
           </div>
         </div>
 
