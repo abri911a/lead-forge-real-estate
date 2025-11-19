@@ -25,15 +25,17 @@ interface UsePropertiesOptions {
   page?: number;
   pageSize?: number;
   featured?: boolean;
+  location?: string;
 }
 
 export const useProperties = ({
   page = 1,
   pageSize = 9,
   featured,
+  location,
 }: UsePropertiesOptions = {}) => {
   return useQuery({
-    queryKey: ["properties", page, pageSize, featured],
+    queryKey: ["properties", page, pageSize, featured, location],
     queryFn: async () => {
       const from = (page - 1) * pageSize;
       const to = from + pageSize - 1;
@@ -46,6 +48,10 @@ export const useProperties = ({
 
       if (featured !== undefined) {
         query = query.eq("featured", featured);
+      }
+
+      if (location && location !== "all") {
+        query = query.ilike("location", `%${location}%`);
       }
 
       const { data, error, count } = await query;
