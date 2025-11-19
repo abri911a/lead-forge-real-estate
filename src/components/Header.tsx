@@ -1,4 +1,4 @@
-import { Phone, Mail } from "lucide-react";
+import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -7,16 +7,10 @@ const Header = () => {
       <div className="container mx-auto px-4">
         {/* Top bar with contact info */}
         <div className="flex items-center justify-between py-2 text-sm border-b border-warmGray">
-          <div className="flex items-center gap-6">
-            <a href="tel:+96879136646" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
-              <Phone className="h-4 w-4" />
-              <span>+968 79136646</span>
-            </a>
-            <a href="mailto:info@omanproperty.com" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
-              <Mail className="h-4 w-4" />
-              <span>info@omanproperty.com</span>
-            </a>
-          </div>
+          <a href="tel:+96879136646" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
+            <Phone className="h-4 w-4" />
+            <span>+968 79136646</span>
+          </a>
           <div className="hidden md:block">
             <Button size="sm" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-luxury-dark">
               Schedule Viewing
