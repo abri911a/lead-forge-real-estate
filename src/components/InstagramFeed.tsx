@@ -27,26 +27,28 @@ const InstagramFeed = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {REELS.map((reel, index) => (
-          <div
+          <a
             key={index}
-            className="aspect-[9/16] rounded-lg overflow-hidden border border-gold/20 hover:border-gold transition-all shadow-md hover:shadow-xl"
+            href={reel.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all shadow-lg hover:shadow-2xl hover:scale-[1.02] block bg-black"
           >
             <iframe
               src={reel.embedUrl}
-              className="w-full h-full"
+              className="w-full h-full pointer-events-none"
               frameBorder="0"
               scrolling="no"
-              allowTransparency={true}
               allow="encrypted-media"
               title={`Instagram Reel ${index + 1}`}
             />
-          </div>
+          </a>
         ))}
       </div>
       
-      <p className="text-center text-sm text-muted-foreground mt-4">
+      <p className="text-center text-sm text-muted-foreground mt-6">
         Click any reel to watch on Instagram
       </p>
     </div>
