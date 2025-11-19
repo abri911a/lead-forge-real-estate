@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Instagram } from "lucide-react";
 
 const Header = () => {
   return (
@@ -7,10 +8,21 @@ const Header = () => {
       <div className="container mx-auto px-4">
         {/* Top bar with contact info */}
         <div className="flex items-center justify-between py-2 text-sm border-b border-warmGray">
-          <a href="tel:+96879136646" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
-            <Phone className="h-4 w-4" />
-            <span>+968 79136646</span>
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="tel:+96879136646" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
+              <Phone className="h-4 w-4" />
+              <span>+968 79136646</span>
+            </a>
+            <a 
+              href="https://www.instagram.com/waleedvlogs.om/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors"
+            >
+              <Instagram className="h-4 w-4" />
+              <span className="hidden sm:inline">@waleedvlogs.om</span>
+            </a>
+          </div>
           <div className="hidden md:block">
             <Button size="sm" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-luxury-dark">
               Schedule Viewing
