@@ -2,19 +2,18 @@ import { useState, useRef, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
 import { Button } from "./ui/button";
-import { ChevronLeft, ChevronRight, MapPin, Search } from "lucide-react";
+import { MapPin, Search } from "lucide-react";
 import { Skeleton } from "./ui/skeleton";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 
 const FeaturedProperties = () => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
   const [selectedPropertyType, setSelectedPropertyType] = useState<string>("all");
   const [tempLocation, setTempLocation] = useState<string>("all");
   const sectionRef = useRef<HTMLElement>(null);
   
   const { data, isLoading, error } = useProperties({
-    page: currentPage,
+    page: 1,
     pageSize: 9,
     location: selectedLocation,
     propertyType: selectedPropertyType,
@@ -31,14 +30,12 @@ const FeaturedProperties = () => {
       if (propertyType) {
         setSelectedPropertyType(propertyType);
       }
-      setCurrentPage(1);
     };
 
     const handleFilterReset = () => {
       setSelectedLocation("all");
       setSelectedPropertyType("all");
       setTempLocation("all");
-      setCurrentPage(1);
     };
 
     window.addEventListener("hero-filter-search", handleHeroFilter as EventListener);
@@ -50,25 +47,8 @@ const FeaturedProperties = () => {
     };
   }, []);
 
-  const handlePreviousPage = () => {
-    setCurrentPage((prev) => Math.max(1, prev - 1));
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  const handleNextPage = () => {
-    if (data && currentPage < data.totalPages) {
-      setCurrentPage((prev) => prev + 1);
-      if (sectionRef.current) {
-        sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-  };
-
   const handleSearch = () => {
     setSelectedLocation(tempLocation);
-    setCurrentPage(1);
     if (sectionRef.current) {
       sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -112,7 +92,7 @@ const FeaturedProperties = () => {
 
           {data && (
             <p className="text-muted-foreground text-sm mt-2">
-              Showing {((currentPage - 1) * 9) + 1}-{Math.min(currentPage * 9, data.totalCount)} of {data.totalCount} properties
+              Showing {Math.min(9, data.totalCount)} of {data.totalCount} properties
               {selectedLocation !== "all" && ` in ${selectedLocation}`}
             </p>
           )}
@@ -158,67 +138,6 @@ const FeaturedProperties = () => {
                 />
               ))}
             </div>
-
-            {/* Pagination Controls */}
-            {data.totalPages > 1 && (
-              <div className="flex items-center justify-center gap-4 mt-12">
-                <Button
-                  variant="outline"
-                  onClick={handlePreviousPage}
-                  disabled={currentPage === 1}
-                  className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-                >
-                  <ChevronLeft className="mr-2 h-4 w-4" />
-                  Previous
-                </Button>
-                
-                <div className="flex items-center gap-2">
-                  {[...Array(data.totalPages)].map((_, index) => {
-                    const pageNumber = index + 1;
-                    // Show first page, last page, current page and adjacent pages
-                    if (
-                      pageNumber === 1 ||
-                      pageNumber === data.totalPages ||
-                      (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
-                    ) {
-                      return (
-                        <Button
-                          key={pageNumber}
-                          variant={currentPage === pageNumber ? "default" : "outline"}
-                          onClick={() => {
-                            setCurrentPage(pageNumber);
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          }}
-                          className={
-                            currentPage === pageNumber
-                              ? "bg-gold text-luxury-dark hover:bg-gold-light"
-                              : "border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-                          }
-                        >
-                          {pageNumber}
-                        </Button>
-                      );
-                    } else if (
-                      pageNumber === currentPage - 2 ||
-                      pageNumber === currentPage + 2
-                    ) {
-                      return <span key={pageNumber} className="text-muted-foreground">...</span>;
-                    }
-                    return null;
-                  })}
-                </div>
-
-                <Button
-                  variant="outline"
-                  onClick={handleNextPage}
-                  disabled={currentPage === data.totalPages}
-                  className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-                >
-                  Next
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            )}
           </>
         )}
 
