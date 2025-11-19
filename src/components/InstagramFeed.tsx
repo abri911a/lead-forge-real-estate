@@ -3,46 +3,47 @@ import { Instagram } from "lucide-react";
 const InstagramFeed = () => {
   // Your Instagram reel URLs
   const REELS = [
-    "https://www.instagram.com/reel/DFvKKXWMEkn/",
-    "https://www.instagram.com/reel/DHEP3XIsZCP/",
-    "https://www.instagram.com/reel/DHWXkGXAvZw/",
-    "https://www.instagram.com/reel/DKFc7yXsNZh/",
-    "https://www.instagram.com/reel/DJo7EGOMr5X/",
+    {
+      url: "https://www.instagram.com/reel/DFvKKXWMEkn/",
+      embedUrl: "https://www.instagram.com/reel/DFvKKXWMEkn/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DHEP3XIsZCP/",
+      embedUrl: "https://www.instagram.com/reel/DHEP3XIsZCP/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DHWXkGXAvZw/",
+      embedUrl: "https://www.instagram.com/reel/DHWXkGXAvZw/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DKFc7yXsNZh/",
+      embedUrl: "https://www.instagram.com/reel/DKFc7yXsNZh/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DJo7EGOMr5X/",
+      embedUrl: "https://www.instagram.com/reel/DJo7EGOMr5X/embed"
+    }
   ];
 
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {REELS.map((url, index) => {
-          const reelId = url.split('/reel/')[1]?.split('/')[0];
-          return (
-            <a
-              key={index}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="aspect-square rounded-lg overflow-hidden border border-gold/20 group relative bg-black hover:border-gold transition-all"
-            >
-              <blockquote
-                className="instagram-media w-full h-full"
-                data-instgrm-permalink={url}
-                data-instgrm-version="14"
-                style={{
-                  background: '#000',
-                  border: 0,
-                  margin: 0,
-                  padding: 0,
-                  width: '100%',
-                  height: '100%'
-                }}
-              >
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-900/20 to-pink-900/20">
-                  <Instagram className="h-12 w-12 text-gold/60" />
-                </div>
-              </blockquote>
-            </a>
-          );
-        })}
+        {REELS.map((reel, index) => (
+          <div
+            key={index}
+            className="aspect-[9/16] rounded-lg overflow-hidden border border-gold/20 hover:border-gold transition-all shadow-md hover:shadow-xl"
+          >
+            <iframe
+              src={reel.embedUrl}
+              className="w-full h-full"
+              frameBorder="0"
+              scrolling="no"
+              allowTransparency={true}
+              allow="encrypted-media"
+              title={`Instagram Reel ${index + 1}`}
+            />
+          </div>
+        ))}
       </div>
       
       <p className="text-center text-sm text-muted-foreground mt-4">
