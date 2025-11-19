@@ -95,6 +95,25 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
 
       if (error) throw error;
 
+      // Send email notification to admin
+      try {
+        await supabase.functions.invoke('send-tour-notification', {
+          body: {
+            visitorName,
+            visitorEmail,
+            visitorPhone,
+            propertyTitle,
+            tourDate: format(selectedDate, "yyyy-MM-dd"),
+            tourTime: selectedTime,
+            tourType,
+          },
+        });
+        console.log("Admin notification sent");
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+        // Don't fail the whole request if email fails
+      }
+
       toast({
         title: "Tour Request Submitted!",
         description: `Your ${tourType === "video-chat" ? "video chat" : "in-person"} tour for ${propertyTitle} on ${format(selectedDate, "PPP")} at ${selectedTime} has been requested. We'll contact you soon!`,
