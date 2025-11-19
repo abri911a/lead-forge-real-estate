@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
 import AdminProperties from "./pages/AdminProperties";
+import AdminTourRequests from "./pages/AdminTourRequests";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,14 @@ const App = () => (
               element={
                 <ProtectedRoute>
                   <AdminProperties />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/tour-requests"
+              element={
+                <ProtectedRoute>
+                  <AdminTourRequests />
                 </ProtectedRoute>
               }
             />
