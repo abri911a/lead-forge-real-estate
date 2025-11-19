@@ -1,117 +1,54 @@
-import { useEffect, useState } from "react";
 import { Instagram } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-
-interface InstagramPost {
-  url: string;
-  html: string;
-  thumbnail_url?: string;
-  author_name?: string;
-}
 
 const InstagramFeed = () => {
-  const [posts, setPosts] = useState<InstagramPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  // Add your Instagram post URLs here
-  const POST_URLS = [
-    "https://www.instagram.com/reel/DFvKKXWMEkn/",
-    "https://www.instagram.com/reel/DHEP3XIsZCP/",
-    "https://www.instagram.com/reel/DHWXkGXAvZw/",
-    "https://www.instagram.com/reel/DKFc7yXsNZh/",
-    "https://www.instagram.com/reel/DJo7EGOMr5X/",
+  // Your Instagram reel URLs
+  const REELS = [
+    {
+      url: "https://www.instagram.com/reel/DFvKKXWMEkn/",
+      embedUrl: "https://www.instagram.com/reel/DFvKKXWMEkn/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DHEP3XIsZCP/",
+      embedUrl: "https://www.instagram.com/reel/DHEP3XIsZCP/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DHWXkGXAvZw/",
+      embedUrl: "https://www.instagram.com/reel/DHWXkGXAvZw/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DKFc7yXsNZh/",
+      embedUrl: "https://www.instagram.com/reel/DKFc7yXsNZh/embed"
+    },
+    {
+      url: "https://www.instagram.com/reel/DJo7EGOMr5X/",
+      embedUrl: "https://www.instagram.com/reel/DJo7EGOMr5X/embed"
+    },
   ];
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const { data, error } = await supabase.functions.invoke('fetch-instagram-posts', {
-          body: { postUrls: POST_URLS }
-        });
-
-        if (error) throw error;
-        
-        if (data?.embeds) {
-          setPosts(data.embeds);
-        }
-      } catch (error) {
-        console.error('Error fetching Instagram posts:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    // Only fetch if we have valid post URLs (not the placeholder ones)
-    if (POST_URLS.some(url => !url.includes('YOUR_POST_ID'))) {
-      fetchPosts();
-    } else {
-      setLoading(false);
-    }
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="grid grid-cols-3 gap-2">
-        {[1, 2, 3, 4, 5, 6].map((item) => (
-          <div
-            key={item}
-            className="aspect-square bg-warmGray/20 rounded-lg animate-pulse border border-border"
-          />
-        ))}
-      </div>
-    );
-  }
-
-  // If no posts loaded, show placeholder grid linking to Instagram
-  if (posts.length === 0) {
-    return (
-      <div className="grid grid-cols-3 gap-2">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-          <a
-            key={item}
-            href="https://www.instagram.com/waleedvlogs.om/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="aspect-square bg-warmGray/20 rounded-lg hover:opacity-75 transition-opacity flex items-center justify-center group border border-border"
-          >
-            <Instagram className="h-8 w-8 text-gold/50 group-hover:text-gold transition-colors" />
-          </a>
-        ))}
-        <p className="col-span-3 text-center text-sm text-muted-foreground mt-2">
-          Click to view our Instagram feed
-        </p>
-      </div>
-    );
-  }
-
-  // Display actual Instagram posts
   return (
     <div className="grid grid-cols-3 gap-2">
-      {posts.slice(0, 9).map((post, index) => (
+      {REELS.map((reel, index) => (
         <a
           key={index}
-          href={post.url}
+          href={reel.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="aspect-square rounded-lg hover:opacity-75 transition-opacity overflow-hidden border border-border group relative"
+          className="aspect-square rounded-lg overflow-hidden border border-border group relative bg-warmGray/10"
         >
-          {post.thumbnail_url ? (
-            <img 
-              src={post.thumbnail_url} 
-              alt="Instagram post"
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full bg-warmGray/20 flex items-center justify-center">
-              <Instagram className="h-8 w-8 text-gold/50 group-hover:text-gold transition-colors" />
-            </div>
-          )}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-            <Instagram className="h-6 w-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-          </div>
+          <iframe
+            src={reel.embedUrl}
+            className="w-full h-full"
+            frameBorder="0"
+            scrolling="no"
+            allowTransparency
+            title={`Instagram Reel ${index + 1}`}
+          />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none" />
         </a>
       ))}
-      {posts.length < 9 && [...Array(9 - posts.length)].map((_, index) => (
+      
+      {/* Fill remaining slots with placeholders */}
+      {[...Array(Math.max(0, 9 - REELS.length))].map((_, index) => (
         <a
           key={`placeholder-${index}`}
           href="https://www.instagram.com/waleedvlogs.om/"
