@@ -29,7 +29,7 @@ const OmanInvestmentGuide = () => {
               Best Real Estate Investment Options in Oman
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Last updated: January 19, 2025 | Written by Elite Estates Team - Licensed Real Estate Advisors
+              Last updated: January 19, 2025 | Written by Waleed Realestate Team - Licensed Real Estate Advisors
             </p>
           </div>
 
@@ -247,7 +247,7 @@ const OmanInvestmentGuide = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gold mb-2">Property Selection & Due Diligence</h3>
                     <p className="text-muted-foreground">
-                      Identify properties in approved freehold zones. Verify developer credentials, check title deed status, review master plan approvals. Engage licensed real estate advisor (Elite Estates provides multilingual support).
+                      Identify properties in approved freehold zones. Verify developer credentials, check title deed status, review master plan approvals. Engage licensed real estate advisor (Waleed Realestate provides multilingual support).
                     </p>
                   </div>
                 </div>
@@ -427,9 +427,9 @@ const OmanInvestmentGuide = () => {
                 <Users className="h-8 w-8 text-gold" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gold mb-2">About Elite Estates Team</h3>
+                <h3 className="text-lg font-semibold text-gold mb-2">About Waleed Realestate Team</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Elite Estates is a licensed real estate advisory firm specializing in GCC property markets with focus on Oman investment opportunities. Our team of certified advisors has facilitated over OMR 50 million in transactions for international clients across Muscat ITCs, Special Economic Zones, and emerging smart city developments. We provide comprehensive services including property selection, legal coordination, financing assistance, and residency visa guidance.
+                  Waleed Realestate is a licensed real estate advisory firm specializing in GCC property markets with focus on Oman investment opportunities. Our team of certified advisors has facilitated over OMR 50 million in transactions for international clients across Muscat ITCs, Special Economic Zones, and emerging smart city developments. We provide comprehensive services including property selection, legal coordination, financing assistance, and residency visa guidance.
                 </p>
                 <p className="text-muted-foreground text-sm mt-2">
                   <strong>Credentials:</strong> Licensed by Oman Ministry of Housing and Urban Planning | Member of GCC Real Estate Association | 15+ years combined experience in Gulf property markets
