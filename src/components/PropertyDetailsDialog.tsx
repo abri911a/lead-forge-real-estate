@@ -10,6 +10,7 @@ import {
   Shield, Wind, Droplet, Zap, CheckCircle2
 } from "lucide-react";
 import ContactOptionsDialog from "./ContactOptionsDialog";
+import TourBooking from "./TourBooking";
 
 interface PropertyDetailsDialogProps {
   open: boolean;
@@ -181,6 +182,11 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
               </div>
             </TabsContent>
           </Tabs>
+
+          <Separator />
+
+          {/* Tour Booking Section */}
+          <TourBooking propertyTitle={property.title} />
 
           <Separator />
 
