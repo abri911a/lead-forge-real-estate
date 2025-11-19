@@ -13,9 +13,13 @@ interface PropertyCardProps {
   baths: number;
   sqft: string;
   type: string;
+  description?: string;
+  features?: string[];
+  yearBuilt?: number;
+  status?: string;
 }
 
-const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type }: PropertyCardProps) => {
+const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }: PropertyCardProps) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
@@ -23,7 +27,7 @@ const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type }
       <PropertyDetailsDialog 
         open={dialogOpen} 
         onOpenChange={setDialogOpen}
-        property={{ image, title, location, price, beds, baths, sqft, type }}
+        property={{ image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }}
       />
     <Card className="overflow-hidden group hover:shadow-2xl transition-all duration-300 border-warmGray">
       <div className="relative overflow-hidden">
