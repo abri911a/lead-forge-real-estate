@@ -19,8 +19,8 @@ const Index = () => {
       <Hero />
       <SocialProof />
       <FeaturedProperties />
-      <Projects />
       <About />
+      <Projects />
       <FAQ />
       <Footer />
       <WhatsAppButton />
