@@ -18,10 +18,6 @@ const InstagramFeed = () => {
     {
       url: "https://www.instagram.com/reel/DKFc7yXsNZh/",
       embedUrl: "https://www.instagram.com/reel/DKFc7yXsNZh/embed"
-    },
-    {
-      url: "https://www.instagram.com/reel/DJo7EGOMr5X/",
-      embedUrl: "https://www.instagram.com/reel/DJo7EGOMr5X/embed"
     }
   ];
 
@@ -35,7 +31,7 @@ const InstagramFeed = () => {
           }
         `}
       </style>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         {REELS.map((reel, index) => (
           <a
             key={index}
