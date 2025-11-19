@@ -23,6 +23,22 @@ const InstagramFeed = () => {
 
   return (
     <div>
+      {/* Animated Section Title */}
+      <div className="mb-8 text-center">
+        <div className="inline-flex items-center justify-center gap-3 mb-4 animate-fade-in">
+          <div className="relative">
+            <Instagram className="h-10 w-10 text-gold animate-pulse" />
+            <div className="absolute inset-0 bg-gold/20 rounded-full blur-xl animate-pulse" />
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
+            Latest Reels
+          </h3>
+        </div>
+        <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          Explore our featured property tours and market insights
+        </p>
+      </div>
+
       <style>
         {`
           .instagram-reel-wrapper iframe {
