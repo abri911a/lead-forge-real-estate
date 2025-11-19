@@ -21,6 +21,10 @@ interface PropertyDetailsDialogProps {
     baths: number;
     sqft: string;
     type: string;
+    description?: string;
+    features?: string[];
+    yearBuilt?: number;
+    status?: string;
   };
 }
 
@@ -36,7 +40,7 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
     { icon: Zap, label: "Solar Panels" },
   ];
 
-  const features = [
+  const propertyFeatures = property.features || [
     "Modern Kitchen with Premium Appliances",
     "Spacious Master Bedroom with Walk-in Closet",
     "Private Balcony with Stunning Views",
@@ -44,7 +48,6 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
     "Smart Home Automation System",
     "Energy Efficient Windows",
     "Built-in Wardrobes in All Bedrooms",
-    "Guest Bathroom & Powder Room",
   ];
 
   return (
@@ -115,10 +118,10 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
               <div>
                 <h3 className="text-lg font-semibold mb-3">Property Description</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Discover this exceptional {property.type.toLowerCase()} in the prestigious {property.location}. 
-                  This stunning property offers {property.beds} spacious bedrooms and {property.baths} modern bathrooms 
-                  across {property.sqft} square feet of meticulously designed living space. 
-                  Perfect for families seeking luxury, comfort, and convenience in one of Oman's most sought-after locations.
+                  {property.description || `Discover this exceptional ${property.type.toLowerCase()} in the prestigious ${property.location}. 
+                  This stunning property offers ${property.beds} spacious bedrooms and ${property.baths} modern bathrooms 
+                  across ${property.sqft} square feet of meticulously designed living space. 
+                  Perfect for families seeking luxury, comfort, and convenience in one of Oman's most sought-after locations.`}
                 </p>
               </div>
               
@@ -131,11 +134,11 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-gold" />
-                    <span className="text-sm">Year Built: <span className="font-medium">2023</span></span>
+                    <span className="text-sm">Year Built: <span className="font-medium">{property.yearBuilt || 2023}</span></span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-gold" />
-                    <span className="text-sm">Status: <span className="font-medium">Available</span></span>
+                    <span className="text-sm">Status: <span className="font-medium">{property.status || "Available"}</span></span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-gold" />
@@ -148,7 +151,7 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
             <TabsContent value="features" className="space-y-3 mt-4">
               <h3 className="text-lg font-semibold mb-3">Property Features</h3>
               <div className="grid gap-2">
-                {features.map((feature, index) => (
+                {propertyFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
                     <CheckCircle2 className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                     <span className="text-sm">{feature}</span>
