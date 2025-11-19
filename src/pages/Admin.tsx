@@ -1,7 +1,7 @@
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { LogOut, Image } from "lucide-react";
+import { LogOut, Image, Calendar } from "lucide-react";
 
 const Admin = () => {
   const { user, signOut } = useAuth();
@@ -36,6 +36,15 @@ const Admin = () => {
           >
             <Image className="w-8 h-8 text-primary" />
             <span className="text-lg font-semibold text-foreground">Manage Property Images</span>
+          </Button>
+          
+          <Button
+            onClick={() => navigate("/admin/tour-requests")}
+            className="h-32 flex flex-col items-center justify-center gap-4 bg-card hover:bg-accent border border-border"
+            variant="outline"
+          >
+            <Calendar className="w-8 h-8 text-primary" />
+            <span className="text-lg font-semibold text-foreground">Tour Requests</span>
           </Button>
         </div>
       </main>
