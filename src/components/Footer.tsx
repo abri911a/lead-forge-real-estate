@@ -29,20 +29,19 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Home</a></li>
-              <li><a href="#properties" className="text-muted-foreground hover:text-gold transition-colors">Properties</a></li>
-              <li><a href="#projects" className="text-muted-foreground hover:text-gold transition-colors">Projects</a></li>
-              <li><a href="#about" className="text-muted-foreground hover:text-gold transition-colors">About Us</a></li>
+              <li><a href="/" className="text-muted-foreground hover:text-gold transition-colors">Home</a></li>
+              <li><a href="/#properties" className="text-muted-foreground hover:text-gold transition-colors">Properties</a></li>
+              <li><a href="/#projects" className="text-muted-foreground hover:text-gold transition-colors">Projects</a></li>
+              <li><a href="/#about" className="text-muted-foreground hover:text-gold transition-colors">About Us</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Services</h4>
+            <h4 className="font-semibold text-foreground mb-4">Location Guides</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Buy Property</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Sell Property</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Property Management</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors">Investment Consulting</a></li>
+              <li><a href="/oman-investment-guide" className="text-muted-foreground hover:text-gold transition-colors">Oman Investment Guide</a></li>
+              <li><a href="/al-mouj-guide" className="text-muted-foreground hover:text-gold transition-colors">Al Mouj Muscat</a></li>
+              <li><a href="/sultan-haitham-city-guide" className="text-muted-foreground hover:text-gold transition-colors">Sultan Haitham City</a></li>
             </ul>
           </div>
 
