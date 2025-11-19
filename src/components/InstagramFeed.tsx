@@ -27,6 +27,14 @@ const InstagramFeed = () => {
 
   return (
     <div>
+      <style>
+        {`
+          .instagram-reel-wrapper iframe {
+            margin-top: -48px;
+            height: calc(100% + 48px);
+          }
+        `}
+      </style>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {REELS.map((reel, index) => (
           <a
@@ -34,7 +42,7 @@ const InstagramFeed = () => {
             href={reel.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all shadow-lg hover:shadow-2xl hover:scale-[1.02] block bg-black"
+            className="instagram-reel-wrapper aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all shadow-lg hover:shadow-2xl hover:scale-[1.02] block bg-black"
           >
             <iframe
               src={reel.embedUrl}
