@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StructuredData from "@/components/StructuredData";
+import AuthorProfile from "@/components/AuthorProfile";
+import BacklinkResources from "@/components/BacklinkResources";
 import { Button } from "@/components/ui/button";
 import { MapPin, TrendingUp, Home, Shield, DollarSign, Users } from "lucide-react";
 
@@ -29,7 +31,7 @@ const OmanInvestmentGuide = () => {
               Best Real Estate Investment Options in Oman
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Last updated: January 19, 2025 | Written by Waleed Realestate Team - Licensed Real Estate Advisors
+              Last updated: January 19, 2025 | By Waleed Al-Balushi - Licensed Real Estate Advisor
             </p>
           </div>
 
@@ -42,6 +44,11 @@ const OmanInvestmentGuide = () => {
             <p className="text-muted-foreground">
               Oman Vision 2040 has streamlined foreign ownership regulations, making it one of the most investor-friendly GCC markets. Properties in Al Mouj Muscat start from OMR 80,000 for apartments to OMR 1,500,000+ for luxury villas.
             </p>
+          </div>
+
+          {/* Author Profile */}
+          <div className="mb-12">
+            <AuthorProfile variant="full" />
           </div>
 
           {/* Key Investment Locations */}
@@ -453,6 +460,8 @@ const OmanInvestmentGuide = () => {
           </div>
         </div>
       </section>
+
+      <BacklinkResources />
 
       <Footer />
       <WhatsAppButton />

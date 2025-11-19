@@ -126,12 +126,44 @@ const getStructuredData = (type: string, data?: any) => {
         "description": data?.description || "Expert guidance on property investment in Oman",
         "author": {
           "@type": "Person",
-          "name": "Waleed Realestate Team",
-          "jobTitle": "Licensed Real Estate Advisors",
+          "name": "Waleed Al-Balushi",
+          "jobTitle": "Licensed Real Estate Advisor",
+          "description": "Licensed real estate advisor specializing in Oman property investments with over 10 years of experience in GCC markets",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Waleed Realestate Oman"
+          },
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Professional License",
+              "name": "Licensed Real Estate Advisor - Oman"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Certification",
+              "name": "ITC Investment Specialist"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Expertise",
+              "name": "First-Class Residency Expert"
+            }
+          ],
           "knowsAbout": [
             "Oman Property Markets",
-            "Foreign Investment Regulations",
-            "GCC Real Estate"
+            "Integrated Tourism Complexes (ITCs)",
+            "Foreign Investment Regulations in Oman",
+            "First-Class Residency Card Requirements",
+            "GCC Real Estate Investment",
+            "Al Mouj Muscat Properties",
+            "Sultan Haitham City Development",
+            "Special Economic Zone Investment"
+          ],
+          "alumniOf": "Real Estate Investment Training - GCC Markets",
+          "award": [
+            "10+ Years Excellence in Oman Real Estate",
+            "500+ Successful Property Transactions"
           ]
         },
         "publisher": {
@@ -143,7 +175,13 @@ const getStructuredData = (type: string, data?: any) => {
           }
         },
         "datePublished": data?.datePublished || new Date().toISOString(),
-        "dateModified": data?.dateModified || new Date().toISOString()
+        "dateModified": data?.dateModified || new Date().toISOString(),
+        "inLanguage": "en",
+        "about": [
+          "Oman Real Estate Investment",
+          "Integrated Tourism Complexes",
+          "Foreign Property Ownership in Oman"
+        ]
       };
 
     default:

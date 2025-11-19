@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StructuredData from "@/components/StructuredData";
+import AuthorProfile from "@/components/AuthorProfile";
+import BacklinkResources from "@/components/BacklinkResources";
 import { Button } from "@/components/ui/button";
 import { 
   MapPin, Home, Ship, Target, ShoppingBag, 
@@ -35,7 +37,7 @@ const AlMoujGuide = () => {
               Al Mouj Muscat: Your Complete Living Guide
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Last updated: January 19, 2025 | Al Mouj Living & Investment Guide
+              Last updated: January 19, 2025 | By Waleed Al-Balushi - Licensed Real Estate Advisor
             </p>
           </div>
 
@@ -63,6 +65,11 @@ const AlMoujGuide = () => {
                 <div className="text-sm text-muted-foreground">Rental Yield</div>
               </div>
             </div>
+          </div>
+
+          {/* Author Profile */}
+          <div className="mb-12">
+            <AuthorProfile variant="full" />
           </div>
 
           {/* Property Investment Section */}
@@ -301,6 +308,8 @@ const AlMoujGuide = () => {
         </div>
       </section>
       
+      <BacklinkResources />
+
       <Footer />
       <WhatsAppButton />
     </div>
