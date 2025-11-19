@@ -1,6 +1,7 @@
 import { Instagram, Users, Video, TrendingUp, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InstagramFeed from "./InstagramFeed";
+import profileImage from "@/assets/waleed-profile.jpg";
 
 const SocialProof = () => {
   return (
@@ -60,8 +61,12 @@ const SocialProof = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold-light rounded-full flex items-center justify-center">
-                  <Instagram className="h-8 w-8 text-luxury-dark" />
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gold flex-shrink-0">
+                  <img 
+                    src={profileImage} 
+                    alt="Waleed - Oman Real Estate Expert" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gold">@waleedvlogs.om</h3>
