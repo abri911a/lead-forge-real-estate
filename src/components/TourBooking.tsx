@@ -9,11 +9,28 @@ import { format, addDays, startOfDay } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
 
 interface TourBookingProps {
   propertyId: string;
   propertyTitle: string;
 }
+
+const tourBookingSchema = z.object({
+  visitorName: z.string()
+    .trim()
+    .min(2, { message: "Name must be at least 2 characters" })
+    .max(100, { message: "Name must be less than 100 characters" }),
+  visitorEmail: z.string()
+    .trim()
+    .email({ message: "Please enter a valid email address" })
+    .max(255, { message: "Email must be less than 255 characters" }),
+  visitorPhone: z.string()
+    .trim()
+    .min(8, { message: "Please enter a valid phone number" })
+    .max(20, { message: "Phone number must be less than 20 characters" })
+    .regex(/^[\d\s\+\-\(\)]+$/, { message: "Phone number can only contain numbers, spaces, +, -, (, )" }),
+});
 
 const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
   const { toast } = useToast();
@@ -43,10 +60,18 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
       return;
     }
 
-    if (!visitorName || !visitorEmail) {
+    // Validate contact information
+    const validationResult = tourBookingSchema.safeParse({
+      visitorName,
+      visitorEmail,
+      visitorPhone,
+    });
+
+    if (!validationResult.success) {
+      const errorMessage = validationResult.error.errors[0]?.message || "Please check your information";
       toast({
-        title: "Missing Information",
-        description: "Please provide your name and email address.",
+        title: "Invalid Information",
+        description: errorMessage,
         variant: "destructive",
       });
       return;
@@ -241,7 +266,7 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
             />
           </div>
           <div>
-            <Label htmlFor="phone">Phone Number (Optional)</Label>
+            <Label htmlFor="phone">Phone Number *</Label>
             <Input
               id="phone"
               type="tel"
@@ -249,6 +274,7 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
               value={visitorPhone}
               onChange={(e) => setVisitorPhone(e.target.value)}
               className="mt-1"
+              required
             />
           </div>
         </div>
