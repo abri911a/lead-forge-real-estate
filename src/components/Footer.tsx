@@ -49,7 +49,7 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li>Muscat, Oman</li>
-              <li><a href="tel:+96871555067" className="hover:text-gold transition-colors">+968 7155 5067</a></li>
+              <li><a href="tel:+96879136646" className="hover:text-gold transition-colors">+968 7913 6646</a></li>
               <li><a href="mailto:info@omanproperty.com" className="hover:text-gold transition-colors">info@omanproperty.com</a></li>
             </ul>
           </div>
