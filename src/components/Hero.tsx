@@ -3,8 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import heroImage from "@/assets/hero-villa.jpg";
+import { useState } from "react";
 
 const Hero = () => {
+  const [location, setLocation] = useState("");
+
+  const handleSearch = () => {
+    const propertiesSection = document.getElementById("properties");
+    if (propertiesSection) {
+      propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Dispatch custom event with filter data
+      const event = new CustomEvent("hero-filter-search", { detail: { location } });
+      window.dispatchEvent(event);
+    }
+  };
   return (
     <section className="relative h-[90vh] flex items-center justify-center">
       {/* Background image with overlay */}
@@ -44,15 +56,16 @@ const Hero = () => {
                 </SelectContent>
               </Select>
 
-              <Select>
+              <Select value={location} onValueChange={setLocation}>
                 <SelectTrigger>
                   <SelectValue placeholder="Location" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="muscat">Muscat</SelectItem>
-                  <SelectItem value="salalah">Salalah</SelectItem>
-                  <SelectItem value="sultan-haitham">Sultan Haitham City</SelectItem>
-                  <SelectItem value="muscat-bay">Muscat Bay</SelectItem>
+                  <SelectItem value="Muscat">Muscat</SelectItem>
+                  <SelectItem value="Salalah">Salalah</SelectItem>
+                  <SelectItem value="Sohar">Sohar</SelectItem>
+                  <SelectItem value="Nizwa">Nizwa</SelectItem>
+                  <SelectItem value="Sur">Sur</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -68,7 +81,10 @@ const Hero = () => {
                 </SelectContent>
               </Select>
 
-              <Button className="bg-gold text-luxury-dark hover:bg-gold-light w-full">
+              <Button 
+                className="bg-gold text-luxury-dark hover:bg-gold-light w-full"
+                onClick={handleSearch}
+              >
                 <Search className="mr-2 h-4 w-4" />
                 Search Properties
               </Button>

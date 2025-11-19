@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
 import { Button } from "./ui/button";
@@ -17,6 +17,23 @@ const FeaturedProperties = () => {
     pageSize: 9,
     location: selectedLocation,
   });
+
+  // Listen for hero filter events
+  useEffect(() => {
+    const handleHeroFilter = (event: CustomEvent) => {
+      const { location } = event.detail;
+      if (location) {
+        setSelectedLocation(location);
+        setTempLocation(location);
+        setCurrentPage(1);
+      }
+    };
+
+    window.addEventListener("hero-filter-search", handleHeroFilter as EventListener);
+    return () => {
+      window.removeEventListener("hero-filter-search", handleHeroFilter as EventListener);
+    };
+  }, []);
 
   const handlePreviousPage = () => {
     setCurrentPage((prev) => Math.max(1, prev - 1));
