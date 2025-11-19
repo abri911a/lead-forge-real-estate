@@ -1,5 +1,6 @@
 import { Instagram, Users, Video, TrendingUp, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import InstagramFeed from "./InstagramFeed";
 
 const SocialProof = () => {
   return (
@@ -105,21 +106,9 @@ const SocialProof = () => {
 
             {/* Instagram Grid Placeholder */}
             <div className="flex-1">
-              <div className="grid grid-cols-3 gap-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-                  <a
-                    key={item}
-                    href="https://www.instagram.com/waleedvlogs.om/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="aspect-square bg-warmGray/20 rounded-lg hover:opacity-75 transition-opacity flex items-center justify-center group border border-border"
-                  >
-                    <Instagram className="h-8 w-8 text-gold/50 group-hover:text-gold transition-colors" />
-                  </a>
-                ))}
-              </div>
+              <InstagramFeed />
               <p className="text-center text-sm text-muted-foreground mt-4">
-                Click any image to view our Instagram feed
+                Latest posts from @waleedvlogs.om
               </p>
             </div>
           </div>
