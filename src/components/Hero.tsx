@@ -17,6 +17,16 @@ const Hero = () => {
       window.dispatchEvent(event);
     }
   };
+
+  const handleViewAll = () => {
+    const propertiesSection = document.getElementById("properties");
+    if (propertiesSection) {
+      propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Dispatch event to reset filters
+      const event = new CustomEvent("hero-filter-reset");
+      window.dispatchEvent(event);
+    }
+  };
   return (
     <section className="relative h-[90vh] flex items-center justify-center">
       {/* Background image with overlay */}
@@ -93,7 +103,11 @@ const Hero = () => {
 
           {/* CTA buttons */}
           <div className="flex flex-wrap gap-4 mt-8">
-            <Button size="lg" className="bg-gold text-luxury-dark hover:bg-gold-light">
+            <Button 
+              size="lg" 
+              className="bg-gold text-luxury-dark hover:bg-gold-light"
+              onClick={handleViewAll}
+            >
               View All Properties
             </Button>
             <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-luxury-dark">
