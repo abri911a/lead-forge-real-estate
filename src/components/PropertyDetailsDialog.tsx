@@ -16,6 +16,7 @@ interface PropertyDetailsDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   property: {
+    id: string;
     image: string;
     title: string;
     location: string;
@@ -186,7 +187,7 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
           <Separator />
 
           {/* Tour Booking Section */}
-          <TourBooking propertyTitle={property.title} />
+          <TourBooking propertyId={property.id} propertyTitle={property.title} />
 
           <Separator />
 

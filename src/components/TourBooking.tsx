@@ -2,20 +2,28 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Video, User, ChevronLeft, ChevronRight } from "lucide-react";
 import { format, addDays, startOfDay } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface TourBookingProps {
+  propertyId: string;
   propertyTitle: string;
 }
 
-const TourBooking = ({ propertyTitle }: TourBookingProps) => {
+const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
   const { toast } = useToast();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [tourType, setTourType] = useState<"in-person" | "video-chat">("in-person");
+  const [visitorName, setVisitorName] = useState("");
+  const [visitorEmail, setVisitorEmail] = useState("");
+  const [visitorPhone, setVisitorPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Generate next 7 days for quick selection
   const quickDates = Array.from({ length: 7 }, (_, i) => addDays(startOfDay(new Date()), i));
@@ -25,7 +33,7 @@ const TourBooking = ({ propertyTitle }: TourBookingProps) => {
     "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
   ];
 
-  const handleBookTour = () => {
+  const handleBookTour = async () => {
     if (!selectedDate || !selectedTime) {
       toast({
         title: "Missing Information",
@@ -35,10 +43,55 @@ const TourBooking = ({ propertyTitle }: TourBookingProps) => {
       return;
     }
 
-    toast({
-      title: "Tour Request Submitted!",
-      description: `Your ${tourType === "video-chat" ? "video chat" : "in-person"} tour for ${propertyTitle} on ${format(selectedDate, "PPP")} at ${selectedTime} has been requested.`,
-    });
+    if (!visitorName || !visitorEmail) {
+      toast({
+        title: "Missing Information",
+        description: "Please provide your name and email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from("tour_requests")
+        .insert({
+          property_id: propertyId,
+          property_title: propertyTitle,
+          visitor_name: visitorName,
+          visitor_email: visitorEmail,
+          visitor_phone: visitorPhone || null,
+          tour_date: format(selectedDate, "yyyy-MM-dd"),
+          tour_time: selectedTime,
+          tour_type: tourType,
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Tour Request Submitted!",
+        description: `Your ${tourType === "video-chat" ? "video chat" : "in-person"} tour for ${propertyTitle} on ${format(selectedDate, "PPP")} at ${selectedTime} has been requested. We'll contact you soon!`,
+      });
+
+      // Reset form
+      setSelectedDate(undefined);
+      setSelectedTime("");
+      setVisitorName("");
+      setVisitorEmail("");
+      setVisitorPhone("");
+      setTourType("in-person");
+    } catch (error) {
+      console.error("Error submitting tour request:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit tour request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -161,12 +214,53 @@ const TourBooking = ({ propertyTitle }: TourBookingProps) => {
         </div>
       </div>
 
+      {/* Visitor Information */}
+      <div className="space-y-4 mb-6">
+        <h4 className="text-lg font-semibold">Your Information</h4>
+        <div className="space-y-3">
+          <div>
+            <Label htmlFor="name">Full Name *</Label>
+            <Input
+              id="name"
+              type="text"
+              placeholder="Enter your name"
+              value={visitorName}
+              onChange={(e) => setVisitorName(e.target.value)}
+              className="mt-1"
+            />
+          </div>
+          <div>
+            <Label htmlFor="email">Email Address *</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="your.email@example.com"
+              value={visitorEmail}
+              onChange={(e) => setVisitorEmail(e.target.value)}
+              className="mt-1"
+            />
+          </div>
+          <div>
+            <Label htmlFor="phone">Phone Number (Optional)</Label>
+            <Input
+              id="phone"
+              type="tel"
+              placeholder="+968 XXXX XXXX"
+              value={visitorPhone}
+              onChange={(e) => setVisitorPhone(e.target.value)}
+              className="mt-1"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Book Button */}
       <Button
         onClick={handleBookTour}
+        disabled={isSubmitting}
         className="w-full bg-gold text-luxury-dark hover:bg-gold-light font-semibold py-6 text-lg"
       >
-        Request Tour
+        {isSubmitting ? "Submitting..." : "Request Tour"}
       </Button>
     </div>
   );

@@ -130,6 +130,59 @@ export type Database = {
           },
         ]
       }
+      tour_requests: {
+        Row: {
+          created_at: string
+          id: string
+          notes: string | null
+          property_id: string | null
+          property_title: string
+          status: string
+          tour_date: string
+          tour_time: string
+          tour_type: string
+          visitor_email: string
+          visitor_name: string
+          visitor_phone: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          property_id?: string | null
+          property_title: string
+          status?: string
+          tour_date: string
+          tour_time: string
+          tour_type: string
+          visitor_email: string
+          visitor_name: string
+          visitor_phone?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          property_id?: string | null
+          property_title?: string
+          status?: string
+          tour_date?: string
+          tour_time?: string
+          tour_type?: string
+          visitor_email?: string
+          visitor_name?: string
+          visitor_phone?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tour_requests_property_id_fkey"
+            columns: ["property_id"]
+            isOneToOne: false
+            referencedRelation: "properties"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

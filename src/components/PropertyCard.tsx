@@ -6,6 +6,7 @@ import PropertyDetailsDialog from "./PropertyDetailsDialog";
 import ContactOptionsDialog from "./ContactOptionsDialog";
 
 interface PropertyCardProps {
+  id: string;
   image: string;
   title: string;
   location: string;
@@ -20,7 +21,7 @@ interface PropertyCardProps {
   status?: string;
 }
 
-const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }: PropertyCardProps) => {
+const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }: PropertyCardProps) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
 
@@ -29,7 +30,7 @@ const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type, 
       <PropertyDetailsDialog 
         open={dialogOpen} 
         onOpenChange={setDialogOpen}
-        property={{ image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }}
+        property={{ id, image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }}
       />
       <ContactOptionsDialog 
         open={contactDialogOpen} 
