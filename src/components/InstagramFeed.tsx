@@ -54,7 +54,7 @@ const InstagramFeed = () => {
             href={reel.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="instagram-reel-wrapper aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all shadow-lg hover:shadow-2xl hover:scale-[1.02] block bg-black"
+            className="instagram-reel-wrapper aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-2 block bg-black"
           >
             <iframe
               src={reel.embedUrl}
