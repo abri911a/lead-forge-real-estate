@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import {
   Calendar, Home, Car, Trees, Wifi, Dumbbell,
   Shield, Wind, Droplet, Zap, CheckCircle2
 } from "lucide-react";
+import ContactOptionsDialog from "./ContactOptionsDialog";
 
 interface PropertyDetailsDialogProps {
   open: boolean;
@@ -29,6 +31,8 @@ interface PropertyDetailsDialogProps {
 }
 
 const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetailsDialogProps) => {
+  const [contactDialogOpen, setContactDialogOpen] = useState(false);
+  
   const amenities = [
     { icon: Wifi, label: "High Speed WiFi" },
     { icon: Car, label: "2 Parking Spaces" },
@@ -51,8 +55,13 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
   ];
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+    <>
+      <ContactOptionsDialog 
+        open={contactDialogOpen} 
+        onOpenChange={setContactDialogOpen}
+      />
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -179,16 +188,27 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Interested in this property?</h3>
             <div className="grid grid-cols-2 gap-3">
-              <Button className="bg-gold text-luxury-dark hover:bg-gold-light">
+              <Button 
+                className="bg-gold text-luxury-dark hover:bg-gold-light"
+                onClick={() => setContactDialogOpen(true)}
+              >
                 <Phone className="mr-2 h-4 w-4" />
                 Call Agent
               </Button>
-              <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-luxury-dark">
+              <Button 
+                variant="outline" 
+                className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
+                onClick={() => setContactDialogOpen(true)}
+              >
                 <Mail className="mr-2 h-4 w-4" />
                 Email Inquiry
               </Button>
             </div>
-            <Button variant="secondary" className="w-full">
+            <Button 
+              variant="secondary" 
+              className="w-full"
+              onClick={() => setContactDialogOpen(true)}
+            >
               <Calendar className="mr-2 h-4 w-4" />
               Schedule Viewing
             </Button>
@@ -196,6 +216,7 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
         </div>
       </DialogContent>
     </Dialog>
+    </>
   );
 };
 

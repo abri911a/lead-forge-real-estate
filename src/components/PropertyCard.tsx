@@ -3,6 +3,7 @@ import { Bed, Bath, Maximize, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import PropertyDetailsDialog from "./PropertyDetailsDialog";
+import ContactOptionsDialog from "./ContactOptionsDialog";
 
 interface PropertyCardProps {
   image: string;
@@ -21,6 +22,7 @@ interface PropertyCardProps {
 
 const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }: PropertyCardProps) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [contactDialogOpen, setContactDialogOpen] = useState(false);
 
   return (
     <>
@@ -28,6 +30,10 @@ const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type, 
         open={dialogOpen} 
         onOpenChange={setDialogOpen}
         property={{ image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }}
+      />
+      <ContactOptionsDialog 
+        open={contactDialogOpen} 
+        onOpenChange={setContactDialogOpen}
       />
     <Card className="overflow-hidden group hover:shadow-2xl transition-all duration-300 border-warmGray">
       <div className="relative overflow-hidden">
@@ -78,7 +84,10 @@ const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type, 
           >
             View Details
           </Button>
-          <Button className="bg-gold text-luxury-dark hover:bg-gold-light">
+          <Button 
+            className="bg-gold text-luxury-dark hover:bg-gold-light"
+            onClick={() => setContactDialogOpen(true)}
+          >
             <Phone className="mr-2 h-4 w-4" />
             Contact
           </Button>
