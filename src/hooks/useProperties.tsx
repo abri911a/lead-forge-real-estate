@@ -26,6 +26,7 @@ interface UsePropertiesOptions {
   pageSize?: number;
   featured?: boolean;
   location?: string;
+  propertyType?: string;
 }
 
 export const useProperties = ({
@@ -33,9 +34,10 @@ export const useProperties = ({
   pageSize = 9,
   featured,
   location,
+  propertyType,
 }: UsePropertiesOptions = {}) => {
   return useQuery({
-    queryKey: ["properties", page, pageSize, featured, location],
+    queryKey: ["properties", page, pageSize, featured, location, propertyType],
     queryFn: async () => {
       const from = (page - 1) * pageSize;
       const to = from + pageSize - 1;
@@ -52,6 +54,10 @@ export const useProperties = ({
 
       if (location && location !== "all") {
         query = query.ilike("location", `%${location}%`);
+      }
+
+      if (propertyType && propertyType !== "all") {
+        query = query.ilike("property_type", `%${propertyType}%`);
       }
 
       const { data, error, count } = await query;
