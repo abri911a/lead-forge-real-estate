@@ -29,9 +29,18 @@ const FeaturedProperties = () => {
       }
     };
 
+    const handleFilterReset = () => {
+      setSelectedLocation("all");
+      setTempLocation("all");
+      setCurrentPage(1);
+    };
+
     window.addEventListener("hero-filter-search", handleHeroFilter as EventListener);
+    window.addEventListener("hero-filter-reset", handleFilterReset);
+    
     return () => {
       window.removeEventListener("hero-filter-search", handleHeroFilter as EventListener);
+      window.removeEventListener("hero-filter-reset", handleFilterReset);
     };
   }, []);
 
