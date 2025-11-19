@@ -15,12 +15,11 @@ const InstagramFeed = () => {
 
   // Add your Instagram post URLs here
   const POST_URLS = [
-    "https://www.instagram.com/p/YOUR_POST_ID_1/",
-    "https://www.instagram.com/p/YOUR_POST_ID_2/",
-    "https://www.instagram.com/p/YOUR_POST_ID_3/",
-    "https://www.instagram.com/p/YOUR_POST_ID_4/",
-    "https://www.instagram.com/p/YOUR_POST_ID_5/",
-    "https://www.instagram.com/p/YOUR_POST_ID_6/",
+    "https://www.instagram.com/reel/DFvKKXWMEkn/",
+    "https://www.instagram.com/reel/DHEP3XIsZCP/",
+    "https://www.instagram.com/reel/DHWXkGXAvZw/",
+    "https://www.instagram.com/reel/DKFc7yXsNZh/",
+    "https://www.instagram.com/reel/DJo7EGOMr5X/",
   ];
 
   useEffect(() => {
