@@ -41,7 +41,7 @@ const getStructuredData = (type: string, data?: any) => {
       return {
         "@context": "https://schema.org",
         "@type": "RealEstateAgent",
-        "name": "Elite Estates Oman",
+        "name": "Waleed Realestate Oman",
         "description": "Premium real estate investment advisory specializing in Oman's Integrated Tourism Complexes (ITCs), freehold properties, and foreign investment opportunities. Expert guidance for international buyers in Muscat, Al Mouj, and Special Economic Zones.",
         "url": baseUrl,
         "logo": `${baseUrl}/logo.png`,
@@ -93,7 +93,7 @@ const getStructuredData = (type: string, data?: any) => {
       return {
         "@context": "https://schema.org",
         "@type": "RealEstateAgent",
-        "name": "Elite Estates Oman",
+        "name": "Waleed Realestate Oman",
         "image": `${baseUrl}/logo.png`,
         "priceRange": "$$$$",
         "address": {
@@ -126,7 +126,7 @@ const getStructuredData = (type: string, data?: any) => {
         "description": data?.description || "Expert guidance on property investment in Oman",
         "author": {
           "@type": "Person",
-          "name": "Elite Estates Team",
+          "name": "Waleed Realestate Team",
           "jobTitle": "Licensed Real Estate Advisors",
           "knowsAbout": [
             "Oman Property Markets",
@@ -136,7 +136,7 @@ const getStructuredData = (type: string, data?: any) => {
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Elite Estates Oman",
+          "name": "Waleed Realestate Oman",
           "logo": {
             "@type": "ImageObject",
             "url": `${baseUrl}/logo.png`

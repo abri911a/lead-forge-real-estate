@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-gold mb-4">ELITE ESTATES</h3>
+            <h3 className="text-2xl font-bold text-gold mb-4">WALEED REALESTATE</h3>
             <p className="text-muted-foreground mb-4">
               Your gateway to premium real estate investments in Oman
             </p>
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-warmGray mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; 2025 Elite Estates. All rights reserved.</p>
+          <p>&copy; 2025 Waleed Realestate. All rights reserved.</p>
         </div>
       </div>
     </footer>
