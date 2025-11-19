@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 40 95% 55%;
+    --primary: 38 85% 62%;
     --primary-foreground: 0 0% 10%;
 
     --secondary: 0 0% 95%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 40 95% 55%;
+    --accent: 38 85% 62%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,17 +34,18 @@ All colors MUST be HSL.
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 40 95% 55%;
+    --ring: 38 85% 62%;
 
     --radius: 0.5rem;
     
-    /* Custom real estate theme */
+    /* Custom real estate theme - refined elegant palette */
     --luxury-dark: 0 0% 8%;
     --luxury-darker: 0 0% 5%;
-    --gold: 40 95% 55%;
-    --gold-light: 43 96% 65%;
-    --warm-gray: 30 5% 20%;
-    --warm-gray-light: 30 5% 30%;
+    --gold: 38 85% 62%;
+    --gold-light: 40 88% 70%;
+    --gold-muted: 38 50% 50%;
+    --warm-gray: 30 8% 25%;
+    --warm-gray-light: 30 8% 35%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -73,16 +74,16 @@ All colors MUST be HSL.
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 40 95% 55%;
+    --primary: 38 85% 62%;
     --primary-foreground: 0 0% 10%;
 
-    --secondary: 30 5% 20%;
+    --secondary: 30 8% 25%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 30 5% 15%;
+    --muted: 30 8% 18%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 40 95% 55%;
+    --accent: 38 85% 62%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;

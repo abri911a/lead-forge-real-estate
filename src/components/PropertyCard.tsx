@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Bed, Bath, Maximize, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import PropertyDetailsDialog from "./PropertyDetailsDialog";
 
 interface PropertyCardProps {
   image: string;
@@ -14,7 +16,15 @@ interface PropertyCardProps {
 }
 
 const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type }: PropertyCardProps) => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   return (
+    <>
+      <PropertyDetailsDialog 
+        open={dialogOpen} 
+        onOpenChange={setDialogOpen}
+        property={{ image, title, location, price, beds, baths, sqft, type }}
+      />
     <Card className="overflow-hidden group hover:shadow-2xl transition-all duration-300 border-warmGray">
       <div className="relative overflow-hidden">
         <img 
@@ -57,7 +67,11 @@ const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type }
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-luxury-dark">
+          <Button 
+            variant="outline" 
+            className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
+            onClick={() => setDialogOpen(true)}
+          >
             View Details
           </Button>
           <Button className="bg-gold text-luxury-dark hover:bg-gold-light">
@@ -67,6 +81,7 @@ const PropertyCard = ({ image, title, location, price, beds, baths, sqft, type }
         </div>
       </div>
     </Card>
+    </>
   );
 };
 
