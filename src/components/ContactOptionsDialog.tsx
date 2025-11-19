@@ -15,8 +15,9 @@ interface ContactOptionsDialogProps {
 
 const ContactOptionsDialog = ({ open, onOpenChange }: ContactOptionsDialogProps) => {
   const phoneNumber = "+968 79136646";
+  const whatsappNumber = "96879136646"; // WhatsApp number without special characters
   const whatsappMessage = "Hi! I'm interested in learning more about your properties.";
-  const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const callUrl = `tel:${phoneNumber}`;
 
   return (
