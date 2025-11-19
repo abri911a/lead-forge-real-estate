@@ -18,7 +18,7 @@ const FAQ = () => {
     },
     {
       question: "What is the minimum investment required for Oman property?",
-      answer: "Minimum investment varies by property type and location. Studio apartments in Sultan Haitham City start from OMR 33,250, while luxury villas in Al Mouj range from OMR 1,500,000. For the First-Class Residency Card, minimum property investment is OMR 500,000 (~USD 1.3 million) in approved freehold areas."
+      answer: "Minimum investment varies by property type and location. Studio apartments in Sultan Haitham City start from OMR 33,250, while luxury villas in Al Mouj range from OMR 1,500,000. Entry prices depend on the specific development and property type you're interested in."
     },
     {
       question: "What rental yields can I expect from Oman properties?",
@@ -26,7 +26,7 @@ const FAQ = () => {
     },
     {
       question: "What is the Oman First-Class Residency Card?",
-      answer: "The First-Class Residency Card is a 10-year renewable visa available to foreign investors who purchase property valued at OMR 500,000 or more in designated freehold areas. It includes benefits such as residency for family members, business ownership rights, and no sponsor requirements. This program aligns with Oman Vision 2040 to attract foreign investment."
+      answer: "The First-Class Residency Card is a 10-year renewable visa available to foreign investors who purchase property in designated freehold areas. It includes benefits such as residency for family members, business ownership rights, and no sponsor requirements. This program aligns with Oman Vision 2040 to attract foreign investment. Contact us for current eligibility requirements."
     },
     {
       question: "Which areas in Oman offer the best investment opportunities?",
