@@ -4,7 +4,6 @@ import FeaturedProperties from "@/components/FeaturedProperties";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
-import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StructuredData from "@/components/StructuredData";
@@ -21,7 +20,6 @@ const Index = () => {
       <Projects />
       <About />
       <FAQ />
-      <ContactForm />
       <Footer />
       <WhatsAppButton />
     </div>
