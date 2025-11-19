@@ -104,12 +104,9 @@ const SocialProof = () => {
               </a>
             </div>
 
-            {/* Instagram Grid Placeholder */}
+            {/* Instagram Grid */}
             <div className="flex-1">
               <InstagramFeed />
-              <p className="text-center text-sm text-muted-foreground mt-4">
-                Latest posts from @waleedvlogs.om
-              </p>
             </div>
           </div>
         </div>
