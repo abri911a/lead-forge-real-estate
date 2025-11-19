@@ -1,14 +1,15 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import PropertyCard from "./PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
 import { Button } from "./ui/button";
-import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin, Search } from "lucide-react";
 import { Skeleton } from "./ui/skeleton";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 
 const FeaturedProperties = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
+  const [tempLocation, setTempLocation] = useState<string>("all");
   const sectionRef = useRef<HTMLElement>(null);
   
   const { data, isLoading, error } = useProperties({
@@ -16,12 +17,6 @@ const FeaturedProperties = () => {
     pageSize: 9,
     location: selectedLocation,
   });
-
-  useEffect(() => {
-    if (selectedLocation !== "all" && sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [selectedLocation]);
 
   const handlePreviousPage = () => {
     setCurrentPage((prev) => Math.max(1, prev - 1));
@@ -39,9 +34,12 @@ const FeaturedProperties = () => {
     }
   };
 
-  const handleLocationChange = (value: string) => {
-    setSelectedLocation(value);
+  const handleSearch = () => {
+    setSelectedLocation(tempLocation);
     setCurrentPage(1);
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -58,7 +56,7 @@ const FeaturedProperties = () => {
           {/* Location Filter */}
           <div className="flex items-center justify-center gap-3 mb-4">
             <MapPin className="h-5 w-5 text-gold" />
-            <Select value={selectedLocation} onValueChange={handleLocationChange}>
+            <Select value={tempLocation} onValueChange={setTempLocation}>
               <SelectTrigger className="w-[280px] border-gold/30 focus:border-gold">
                 <SelectValue placeholder="Filter by location" />
               </SelectTrigger>
@@ -71,6 +69,13 @@ const FeaturedProperties = () => {
                 <SelectItem value="Sur">Sur</SelectItem>
               </SelectContent>
             </Select>
+            <Button 
+              onClick={handleSearch}
+              className="bg-gold text-luxury-dark hover:bg-gold-light"
+            >
+              <Search className="mr-2 h-4 w-4" />
+              Search
+            </Button>
           </div>
 
           {data && (
