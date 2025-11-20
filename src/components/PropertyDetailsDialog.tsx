@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import ContactOptionsDialog from "./ContactOptionsDialog";
 import TourBooking from "./TourBooking";
+import PropertySchema from "./PropertySchema";
 
 interface PropertyDetailsDialogProps {
   open: boolean;
@@ -58,6 +59,21 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
 
   return (
     <>
+      <PropertySchema property={{
+        id: property.id,
+        image: property.image,
+        title: property.title,
+        location: property.location,
+        price: property.price,
+        beds: property.beds,
+        baths: property.baths,
+        sqft: property.sqft,
+        type: property.type,
+        description: property.description,
+        features: property.features,
+        yearBuilt: property.yearBuilt,
+        status: property.status
+      }} />
       <ContactOptionsDialog 
         open={contactDialogOpen} 
         onOpenChange={setContactDialogOpen}
