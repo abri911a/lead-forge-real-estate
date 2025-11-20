@@ -47,4 +47,4 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap Location
-Sitemap: https://yoursite.lovable.app/sitemap.xml
+Sitemap: https://waleedproperty.com/sitemap.xml
