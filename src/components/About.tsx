@@ -7,10 +7,10 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Your Trusted Partner in <span className="text-gold">Oman Real Estate</span>
             </h2>
-            <p className="text-foreground/90 text-xl leading-relaxed mb-10 font-medium">
+            <p className="text-white/90 text-xl leading-relaxed mb-10 font-medium">
               We specialize in helping international investors and Gulf nationals discover exceptional 
               real estate opportunities across Oman. From luxury villas to smart investment properties, 
               we guide you every step of the way.
@@ -20,24 +20,24 @@ const About = () => {
               <div className="flex items-start gap-4">
                 <CheckCircle className="h-7 w-7 text-gold flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">Expert Market Knowledge</h3>
-                  <p className="text-foreground/80 text-base leading-relaxed">Deep understanding of Oman's property regulations and market trends</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Expert Market Knowledge</h3>
+                  <p className="text-white/80 text-base leading-relaxed">Deep understanding of Oman's property regulations and market trends</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
                 <CheckCircle className="h-7 w-7 text-gold flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">Personalized Service</h3>
-                  <p className="text-foreground/80 text-base leading-relaxed">Tailored property solutions matching your investment goals and lifestyle</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Personalized Service</h3>
+                  <p className="text-white/80 text-base leading-relaxed">Tailored property solutions matching your investment goals and lifestyle</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
                 <CheckCircle className="h-7 w-7 text-gold flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">End-to-End Support</h3>
-                  <p className="text-foreground/80 text-base leading-relaxed">From property search to final ownership transfer, we handle everything</p>
+                  <h3 className="text-xl font-bold text-white mb-2">End-to-End Support</h3>
+                  <p className="text-white/80 text-base leading-relaxed">From property search to final ownership transfer, we handle everything</p>
                 </div>
               </div>
             </div>
