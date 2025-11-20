@@ -1,15 +1,24 @@
-# Elite Estates Oman - Robots.txt
-# Optimized for LLM crawlers and search engines
+# Waleed Real Estate Oman - Robots.txt
+# Optimized for search engines and AI crawlers
 
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /login
+Disallow: /signup
 
 # Major Search Engines
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
+Disallow: /login
+Disallow: /signup
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin
+Disallow: /login
+Disallow: /signup
 
 # Social Media Crawlers
 User-agent: Twitterbot
@@ -37,5 +46,5 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Sitemap
-Sitemap: https://elite-estates.om/sitemap.xml
+# Sitemap Location
+Sitemap: https://yoursite.lovable.app/sitemap.xml
