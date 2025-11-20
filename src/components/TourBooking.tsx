@@ -80,38 +80,34 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from("tour_requests")
-        .insert({
-          property_id: propertyId,
-          property_title: propertyTitle,
-          visitor_name: visitorName,
-          visitor_email: visitorEmail,
-          visitor_phone: visitorPhone || null,
-          tour_date: format(selectedDate, "yyyy-MM-dd"),
-          tour_time: selectedTime,
-          tour_type: tourType,
-        });
-
-      if (error) throw error;
-
-      // Send email notification to admin
-      try {
-        await supabase.functions.invoke('send-tour-notification', {
+      // Submit through edge function with rate limiting and server-side validation
+      const { data, error } = await supabase.functions.invoke(
+        "submit-tour-request",
+        {
           body: {
-            visitorName,
-            visitorEmail,
-            visitorPhone,
-            propertyTitle,
-            tourDate: format(selectedDate, "yyyy-MM-dd"),
-            tourTime: selectedTime,
-            tourType,
+            property_id: propertyId,
+            property_title: propertyTitle,
+            visitor_name: visitorName,
+            visitor_email: visitorEmail,
+            visitor_phone: visitorPhone || null,
+            tour_date: format(selectedDate, "yyyy-MM-dd"),
+            tour_time: selectedTime,
+            tour_type: tourType,
           },
-        });
-        console.log("Admin notification sent");
-      } catch (emailError) {
-        console.error("Failed to send email notification:", emailError);
-        // Don't fail the whole request if email fails
+        }
+      );
+
+      if (error) {
+        if (error.message?.includes("Rate limit exceeded") || error.message?.includes("429")) {
+          toast({
+            title: "Too Many Requests",
+            description: "You've submitted too many tour requests recently. Please try again in an hour.",
+            variant: "destructive",
+          });
+        } else {
+          throw error;
+        }
+        return;
       }
 
       toast({
