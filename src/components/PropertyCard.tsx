@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import PropertyDetailsDialog from "./PropertyDetailsDialog";
 import ContactOptionsDialog from "./ContactOptionsDialog";
+import PropertySchema from "./PropertySchema";
 
 interface PropertyCardProps {
   id: string;
@@ -27,6 +28,7 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
 
   return (
     <>
+      <PropertySchema property={{ id, image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }} />
       <PropertyDetailsDialog 
         open={dialogOpen} 
         onOpenChange={setDialogOpen}
