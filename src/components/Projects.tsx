@@ -47,10 +47,10 @@ const Projects = () => {
                   alt={guide.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-darker via-luxury-dark/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{guide.name}</h3>
-                  <p className="text-sm text-gold-light mb-4">{guide.description}</p>
+                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-2">{guide.name}</h3>
+                  <p className="text-sm text-gold drop-shadow-md mb-4">{guide.description}</p>
                   <Button 
                     size="sm" 
                     className="bg-gold text-luxury-dark hover:bg-gold-light"
