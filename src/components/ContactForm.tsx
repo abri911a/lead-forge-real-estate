@@ -50,18 +50,6 @@ const ContactForm = () => {
 
               <div className="flex items-start gap-4">
                 <div className="bg-gold/10 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-gold" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <a href="mailto:info@omanproperty.com" className="text-muted-foreground hover:text-gold transition-colors">
-                    info@omanproperty.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-gold/10 p-3 rounded-lg">
                   <MapPin className="h-6 w-6 text-gold" />
                 </div>
                 <div>
