@@ -4,7 +4,8 @@ import { Calendar } from "@/components/ui/calendar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Video, User, ChevronLeft, ChevronRight } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Video, User, CheckCircle2 } from "lucide-react";
 import { format, addDays, startOfDay } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -41,6 +42,35 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
   const [visitorEmail, setVisitorEmail] = useState("");
   const [visitorPhone, setVisitorPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  
+  // Field-level errors
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  // Validate individual field
+  const validateField = (field: "name" | "email" | "phone", value: string) => {
+    try {
+      if (field === "name") {
+        tourBookingSchema.shape.visitorName.parse(value);
+        setErrors(prev => ({ ...prev, name: "" }));
+      } else if (field === "email") {
+        tourBookingSchema.shape.visitorEmail.parse(value);
+        setErrors(prev => ({ ...prev, email: "" }));
+      } else if (field === "phone") {
+        tourBookingSchema.shape.visitorPhone.parse(value);
+        setErrors(prev => ({ ...prev, phone: "" }));
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const errorMessage = error.errors[0]?.message || "";
+        setErrors(prev => ({ ...prev, [field]: errorMessage }));
+      }
+    }
+  };
 
   // Generate next 7 days for quick selection
   const quickDates = Array.from({ length: 7 }, (_, i) => addDays(startOfDay(new Date()), i));
@@ -110,18 +140,25 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
         return;
       }
 
+      // Show success message
+      setIsSuccess(true);
+      
       toast({
         title: "Tour Request Submitted!",
-        description: `Your ${tourType === "video-chat" ? "video chat" : "in-person"} tour for ${propertyTitle} on ${format(selectedDate, "PPP")} at ${selectedTime} has been requested. We'll contact you soon!`,
+        description: "We'll contact you soon to confirm your tour.",
       });
 
-      // Reset form
-      setSelectedDate(undefined);
-      setSelectedTime("");
-      setVisitorName("");
-      setVisitorEmail("");
-      setVisitorPhone("");
-      setTourType("in-person");
+      // Reset form after delay
+      setTimeout(() => {
+        setSelectedDate(undefined);
+        setSelectedTime("");
+        setVisitorName("");
+        setVisitorEmail("");
+        setVisitorPhone("");
+        setTourType("in-person");
+        setErrors({ name: "", email: "", phone: "" });
+        setIsSuccess(false);
+      }, 5000);
     } catch (error) {
       console.error("Error submitting tour request:", error);
       toast({
@@ -137,6 +174,16 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
   return (
     <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-gold/20">
       <h3 className="text-2xl font-bold mb-6 text-center">Request a Tour</h3>
+      
+      {/* Success Message */}
+      {isSuccess && (
+        <Alert className="mb-6 border-green-500 bg-green-50 dark:bg-green-950">
+          <CheckCircle2 className="h-5 w-5 text-green-600" />
+          <AlertDescription className="text-green-800 dark:text-green-200 font-medium">
+            Tour request submitted successfully! We'll contact you at {visitorEmail} to confirm your {tourType === "video-chat" ? "video chat" : "in-person"} tour on {selectedDate && format(selectedDate, "PPP")} at {selectedTime}.
+          </AlertDescription>
+        </Alert>
+      )}
 
       {/* Quick Date Selection */}
       <div className="mb-6">
@@ -257,40 +304,78 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
       {/* Visitor Information */}
       <div className="space-y-4 mb-6">
         <h4 className="text-lg font-semibold">Your Information</h4>
-        <div className="space-y-3">
+        <div className="space-y-4">
           <div>
-            <Label htmlFor="name">Full Name *</Label>
+            <Label htmlFor="name" className="text-sm font-medium">
+              Full Name <span className="text-destructive">*</span>
+            </Label>
             <Input
               id="name"
               type="text"
               placeholder="Enter your name"
               value={visitorName}
               onChange={(e) => setVisitorName(e.target.value)}
-              className="mt-1"
+              onBlur={(e) => validateField("name", e.target.value)}
+              className={cn(
+                "mt-1",
+                errors.name && "border-destructive focus-visible:ring-destructive"
+              )}
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? "name-error" : undefined}
             />
+            {errors.name && (
+              <p id="name-error" className="text-sm text-destructive mt-1 font-medium">
+                {errors.name}
+              </p>
+            )}
           </div>
           <div>
-            <Label htmlFor="email">Email Address *</Label>
+            <Label htmlFor="email" className="text-sm font-medium">
+              Email Address <span className="text-destructive">*</span>
+            </Label>
             <Input
               id="email"
               type="email"
               placeholder="your.email@example.com"
               value={visitorEmail}
               onChange={(e) => setVisitorEmail(e.target.value)}
-              className="mt-1"
+              onBlur={(e) => validateField("email", e.target.value)}
+              className={cn(
+                "mt-1",
+                errors.email && "border-destructive focus-visible:ring-destructive"
+              )}
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? "email-error" : undefined}
             />
+            {errors.email && (
+              <p id="email-error" className="text-sm text-destructive mt-1 font-medium">
+                {errors.email}
+              </p>
+            )}
           </div>
           <div>
-            <Label htmlFor="phone">Phone Number *</Label>
+            <Label htmlFor="phone" className="text-sm font-medium">
+              Phone Number <span className="text-destructive">*</span>
+            </Label>
             <Input
               id="phone"
               type="tel"
               placeholder="+968 XXXX XXXX"
               value={visitorPhone}
               onChange={(e) => setVisitorPhone(e.target.value)}
-              className="mt-1"
-              required
+              onBlur={(e) => validateField("phone", e.target.value)}
+              className={cn(
+                "mt-1",
+                errors.phone && "border-destructive focus-visible:ring-destructive"
+              )}
+              aria-invalid={!!errors.phone}
+              aria-describedby={errors.phone ? "phone-error" : undefined}
             />
+            {errors.phone && (
+              <p id="phone-error" className="text-sm text-destructive mt-1 font-medium">
+                {errors.phone}
+              </p>
+            )}
           </div>
         </div>
       </div>
