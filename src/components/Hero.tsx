@@ -38,6 +38,7 @@ const Hero = () => {
           src={heroImage} 
           alt="Luxury property in Oman" 
           className="w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-luxury-darker/95 via-luxury-dark/80 to-luxury-dark/60" />
       </div>
