@@ -58,8 +58,8 @@ const FeaturedProperties = () => {
     <section ref={sectionRef} id="properties" className="py-20 bg-luxury-dark">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Featured <span className="text-gold">Properties</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-gold">Featured</span> <span className="text-gold">Properties</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
             Explore our handpicked selection of premium properties across Oman's most desirable locations
