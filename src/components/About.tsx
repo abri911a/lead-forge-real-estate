@@ -1,7 +1,52 @@
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
 
 const About = () => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const counterRef = useRef<HTMLDivElement>(null);
+  const targetCount = 500;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          
+          // Animate counter
+          const duration = 2000; // 2 seconds
+          const steps = 60;
+          const increment = targetCount / steps;
+          let current = 0;
+          
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= targetCount) {
+              setCount(targetCount);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(current));
+            }
+          }, duration / steps);
+          
+          return () => clearInterval(timer);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => {
+      if (counterRef.current) {
+        observer.unobserve(counterRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
   return (
     <section id="about" className="py-20 bg-luxury-dark">
       <div className="container mx-auto px-4">
@@ -58,8 +103,13 @@ const About = () => {
               alt="Luxury real estate"
               className="rounded-lg shadow-2xl"
             />
-            <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-lg shadow-xl border border-warmGray">
-              <div className="text-3xl font-bold text-gold mb-1">500+</div>
+            <div 
+              ref={counterRef}
+              className="absolute -bottom-6 -left-6 bg-card p-6 rounded-lg shadow-xl border border-warmGray"
+            >
+              <div className="text-3xl font-bold text-gold mb-1 transition-all duration-300">
+                {count}+
+              </div>
               <div className="text-sm text-muted-foreground">Properties Sold</div>
             </div>
           </div>
