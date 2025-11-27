@@ -4,6 +4,7 @@ import FeaturedProperties from "@/components/FeaturedProperties";
 import SocialProof from "@/components/SocialProof";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
+import AuthorProfile from "@/components/AuthorProfile";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -20,6 +21,17 @@ const Index = () => {
       <SocialProof />
       <FeaturedProperties />
       <About />
+      
+      {/* Agent Profile Section */}
+      <section id="agent-profile" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-gold mb-8 text-center">Meet Your Real Estate Advisor</h2>
+            <AuthorProfile variant="full" />
+          </div>
+        </div>
+      </section>
+      
       <Projects />
       <FAQ />
       <Footer />
