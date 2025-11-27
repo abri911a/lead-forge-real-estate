@@ -360,7 +360,7 @@ const TourBooking = ({ propertyId, propertyTitle }: TourBookingProps) => {
             <Input
               id="phone"
               type="tel"
-              placeholder="+968 XXXX XXXX"
+              placeholder="(+Country Code) XXXX XXXX"
               value={visitorPhone}
               onChange={(e) => setVisitorPhone(e.target.value)}
               onBlur={(e) => validateField("phone", e.target.value)}
