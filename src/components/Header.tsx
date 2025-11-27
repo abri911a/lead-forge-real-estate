@@ -24,7 +24,17 @@ const Header = () => {
             </a>
           </div>
           <div className="hidden md:block">
-            <Button size="sm" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-luxury-dark">
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
+              onClick={() => {
+                const propertiesSection = document.getElementById("properties");
+                if (propertiesSection) {
+                  propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
+            >
               Schedule Viewing
             </Button>
           </div>
@@ -44,7 +54,15 @@ const Header = () => {
             <li><a href="#contact" className="text-foreground hover:text-gold transition-colors">Contact</a></li>
           </ul>
 
-          <Button className="bg-gold text-luxury-dark hover:bg-gold-light">
+          <Button 
+            className="bg-gold text-luxury-dark hover:bg-gold-light"
+            onClick={() => {
+              const propertiesSection = document.getElementById("properties");
+              if (propertiesSection) {
+                propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+          >
             Get Started
           </Button>
         </nav>
