@@ -114,7 +114,17 @@ const Hero = () => {
             >
               View All Properties
             </Button>
-            <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-luxury-dark">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
+              onClick={() => {
+                const profileSection = document.getElementById("agent-profile");
+                if (profileSection) {
+                  profileSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
+            >
               Talk to Agent
             </Button>
           </div>
