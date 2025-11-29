@@ -31,7 +31,7 @@ const OmanInvestmentGuide = () => {
               Best Real Estate Investment Options in Oman
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Last updated: January 19, 2025 | By Waleed Al-Balushi - Licensed Real Estate Advisor
+              Last updated: January 19, 2025 | By Waleed Al Abri - Licensed Real Estate Advisor
             </p>
           </div>
 
