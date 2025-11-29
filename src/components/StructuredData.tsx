@@ -126,7 +126,7 @@ const getStructuredData = (type: string, data?: any) => {
         "description": data?.description || "Expert guidance on property investment in Oman",
         "author": {
           "@type": "Person",
-          "name": "Waleed Al-Balushi",
+          "name": "Waleed Al Abri",
           "jobTitle": "Licensed Real Estate Advisor",
           "description": "Licensed real estate advisor specializing in Oman property investments with over 10 years of experience in GCC markets",
           "affiliation": {
