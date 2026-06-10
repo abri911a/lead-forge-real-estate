@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import OmanInvestmentGuide from "./pages/OmanInvestmentGuide";
 import AlMoujGuide from "./pages/AlMoujGuide";
 import SultanHaithamCityGuide from "./pages/SultanHaithamCityGuide";
+import PropertyDetail from "./pages/PropertyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/oman-investment-guide" element={<OmanInvestmentGuide />} />
             <Route path="/al-mouj-guide" element={<AlMoujGuide />} />
             <Route path="/sultan-haitham-city-guide" element={<SultanHaithamCityGuide />} />
+            <Route path="/property/:id" element={<PropertyDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route
