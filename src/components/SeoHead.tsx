@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 interface SeoHeadProps {
   title: string;
@@ -27,7 +27,7 @@ const SeoHead = ({
   type = "website",
   image = "https://lovable.dev/opengraph-image-p98pqg.png",
 }: SeoHeadProps) => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     const applyHead = () => {
       document.title = title;
 
