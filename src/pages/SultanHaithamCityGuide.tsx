@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -16,15 +17,27 @@ const SultanHaithamCityGuide = () => {
 
   return (
     <div className="min-h-screen bg-luxury-dark text-foreground">
+      <Helmet>
+        <title>Sultan Haitham City Guide (2026) | Oman's Smart City Investment</title>
+        <meta name="description" content="Inside Sultan Haitham City — Oman's flagship smart city near Muscat. Freehold apartments and villas from OMR 33,250, payment plans, infrastructure timeline, and projected yields." />
+        <link rel="canonical" href="https://waleedproperty.com/sultan-haitham-city-guide" />
+        <meta property="og:title" content="Sultan Haitham City Guide (2026) | Oman's Smart City Investment" />
+        <meta property="og:description" content="Sultan Haitham City: freehold property options, flexible payment plans, smart-city infrastructure, and investment outlook." />
+        <meta property="og:url" content="https://waleedproperty.com/sultan-haitham-city-guide" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:title" content="Sultan Haitham City Guide (2026) | Oman's Smart City Investment" />
+        <meta name="twitter:description" content="Sultan Haitham City: freehold property options, flexible payment plans, smart-city infrastructure, and investment outlook." />
+      </Helmet>
       <StructuredData 
         type="article" 
         data={{
-          title: "Sultan Haitham City: Oman's Future Smart City Investment Guide (2025)",
+          title: "Sultan Haitham City: Oman's Future Smart City Investment Guide (2026)",
           description: "Complete guide to Sultan Haitham City - Oman's new smart city development, property investment opportunities, amenities, and future growth prospects",
           datePublished: "2025-01-19",
-          dateModified: "2025-01-19"
+          dateModified: "2026-06-10"
         }}
       />
+
       
       <Header />
       
