@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -10,15 +11,27 @@ import { MapPin, TrendingUp, Home, Shield, DollarSign, Users } from "lucide-reac
 const OmanInvestmentGuide = () => {
   return (
     <div className="min-h-screen bg-luxury-dark text-foreground">
+      <Helmet>
+        <title>Oman Real Estate Investment Guide (2026) | Foreign Buyer Handbook</title>
+        <meta name="description" content="Step-by-step guide for foreign investors buying property in Oman: ITCs, freehold zones, First-Class Residency Card, financing, fees, and yields in Muscat, Duqm, and Salalah." />
+        <link rel="canonical" href="https://waleedproperty.com/oman-investment-guide" />
+        <meta property="og:title" content="Oman Real Estate Investment Guide (2026) | Foreign Buyer Handbook" />
+        <meta property="og:description" content="Everything international buyers need to invest in Oman property: ITCs, freehold, residency, financing, and fees." />
+        <meta property="og:url" content="https://waleedproperty.com/oman-investment-guide" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:title" content="Oman Real Estate Investment Guide (2026) | Foreign Buyer Handbook" />
+        <meta name="twitter:description" content="Everything international buyers need to invest in Oman property: ITCs, freehold, residency, financing, and fees." />
+      </Helmet>
       <StructuredData 
         type="article" 
         data={{
-          title: "Best Real Estate Investment Options in Oman (2025)",
+          title: "Best Real Estate Investment Options in Oman (2026)",
           description: "Comprehensive guide to Oman real estate investment for international buyers",
           datePublished: "2025-01-19",
-          dateModified: "2025-01-19"
+          dateModified: "2026-06-10"
         }}
       />
+
       
       <Header />
       
