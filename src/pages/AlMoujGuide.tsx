@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -16,7 +17,27 @@ const AlMoujGuide = () => {
 
   return (
     <div className="min-h-screen bg-luxury-dark text-foreground">
+      <Helmet>
+        <title>Al Mouj Muscat Guide (2026) | Luxury Waterfront Living & ITC Investment</title>
+        <meta name="description" content="Complete guide to Al Mouj Muscat — Oman's premier Integrated Tourism Complex. Marina, golf course, freehold villas and apartments for foreign buyers, plus 5-8% rental yields." />
+        <link rel="canonical" href="https://waleedproperty.com/al-mouj-guide" />
+        <meta property="og:title" content="Al Mouj Muscat Guide (2026) | Luxury Waterfront Living & ITC Investment" />
+        <meta property="og:description" content="Inside Al Mouj Muscat: amenities, freehold property options, and investment returns for international buyers in Oman's flagship ITC." />
+        <meta property="og:url" content="https://waleedproperty.com/al-mouj-guide" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:title" content="Al Mouj Muscat Guide (2026) | Luxury Waterfront Living & ITC Investment" />
+        <meta name="twitter:description" content="Inside Al Mouj Muscat: amenities, freehold property options, and investment returns for international buyers." />
+      </Helmet>
       <StructuredData 
+        type="article" 
+        data={{
+          title: "Al Mouj Muscat: Complete Living & Investment Guide (2026)",
+          description: "Discover everything about Al Mouj Muscat - luxury waterfront living, property investment opportunities, amenities, and lifestyle in Oman's premier ITC",
+          datePublished: "2025-01-19",
+          dateModified: "2026-06-10"
+        }}
+      />
+
         type="article" 
         data={{
           title: "Al Mouj Muscat: Complete Living & Investment Guide (2025)",
