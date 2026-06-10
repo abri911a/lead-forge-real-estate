@@ -38,14 +38,7 @@ const AlMoujGuide = () => {
         }}
       />
 
-        type="article" 
-        data={{
-          title: "Al Mouj Muscat: Complete Living & Investment Guide (2025)",
-          description: "Discover everything about Al Mouj Muscat - luxury waterfront living, property investment opportunities, amenities, and lifestyle in Oman's premier ITC",
-          datePublished: "2025-01-19",
-          dateModified: "2025-01-19"
-        }}
-      />
+
       
       <Header />
       
