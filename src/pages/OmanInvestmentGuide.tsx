@@ -6,21 +6,28 @@ import StructuredData from "@/components/StructuredData";
 import AuthorProfile from "@/components/AuthorProfile";
 import BacklinkResources from "@/components/BacklinkResources";
 import { Button } from "@/components/ui/button";
+import SeoHead from "@/components/SeoHead";
 import { MapPin, TrendingUp, Home, Shield, DollarSign, Users } from "lucide-react";
+
+const title = "Oman Property Investment Guide (2026) | Waleed Property";
+const description = "Step-by-step guide for foreign investors buying property in Oman: ITCs, freehold zones, First-Class Residency Card, financing, fees, and yields in Muscat, Duqm, and Salalah.";
+const canonical = "https://waleedproperty.com/oman-investment-guide";
 
 const OmanInvestmentGuide = () => {
   return (
     <div className="min-h-screen bg-luxury-dark text-foreground">
+      <SeoHead title={title} description={description} canonical={canonical} type="article" />
       <Helmet>
-        <title>Oman Real Estate Investment Guide (2026) | Foreign Buyer Handbook</title>
-        <meta name="description" content="Step-by-step guide for foreign investors buying property in Oman: ITCs, freehold zones, First-Class Residency Card, financing, fees, and yields in Muscat, Duqm, and Salalah." />
-        <link rel="canonical" href="https://waleedproperty.com/oman-investment-guide" />
-        <meta property="og:title" content="Oman Real Estate Investment Guide (2026) | Foreign Buyer Handbook" />
-        <meta property="og:description" content="Everything international buyers need to invest in Oman property: ITCs, freehold, residency, financing, and fees." />
-        <meta property="og:url" content="https://waleedproperty.com/oman-investment-guide" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
         <meta property="og:type" content="article" />
-        <meta name="twitter:title" content="Oman Real Estate Investment Guide (2026) | Foreign Buyer Handbook" />
-        <meta name="twitter:description" content="Everything international buyers need to invest in Oman property: ITCs, freehold, residency, financing, and fees." />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:url" content={canonical} />
       </Helmet>
       <StructuredData 
         type="article" 

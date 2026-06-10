@@ -6,27 +6,34 @@ import StructuredData from "@/components/StructuredData";
 import AuthorProfile from "@/components/AuthorProfile";
 import BacklinkResources from "@/components/BacklinkResources";
 import { Button } from "@/components/ui/button";
+import SeoHead from "@/components/SeoHead";
 import { 
   MapPin, Home, Building2, Wifi, Trees, 
   Zap, Car, GraduationCap, ShoppingBag, TrendingUp 
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+const title = "Sultan Haitham City Guide (2026) | Waleed Property";
+const description = "Inside Sultan Haitham City — Oman's flagship smart city near Muscat. Freehold apartments and villas from OMR 33,250, payment plans, infrastructure timeline, and projected yields.";
+const canonical = "https://waleedproperty.com/sultan-haitham-city-guide";
+
 const SultanHaithamCityGuide = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-luxury-dark text-foreground">
+      <SeoHead title={title} description={description} canonical={canonical} type="article" />
       <Helmet>
-        <title>Sultan Haitham City Guide (2026) | Oman's Smart City Investment</title>
-        <meta name="description" content="Inside Sultan Haitham City — Oman's flagship smart city near Muscat. Freehold apartments and villas from OMR 33,250, payment plans, infrastructure timeline, and projected yields." />
-        <link rel="canonical" href="https://waleedproperty.com/sultan-haitham-city-guide" />
-        <meta property="og:title" content="Sultan Haitham City Guide (2026) | Oman's Smart City Investment" />
-        <meta property="og:description" content="Sultan Haitham City: freehold property options, flexible payment plans, smart-city infrastructure, and investment outlook." />
-        <meta property="og:url" content="https://waleedproperty.com/sultan-haitham-city-guide" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
         <meta property="og:type" content="article" />
-        <meta name="twitter:title" content="Sultan Haitham City Guide (2026) | Oman's Smart City Investment" />
-        <meta name="twitter:description" content="Sultan Haitham City: freehold property options, flexible payment plans, smart-city infrastructure, and investment outlook." />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:url" content={canonical} />
       </Helmet>
       <StructuredData 
         type="article" 

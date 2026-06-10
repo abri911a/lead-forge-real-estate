@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Bed, Bath, Maximize, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import PropertyDetailsDialog from "./PropertyDetailsDialog";
@@ -81,11 +82,11 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
 
         <div className="grid grid-cols-2 gap-3">
           <Button 
+            asChild
             variant="outline" 
             className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-            onClick={() => setDialogOpen(true)}
           >
-            View Details
+            <Link to={`/property/${id}`}>View Details</Link>
           </Button>
           <Button 
             className="bg-gold text-luxury-dark hover:bg-gold-light"
