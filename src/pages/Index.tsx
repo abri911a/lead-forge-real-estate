@@ -38,6 +38,11 @@ const Index = () => {
       <Hero />
       <SocialProof />
       <FeaturedProperties />
+      <section className="bg-luxury-dark border-y border-gold/20 py-6">
+        <div className="container mx-auto px-4 text-center text-muted-foreground">
+          New: see our verified <a href="/oman-property-prices-2026" className="text-gold underline underline-offset-2 hover:text-gold-light font-medium">Oman property prices 2026</a> guide — area-by-area numbers, foreign-ownership rules, and realistic yields.
+        </div>
+      </section>
       <About />
       
       {/* Agent Profile Section */}

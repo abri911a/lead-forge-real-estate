@@ -66,7 +66,7 @@ const AlMoujGuide = () => {
           <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-8 mb-12">
             <h2 className="text-2xl font-bold text-gold mb-4">At a Glance</h2>
             <p className="text-foreground text-lg leading-relaxed mb-4">
-              <strong>Al Mouj Muscat</strong> is Oman's premier waterfront Integrated Tourism Complex (ITC) offering luxury lifestyle living just 10 minutes from Muscat International Airport. This 100% freehold community features an 18-hole championship golf course, private marina with 140+ berths, international schools, and world-class amenities across 230+ hectares of prime waterfront real estate.
+              <strong>Al Mouj Muscat</strong> is Oman's premier waterfront Integrated Tourism Complex (ITC) offering luxury lifestyle living just 10 minutes from Muscat International Airport. This 100% freehold community features an 18-hole championship golf course, private marina with 140+ berths, international schools, and world-class amenities across 230+ hectares of prime waterfront real estate. Comparing areas? See our <a href="/oman-property-prices-2026" className="text-gold underline underline-offset-2 hover:text-gold-light">Oman property prices 2026</a> guide.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
               <div className="text-center">
