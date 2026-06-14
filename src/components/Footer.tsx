@@ -42,6 +42,7 @@ const Footer = () => {
               <li><a href="/oman-investment-guide" className="text-muted-foreground hover:text-gold transition-colors">Oman Investment Guide</a></li>
               <li><a href="/al-mouj-guide" className="text-muted-foreground hover:text-gold transition-colors">Al Mouj Muscat</a></li>
               <li><a href="/sultan-haitham-city-guide" className="text-muted-foreground hover:text-gold transition-colors">Sultan Haitham City</a></li>
+              <li><a href="/oman-property-prices-2026" className="text-muted-foreground hover:text-gold transition-colors">Oman property prices 2026</a></li>
             </ul>
           </div>
 
