@@ -12,16 +12,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
-                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
