@@ -11,7 +11,7 @@ const Footer = () => {
               Your gateway to premium real estate investments in Oman
             </p>
             <div className="flex gap-3">
-              <a href="#" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
+              <a href="https://www.instagram.com/waleedvlogs.om/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
