@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import OmanInvestmentGuide from "./pages/OmanInvestmentGuide";
 import AlMoujGuide from "./pages/AlMoujGuide";
 import SultanHaithamCityGuide from "./pages/SultanHaithamCityGuide";
+import OmanPropertyPrices2026 from "./pages/OmanPropertyPrices2026";
 import PropertyDetail from "./pages/PropertyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
