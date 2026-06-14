@@ -142,12 +142,14 @@ const OmanPropertyPrices2026 = () => {
               advisor in Oman. Prices move. Every figure below is dated and
               reflects developer offers seen in June 2026. For a current quote
               on a specific project,{" "}
-              <button
-                onClick={() => navigate("/#contact")}
+              <a
+                href="https://wa.me/96879136646?text=Hi%20Waleed%2C%20I%20read%20your%20Oman%20Property%20Prices%202026%20guide%20and%20would%20like%20a%20consultation."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gold underline underline-offset-2 hover:text-gold-light"
               >
                 contact me
-              </button>
+              </a>
               .
             </p>
           </div>
@@ -536,10 +538,16 @@ const OmanPropertyPrices2026 = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                onClick={() => navigate("/#contact")}
+                asChild
                 className="bg-gold text-luxury-dark hover:bg-gold-light"
               >
-                Book a consultation
+                <a
+                  href="https://wa.me/96879136646?text=Hi%20Waleed%2C%20I%20read%20your%20Oman%20Property%20Prices%202026%20guide%20and%20would%20like%20a%20consultation."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a consultation
+                </a>
               </Button>
               <Button
                 variant="outline"
