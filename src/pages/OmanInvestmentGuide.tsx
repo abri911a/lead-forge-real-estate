@@ -62,7 +62,7 @@ const OmanInvestmentGuide = () => {
               <strong>Oman's top real estate investments for international buyers in 2025 include:</strong> Integrated Tourism Complexes (ITCs) in Muscat offering 5-8% gross yields, freehold properties in Special Economic Zones like Duqm SEZAD, and emerging smart city developments in Sultan Haitham City. Foreign investment grew 19.4% year-over-year in 2024, supported by the First-Class Residency Card program requiring OMR 500,000 (~USD 1.3 million) minimum property investment.
             </p>
             <p className="text-muted-foreground">
-              Oman Vision 2040 has streamlined foreign ownership regulations, making it one of the most investor-friendly GCC markets. Properties in Al Mouj Muscat start from OMR 80,000 for apartments to OMR 1,500,000+ for luxury villas.
+              Oman Vision 2040 has streamlined foreign ownership regulations, making it one of the most investor-friendly GCC markets. Properties in Al Mouj Muscat start from OMR 80,000 for apartments to OMR 1,500,000+ for luxury villas. For verified, area-by-area numbers see our <a href="/oman-property-prices-2026" className="text-gold underline underline-offset-2 hover:text-gold-light">Oman property prices 2026</a> guide.
             </p>
           </div>
 
