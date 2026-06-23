@@ -323,13 +323,6 @@ const OmanPropertyPrices2026 = () => {
                     </TableCell>
                     <TableCell>Prime central Muscat</TableCell>
                   </TableRow>
-                  <TableRow>
-                    <TableCell>Knowledge Oasis</TableCell>
-                    <TableCell>56,000 to 58,000</TableCell>
-                    <TableCell>—</TableCell>
-                    <TableCell>Freehold + family residency</TableCell>
-                    <TableCell>9% rental guarantee (3yr)</TableCell>
-                  </TableRow>
                 </TableBody>
                 <TableCaption className="px-4 pb-4 text-left">
                   Representative verified figures. A project's exact price
