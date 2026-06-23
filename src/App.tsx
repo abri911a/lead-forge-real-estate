@@ -10,6 +10,7 @@ import OmanInvestmentGuide from "./pages/OmanInvestmentGuide";
 import AlMoujGuide from "./pages/AlMoujGuide";
 import SultanHaithamCityGuide from "./pages/SultanHaithamCityGuide";
 import OmanPropertyPrices2026 from "./pages/OmanPropertyPrices2026";
+import CanForeignersBuyPropertyInOman from "./pages/CanForeignersBuyPropertyInOman";
 import PropertyDetail from "./pages/PropertyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/al-mouj-guide" element={<AlMoujGuide />} />
             <Route path="/sultan-haitham-city-guide" element={<SultanHaithamCityGuide />} />
             <Route path="/oman-property-prices-2026" element={<OmanPropertyPrices2026 />} />
+            <Route path="/can-foreigners-buy-property-in-oman" element={<CanForeignersBuyPropertyInOman />} />
             <Route path="/property/:id" element={<PropertyDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
