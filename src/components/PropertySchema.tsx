@@ -70,8 +70,7 @@ const PropertySchema = ({ property }: PropertySchemaProps) => {
           "@type": "RealEstateAgent",
           name: "Waleed Property",
           url: "https://waleedproperty.com",
-          telephone: "+968-YOUR-PHONE",
-          email: "info@waleedproperty.com"
+          telephone: "+968-YOUR-PHONE"
         }
       },
       ...(property.status && {
