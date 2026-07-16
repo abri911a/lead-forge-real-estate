@@ -43,7 +43,7 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
           <h3 className="text-2xl font-bold text-gold mb-2">Waleed Al Abri</h3>
           <p className="text-lg text-foreground mb-1">Licensed Real Estate Advisor</p>
           <p className="text-sm text-muted-foreground mb-4">
-            Waleed Realestate Oman - Founder & Principal Advisor
+            Waleed Property - Founder & Principal Advisor
           </p>
           
           <div className="mb-4">
