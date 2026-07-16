@@ -10,7 +10,7 @@ import SeoHead from "@/components/SeoHead";
 import { MapPin, TrendingUp, Home, Shield, DollarSign, Users } from "lucide-react";
 
 const title = "Oman Property Investment Guide (2026) | Waleed Property";
-const description = "Step-by-step guide for foreign investors buying property in Oman: ITCs, freehold zones, First-Class Residency Card, financing, fees, and yields in Muscat, Duqm, and Salalah.";
+const description = "Step-by-step guide for foreign investors buying property in Oman: ITCs, freehold zones, Golden Residency, financing, fees, and yields in Muscat, Duqm, and Salalah.";
 const canonical = "https://waleedproperty.com/oman-investment-guide";
 
 const OmanInvestmentGuide = () => {
@@ -59,7 +59,7 @@ const OmanInvestmentGuide = () => {
           <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-8 mb-12">
             <h2 className="text-2xl font-bold text-gold mb-4">Quick Answer</h2>
             <p className="text-foreground text-lg leading-relaxed mb-4">
-              <strong>Oman's top real estate investments for international buyers in 2025 include:</strong> Integrated Tourism Complexes (ITCs) in Muscat offering 5-8% gross yields, freehold properties in Special Economic Zones like Duqm SEZAD, and emerging smart city developments in Sultan Haitham City. Foreign investment grew 19.4% year-over-year in 2024, supported by the First-Class Residency Card program requiring OMR 500,000 (~USD 1.3 million) minimum property investment.
+              <strong>Oman's top real estate investments for international buyers in 2025 include:</strong> Integrated Tourism Complexes (ITCs) in Muscat offering 5-8% gross yields, freehold properties in Special Economic Zones like Duqm SEZAD, and emerging smart city developments in Sultan Haitham City. Foreign investment grew 19.4% year-over-year in 2024, supported by Oman's Golden Residency programme, which requires from OMR 200,000 in qualifying property investment for a 10-year renewable visa.
             </p>
             <p className="text-muted-foreground">
               Oman Vision 2040 has streamlined foreign ownership regulations, making it one of the most investor-friendly GCC markets. Properties in Al Mouj Muscat start from OMR 80,000 for apartments to OMR 1,500,000+ for luxury villas. For verified, area-by-area numbers see our <a href="/oman-property-prices-2026" className="text-gold underline underline-offset-2 hover:text-gold-light">Oman property prices 2026</a> guide.
@@ -163,7 +163,7 @@ const OmanInvestmentGuide = () => {
             </div>
 
             <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gold mb-4">First-Class Residency Card</h3>
+              <h3 className="text-xl font-semibold text-gold mb-4">Oman Golden Residency (from OMR 200,000)</h3>
               <p className="text-foreground mb-4">
                 <strong>Eligibility Requirements:</strong>
               </p>
@@ -322,7 +322,7 @@ const OmanInvestmentGuide = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gold mb-2">Post-Purchase: Residency Application</h3>
                     <p className="text-muted-foreground">
-                      If qualifying for First-Class Residency Card (OMR 500,000+ investment): Submit application through Royal Oman Police. Required documents: passport copies, property title deed, proof of investment, bank statements. Processing time: 30-60 days.
+                      If qualifying for the Oman Golden Residency (from OMR 200,000 in qualifying property): Submit application through Royal Oman Police. Required documents: passport copies, property title deed, proof of investment, bank statements. Processing time: 30-60 days.
                     </p>
                   </div>
                 </div>
@@ -470,7 +470,7 @@ const OmanInvestmentGuide = () => {
             <h3 className="text-sm font-semibold text-gold mb-3">Sources & References</h3>
             <ol className="text-xs text-muted-foreground space-y-1">
               <li>[1] National Center for Statistics and Information (NCSI) - Oman Real Estate Market Reports Q2-Q4 2024</li>
-              <li>[2] Royal Oman Police - First-Class Residency Card Guidelines 2025</li>
+              <li>[2] Royal Oman Police - Property Owner Residency Guidelines (ROP Decision 87/2026) Royal Oman Police - First-Class Residency Card Guidelines 2025 Golden Residency Programme</li>
               <li>[3] Oman Ministry of Housing and Urban Planning - Foreign Ownership Regulations (Updated April 2025)</li>
               <li>[4] GCC Real Estate Market Analysis - Knight Frank Middle East Q4 2024</li>
               <li>[5] Al Ahly Sabbour - Wadi Zaha Development Master Plan 2025</li>
