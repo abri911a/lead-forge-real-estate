@@ -212,7 +212,14 @@ const CanForeignersBuyPropertyInOman = () => {
               areas, not just inside ITC zones. Non-GCC foreigners are the
               group practically limited to ITC and eligible developments. If
               you are a GCC buyer, your options are broader than a quick web
-              search suggests, so it is worth checking area by area.
+              search suggests, so it is worth checking area by area. Full
+              guide:{" "}
+              <a
+                href="/can-gcc-citizens-buy-property-in-oman"
+                className="text-gold underline underline-offset-2 hover:text-gold-light"
+              >
+                Can GCC citizens buy property in Oman outside ITCs?
+              </a>
             </p>
           </div>
 
