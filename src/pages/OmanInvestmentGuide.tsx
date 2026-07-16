@@ -470,7 +470,7 @@ const OmanInvestmentGuide = () => {
             <h3 className="text-sm font-semibold text-gold mb-3">Sources & References</h3>
             <ol className="text-xs text-muted-foreground space-y-1">
               <li>[1] National Center for Statistics and Information (NCSI) - Oman Real Estate Market Reports Q2-Q4 2024</li>
-              <li>[2] Royal Oman Police - Property Owner Residency Guidelines (ROP Decision 87/2026) Royal Oman Police - First-Class Residency Card Guidelines 2025 Golden Residency Programme</li>
+              <li>[2] Royal Oman Police - Property Owner Residency Guidelines (ROP Decision 87/2026) and Golden Residency Programme</li>
               <li>[3] Oman Ministry of Housing and Urban Planning - Foreign Ownership Regulations (Updated April 2025)</li>
               <li>[4] GCC Real Estate Market Analysis - Knight Frank Middle East Q4 2024</li>
               <li>[5] Al Ahly Sabbour - Wadi Zaha Development Master Plan 2025</li>
