@@ -312,7 +312,7 @@ const OmanPropertyPrices2026 = () => {
                     <TableCell>—</TableCell>
                     <TableCell>from 50,000 (143m² ~104,500)</TableCell>
                     <TableCell>GCC + Omani</TableCell>
-                    <TableCell>Elite central district</TableCell>
+                    <TableCell>Prime central district</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>Qurum</TableCell>
