@@ -61,7 +61,7 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
             <p className="mb-3">
               Waleed specializes in guiding international investors and GCC nationals through Oman's 
               real estate market. With over a decade of experience in Integrated Tourism Complexes (ITCs), 
-              foreign ownership regulations, and the First-Class Residency Card program, he has helped 
+              foreign ownership regulations, and Oman's residency-by-property programs, he has helped 
               hundreds of clients successfully invest in Oman property.
             </p>
             <p>
