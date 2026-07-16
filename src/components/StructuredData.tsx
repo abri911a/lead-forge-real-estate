@@ -41,15 +41,13 @@ const getStructuredData = (type: string, data?: any) => {
       return {
         "@context": "https://schema.org",
         "@type": "RealEstateAgent",
-        "name": "Waleed Realestate Oman",
+        "name": "Waleed Property",
         "description": "Premium real estate investment advisory specializing in Oman's Integrated Tourism Complexes (ITCs), freehold properties, and foreign investment opportunities. Expert guidance for international buyers in Muscat, Al Mouj, and Special Economic Zones.",
         "url": baseUrl,
         "logo": `${baseUrl}/logo.png`,
         "telephone": "+968-79136646",
-        "email": "info@elite-estates.om",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Al Mouj",
           "addressLocality": "Muscat",
           "addressCountry": "OM"
         },
@@ -78,16 +76,18 @@ const getStructuredData = (type: string, data?: any) => {
           "Oman Real Estate Investment",
           "Integrated Tourism Complexes (ITCs)",
           "Foreign Ownership Regulations in Oman",
-          "First-Class Residency Card Requirements",
+          "Oman Golden Residency Programme (OMR 200,000, 10-year)",
+          "Property Owner Residency (ROP Decision 87/2026)",
           "Al Mouj Muscat Properties",
           "Oman Vision 2040",
           "Special Economic Zone Investment",
           "GCC Property Markets"
         ],
         "sameAs": [
-          "https://www.linkedin.com/company/elite-estates-oman"
+          "https://www.instagram.com/waleedvlogs.om/"
         ]
       };
+
 
     case 'localBusiness':
       return {
