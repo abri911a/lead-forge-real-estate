@@ -171,7 +171,7 @@ const getStructuredData = (type: string, data?: any) => {
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Waleed Realestate Oman",
+          "name": "Waleed Property",
           "logo": {
             "@type": "ImageObject",
             "url": `${baseUrl}/logo.png`
