@@ -504,7 +504,13 @@ const OmanPropertyPrices2026 = () => {
               selling without an active escrow account. Before you pay any
               off-plan deposit, ask for the escrow account details and confirm
               they exist. It is the most important check a foreign buyer can
-              make.
+              make.{" "}
+              <a
+                href="/is-off-plan-property-safe-in-oman"
+                className="text-gold underline underline-offset-2 hover:text-gold-light"
+              >
+                Full guide: is off-plan property safe in Oman?
+              </a>
             </p>
           </div>
 

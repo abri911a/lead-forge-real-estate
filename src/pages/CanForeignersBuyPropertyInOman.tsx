@@ -286,7 +286,14 @@ const CanForeignersBuyPropertyInOman = () => {
                 practice enforcement is uneven, so before paying any deposit,
                 ask for the escrow account details and confirm the account
                 exists. It is the single most important check a foreign buyer
-                can make.
+                can make.{" "}
+                <a
+                  href="/is-off-plan-property-safe-in-oman"
+                  className="text-gold underline underline-offset-2 hover:text-gold-light"
+                >
+                  Full guide: the 2026 escrow law
+                </a>
+                .
               </li>
               <li>
                 • <strong>Structural warranty (Civil Code Article 634):</strong>{" "}

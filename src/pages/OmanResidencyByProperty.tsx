@@ -214,7 +214,13 @@ const OmanResidencyByProperty = () => {
             <p className="text-muted-foreground leading-relaxed">
               Two conditions to know. You must enter Oman within 3 months of
               the visa being issued. And on the visa route, each entry allows
-              a stay of up to 3 months.
+              a stay of up to 3 months. Related:{" "}
+              <a
+                href="/is-off-plan-property-safe-in-oman"
+                className="text-gold underline underline-offset-2 hover:text-gold-light"
+              >
+                Is off-plan property safe in Oman?
+              </a>
             </p>
           </div>
 
