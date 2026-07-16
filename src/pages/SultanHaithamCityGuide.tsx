@@ -372,7 +372,11 @@ const SultanHaithamCityGuide = () => {
               <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-gold mb-2">100% Freehold & Residency Benefits</h3>
                 <p className="text-muted-foreground">
-                  Foreign ownership allowed with freehold titles. Property investment qualifies for Oman residency visa programs, providing long-term residency rights for investors and their families.
+                  Foreign ownership allowed with freehold titles. Property investment qualifies for Oman residency visa programs, providing long-term residency rights for investors and their families. Full guide:{" "}
+                  <a href="/oman-residency-by-property" className="text-gold underline underline-offset-2 hover:text-gold-light">
+                    Oman residency by property
+                  </a>
+                  .
                 </p>
               </div>
             </div>

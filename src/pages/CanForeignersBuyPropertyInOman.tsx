@@ -32,7 +32,7 @@ const articleJsonLd = {
     jobTitle: "Licensed Real Estate Advisor",
   },
   datePublished: "2026-06-23",
-  dateModified: "2026-06-23",
+  dateModified: "2026-07-16",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
   about: "Foreign property ownership and residency rules in Oman in 2026",
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "Does buying property in Oman give me residency?",
-    a: "A freehold purchase in an ITC zone grants property-investor residency with no minimum value, tied to ownership and covering family. From OMR 250,000 you qualify for a 5-year Golden Residency, and from OMR 500,000 a 10-year one. A June 2026 reform also lets off-plan buyers start an owner visa before handover.",
+    a: "A freehold purchase in an ITC zone grants property-investor residency with no minimum value, tied to ownership and covering family. From OMR 200,000 of qualifying investment you can apply for the 10-year renewable Golden Residency. The old 250,000 and 500,000 tiers were replaced in September 2025. A June 2026 reform also lets off-plan buyers start an owner visa before handover.",
   },
   {
     q: "Which areas in Oman can foreigners buy in?",
@@ -231,14 +231,13 @@ const CanForeignersBuyPropertyInOman = () => {
                 freehold purchase in an ITC zone, with no minimum value. It
                 is tied to ownership, renews while the property stays in your
                 name, and covers your family. This is the honest answer for
-                most buyers under OMR 250,000.
+                most buyers under OMR 200,000.
               </li>
               <li>
-                • <strong>Golden Residency:</strong> the premium tier. OMR
-                250,000 of qualifying property gives a 5-year visa, OMR
-                500,000 gives a 10-year visa, and after the qualifying period
-                it is independent of the property, so you can sell and keep
-                the residency.
+                • <strong>Golden Residency:</strong> the premium tier. From
+                OMR 200,000 of qualifying investment you can apply for the
+                10-year renewable Golden Residency. The old 250,000 and
+                500,000 tiers were replaced in September 2025.
               </li>
             </ul>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -250,6 +249,16 @@ const CanForeignersBuyPropertyInOman = () => {
               now qualify for a renewable owner visa rather than making you
               wait until handover. The grant extends to a spouse and
               first-degree relatives and ends if you sell.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Full guide:{" "}
+              <a
+                href="/oman-residency-by-property"
+                className="text-gold underline underline-offset-2 hover:text-gold-light"
+              >
+                Oman residency by property
+              </a>
+              .
             </p>
             <p className="text-muted-foreground leading-relaxed">
               One thing to be clear about: this reform changes residency

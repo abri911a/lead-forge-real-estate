@@ -473,8 +473,14 @@ const OmanPropertyPrices2026 = () => {
               permanent lifetime residency for the buyer and first-degree
               relatives. Thresholds and terms vary by project and change with
               policy, so verify the current rule for your specific project
-              rather than relying on a generic number. For a full breakdown,
-              see:{" "}
+              rather than relying on a generic number. Full guide:{" "}
+              <a
+                href="/oman-residency-by-property"
+                className="text-gold underline underline-offset-2 hover:text-gold-light"
+              >
+                Oman residency by property
+              </a>
+              . For ownership rules see:{" "}
               <a
                 href="/can-foreigners-buy-property-in-oman"
                 className="text-gold underline underline-offset-2 hover:text-gold-light"
