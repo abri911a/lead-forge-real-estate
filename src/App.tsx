@@ -38,6 +38,7 @@ const App = () => (
             <Route path="/oman-property-prices-2026" element={<OmanPropertyPrices2026 />} />
             <Route path="/can-foreigners-buy-property-in-oman" element={<CanForeignersBuyPropertyInOman />} />
             <Route path="/oman-residency-by-property" element={<OmanResidencyByProperty />} />
+            <Route path="/is-off-plan-property-safe-in-oman" element={<IsOffPlanPropertySafeInOman />} />
             <Route path="/property/:id" element={<PropertyDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
