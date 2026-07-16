@@ -10,7 +10,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Can foreigners buy property in Oman?",
-      answer: "Yes, foreign nationals can purchase property in Oman in designated areas including Integrated Tourism Complexes (ITCs) like Al Mouj Muscat, The Wave, and Special Economic Zones. As of 2025, ITCs offer 100% freehold ownership to international buyers with no restrictions. Investment of OMR 500,000+ in approved properties qualifies for the First-Class Residency Card program."
+      answer: "Yes, foreign nationals can purchase property in Oman in designated areas including Integrated Tourism Complexes (ITCs) like Al Mouj Muscat, The Wave, and Special Economic Zones. ITCs are the main zones where foreigners can own property in Oman. Most units are freehold, but some projects offer usufruct instead, so confirm the ownership type per project. A qualifying purchase opens the sponsor-free Property Owner Residency, and from OMR 200,000 you can apply for the 10-year renewable Golden Residency."
     },
     {
       question: "What are Integrated Tourism Complexes (ITCs) in Oman?",
