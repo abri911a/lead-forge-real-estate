@@ -11,7 +11,7 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
     "Licensed Real Estate Advisor - Oman",
     "ITC Investment Specialist",
     "10+ Years GCC Property Markets",
-    "First-Class Residency Expert"
+    "Residency-by-Property Specialist"
   ];
 
   if (variant === "compact") {
