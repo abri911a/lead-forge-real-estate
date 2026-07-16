@@ -67,7 +67,14 @@ let homeHtml = null;
 async function render(route) {
   const page = await browser.newPage();
   try {
-    await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 60000 });
+    try {
+      await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 30000 });
+    } catch {
+      // Third-party beacons (gtag etc.) can keep the network busy forever,
+      // so 'networkidle' never fires. Fall back to 'load' + a settle delay.
+      await page.goto(BASE + route, { waitUntil: 'load', timeout: 60000 });
+      await page.waitForTimeout(2000);
+    }
     await page.waitForTimeout(500); // let react-helmet-async settle head tags
     const rootChildren = await page.$eval('#root', (el) => el.children.length).catch(() => 0);
     if (rootChildren === 0) throw new Error('root rendered empty');
