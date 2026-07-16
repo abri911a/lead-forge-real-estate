@@ -148,7 +148,7 @@ const getStructuredData = (type: string, data?: any) => {
             {
               "@type": "EducationalOccupationalCredential",
               "credentialCategory": "Expertise",
-              "name": "First-Class Residency Expert"
+              "name": "Residency-by-Property Specialist"
             }
           ],
           "knowsAbout": [
