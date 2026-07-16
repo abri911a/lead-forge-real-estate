@@ -93,12 +93,11 @@ const getStructuredData = (type: string, data?: any) => {
       return {
         "@context": "https://schema.org",
         "@type": "RealEstateAgent",
-        "name": "Waleed Realestate Oman",
+        "name": "Waleed Property",
         "image": `${baseUrl}/logo.png`,
         "priceRange": "$$$$",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Al Mouj",
           "addressLocality": "Muscat",
           "addressCountry": "OM"
         },
@@ -110,6 +109,7 @@ const getStructuredData = (type: string, data?: any) => {
           "longitude": "58.3829"
         }
       };
+
 
     case 'faqPage':
       return {
