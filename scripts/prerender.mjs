@@ -78,6 +78,10 @@ async function render(route) {
       const dir = join(DIST, route);
       mkdirSync(dir, { recursive: true });
       writeFileSync(join(dir, 'index.html'), html);
+      // Also write <route>.html so GitHub Pages serves the extensionless URL
+      // (/oman-residency-by-property) with a 200 — matching the canonical
+      // exactly instead of 301-redirecting to the trailing-slash variant.
+      writeFileSync(join(DIST, `${route}.html`), html);
     }
     results.ok.push(route);
   } catch (err) {
