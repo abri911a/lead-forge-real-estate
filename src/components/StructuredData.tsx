@@ -155,7 +155,9 @@ const getStructuredData = (type: string, data?: any) => {
             "Oman Property Markets",
             "Integrated Tourism Complexes (ITCs)",
             "Foreign Investment Regulations in Oman",
-            "First-Class Residency Card Requirements",
+            "Oman Golden Residency Programme (OMR 200,000, 10-year)",
+            "Property Owner Residency (ROP Decision 87/2026)",
+
             "GCC Real Estate Investment",
             "Al Mouj Muscat Properties",
             "Sultan Haitham City Development",
