@@ -92,7 +92,7 @@ const handler = async (req: Request): Promise<Response> => {
           </div>
 
           <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px;">
-            <p>This notification was sent from Waleed Realestate Oman</p>
+            <p>This notification was sent from Waleed Property</p>
             <p>Contact: +968-79136646</p>
           </div>
         </div>

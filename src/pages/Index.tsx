@@ -13,7 +13,7 @@ import StructuredData from "@/components/StructuredData";
 import SeoHead from "@/components/SeoHead";
 
 const title = "Best Real Estate Investment in Oman (2026) | Waleed Property — ITCs, Freehold & Foreign Ownership";
-const description = "Oman's top real estate investments for international buyers: ITCs in Muscat with 5-8% gross yields, freehold properties in SEZs, and luxury villas. Expert guidance on Vision 2040 and the First-Class Residency Card.";
+const description = "Oman's top real estate investments for international buyers: ITCs in Muscat with 5-8% gross yields, freehold properties in SEZs, and luxury villas. Expert guidance on Vision 2040 and the Golden Residency programme.";
 const canonical = "https://waleedproperty.com/";
 
 const Index = () => {

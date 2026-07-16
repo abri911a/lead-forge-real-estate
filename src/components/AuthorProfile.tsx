@@ -11,7 +11,7 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
     "Licensed Real Estate Advisor - Oman",
     "ITC Investment Specialist",
     "10+ Years GCC Property Markets",
-    "First-Class Residency Expert"
+    "Residency-by-Property Specialist"
   ];
 
   if (variant === "compact") {
@@ -43,7 +43,7 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
           <h3 className="text-2xl font-bold text-gold mb-2">Waleed Al Abri</h3>
           <p className="text-lg text-foreground mb-1">Licensed Real Estate Advisor</p>
           <p className="text-sm text-muted-foreground mb-4">
-            Waleed Realestate Oman - Founder & Principal Advisor
+            Waleed Property - Founder & Principal Advisor
           </p>
           
           <div className="mb-4">
@@ -61,7 +61,7 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
             <p className="mb-3">
               Waleed specializes in guiding international investors and GCC nationals through Oman's 
               real estate market. With over a decade of experience in Integrated Tourism Complexes (ITCs), 
-              foreign ownership regulations, and the First-Class Residency Card program, he has helped 
+              foreign ownership regulations, and Oman's residency-by-property programs, he has helped 
               hundreds of clients successfully invest in Oman property.
             </p>
             <p>

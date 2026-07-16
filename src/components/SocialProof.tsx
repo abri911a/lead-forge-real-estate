@@ -64,7 +64,7 @@ const SocialProof = () => {
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gold flex-shrink-0">
                   <img 
                     src={profileImage} 
-                    alt="Waleed - Oman Real Estate Expert" 
+                    alt="Waleed Al Abri - Waleed Property" 
                     className="w-full h-full object-cover"
                   />
                 </div>
