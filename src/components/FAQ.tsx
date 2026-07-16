@@ -25,8 +25,9 @@ const FAQ = () => {
       answer: "Rental yields in Oman's prime locations average 5-8% gross annually. Al Mouj Muscat properties typically yield 6-7%, while emerging areas like Sultan Haitham City offer potential for 7-9% as infrastructure develops. These yields are competitive with Dubai (4-6%) and Abu Dhabi (5-7%) with lower purchase prices."
     },
     {
-      question: "What is the Oman First-Class Residency Card?",
-      answer: "The First-Class Residency Card is a 10-year renewable visa available to foreign investors who purchase property in designated freehold areas. It includes benefits such as residency for family members, business ownership rights, and no sponsor requirements. This program aligns with Oman Vision 2040 to attract foreign investment. Contact us for current eligibility requirements."
+      question: "What residency options come with buying property in Oman?",
+      answer: "A qualifying property purchase opens the sponsor-free Property Owner Residency (ROP Decision 87/2026). From OMR 200,000 of qualifying investment, buyers can apply for the 10-year renewable Golden Residency, which includes family sponsorship and business ownership rights. Contact us for current eligibility requirements."
+
     },
     {
       question: "Which areas in Oman offer the best investment opportunities?",
