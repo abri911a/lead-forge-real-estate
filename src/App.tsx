@@ -11,6 +11,7 @@ import AlMoujGuide from "./pages/AlMoujGuide";
 import SultanHaithamCityGuide from "./pages/SultanHaithamCityGuide";
 import OmanPropertyPrices2026 from "./pages/OmanPropertyPrices2026";
 import CanForeignersBuyPropertyInOman from "./pages/CanForeignersBuyPropertyInOman";
+import OmanResidencyByProperty from "./pages/OmanResidencyByProperty";
 import PropertyDetail from "./pages/PropertyDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
