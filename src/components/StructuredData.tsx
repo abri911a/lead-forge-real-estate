@@ -131,7 +131,8 @@ const getStructuredData = (type: string, data?: any) => {
           "description": "Licensed real estate advisor specializing in Oman property investments with over 10 years of experience in GCC markets",
           "affiliation": {
             "@type": "Organization",
-            "name": "Waleed Realestate Oman"
+            "name": "Waleed Property"
+
           },
           "hasCredential": [
             {
