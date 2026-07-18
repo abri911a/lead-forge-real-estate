@@ -25,7 +25,7 @@ const SeoHead = ({
   description,
   canonical,
   type = "website",
-  image = "https://lovable.dev/opengraph-image-p98pqg.png",
+  image = "https://waleedproperty.com/og-image.jpg",
 }: SeoHeadProps) => {
   useEffect(() => {
     const applyHead = () => {

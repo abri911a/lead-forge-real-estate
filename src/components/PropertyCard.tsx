@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import PropertyDetailsDialog from "./PropertyDetailsDialog";
 import ContactOptionsDialog from "./ContactOptionsDialog";
 import PropertySchema from "./PropertySchema";
+import { optimizeImageUrl } from "@/lib/utils";
 
 interface PropertyCardProps {
   id: string;
@@ -41,9 +42,12 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
       />
     <Card className="overflow-hidden group hover:shadow-2xl transition-all duration-300 border-warmGray">
       <div className="relative overflow-hidden">
-        <img 
-          src={image} 
+        <img
+          src={optimizeImageUrl(image)}
           alt={title}
+          width={800}
+          height={533}
+          loading="lazy"
           className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4">
@@ -86,7 +90,7 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
             variant="outline" 
             className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
           >
-            <Link to={`/property/${id}`}>View Details</Link>
+            <Link to={`/property/${id}`} aria-label={`View details: ${title}`}>View Details</Link>
           </Button>
           <Button 
             className="bg-gold text-luxury-dark hover:bg-gold-light"

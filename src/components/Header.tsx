@@ -13,10 +13,11 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span>+968 79136646</span>
             </a>
-            <a 
-              href="https://www.instagram.com/waleedvlogs.om/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/waleedvlogs.om/"
+              target="_blank"
               rel="noopener noreferrer"
+              aria-label="Follow @waleedvlogs.om on Instagram"
               className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors"
             >
               <Instagram className="h-4 w-4" />
@@ -43,7 +44,7 @@ const Header = () => {
         {/* Main navigation */}
         <nav className="flex items-center justify-between py-4">
           <a href="/" className="text-2xl font-bold text-gold">
-            WALEED REALESTATE
+            WALEED PROPERTY
           </a>
           
           <ul className="hidden md:flex items-center gap-8">

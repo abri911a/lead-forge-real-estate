@@ -35,6 +35,7 @@ const Index = () => {
       <StructuredData type="localBusiness" />
       
       <Header />
+      <main>
       <Hero />
       <SocialProof />
       <FeaturedProperties />
@@ -57,6 +58,7 @@ const Index = () => {
       
       <Projects />
       <FAQ />
+      </main>
       <Footer />
       <WhatsAppButton />
     </div>

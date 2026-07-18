@@ -69,7 +69,7 @@ const FeaturedProperties = () => {
           <div className="flex items-center justify-center gap-3 mb-4">
             <MapPin className="h-5 w-5 text-gold" />
             <Select value={tempLocation} onValueChange={setTempLocation}>
-              <SelectTrigger className="w-[280px] border-gold/30 focus:border-gold">
+              <SelectTrigger aria-label="Filter by location" className="w-[280px] border-gold/30 focus:border-gold">
                 <SelectValue placeholder="Filter by location" />
               </SelectTrigger>
               <SelectContent>

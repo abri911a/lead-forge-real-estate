@@ -1,23 +1,34 @@
-import { Instagram } from "lucide-react";
+import { Instagram, Play } from "lucide-react";
+import reelDFvKKXWMEkn from "@/assets/reel-DFvKKXWMEkn.webp";
+import reelDHEP3XIsZCP from "@/assets/reel-DHEP3XIsZCP.webp";
+import reelDHWXkGXAvZw from "@/assets/reel-DHWXkGXAvZw.webp";
+import reelDKFc7yXsNZh from "@/assets/reel-DKFc7yXsNZh.webp";
 
 const InstagramFeed = () => {
-  // Your Instagram reel URLs
+  // Static reel covers link out to Instagram — no live embeds.
+  // Live IG embeds cost ~1.3MB (4x duplicate CSS + images) and set
+  // third-party cookies; the facade keeps the page self-contained.
+  // To refresh a cover: replace the matching src/assets/reel-<id>.webp.
   const REELS = [
     {
       url: "https://www.instagram.com/reel/DFvKKXWMEkn/",
-      embedUrl: "https://www.instagram.com/reel/DFvKKXWMEkn/embed"
+      cover: reelDFvKKXWMEkn,
+      label: "Property mistake that cost buyers their savings"
     },
     {
       url: "https://www.instagram.com/reel/DHEP3XIsZCP/",
-      embedUrl: "https://www.instagram.com/reel/DHEP3XIsZCP/embed"
+      cover: reelDHEP3XIsZCP,
+      label: "The question to ask before buying off-plan property"
     },
     {
       url: "https://www.instagram.com/reel/DHWXkGXAvZw/",
-      embedUrl: "https://www.instagram.com/reel/DHWXkGXAvZw/embed"
+      cover: reelDHWXkGXAvZw,
+      label: "Before you buy: apartment or land?"
     },
     {
       url: "https://www.instagram.com/reel/DKFc7yXsNZh/",
-      embedUrl: "https://www.instagram.com/reel/DKFc7yXsNZh/embed"
+      cover: reelDKFc7yXsNZh,
+      label: "The biggest lie at property exhibitions"
     }
   ];
 
@@ -39,35 +50,34 @@ const InstagramFeed = () => {
         </p>
       </div>
 
-      <style>
-        {`
-          .instagram-reel-wrapper iframe {
-            margin-top: -48px;
-            height: calc(100% + 48px);
-          }
-        `}
-      </style>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        {REELS.map((reel, index) => (
+        {REELS.map((reel) => (
           <a
-            key={index}
+            key={reel.url}
             href={reel.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="instagram-reel-wrapper aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-2 block bg-black"
+            aria-label={`Watch on Instagram: ${reel.label}`}
+            className="group relative aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-2 block bg-black"
           >
-            <iframe
-              src={reel.embedUrl}
-              className="w-full h-full pointer-events-none"
-              frameBorder="0"
-              scrolling="no"
-              allow="encrypted-media"
-              title={`Instagram Reel ${index + 1}`}
+            <img
+              src={reel.cover}
+              alt={reel.label}
+              width={360}
+              height={640}
+              loading="lazy"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-luxury-dark/40">
+              <span className="flex items-center gap-2 bg-gold text-luxury-dark px-4 py-2 rounded-full font-semibold text-sm">
+                <Play className="h-4 w-4" />
+                Watch on Instagram
+              </span>
+            </div>
           </a>
         ))}
       </div>
-      
+
       <p className="text-center text-sm text-muted-foreground mt-6">
         Click any reel to watch on Instagram
       </p>

@@ -3,23 +3,27 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 
 const About = () => {
-  const [count, setCount] = useState(0);
+  // Initial state = final value so prerendered HTML (and AI crawlers)
+  // read "500+", never a frozen "0+". The count-up runs only when a
+  // real user scrolls the card into view.
+  const targetCount = 500;
+  const [count, setCount] = useState(targetCount);
   const [hasAnimated, setHasAnimated] = useState(false);
   const counterRef = useRef<HTMLDivElement>(null);
-  const targetCount = 500;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          
+
           // Animate counter
           const duration = 2000; // 2 seconds
           const steps = 60;
           const increment = targetCount / steps;
           let current = 0;
-          
+          setCount(0);
+
           const timer = setInterval(() => {
             current += increment;
             if (current >= targetCount) {
@@ -29,7 +33,7 @@ const About = () => {
               setCount(Math.floor(current));
             }
           }, duration / steps);
-          
+
           return () => clearInterval(timer);
         }
       },
@@ -98,9 +102,12 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=70&auto=format"
               alt="Luxury real estate"
+              width={800}
+              height={533}
+              loading="lazy"
               className="rounded-lg shadow-2xl"
             />
             <div 
@@ -110,7 +117,7 @@ const About = () => {
               <div className="text-3xl font-bold text-gold mb-1 transition-all duration-300">
                 {count}+
               </div>
-              <div className="text-sm text-muted-foreground">Properties Sold</div>
+              <div className="text-sm text-muted-foreground">Property Videos</div>
             </div>
           </div>
         </div>

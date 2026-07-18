@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import waleedProfile from "@/assets/waleed-profile.jpg";
+import waleedProfile from "@/assets/waleed-profile.webp";
 
 interface AuthorProfileProps {
   variant?: "compact" | "full";

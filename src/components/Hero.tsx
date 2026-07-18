@@ -2,7 +2,7 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import heroImage from "@/assets/hero-villa.jpg";
+import heroImage from "@/assets/hero-villa.webp";
 import { useState } from "react";
 
 const Hero = () => {
@@ -34,9 +34,11 @@ const Hero = () => {
     <section className="relative h-[90vh] flex items-center justify-center">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Luxury property in Oman" 
+        <img
+          src={heroImage}
+          alt="Luxury property in Oman"
+          width={1600}
+          height={900}
           className="w-full h-full object-cover"
           fetchPriority="high"
         />
@@ -59,7 +61,7 @@ const Hero = () => {
           <div className="bg-card/95 backdrop-blur-sm p-6 rounded-lg shadow-2xl">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <Select value={propertyType} onValueChange={setPropertyType}>
-                <SelectTrigger>
+                <SelectTrigger aria-label="Property type">
                   <SelectValue placeholder="Property Type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -71,7 +73,7 @@ const Hero = () => {
               </Select>
 
               <Select value={location} onValueChange={setLocation}>
-                <SelectTrigger>
+                <SelectTrigger aria-label="Location">
                   <SelectValue placeholder="Location" />
                 </SelectTrigger>
                 <SelectContent>
@@ -84,7 +86,7 @@ const Hero = () => {
               </Select>
 
               <Select>
-                <SelectTrigger>
+                <SelectTrigger aria-label="Bedrooms">
                   <SelectValue placeholder="Bedrooms" />
                 </SelectTrigger>
                 <SelectContent>
