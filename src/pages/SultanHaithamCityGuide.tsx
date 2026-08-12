@@ -41,7 +41,7 @@ const SultanHaithamCityGuide = () => {
           title: "Sultan Haitham City: Oman's Future Smart City Investment Guide (2026)",
           description: "Complete guide to Sultan Haitham City - Oman's new smart city development, property investment opportunities, amenities, and future growth prospects",
           datePublished: "2025-01-19",
-          dateModified: "2026-06-10"
+          dateModified: "2026-07-16"
         }}
       />
 
@@ -57,7 +57,7 @@ const SultanHaithamCityGuide = () => {
               Sultan Haitham City: Oman's New Smart City
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Last updated: January 19, 2025 | By Waleed Al Abri - Licensed Real Estate Advisor
+              Last updated: July 16, 2026 | By Waleed Al Abri - Real Estate Advisor
             </p>
           </div>
 

@@ -8,7 +8,7 @@ interface AuthorProfileProps {
 
 const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
   const credentials = [
-    "Licensed Real Estate Advisor - Oman",
+    "Real Estate Advisor - Oman",
     "ITC Investment Specialist",
     "10+ Years GCC Property Markets",
     "Residency-by-Property Specialist"
@@ -19,12 +19,12 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
       <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg">
         <img 
           src={waleedProfile}
-          alt="Waleed Al Abri - Licensed Real Estate Advisor"
+          alt="Waleed Al Abri - Real Estate Advisor"
           className="w-16 h-16 rounded-full object-cover border-2 border-gold"
         />
         <div>
           <h3 className="font-semibold text-foreground">Waleed Al Abri</h3>
-          <p className="text-sm text-muted-foreground">Licensed Real Estate Advisor</p>
+          <p className="text-sm text-muted-foreground">Real Estate Advisor</p>
           <p className="text-xs text-gold">10+ Years Experience in Oman Property Markets</p>
         </div>
       </div>
@@ -36,12 +36,12 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
       <div className="flex flex-col md:flex-row gap-6">
         <img 
           src={waleedProfile}
-          alt="Waleed Al Abri - Licensed Real Estate Advisor in Oman"
+          alt="Waleed Al Abri - Real Estate Advisor in Oman"
           className="w-32 h-32 rounded-lg object-cover border-2 border-gold"
         />
         <div className="flex-1">
           <h3 className="text-2xl font-bold text-gold mb-2">Waleed Al Abri</h3>
-          <p className="text-lg text-foreground mb-1">Licensed Real Estate Advisor</p>
+          <p className="text-lg text-foreground mb-1">Real Estate Advisor</p>
           <p className="text-sm text-muted-foreground mb-4">
             Waleed Property - Founder & Principal Advisor
           </p>

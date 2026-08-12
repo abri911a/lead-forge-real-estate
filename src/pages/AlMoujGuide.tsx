@@ -41,7 +41,7 @@ const AlMoujGuide = () => {
           title: "Al Mouj Muscat: Complete Living & Investment Guide (2026)",
           description: "Discover everything about Al Mouj Muscat - luxury waterfront living, property investment opportunities, amenities, and lifestyle in Oman's premier ITC",
           datePublished: "2025-01-19",
-          dateModified: "2026-06-10"
+          dateModified: "2026-06-23"
         }}
       />
 
@@ -58,7 +58,7 @@ const AlMoujGuide = () => {
               Al Mouj Muscat: Your Complete Living Guide
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Last updated: January 19, 2025 | By Waleed Al Abri - Licensed Real Estate Advisor
+              Last updated: June 23, 2026 | By Waleed Al Abri - Real Estate Advisor
             </p>
           </div>
 

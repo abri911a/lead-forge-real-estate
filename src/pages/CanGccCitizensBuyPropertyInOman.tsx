@@ -37,7 +37,7 @@ const articleJsonLd = {
   author: {
     "@type": "Person",
     name: "Waleed Al Abri",
-    jobTitle: "Licensed Real Estate Advisor",
+    jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-07-16",
   dateModified: "2026-07-16",

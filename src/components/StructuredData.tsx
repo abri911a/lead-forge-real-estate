@@ -127,7 +127,7 @@ const getStructuredData = (type: string, data?: any) => {
         "author": {
           "@type": "Person",
           "name": "Waleed Al Abri",
-          "jobTitle": "Licensed Real Estate Advisor",
+          "jobTitle": "Real Estate Advisor",
           "description": "Licensed real estate advisor specializing in Oman property investments with over 10 years of experience in GCC markets",
           "affiliation": {
             "@type": "Organization",
@@ -138,7 +138,7 @@ const getStructuredData = (type: string, data?: any) => {
             {
               "@type": "EducationalOccupationalCredential",
               "credentialCategory": "Professional License",
-              "name": "Licensed Real Estate Advisor - Oman"
+              "name": "Real Estate Advisor - Oman"
             },
             {
               "@type": "EducationalOccupationalCredential",

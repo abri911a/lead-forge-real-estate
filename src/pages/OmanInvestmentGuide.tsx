@@ -35,7 +35,7 @@ const OmanInvestmentGuide = () => {
           title: "Best Real Estate Investment Options in Oman (2026)",
           description: "Comprehensive guide to Oman real estate investment for international buyers",
           datePublished: "2025-01-19",
-          dateModified: "2026-06-10"
+          dateModified: "2026-07-16"
         }}
       />
 
@@ -51,7 +51,7 @@ const OmanInvestmentGuide = () => {
               Best Real Estate Investment Options in Oman
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Last updated: January 19, 2025 | By Waleed Al Abri - Licensed Real Estate Advisor
+              Last updated: July 16, 2026 | By Waleed Al Abri - Real Estate Advisor
             </p>
           </div>
 
