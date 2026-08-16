@@ -23,12 +23,12 @@ import {
 const title =
   "Does Buying Property in Oman Give You Residency? 2026 Owner Visa & Golden Visa Rules | Waleed Property";
 const description =
-  "Yes, if it qualifies. The 2026 guide to Oman residency by property: the new sponsor-free owner visa (ROP 87/2026), off-plan buyer visas, family inclusion, and the 10-year Golden Residency at OMR 200,000. By a licensed Oman advisor.";
+  "Yes, if it qualifies. The 2026 guide to Oman residency by property: the new sponsor-free owner visa (ROP 87/2026), off-plan buyer visas, family inclusion, and the 10-year Golden Residency at OMR 200,000. By a Oman property advisor.";
 const canonical = "https://waleedproperty.com/oman-residency-by-property";
 const ogTitle =
   "Does Buying Property in Oman Give You Residency? The 2026 Rules";
 const ogDescription =
-  "The new sponsor-free owner residency, off-plan visas before handover, and the 10-year Golden Residency, explained by a licensed Oman advisor.";
+  "The new sponsor-free owner residency, off-plan visas before handover, and the 10-year Golden Residency, explained by a Oman property advisor.";
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -128,7 +128,7 @@ const OmanResidencyByProperty = () => {
               Does Buying Property in Oman Give You Residency? The 2026 Rules
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Updated July 2026 · By Waleed Al Abri — Licensed Real Estate
+              Updated July 2026 · By Waleed Al Abri — Real Estate
               Advisor
             </p>
           </div>
@@ -142,7 +142,7 @@ const OmanResidencyByProperty = () => {
               Police Decision 87/2026), owners get residency without a local
               sponsor, family is included, and off-plan buyers can get a
               renewable visa before handover. Updated July 2026 by Waleed Al
-              Abri, a licensed real estate advisor in Oman.
+              Abri, a real estate advisor in Oman.
             </p>
           </div>
 
@@ -392,7 +392,7 @@ const OmanResidencyByProperty = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book a consultation with Waleed Al Abri, licensed real
+                  Book a consultation with Waleed Al Abri, real
                   estate advisor in Oman
                 </a>
               </Button>

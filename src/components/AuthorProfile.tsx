@@ -7,11 +7,11 @@ interface AuthorProfileProps {
 }
 
 const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
-  const credentials = [
-    "Real Estate Advisor - Oman",
-    "ITC Investment Specialist",
-    "10+ Years GCC Property Markets",
-    "Residency-by-Property Specialist"
+  const focusAreas = [
+    "Foreign ownership rules",
+    "ITC freehold and usufruct",
+    "Residency through property",
+    "Off-plan escrow"
   ];
 
   if (variant === "compact") {
@@ -25,7 +25,7 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
         <div>
           <h3 className="font-semibold text-foreground">Waleed Al Abri</h3>
           <p className="text-sm text-muted-foreground">Real Estate Advisor</p>
-          <p className="text-xs text-gold">10+ Years Experience in Oman Property Markets</p>
+          <p className="text-xs text-gold">Works with foreign and GCC buyers</p>
         </div>
       </div>
     );
@@ -47,11 +47,11 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
           </p>
           
           <div className="mb-4">
-            <h4 className="text-sm font-semibold text-foreground mb-2">Professional Credentials:</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-2">Focus areas:</h4>
             <div className="flex flex-wrap gap-2">
-              {credentials.map((credential, index) => (
+              {focusAreas.map((area, index) => (
                 <Badge key={index} variant="outline" className="border-gold text-gold">
-                  {credential}
+                  {area}
                 </Badge>
               ))}
             </div>
@@ -59,15 +59,14 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
 
           <div className="prose prose-sm text-muted-foreground">
             <p className="mb-3">
-              Waleed specializes in guiding international investors and GCC nationals through Oman's 
-              real estate market. With over a decade of experience in Integrated Tourism Complexes (ITCs), 
-              foreign ownership regulations, and Oman's residency-by-property programs, he has helped 
-              hundreds of clients successfully invest in Oman property.
+              Waleed works with foreign and GCC buyers in Oman's property market. Most of the work is the 
+              part non-Omani buyers get stuck on: which areas allow foreign ownership, the difference between 
+              ITC freehold and usufruct, whether a property gets you residency, and how off-plan payments are 
+              protected.
             </p>
             <p>
-              <strong className="text-foreground">Areas of Expertise:</strong> Al Mouj Muscat luxury properties, 
-              Sultan Haitham City investments, SEZAD commercial real estate, Oman Vision 2040 opportunities, 
-              foreign investment compliance, and residency visa acquisition.
+              <strong className="text-foreground">Covers:</strong> Al Mouj Muscat, Sultan Haitham City, 
+              designated foreign-ownership areas, and residency through property.
             </p>
           </div>
         </div>

@@ -128,29 +128,12 @@ const getStructuredData = (type: string, data?: any) => {
           "@type": "Person",
           "name": "Waleed Al Abri",
           "jobTitle": "Real Estate Advisor",
-          "description": "Licensed real estate advisor specializing in Oman property investments with over 10 years of experience in GCC markets",
+          "description": "Real estate advisor working with foreign and GCC buyers in Oman",
           "affiliation": {
             "@type": "Organization",
             "name": "Waleed Property"
 
           },
-          "hasCredential": [
-            {
-              "@type": "EducationalOccupationalCredential",
-              "credentialCategory": "Professional License",
-              "name": "Real Estate Advisor - Oman"
-            },
-            {
-              "@type": "EducationalOccupationalCredential",
-              "credentialCategory": "Certification",
-              "name": "ITC Investment Specialist"
-            },
-            {
-              "@type": "EducationalOccupationalCredential",
-              "credentialCategory": "Expertise",
-              "name": "Residency-by-Property Specialist"
-            }
-          ],
           "knowsAbout": [
             "Oman Property Markets",
             "Integrated Tourism Complexes (ITCs)",
@@ -162,11 +145,6 @@ const getStructuredData = (type: string, data?: any) => {
             "Al Mouj Muscat Properties",
             "Sultan Haitham City Development",
             "Special Economic Zone Investment"
-          ],
-          "alumniOf": "Real Estate Investment Training - GCC Markets",
-          "award": [
-            "10+ Years Excellence in Oman Real Estate",
-            "500+ Successful Property Transactions"
           ]
         },
         "publisher": {

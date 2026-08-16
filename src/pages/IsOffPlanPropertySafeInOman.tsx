@@ -23,7 +23,7 @@ import {
 const title =
   "Is Off-Plan Property Safe in Oman? The 2026 Escrow Law (RD 79/2025) | Waleed Property";
 const description =
-  "Safer than before, not risk-free. Oman's new Real Estate Regulation Law (Royal Decree 79/2025, in force 10 March 2026) replaced the 2018 escrow law. How the escrow works, what it does not cover, and the 5 checks before you pay a deposit. By a licensed Oman advisor.";
+  "Safer than before, not risk-free. Oman's new Real Estate Regulation Law (Royal Decree 79/2025, in force 10 March 2026) replaced the 2018 escrow law. How the escrow works, what it does not cover, and the 5 checks before you pay a deposit. By a Oman property advisor.";
 const canonical = "https://waleedproperty.com/is-off-plan-property-safe-in-oman";
 const ogTitle =
   "Is Off-Plan Property Safe in Oman? The 2026 Escrow Law Explained";
@@ -132,7 +132,7 @@ const IsOffPlanPropertySafeInOman = () => {
               Is Off-Plan Property Safe in Oman? The 2026 Escrow Law Explained
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Updated July 2026 · By Waleed Al Abri — Licensed Real Estate
+              Updated July 2026 · By Waleed Al Abri — Real Estate
               Advisor
             </p>
           </div>
@@ -145,8 +145,8 @@ const IsOffPlanPropertySafeInOman = () => {
               buyer payments in an escrow account at a licensed bank, released
               only against certified construction progress. The protection is
               real, but it is not a completion guarantee. Verify the escrow
-              before you pay. Updated July 2026 by Waleed Al Abri, a licensed
-              real estate advisor in Oman.
+              before you pay. Updated July 2026 by Waleed Al Abri, a real
+              estate advisor in Oman.
             </p>
           </div>
 
@@ -420,7 +420,7 @@ const IsOffPlanPropertySafeInOman = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book a consultation with Waleed Al Abri, licensed real
+                  Book a consultation with Waleed Al Abri, real
                   estate advisor in Oman
                 </a>
               </Button>

@@ -23,7 +23,7 @@ import {
 const title =
   "Can GCC Citizens Buy Property in Oman Outside ITCs? 2026 Guide | Waleed Property";
 const description =
-  "Yes. Royal Decree 21/2004 lets Saudi, Emirati, Kuwaiti, Qatari and Bahraini citizens own property and land across most of Oman, no ITC needed. The prohibited areas, the 4-year land rule, and how developer gating really works. By a licensed Oman advisor.";
+  "Yes. Royal Decree 21/2004 lets Saudi, Emirati, Kuwaiti, Qatari and Bahraini citizens own property and land across most of Oman, no ITC needed. The prohibited areas, the 4-year land rule, and how developer gating really works. By a Oman property advisor.";
 const canonical =
   "https://waleedproperty.com/can-gcc-citizens-buy-property-in-oman";
 const ogTitle = "Can GCC Citizens Buy Property in Oman Outside ITCs?";
@@ -131,7 +131,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
               Can GCC Citizens Buy Property in Oman Outside ITCs?
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Updated July 2026 · By Waleed Al Abri — Licensed Real Estate
+              Updated July 2026 · By Waleed Al Abri — Real Estate
               Advisor
             </p>
           </div>
@@ -145,7 +145,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
               Oman, close to how Omanis do. No ITC needed. Two exceptions
               matter: a list of prohibited areas, and agricultural land. And
               vacant land must be built on within 4 years. Updated July 2026
-              by Waleed Al Abri, a licensed real estate advisor in Oman.
+              by Waleed Al Abri, a real estate advisor in Oman.
             </p>
           </div>
 
@@ -433,7 +433,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book a consultation with Waleed Al Abri, licensed real
+                  Book a consultation with Waleed Al Abri, real
                   estate advisor in Oman
                 </a>
               </Button>

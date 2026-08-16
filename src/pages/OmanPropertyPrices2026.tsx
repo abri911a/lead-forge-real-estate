@@ -25,7 +25,7 @@ import { useNavigate } from "react-router-dom";
 const title =
   "Oman Property Prices 2026: Verified Area-by-Area Guide | Waleed Property";
 const description =
-  "Verified June 2026 Oman property prices by area: apartments from OMR 19,700, foreign-freehold zones, realistic rental yields, residency and escrow law. By a licensed Oman real estate advisor.";
+  "Verified June 2026 Oman property prices by area: apartments from OMR 19,700, foreign-freehold zones, realistic rental yields, residency and escrow law. By an Oman real estate advisor.";
 const canonical = "https://waleedproperty.com/oman-property-prices-2026";
 const ogTitle = "Oman Property Prices 2026: Verified Area-by-Area Guide";
 const ogDescription =
@@ -121,7 +121,7 @@ const OmanPropertyPrices2026 = () => {
               Oman Property Prices 2026: A Verified, Area-by-Area Guide
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Updated June 14, 2026 · By Waleed Al Abri — Licensed Real Estate
+              Updated June 14, 2026 · By Waleed Al Abri — Real Estate
               Advisor
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
@@ -138,7 +138,7 @@ const OmanPropertyPrices2026 = () => {
           {/* Author callout */}
           <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-6 mb-10">
             <p className="text-foreground leading-relaxed">
-              Written by <strong>Waleed Al Abri</strong>, a licensed real estate
+              Written by <strong>Waleed Al Abri</strong>, a real estate
               advisor in Oman. Prices move. Every figure below is dated and
               reflects developer offers seen in June 2026. For a current quote
               on a specific project,{" "}
