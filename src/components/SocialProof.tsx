@@ -35,7 +35,7 @@ const SocialProof = () => {
             <div className="flex justify-center mb-3">
               <Video className="h-8 w-8 text-gold" />
             </div>
-            <div className="text-3xl font-bold text-gold mb-1">500+</div>
+            <div className="text-3xl font-bold text-gold mb-1">94+</div>
             <div className="text-sm text-muted-foreground">Property Videos</div>
           </div>
 

@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 
 const About = () => {
   // Initial state = final value so prerendered HTML (and AI crawlers)
-  // read "500+", never a frozen "0+". The count-up runs only when a
+  // read "94+", never a frozen "0+". The count-up runs only when a
   // real user scrolls the card into view.
-  const targetCount = 500;
+  const targetCount = 94;
   const [count, setCount] = useState(targetCount);
   const [hasAnimated, setHasAnimated] = useState(false);
   const counterRef = useRef<HTMLDivElement>(null);
