@@ -41,7 +41,7 @@ const articleJsonLd = {
     jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-07-16",
-  dateModified: "2026-07-16",
+  dateModified: "2026-08-16",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
   about:
@@ -293,6 +293,17 @@ const OmanResidencyByProperty = () => {
               >
                 Can foreigners buy property in Oman?
               </a>
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              The Ministry of Housing and Urban Planning said this directly in
+              late June 2026, after some coverage suggested Oman had opened
+              ownership to foreigners nationwide. It had not. Ownership by
+              non-Omanis stays limited to designated locations: Integrated
+              Tourism Complexes, future cities such as Sultan Haitham City, Al
+              Thuraya City and Al Jabal Al Aali, and integrated residential
+              neighbourhoods such as Surouh. The new Real Estate Registry Law
+              (Royal Decree 56/2026, in force 18 May 2026) changed how
+              ownership is registered and proved, not who may own or where.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Two more things stayed the same. Approval is not automatic,

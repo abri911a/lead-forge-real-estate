@@ -41,7 +41,7 @@ const articleJsonLd = {
     jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-07-16",
-  dateModified: "2026-07-16",
+  dateModified: "2026-08-16",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
   about:
@@ -267,6 +267,35 @@ const IsOffPlanPropertySafeInOman = () => {
           </div>
 
           {/* What escrow does not do */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gold mb-4">
+              Escrow protects your money. Registration protects your title.
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              These are two different problems, and off-plan buyers routinely
+              solve only the first. On 18 May 2026 the new Real Estate
+              Registry Law came into force under Royal Decree 56/2026,
+              replacing the 1998 statute. It recognises a preliminary register
+              that documents off-plan sales and development projects, so
+              buyers of units that are not yet registered are inside the
+              system rather than outside it.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              It also keeps the rule that decides who actually owns the unit:
+              a transaction only takes effect against third parties once it is
+              registered. Until then you hold a personal obligation from the
+              seller, not ownership anyone else has to respect. That is the
+              risk escrow was never designed to cover.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              The law also defines the title deed, gives an electronic deed
+              the same legal force as a paper one, and lets a deed be issued
+              in English on request. The executive regulations setting out how
+              this works in practice have not been published yet. Until they
+              are, existing rules continue to apply.
+            </p>
+          </div>
+
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gold mb-4">
               What escrow does not do

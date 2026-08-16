@@ -32,13 +32,17 @@ const articleJsonLd = {
     jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-06-23",
-  dateModified: "2026-07-16",
+  dateModified: "2026-08-16",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
   about: "Foreign property ownership and residency rules in Oman in 2026",
 };
 
 const faqs = [
+  {
+    q: "Did Oman open property ownership to all foreigners in 2026?",
+    a: "No. The Ministry of Housing and Urban Planning stated in late June 2026 that foreign ownership has not been opened to all areas. It stays limited to designated locations: Integrated Tourism Complexes, future cities such as Sultan Haitham City, Al Thuraya City and Al Jabal Al Aali, and integrated residential neighbourhoods such as Surouh. The Real Estate Registry Law (Royal Decree 56/2026, in force 18 May 2026) modernised how ownership is registered and proved. It did not change who may own, or where.",
+  },
   {
     q: "Can foreigners buy property in Oman?",
     a: "Yes. Under Royal Decree 29/2018, foreigners can own property in designated ITC zones and other eligible areas. Most foreign-owned units are freehold, but some projects offer only usufruct, so confirm the ownership type for the specific unit.",
@@ -197,6 +201,54 @@ const CanForeignersBuyPropertyInOman = () => {
               generally cannot buy. Certain areas are off-limits entirely,
               including Jabal Al Akhdar and designated strategic or military
               zones.
+            </p>
+          </div>
+
+          {/* 2026 Registry Law + ministry clarification */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gold mb-4">
+              What the 2026 Registry Law changed, and what it did not
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              On 18 May 2026 the new Real Estate Registry Law came into force
+              under Royal Decree 56/2026, replacing the 1998 statute. Some
+              international coverage read it as Oman opening property
+              ownership to foreigners nationwide. That is not what happened.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              In late June 2026 the Ministry of Housing and Urban Planning
+              stated that foreign ownership has not been opened to all areas
+              of the country. Ownership by non-Omanis stays limited to
+              locations already designated under existing law:
+            </p>
+            <ul className="space-y-2 text-foreground mb-4">
+              <li>• Integrated Tourism Complexes</li>
+              <li>
+                • Future cities, including Sultan Haitham City, Al Thuraya
+                City and Al Jabal Al Aali
+              </li>
+              <li>
+                • Integrated residential neighbourhoods, including Surouh
+              </li>
+            </ul>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              GCC citizens remain under separate GCC agreements. And being in
+              a designated area still does not tell you the tier, so confirm
+              freehold or usufruct for the specific unit.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              What the registry law changes is proof of ownership, not
+              permission to own. It defines the title deed, gives an
+              electronic deed the same legal force as a paper one, and allows
+              a deed to be issued in English on request. It also keeps the
+              rule that matters most: a transaction only counts once it is
+              registered. Unregistered, you hold a promise from the seller,
+              not ownership that binds anyone else.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              The executive regulations setting out how this works in
+              practice have not been published yet. Until they are, existing
+              rules continue to apply.
             </p>
           </div>
 
