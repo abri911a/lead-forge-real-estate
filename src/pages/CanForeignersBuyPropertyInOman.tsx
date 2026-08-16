@@ -40,6 +40,10 @@ const articleJsonLd = {
 
 const faqs = [
   {
+    q: "Can foreigners buy property in Oman outside ITC zones?",
+    a: "Yes, but not freehold. Ministerial Decision 357/2020 lets non-Omanis take a usufruct of up to 99 years on an apartment in a multi-storey mixed-use building, in locations the Ministry of Housing and Urban Planning specifies, starting with Muscat Governorate. Conditions apply, including minimum unit values, a two-room minimum, one unit per buyer, and a four-year hold before you can sell or rent. Freehold for non-GCC buyers stays tied to ITCs and other designated areas.",
+  },
+  {
     q: "Did Oman open property ownership to all foreigners in 2026?",
     a: "No. The Ministry of Housing and Urban Planning stated in late June 2026 that foreign ownership has not been opened to all areas. It stays limited to designated locations: Integrated Tourism Complexes, future cities such as Sultan Haitham City, Al Thuraya City and Al Jabal Al Aali, and integrated residential neighbourhoods such as Surouh. The Real Estate Registry Law (Royal Decree 56/2026, in force 18 May 2026) modernised how ownership is registered and proved. It did not change who may own, or where.",
   },
@@ -204,6 +208,47 @@ const CanForeignersBuyPropertyInOman = () => {
             </p>
           </div>
 
+          {/* Usufruct route outside ITC - MD 357/2020 */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gold mb-4">
+              Buying outside an ITC: the usufruct route
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              There is a second route, and it is the one most often missed.
+              Ministerial Decision 357/2020 lets non-Omanis take a usufruct on
+              an apartment in a multi-storey mixed-use building outside any
+              ITC, in locations the Ministry of Housing and Urban Planning
+              specifies. It started in Muscat Governorate.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              This is not freehold. The initial term runs up to 50 years and
+              can be renewed to 99. It can be mortgaged, and it passes to your
+              heirs.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              The controls are specific. The building must have at least four
+              floors and be recently completed. The unit must have at least
+              two rooms. Minimum values were set at OMR 45,000 in Muscat
+              Governorate and OMR 35,000 elsewhere. You may hold one unit. No
+              more than 40 per cent of a building's units may go into the
+              scheme, and no more than 20 per cent to buyers of a single
+              nationality. You cannot sell or rent the unit for the first four
+              years after registration.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              These thresholds are set by the ministry and can be revised, so
+              confirm the current figures for the specific building before you
+              commit to anything.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              One open point worth knowing. When this scheme started it
+              carried no residency. The June 2026 rules grant sponsor-free
+              residency to a foreigner who owns a registered real estate unit.
+              Whether a usufruct registered under the 2020 controls counts for
+              that has not been spelled out. Do not assume it does.
+            </p>
+          </div>
+
           {/* 2026 Registry Law + ministry clarification */}
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gold mb-4">
@@ -234,7 +279,9 @@ const CanForeignersBuyPropertyInOman = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               GCC citizens remain under separate GCC agreements. And being in
               a designated area still does not tell you the tier, so confirm
-              freehold or usufruct for the specific unit.
+              freehold or usufruct for the specific unit. Separately from
+              this list, the usufruct route under Ministerial Decision
+              357/2020 covers approved buildings outside ITC zones.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               What the registry law changes is proof of ownership, not
