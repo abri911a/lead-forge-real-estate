@@ -41,7 +41,7 @@ const articleJsonLd = {
 const faqs = [
   {
     q: "Can foreigners buy property in Oman outside ITC zones?",
-    a: "Yes, but not freehold. Ministerial Decision 357/2020 lets non-Omanis take a usufruct of up to 99 years on an apartment in a multi-storey mixed-use building, in locations the Ministry of Housing and Urban Planning specifies, starting with Muscat Governorate. Conditions apply, including minimum unit values, a two-room minimum, one unit per buyer, and a four-year hold before you can sell or rent. Freehold for non-GCC buyers stays tied to ITCs and other designated areas.",
+    a: "Yes, but not freehold. Ministerial Decision 357/2020 lets non-Omanis take a usufruct of up to 99 years on an apartment in a multi-storey mixed-use building, in locations the Ministry of Housing and Urban Planning specifies, starting with Muscat Governorate. Conditions apply, including minimum unit values, a two-room minimum, a 3 per cent registration fee on the unit value, one unit per buyer, and a four-year hold before you can sell or rent. Freehold for non-GCC buyers stays tied to ITCs and other designated areas.",
   },
   {
     q: "Did Oman open property ownership to all foreigners in 2026?",
@@ -229,7 +229,9 @@ const CanForeignersBuyPropertyInOman = () => {
               The controls are specific. The building must have at least four
               floors and be recently completed. The unit must have at least
               two rooms. Minimum values were set at OMR 45,000 in Muscat
-              Governorate and OMR 35,000 elsewhere. You may hold one unit. No
+              Governorate and OMR 35,000 elsewhere. Registering the usufruct
+              costs 3 per cent of the unit value, paid to the ministry. You
+              may hold one unit. No
               more than 40 per cent of a building's units may go into the
               scheme, and no more than 20 per cent to buyers of a single
               nationality. You cannot sell or rent the unit for the first four
