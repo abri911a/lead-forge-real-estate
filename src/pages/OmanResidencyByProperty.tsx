@@ -23,12 +23,12 @@ import {
 const title =
   "Does Buying Property in Oman Give You Residency? 2026 Owner Visa & Golden Visa Rules | Waleed Property";
 const description =
-  "Yes, if it qualifies. The 2026 guide to Oman residency by property: the new sponsor-free owner visa (ROP 87/2026), off-plan buyer visas, family inclusion, and the 10-year Golden Residency at OMR 200,000. By a Oman property advisor.";
+  "Yes, if it qualifies. The 2026 guide to Oman residency by property: the new sponsor-free owner visa (ROP 87/2026), off-plan buyer visas, family inclusion, and the 10-year Golden Residency at OMR 200,000. By an Oman property advisor.";
 const canonical = "https://waleedproperty.com/oman-residency-by-property";
 const ogTitle =
   "Does Buying Property in Oman Give You Residency? The 2026 Rules";
 const ogDescription =
-  "The new sponsor-free owner residency, off-plan visas before handover, and the 10-year Golden Residency, explained by a Oman property advisor.";
+  "The new sponsor-free owner residency, off-plan visas before handover, and the 10-year Golden Residency, explained by an Oman property advisor.";
 
 const articleJsonLd = {
   "@context": "https://schema.org",

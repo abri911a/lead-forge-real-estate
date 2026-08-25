@@ -23,7 +23,7 @@ import {
 const title =
   "Can GCC Citizens Buy Property in Oman Outside ITCs? 2026 Guide | Waleed Property";
 const description =
-  "Yes. Royal Decree 21/2004 lets Saudi, Emirati, Kuwaiti, Qatari and Bahraini citizens own property and land across most of Oman, no ITC needed. The prohibited areas, the 4-year land rule, and how developer gating really works. By a Oman property advisor.";
+  "Yes. Royal Decree 21/2004 lets Saudi, Emirati, Kuwaiti, Qatari and Bahraini citizens own property and land across most of Oman, no ITC needed. The prohibited areas, the 4-year land rule, and how developer gating really works. By an Oman property advisor.";
 const canonical =
   "https://waleedproperty.com/can-gcc-citizens-buy-property-in-oman";
 const ogTitle = "Can GCC Citizens Buy Property in Oman Outside ITCs?";

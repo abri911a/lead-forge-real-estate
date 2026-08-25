@@ -15,7 +15,7 @@ import {
 const title =
   "Can Foreigners Buy Property in Oman? 2026 Ownership & Residency Guide | Waleed Property";
 const description =
-  "Yes, foreigners can buy property in Oman. A 2026 guide to ITC freehold vs usufruct, which zones allow foreign ownership, residency by property, and the escrow law. By a Oman property advisor.";
+  "Yes, foreigners can buy property in Oman. A 2026 guide to ITC freehold vs usufruct, which zones allow foreign ownership, residency by property, and the escrow law. By an Oman property advisor.";
 const canonical =
   "https://waleedproperty.com/can-foreigners-buy-property-in-oman";
 const ogTitle = "Can Foreigners Buy Property in Oman? A 2026 Guide";
@@ -458,7 +458,7 @@ const CanForeignersBuyPropertyInOman = () => {
           {/* CTA */}
           <div className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-gold mb-4">
-              Talk to a Oman property advisor
+              Talk to an Oman property advisor
             </h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               The rules read simply on a page and get complicated on a
