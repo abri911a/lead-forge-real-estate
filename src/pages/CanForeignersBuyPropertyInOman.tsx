@@ -32,7 +32,7 @@ const articleJsonLd = {
     jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-06-23",
-  dateModified: "2026-08-16",
+  dateModified: "2026-08-28",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
   about: "Foreign property ownership and residency rules in Oman in 2026",
@@ -41,7 +41,7 @@ const articleJsonLd = {
 const faqs = [
   {
     q: "Can foreigners buy property in Oman outside ITC zones?",
-    a: "Yes, but not freehold. Ministerial Decision 357/2020 lets non-Omanis take a usufruct of up to 99 years on an apartment in a multi-storey mixed-use building, in locations the Ministry of Housing and Urban Planning specifies, starting with Muscat Governorate. Conditions apply, including minimum unit values, a two-room minimum, a 3 per cent registration fee on the unit value, one unit per buyer, and a four-year hold before you can sell or rent. Freehold for non-GCC buyers stays tied to ITCs and other designated areas.",
+    a: "Yes, but not freehold. Ministerial Decision 357/2020 lets non-Omanis take a usufruct of up to 99 years on an apartment in a multi-storey mixed-use building, in locations the Ministry of Housing and Urban Planning specifies, starting with Muscat Governorate. Conditions apply, and one rules most people out: the buyer must already be living in Oman on a residence permit, so it is not open to someone buying from abroad. The rest include minimum unit values, a two-room minimum, a 3 per cent registration fee on the unit value, one unit per buyer, and a four-year hold before you can sell or rent. Freehold for non-GCC buyers stays tied to ITCs and other designated areas.",
   },
   {
     q: "Did Oman open property ownership to all foreigners in 2026?",
@@ -236,6 +236,12 @@ const CanForeignersBuyPropertyInOman = () => {
               scheme, and no more than 20 per cent to buyers of a single
               nationality. You cannot sell or rent the unit for the first four
               years after registration.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              There is also a condition on the buyer, and it rules most people
+              out. You must be at least 23 and already living in Oman on a
+              residence permit, reported as two years of residence. If you are
+              buying from abroad, this route is not open to you.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               These thresholds are set by the ministry and can be revised, so
