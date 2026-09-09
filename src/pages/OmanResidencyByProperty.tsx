@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
+import ResidencyRouteFinder from "@/components/ResidencyRouteFinder";
 import SeoHead from "@/components/SeoHead";
 import { Button } from "@/components/ui/button";
 import {
@@ -41,7 +42,7 @@ const articleJsonLd = {
     jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-07-16",
-  dateModified: "2026-08-16",
+  dateModified: "2026-09-09",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
   about:
@@ -145,6 +146,8 @@ const OmanResidencyByProperty = () => {
               Abri, a real estate advisor in Oman.
             </p>
           </div>
+
+          <ResidencyRouteFinder />
 
           <div className="mb-12">
             <AuthorProfile variant="full" />
