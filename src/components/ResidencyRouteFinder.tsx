@@ -11,7 +11,8 @@ import { Button } from "@/components/ui/button";
 type Nat = "gcc" | "other";
 type Buy = "freehold" | "offplan" | "usufruct" | "unsure";
 type Val = "under" | "over";
-type RouteKey = "gcc" | "owner" | "offplan" | "golden" | "usufruct" | "unsure";
+type City = "shc" | "itc";
+type RouteKey = "gcc" | "owner" | "offplan" | "shc" | "golden" | "usufruct" | "unsure";
 
 const ROUTES: Record<
   RouteKey,
@@ -28,10 +29,20 @@ const ROUTES: Record<
     source: "Royal Oman Police Decision 87/2026",
     cta: "I am buying a registered unit in an ITC. What is my residency position?",
   },
+  shc: {
+    title: "Residency at 30% paid, before handover",
+    verdict: [
+      "Sultan Haitham City has its own rule. Once you have paid 30% of the price, residency is triggered, before handover.",
+      "Under OMR 50,000 it covers you only. At OMR 50,000 or more it covers your family too.",
+      "It is nationality-gated. Ownership does not guarantee it: residency needs a separate security clearance, and not every nationality is on the eligible list. Ask before you pay the 30%.",
+    ],
+    source: "Ministerial Decision, September 2025. Have the developer's legal team confirm the terms in writing",
+    cta: "I am buying off-plan in Sultan Haitham City. Will I get residency at 30% paid?",
+  },
   offplan: {
     title: "Owner visa first, residency at registration",
     verdict: [
-      "Before the unit is registered you can get an owner visa, not residency.",
+      "In an ITC such as Al Mouj, Muscat Hills or AIDA, an off-plan buyer gets an owner visa before registration, not residency.",
       "It runs 6 to 12 months and is renewable, on a certificate from the competent authority.",
       "Once the unit is registered in your name, the Owner Residency route opens.",
     ],
@@ -80,21 +91,25 @@ const ROUTES: Record<
   },
 };
 
-const ORDER: RouteKey[] = ["owner", "offplan", "golden", "usufruct", "gcc", "unsure"];
+const ORDER: RouteKey[] = ["owner", "shc", "offplan", "golden", "usufruct", "gcc", "unsure"];
 
 function track(name: string, route: string) {
   const w = window as unknown as { gtag?: (...a: unknown[]) => void };
   if (typeof w.gtag === "function") w.gtag("event", name, { route });
 }
 
-function resolve(nat?: Nat, buy?: Buy, val?: Val): RouteKey | null {
+function resolve(nat?: Nat, buy?: Buy, val?: Val, city?: City): RouteKey | null {
   if (nat === "gcc") return "gcc";
   if (!nat || !buy) return null;
   if (buy === "usufruct") return "usufruct";
   if (buy === "unsure") return "unsure";
+  if (buy === "offplan") {
+    if (!city) return null;
+    if (city === "shc") return "shc";
+    return val ? "offplan" : null;
+  }
   if (!val) return null;
-  if (buy === "freehold") return val === "over" ? "golden" : "owner";
-  return "offplan";
+  return val === "over" ? "golden" : "owner";
 }
 
 function Pill({
@@ -128,8 +143,10 @@ const ResidencyRouteFinder = () => {
   const [nat, setNat] = useState<Nat>();
   const [buy, setBuy] = useState<Buy>();
   const [val, setVal] = useState<Val>();
-  const result = resolve(nat, buy, val);
-  const needsVal = nat === "other" && (buy === "freehold" || buy === "offplan");
+  const [city, setCity] = useState<City>();
+  const result = resolve(nat, buy, val, city);
+  const needsCity = nat === "other" && buy === "offplan";
+  const needsVal = nat === "other" && (buy === "freehold" || (buy === "offplan" && city === "itc"));
 
   const pick = <T,>(setter: (v: T) => void, v: T, key?: RouteKey | null) => {
     setter(v);
@@ -140,6 +157,7 @@ const ResidencyRouteFinder = () => {
     setNat(undefined);
     setBuy(undefined);
     setVal(undefined);
+    setCity(undefined);
   };
 
   return (
@@ -151,7 +169,7 @@ const ResidencyRouteFinder = () => {
         Which residency does your purchase give you?
       </h2>
       <p className="text-muted-foreground mb-6">
-        Three taps. Six possible answers, all shown below. Nothing here replaces a
+        Three or four taps. Seven possible answers, all shown below. Nothing here replaces a
         check with the competent authority before you pay.
       </p>
 
@@ -159,10 +177,10 @@ const ResidencyRouteFinder = () => {
       <div className="mb-5">
         <p className="text-sm font-semibold text-foreground mb-2">1. Your nationality</p>
         <div className="flex flex-wrap gap-2">
-          <Pill on={nat === "other"} onClick={() => { pick(setNat, "other"); setBuy(undefined); setVal(undefined); }}>
+          <Pill on={nat === "other"} onClick={() => { pick(setNat, "other"); setBuy(undefined); setVal(undefined); setCity(undefined); }}>
             Not a GCC citizen
           </Pill>
-          <Pill on={nat === "gcc"} onClick={() => { pick(setNat, "gcc", "gcc"); setBuy(undefined); setVal(undefined); }}>
+          <Pill on={nat === "gcc"} onClick={() => { pick(setNat, "gcc", "gcc"); setBuy(undefined); setVal(undefined); setCity(undefined); }}>
             GCC citizen
           </Pill>
         </div>
@@ -173,10 +191,10 @@ const ResidencyRouteFinder = () => {
         <div className="mb-5">
           <p className="text-sm font-semibold text-foreground mb-2">2. What you are buying</p>
           <div className="flex flex-wrap gap-2">
-            <Pill on={buy === "freehold"} onClick={() => { pick(setBuy, "freehold"); setVal(undefined); }}>
+            <Pill on={buy === "freehold"} onClick={() => { pick(setBuy, "freehold"); setVal(undefined); setCity(undefined); }}>
               Freehold in an ITC or eligible zone
             </Pill>
-            <Pill on={buy === "offplan"} onClick={() => { pick(setBuy, "offplan"); setVal(undefined); }}>
+            <Pill on={buy === "offplan"} onClick={() => { pick(setBuy, "offplan"); setVal(undefined); setCity(undefined); }}>
               Off-plan, not yet registered
             </Pill>
             <Pill on={buy === "usufruct"} onClick={() => pick(setBuy, "usufruct", "usufruct")}>
@@ -189,15 +207,30 @@ const ResidencyRouteFinder = () => {
         </div>
       )}
 
-      {/* Q3 */}
+      {/* Q3 (off-plan only): which city */}
+      {needsCity && (
+        <div className="mb-5">
+          <p className="text-sm font-semibold text-foreground mb-2">3. Where is the project</p>
+          <div className="flex flex-wrap gap-2">
+            <Pill on={city === "shc"} onClick={() => { pick(setCity, "shc", "shc"); setVal(undefined); }}>
+              Sultan Haitham City
+            </Pill>
+            <Pill on={city === "itc"} onClick={() => { pick(setCity, "itc"); setVal(undefined); }}>
+              An ITC (Al Mouj, Muscat Hills, AIDA, Jebel Sifah...)
+            </Pill>
+          </div>
+        </div>
+      )}
+
+      {/* Value */}
       {needsVal && (
         <div className="mb-5">
-          <p className="text-sm font-semibold text-foreground mb-2">3. Purchase value</p>
+          <p className="text-sm font-semibold text-foreground mb-2">{needsCity ? "4" : "3"}. Purchase value</p>
           <div className="flex flex-wrap gap-2">
-            <Pill on={val === "under"} onClick={() => pick(setVal, "under", resolve(nat, buy, "under"))}>
+            <Pill on={val === "under"} onClick={() => pick(setVal, "under", resolve(nat, buy, "under", city))}>
               Under OMR 200,000
             </Pill>
-            <Pill on={val === "over"} onClick={() => pick(setVal, "over", resolve(nat, buy, "over"))}>
+            <Pill on={val === "over"} onClick={() => pick(setVal, "over", resolve(nat, buy, "over", city))}>
               OMR 200,000 or more
             </Pill>
           </div>

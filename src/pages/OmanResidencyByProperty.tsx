@@ -252,11 +252,23 @@ const OmanResidencyByProperty = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      An off-plan unit, registration not complete
+                      An off-plan unit in an ITC, registration not complete
                     </TableCell>
                     <TableCell>
                       Sponsor-free visa, 6 to 12 months, renewable. Bridges
                       you until registration.
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      An off-plan unit in Sultan Haitham City, 30% of the
+                      price paid
+                    </TableCell>
+                    <TableCell>
+                      Owner Residency before handover. You only under OMR
+                      50,000; family included at OMR 50,000 or more. Needs a
+                      separate security clearance, and not every nationality
+                      is eligible.
                     </TableCell>
                   </TableRow>
                   <TableRow>
