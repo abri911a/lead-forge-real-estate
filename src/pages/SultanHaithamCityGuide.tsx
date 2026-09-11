@@ -372,7 +372,7 @@ const SultanHaithamCityGuide = () => {
               <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-gold mb-2">100% Freehold & Residency Benefits</h3>
                 <p className="text-muted-foreground">
-                  Foreign ownership allowed with freehold titles. Property investment qualifies for Oman residency visa programs, providing long-term residency rights for investors and their families. Full guide:{" "}
+                  Foreign ownership allowed with freehold titles. Sultan Haitham City has its own residency rule: once 30% of the price is paid, residency is triggered, before handover. Under OMR 50,000 it covers the buyer only; at OMR 50,000 or more it covers the family too. It needs a separate security clearance, and not every nationality is eligible, so ask before paying the 30%. Full rules for investors and their families. Full guide:{" "}
                   <a href="/oman-residency-by-property" className="text-gold underline underline-offset-2 hover:text-gold-light">
                     Oman residency by property
                   </a>
