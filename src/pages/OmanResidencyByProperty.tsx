@@ -265,10 +265,10 @@ const OmanResidencyByProperty = () => {
                       price paid
                     </TableCell>
                     <TableCell>
-                      Owner Residency before handover. You only under OMR
-                      50,000; family included at OMR 50,000 or more. Needs a
-                      separate security clearance, and not every nationality
-                      is eligible.
+                      Two-year renewable residency before handover. You only
+                      at OMR 50,000 or less; first-degree family included above
+                      OMR 50,000. Needs a separate security clearance, so
+                      ownership does not guarantee it.
                     </TableCell>
                   </TableRow>
                   <TableRow>
