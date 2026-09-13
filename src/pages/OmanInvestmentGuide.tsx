@@ -15,7 +15,7 @@ const canonical = "https://waleedproperty.com/oman-investment-guide";
 
 const OmanInvestmentGuide = () => {
   return (
-    <div className="min-h-screen bg-luxury-dark text-foreground">
+    <div className="dark min-h-screen bg-luxury-dark text-foreground">
       <SeoHead title={title} description={description} canonical={canonical} type="article" />
       <Helmet>
         <title>{title}</title>

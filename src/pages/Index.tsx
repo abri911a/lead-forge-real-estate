@@ -18,7 +18,7 @@ const canonical = "https://waleedproperty.com/";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-luxury-dark text-foreground">
+    <div className="dark min-h-screen bg-luxury-dark text-foreground">
       <SeoHead title={title} description={description} canonical={canonical} />
       <Helmet>
         <title>{title}</title>

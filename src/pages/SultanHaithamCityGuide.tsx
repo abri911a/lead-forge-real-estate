@@ -21,7 +21,7 @@ const SultanHaithamCityGuide = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-luxury-dark text-foreground">
+    <div className="dark min-h-screen bg-luxury-dark text-foreground">
       <SeoHead title={title} description={description} canonical={canonical} type="article" />
       <Helmet>
         <title>{title}</title>
