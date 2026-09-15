@@ -14,6 +14,21 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
     "Off-plan escrow"
   ];
 
+  const publications = [
+    {
+      outlet: "OERLive",
+      date: "15 September 2026",
+      title: "The Sultan Haitham City residency rule most buyers don't know about",
+      url: "https://oerlive.com/news/the-sultan-haitham-city-residency-rule-most-buyers-dont-know-about/"
+    },
+    {
+      outlet: "Muscat Daily",
+      date: "19 August 2026",
+      title: "What foreign buyers get wrong about Oman's new property rules",
+      url: "https://www.muscatdaily.com/2026/08/19/what-foreign-buyers-get-wrong-about-omans-new-property-rules/"
+    }
+  ];
+
   if (variant === "compact") {
     return (
       <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg">
@@ -68,6 +83,24 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
               <strong className="text-foreground">Covers:</strong> Al Mouj Muscat, Sultan Haitham City, 
               designated foreign-ownership areas, and residency through property.
             </p>
+          </div>
+          <div className="mt-4">
+            <h4 className="text-sm font-semibold text-foreground mb-2">Published in:</h4>
+            <ul className="space-y-1 text-sm text-muted-foreground">
+              {publications.map((pub) => (
+                <li key={pub.url}>
+                  <a
+                    href={pub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gold underline-offset-4 hover:underline"
+                  >
+                    {pub.title}
+                  </a>
+                  {" "}<span className="text-muted-foreground">— {pub.outlet}, {pub.date}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
