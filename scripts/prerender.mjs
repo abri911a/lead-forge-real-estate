@@ -78,7 +78,9 @@ async function render(route) {
     await page.waitForTimeout(500); // let react-helmet-async settle head tags
     const rootChildren = await page.$eval('#root', (el) => el.children.length).catch(() => 0);
     if (rootChildren === 0) throw new Error('root rendered empty');
-    const html = await page.content();
+    // Strip the Google Ads library tag that index.html appends after `load`; otherwise the
+    // snapshot bakes it in and the runtime loader adds a second copy (double-counted events).
+    const html = (await page.content()).replace(/<script[^>]*googletagmanager\.com\/gtag\/js[^>]*><\/script>\s*/g, '');
     if (route === '/') {
       homeHtml = html;
     } else {

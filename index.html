@@ -12,6 +12,7 @@
       gtag('js', new Date());
       gtag('config', 'AW-17753851829');
       window.addEventListener('load', function () {
+        if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17753851829';
