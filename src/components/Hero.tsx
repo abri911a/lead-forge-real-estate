@@ -2,7 +2,6 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import heroImage from "@/assets/hero-villa.webp";
 import { useState } from "react";
 
 const Hero = () => {
@@ -35,12 +34,16 @@ const Hero = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
+          src="/hero/hero-villa-1440.webp"
+          srcSet="/hero/hero-villa-640.webp 640w, /hero/hero-villa-960.webp 960w, /hero/hero-villa-1440.webp 1440w"
+          sizes="100vw"
           alt="Luxury property in Oman"
-          width={1600}
-          height={900}
+          width={1440}
+          height={810}
           className="w-full h-full object-cover"
           fetchPriority="high"
+          loading="eager"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-luxury-darker/95 via-luxury-dark/80 to-luxury-dark/60" />
       </div>

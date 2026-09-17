@@ -7,19 +7,19 @@ const guides = [
     name: "Al Mouj Muscat",
     description: "Luxury Waterfront Living Guide",
     path: "/al-mouj-guide",
-    image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=70&auto=format"
   },
   {
     name: "Sultan Haitham City",
     description: "Future Smart City Development",
     path: "/sultan-haitham-city-guide",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=70&auto=format"
   },
   {
     name: "Investment in Oman",
     description: "Complete Foreign Investor Guide",
     path: "/oman-investment-guide",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=70&auto=format"
   }
 ];
 
@@ -45,6 +45,10 @@ const Projects = () => {
                 <img 
                   src={guide.image}
                   alt={guide.name}
+                  loading="lazy"
+                  decoding="async"
+                  width={800}
+                  height={533}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
