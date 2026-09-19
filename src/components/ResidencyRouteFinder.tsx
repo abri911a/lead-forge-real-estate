@@ -34,7 +34,7 @@ const ROUTES: Record<
     verdict: [
       "Sultan Haitham City has its own rule, set by the Ministry of Housing for the future cities and Surouh projects. Once you have paid 30% of the price you can apply for residency, before handover. It is a two-year residency, renewable.",
       "At OMR 50,000 or less it covers you only. Above OMR 50,000 it covers your first-degree family too.",
-      "It is nationality-gated. Ownership does not guarantee it: residency needs a separate security clearance, and not every nationality is on the eligible list. Ask before you pay the 30%.",
+      "Ownership does not guarantee it: residency needs a separate security clearance. Ask before you pay the 30%.",
     ],
     source: "Ministry of Housing mechanism for the future cities and Surouh projects (2025); residencies issued since mid-2026. Have the developer's legal team confirm the terms in writing",
     cta: "I am buying off-plan in Sultan Haitham City. Will I get residency at 30% paid?",
