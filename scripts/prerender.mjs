@@ -66,6 +66,9 @@ let homeHtml = null;
 
 async function render(route) {
   const page = await browser.newPage();
+  // The site's Google tag also feeds GA4 (G-9SYPLP0KP9, combined in Google's tag settings). Unblocked,
+  // every deploy would send 51 fake page views from the build machine into Analytics and Ads.
+  await page.route(/googletagmanager\.com|google-analytics\.com|analytics\.google\.com|doubleclick\.net|googleadservices\.com|google\.[a-z.]+\/(pagead|ccm|rmkt)\//, (r) => r.abort());
   try {
     try {
       await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 30000 });

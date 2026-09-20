@@ -5,9 +5,8 @@ const ADS_ID = "AW-17753851829";
 // Conversion label from Google Ads (Goals → Conversions → "WhatsApp tap" → tag setup → "send_to").
 // Paste only the part after the slash. Empty = no Ads conversion is sent.
 const WA_TAP_LABEL = "RjteCL_Irv4cELWP2ZFC";
-// GA4 measurement ID ("G-XXXXXXXXXX"). Google Ads only reports taps that follow an ad click;
-// organic taps (the route-finder gate) are readable only in GA4. Empty = GA4 off.
-const GA4_ID = "";
+// GA4 (G-9SYPLP0KP9) needs no code here: it is combined with the Ads tag in Google's tag settings, so every
+// gtag event already reaches it. Do not add a GA4 config call, it would count each page view twice.
 // Appended to the WhatsApp prefilled text for ad clicks, so the conversation can be matched in the CRM.
 const PAID_REF = "(ref: G1)";
 const PAID_KEY = "wp_paid_click";
@@ -51,7 +50,6 @@ function withPaidRef(href: string) {
 export function initAdsTracking() {
   if (typeof window === "undefined") return;
   rememberPaidClick();
-  if (GA4_ID) gtag("config", GA4_ID);
 
   document.addEventListener(
     "click",
