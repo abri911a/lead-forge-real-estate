@@ -3,34 +3,35 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "@/contexts/AuthContext";
-import ProtectedRoute from "@/components/ProtectedRoute";
-import Index from "./pages/Index";
-import OmanInvestmentGuide from "./pages/OmanInvestmentGuide";
-import AlMoujGuide from "./pages/AlMoujGuide";
-import SultanHaithamCityGuide from "./pages/SultanHaithamCityGuide";
-import OmanPropertyPrices2026 from "./pages/OmanPropertyPrices2026";
-import CanForeignersBuyPropertyInOman from "./pages/CanForeignersBuyPropertyInOman";
-import OmanResidencyByProperty from "./pages/OmanResidencyByProperty";
-import IsOffPlanPropertySafeInOman from "./pages/IsOffPlanPropertySafeInOman";
-import CanGccCitizensBuyPropertyInOman from "./pages/CanGccCitizensBuyPropertyInOman";
-import PropertyDetail from "./pages/PropertyDetail";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Admin from "./pages/Admin";
-import AdminProperties from "./pages/AdminProperties";
-import AdminTourRequests from "./pages/AdminTourRequests";
-import NotFound from "./pages/NotFound";
+import { Suspense } from "react";
+import {
+  Index,
+  OmanInvestmentGuide,
+  AlMoujGuide,
+  SultanHaithamCityGuide,
+  OmanPropertyPrices2026,
+  CanForeignersBuyPropertyInOman,
+  OmanResidencyByProperty,
+  IsOffPlanPropertySafeInOman,
+  CanGccCitizensBuyPropertyInOman,
+  PropertyDetail,
+  Login,
+  Signup,
+  Admin,
+  AdminProperties,
+  AdminTourRequests,
+  NotFound,
+} from "./routes";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AuthProvider>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/oman-investment-guide" element={<OmanInvestmentGuide />} />
@@ -46,34 +47,22 @@ const App = () => (
             <Route path="/signup" element={<Signup />} />
             <Route
               path="/admin"
-              element={
-                <ProtectedRoute>
-                  <Admin />
-                </ProtectedRoute>
-              }
+              element={<Admin />}
             />
             <Route
               path="/admin/properties"
-              element={
-                <ProtectedRoute>
-                  <AdminProperties />
-                </ProtectedRoute>
-              }
+              element={<AdminProperties />}
             />
             <Route
               path="/admin/tour-requests"
-              element={
-                <ProtectedRoute>
-                  <AdminTourRequests />
-                </ProtectedRoute>
-              }
+              element={<AdminTourRequests />}
             />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </BrowserRouter>
       </TooltipProvider>
-    </AuthProvider>
   </QueryClientProvider>
 );
 

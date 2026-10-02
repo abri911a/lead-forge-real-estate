@@ -3,11 +3,14 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 import { initAdsTracking } from "./lib/adsTracking";
+import { preloadCurrentPage } from "./routes";
 
 initAdsTracking();
 
-createRoot(document.getElementById("root")!).render(
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>
-);
+preloadCurrentPage(window.location.pathname).then(() => {
+  createRoot(document.getElementById("root")!).render(
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  );
+});
