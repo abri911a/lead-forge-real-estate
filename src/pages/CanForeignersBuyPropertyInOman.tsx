@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
+import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
@@ -136,6 +137,12 @@ const CanForeignersBuyPropertyInOman = () => {
               Waleed Al Abri, a real estate advisor in Oman.
             </p>
           </div>
+
+          <WhatsAppOfferBox
+            heading="Not sure what you can buy?"
+            body="Send me your budget and your nationality on WhatsApp. I will reply with 3 projects you can legally buy."
+            message="Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ..."
+          />
 
           {/* Author */}
           <div className="mb-12">

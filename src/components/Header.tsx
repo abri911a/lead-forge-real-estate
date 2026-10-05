@@ -1,8 +1,14 @@
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "react-router-dom";
 import { Instagram } from "lucide-react";
 
+const GET_STARTED_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponent(
+  "Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ...",
+)}`;
+
 const Header = () => {
+  const isHome = useLocation().pathname === "/";
   return (
     <header className="sticky top-0 z-50 bg-luxury-dark/95 backdrop-blur-sm border-b border-warmGray">
       <div className="container mx-auto px-4">
@@ -55,17 +61,26 @@ const Header = () => {
             <li><a href="#contact" className="text-foreground hover:text-gold transition-colors">Contact</a></li>
           </ul>
 
-          <Button 
-            className="bg-gold text-luxury-dark hover:bg-gold-light"
-            onClick={() => {
-              const propertiesSection = document.getElementById("properties");
-              if (propertiesSection) {
-                propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
-              }
-            }}
-          >
-            Get Started
-          </Button>
+          {isHome ? (
+            <Button
+              className="bg-gold text-luxury-dark hover:bg-gold-light"
+              onClick={() => {
+                const propertiesSection = document.getElementById("properties");
+                if (propertiesSection) {
+                  propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
+            >
+              Get Started
+            </Button>
+          ) : (
+            // #properties exists only on the home page; elsewhere the button used to do nothing
+            <Button asChild className="bg-gold text-luxury-dark hover:bg-gold-light">
+              <a href={GET_STARTED_WHATSAPP} target="_blank" rel="noopener noreferrer">
+                Get Started
+              </a>
+            </Button>
+          )}
         </nav>
       </div>
     </header>

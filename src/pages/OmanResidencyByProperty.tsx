@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
 import ResidencyRouteFinder from "@/components/ResidencyRouteFinder";
+import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import SeoHead from "@/components/SeoHead";
 import { Button } from "@/components/ui/button";
 import {
@@ -146,6 +147,12 @@ const OmanResidencyByProperty = () => {
               Abri, a real estate advisor in Oman.
             </p>
           </div>
+
+          <WhatsAppOfferBox
+            heading="Want a property that gives residency?"
+            body="Send me your budget and your nationality on WhatsApp. I will reply with 3 projects that qualify for residency."
+            message="Hi Waleed, I want a property that gives residency. My budget is: ... My nationality is: ..."
+          />
 
           <ResidencyRouteFinder />
 
