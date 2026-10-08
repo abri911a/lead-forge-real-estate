@@ -433,8 +433,8 @@ const CanForeignersBuyPropertyInOman = () => {
               Beyond the purchase price, budget for transfer and registration
               fees and any service charges on the building. Prices themselves
               vary widely by area, from entry apartments around OMR 19,700 to
-              premium ITC freehold well above OMR 100,000. For a current
-              area-by-area breakdown, see the companion guide:{" "}
+              premium ITC freehold well above OMR 100,000. For how off-plan
+              prices changed from 2025 to 2026, with sources, see:{" "}
               <a
                 href="/oman-property-prices-2026"
                 className="text-gold underline underline-offset-2 hover:text-gold-light"

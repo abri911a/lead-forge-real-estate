@@ -4,69 +4,57 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
 import SeoHead from "@/components/SeoHead";
-import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useNavigate } from "react-router-dom";
+
+// Off-plan price tracker. Rebuilt 8 Oct 2026 from the June area guide.
+// Data rule: only PUBLIC prices, each linked to the page that shows it (checked 8 Oct 2026).
+// Never add prices from rep WhatsApp sheets, client deals or this site itself.
 
 const title =
-  "Oman Property Prices 2026: Verified Area-by-Area Guide | Waleed Property";
+  "Oman Off-Plan Prices 2025 to 2026: What Changed, With Sources | Waleed Property";
 const description =
-  "Verified June 2026 Oman property prices by area: apartments from OMR 19,700, foreign-freehold zones, realistic rental yields, residency and escrow law. By an Oman real estate advisor.";
+  "Public off-plan prices for Oman projects in 2025 and 2026, with sources. Which projects went up, which stayed flat, and why a higher price is not always a rise.";
 const canonical = "https://waleedproperty.com/oman-property-prices-2026";
-const ogTitle = "Oman Property Prices 2026: Verified Area-by-Area Guide";
+const ogTitle = "Off-Plan Prices in Oman: What Changed From 2025 to 2026";
 const ogDescription =
-  "What property actually costs in Oman in 2026, by area and type, with foreign-ownership rules and realistic yields.";
+  "Four projects with public prices in both years. Two went up a lot, two stayed flat. Every price links to its source.";
 
 const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Oman Property Prices 2026: A Verified, Area-by-Area Guide",
+  headline: "Off-Plan Prices in Oman: What Changed From 2025 to 2026",
   author: {
     "@type": "Person",
     name: "Waleed Al Abri",
     jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-06-14",
-  dateModified: "2026-06-14",
+  dateModified: "2026-10-08",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
-  about: "Property prices, foreign ownership, and rental yields in Oman in 2026",
+  about: "Off-plan property prices in Oman, 2025 to 2026",
 };
 
 const faqs = [
   {
-    q: "What is the cheapest property in Oman in 2026?",
-    a: "New off-plan 1-bedroom apartments start around OMR 19,700 to 22,900 in the Khoudh area of Muscat, but these are small and limited to Omani and GCC buyers.",
+    q: "Did off-plan prices in Oman go up from 2025 to 2026?",
+    a: "For some projects. I found 4 projects with a public price for the same kind of unit in both years. The Great Escape 2 went up 32% and Wadi Zaha 21% per square metre. Opal Residence and The Plaza at Sustainable City Yiti stayed flat. Both rises came from the developer raising the list as units sold.",
   },
   {
-    q: "Can foreigners buy property in Oman?",
-    a: "Yes. Under Royal Decree 29/2018, foreigners can own freehold in designated ITC zones such as Muscat Hills, Muscat Bay and Telal Al Qurm, or hold 99-year usufruct in some other areas. ITC freehold also grants residency rights.",
+    q: "Does the NCSI real estate price index show prices per square metre?",
+    a: "No. It measures the value of deals traded. In Q2 2026 the apartment index was 17.2% higher than a year before. That means more money went into apartment deals. It does not mean a flat costs 17.2% more.",
   },
   {
-    q: "How much does a 2-bedroom apartment cost in Muscat?",
-    a: "As of June 2026, roughly OMR 50,000 to 72,000 in mid-market areas, rising to OMR 80,000 to 105,000 for premium beachfront or master-planned ITC locations.",
-  },
-  {
-    q: "What rental yield can I expect in Oman?",
-    a: "A realistic gross yield on a standard residential apartment is about 5 to 7 percent. Advertised yields of 10 to 14 percent generally apply to commercial or furnished short-let properties and should be checked carefully.",
-  },
-  {
-    q: "Which areas in Oman allow foreign freehold ownership?",
-    a: "Mainly ITC zones such as Muscat Hills, Muscat Bay, Al Mouj and Telal Al Qurm, plus select Sultan Haitham City projects. Outside these, foreigners are usually limited to usufruct or cannot buy.",
+    q: "Why does a project's 'from' price go up?",
+    a: "There are three reasons. The developer raises the list as units sell. The cheap units sell out, so the 'from' price moves even though nothing got more expensive. Or the market moves. Only the third is a real price rise.",
   },
 ];
 
@@ -80,504 +68,409 @@ const faqJsonLd = {
   })),
 };
 
-const OmanPropertyPrices2026 = () => {
-  const navigate = useNavigate();
+type Source = { label: string; date: string; href: string };
+type Row = {
+  project: string;
+  area: string;
+  unit: string;
+  before: string;
+  beforeSource: Source;
+  after: string;
+  afterSource: Source;
+  change: string;
+  reason: string;
+};
 
-  return (
-    <div className="dark min-h-screen bg-luxury-dark text-foreground">
-      <SeoHead
-        title={title}
-        description={description}
-        canonical={canonical}
-        type="article"
-      />
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={canonical} />
-        <meta property="og:title" content={ogTitle} />
-        <meta property="og:description" content={ogDescription} />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={ogTitle} />
-        <meta name="twitter:description" content={ogDescription} />
-        <meta name="twitter:url" content={canonical} />
-        <script type="application/ld+json">
-          {JSON.stringify(articleJsonLd)}
-        </script>
-        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
-      </Helmet>
+const rows: Row[] = [
+  {
+    project: "The Great Escape 2",
+    area: "AIDA, Yiti",
+    unit: "1-bedroom, 59.6 m²",
+    before: "95,390",
+    beforeSource: {
+      label: "Omran Real Estate",
+      date: "Jan 2025",
+      href: "https://web.archive.org/web/20250518161442/https://omran-realestate.com/property/aida-the-great-escape-2-apartment/",
+    },
+    after: "125,605",
+    afterSource: {
+      label: "Tropical Riviera",
+      date: "Feb 2026",
+      href: "https://tropicalriviera.com/the-great-escape-2-signature-residences-aida-oman/",
+    },
+    change: "+32%",
+    reason: "Developer raised the list as units sold",
+  },
+  {
+    project: "Wadi Zaha",
+    area: "Sultan Haitham City",
+    unit: "Studio",
+    before: "42,000 for 50 m² (840 per m²)",
+    beforeSource: {
+      label: "Vista Real Estate",
+      date: "May 2025",
+      href: "https://web.archive.org/web/20250619125314/https://vistaoman.com/Properties-for-sale-rent/sale/apartments-flat-oman/mabela/great-offer-50-sqm-freehold-studio-apartment-in-wadi-zaha/",
+    },
+    after: "54,705 for 54 m² (1,013 per m²)",
+    afterSource: {
+      label: "Damas Global",
+      date: "Sep 2026",
+      href: "https://damas.net/oman/blog/sultan-haitham-city-shc",
+    },
+    change: "+21% per m²",
+    reason: "Developer raised the list. Studios also got bigger.",
+  },
+  {
+    project: "Opal Residence",
+    area: "Muscat Hills",
+    unit: "Studio",
+    before: "44,645 before VAT",
+    beforeSource: {
+      label: "Ruby Oman",
+      date: "Jun 2025",
+      href: "https://rubyoman.com/projects/opal-muscat-hills/",
+    },
+    after: "44,100 for 49 m²",
+    afterSource: {
+      label: "KV Land",
+      date: "Oct 2026",
+      href: "https://kvland.com/property/opal-residential-project-muscat-hills/",
+    },
+    change: "-1%",
+    reason: "Flat",
+  },
+  {
+    project: "The Plaza, Sustainable City Yiti",
+    area: "Yiti",
+    unit: "1-bedroom, about 79 m²",
+    before: "87,000",
+    beforeSource: {
+      label: "Muzn Properties",
+      date: "Oct 2025",
+      href: "https://web.archive.org/web/20251110220330/https://muzn-properties.com/property/plaza-apartments-yiti-1bedroom-beach/",
+    },
+    after: "85,971",
+    afterSource: {
+      label: "April 2026 developer price list, via muscat.properties",
+      date: "Apr 2026",
+      href: "https://muscat.properties/projects/tsc-yiti-the-plaza",
+    },
+    change: "-1%",
+    reason: "Flat",
+  },
+];
 
-      <Header />
+const linkClass = "text-gold underline underline-offset-2 hover:text-gold-light";
 
-      <section className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-8">
-            <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-              Market Report · June 2026
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
-              Oman Property Prices 2026: A Verified, Area-by-Area Guide
-            </h1>
-            <p className="text-sm text-muted-foreground mb-4">
-              Updated June 14, 2026 · By Waleed Al Abri — Real Estate
-              Advisor
+const SourceLink = ({ s }: { s: Source }) => (
+  <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+    {s.label}, {s.date}
+  </a>
+);
+
+const OmanPropertyPrices2026 = () => (
+  <div className="dark min-h-screen bg-luxury-dark text-foreground">
+    <SeoHead title={title} description={description} canonical={canonical} type="article" />
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonical} />
+      <meta property="og:title" content={ogTitle} />
+      <meta property="og:description" content={ogDescription} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:type" content="article" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={ogTitle} />
+      <meta name="twitter:description" content={ogDescription} />
+      <meta name="twitter:url" content={canonical} />
+      <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+    </Helmet>
+
+    <Header />
+
+    <section className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="mb-8">
+          <span className="text-gold text-sm font-semibold uppercase tracking-wide">
+            Price tracker · Updated October 2026
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
+            Off-Plan Prices in Oman: What Changed From 2025 to 2026
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Updated October 8, 2026 · By Waleed Al Abri, Real Estate Advisor
+          </p>
+        </div>
+
+        {/* Short answer */}
+        <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
+          <h2 className="text-2xl font-bold text-gold mb-4">Short answer</h2>
+          <div className="space-y-3 text-foreground leading-relaxed">
+            <p>
+              I found 4 projects with a public price for the same kind of unit in both 2025 and
+              2026.
             </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              Updated June 2026. This is a working price reference for buying
-              property in Oman, built from current developer-advertised prices
-              across 50+ active projects, not recycled portal estimates. It
-              covers what apartments actually cost by area, which zones
-              foreigners can own freehold, realistic rental yields, residency,
-              and the escrow law that protects your deposit. Figures are in
-              Omani Rial (OMR). One OMR is about USD 2.60.
+            <p>
+              Two went up a lot: The Great Escape 2 by 32%, and Wadi Zaha by 21% per square metre.
+              Two stayed flat: Opal Residence and The Plaza at Sustainable City Yiti.
             </p>
-          </div>
-
-          {/* Author callout */}
-          <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-6 mb-10">
-            <p className="text-foreground leading-relaxed">
-              Written by <strong>Waleed Al Abri</strong>, a real estate
-              advisor in Oman. Prices move. Every figure below is dated and
-              reflects developer offers seen in June 2026. For a current quote
-              on a specific project,{" "}
-              <a
-                href="https://wa.me/96879136646?text=Hi%20Waleed%2C%20I%20read%20your%20Oman%20Property%20Prices%202026%20guide%20and%20would%20like%20a%20consultation."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gold underline underline-offset-2 hover:text-gold-light"
-              >
-                contact me
-              </a>
-              .
+            <p>
+              Both rises came from the developer raising the list as units sold. I did not see a
+              market-wide rise in these numbers.
             </p>
-          </div>
-
-          {/* Quick answer */}
-          <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
-            <h2 className="text-2xl font-bold text-gold mb-4">
-              Quick answer (June 2026)
-            </h2>
-            <ul className="space-y-2 text-foreground">
-              <li>
-                • <strong>Cheapest new apartment:</strong> entry 1-bedroom units
-                start around OMR 19,700 to 22,900 (Khoudh cluster, off-plan).
-              </li>
-              <li>
-                • <strong>Typical Muscat 2-bedroom:</strong> roughly OMR 50,000
-                to 72,000 depending on area and finish.
-              </li>
-              <li>
-                • <strong>Foreign-freehold (all nationalities):</strong> mostly
-                in ITC zones such as Muscat Hills, Muscat Bay, Sultan Haitham
-                City and Telal Al Qurm, from about OMR 45,000 (1BR) upward.
-              </li>
-              <li>
-                • <strong>Realistic residential rental yield:</strong> about 5%
-                to 7% gross. Headline 10% to 14% figures are commercial,
-                furnished short-let, or developer projections. Treat them with
-                caution.
-              </li>
-              <li>
-                • <strong>Deposit protection:</strong> off-plan payments are
-                meant to sit in an escrow account under Royal Decree 79/2025,
-                but always verify the account exists before you pay.
-              </li>
-            </ul>
-          </div>
-
-          {/* Author */}
-          <div className="mb-12">
-            <AuthorProfile variant="full" />
-          </div>
-
-          {/* Cheapest entry points */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
-              Cheapest entry points (June 2026)
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              The lowest verified new-build prices, all off-plan in the Khoudh
-              education cluster.
-            </p>
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Project area</TableHead>
-                    <TableHead>Type</TableHead>
-                    <TableHead>From (OMR)</TableHead>
-                    <TableHead>Notes</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>Khoudh 6</TableCell>
-                    <TableCell>1BR 54–61m²</TableCell>
-                    <TableCell>19,700</TableCell>
-                    <TableCell>Off-plan, GCC + Omani</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Khoudh (near SQU)</TableCell>
-                    <TableCell>Apartment</TableCell>
-                    <TableCell>21,000</TableCell>
-                    <TableCell>5K down + installments</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Khoudh / Al Irfan</TableCell>
-                    <TableCell>Boutique apartment</TableCell>
-                    <TableCell>22,900</TableCell>
-                    <TableCell>Off-plan</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Khoudh 7</TableCell>
-                    <TableCell>Offices 46–89m²</TableCell>
-                    <TableCell>34,500</TableCell>
-                    <TableCell>~9% gross commercial</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
-            <p className="text-muted-foreground mt-4 leading-relaxed">
-              <strong className="text-foreground">Reality check:</strong>{" "}
-              sub-OMR 25K units are small, off-plan, and limited to Omani and
-              GCC buyers. There is no ready-to-move, developer-direct unit under
-              about OMR 35K right now. Ready stock sells out fast and trades on
-              the resale market.
-            </p>
-          </div>
-
-          {/* Apartment prices by area */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-6">
-              Apartment prices by area (June 2026, developer-advertised)
-            </h2>
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Area</TableHead>
-                    <TableHead>1-Bedroom</TableHead>
-                    <TableHead>2-Bedroom</TableHead>
-                    <TableHead>Foreign ownership</TableHead>
-                    <TableHead>Notes</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>Khoudh</TableCell>
-                    <TableCell>from 19,700</TableCell>
-                    <TableCell>—</TableCell>
-                    <TableCell>GCC + Omani</TableCell>
-                    <TableCell>Cheapest entry; education cluster</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Ghala</TableCell>
-                    <TableCell>from 28,000</TableCell>
-                    <TableCell>from 38,000</TableCell>
-                    <TableCell>99-yr usufruct (foreigners)</TableCell>
-                    <TableCell>Verify escrow before paying</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Bousher</TableCell>
-                    <TableCell>26,900 cash / 35,000 ready</TableCell>
-                    <TableCell>from 52,000</TableCell>
-                    <TableCell>Mostly GCC + Omani</TableCell>
-                    <TableCell>Mixed-use anchor cluster</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Sultan Haitham City</TableCell>
-                    <TableCell>studio from 46,600</TableCell>
-                    <TableCell>up to 105,000</TableCell>
-                    <TableCell>Freehold, all nationalities</TableCell>
-                    <TableCell>New govt master-planned city</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Muscat Hills (ITC)</TableCell>
-                    <TableCell>from 45,159</TableCell>
-                    <TableCell>from 57,925</TableCell>
-                    <TableCell>Freehold, all nationalities + residency</TableCell>
-                    <TableCell>Premium; golf/airport</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Muscat Bay (ITC)</TableCell>
-                    <TableCell>studio 47,000 / 1BR 56,000</TableCell>
-                    <TableCell>3BR 132,000</TableCell>
-                    <TableCell>Freehold, all nationalities</TableCell>
-                    <TableCell>Beachfront flagship</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>MSQ (Madinat Qaboos)</TableCell>
-                    <TableCell>—</TableCell>
-                    <TableCell>from 50,000 (143m² ~104,500)</TableCell>
-                    <TableCell>GCC + Omani</TableCell>
-                    <TableCell>Prime central district</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Qurum</TableCell>
-                    <TableCell>studio 37,250</TableCell>
-                    <TableCell>from 81,000 (beachfront)</TableCell>
-                    <TableCell>
-                      Telal = freehold all-nat + permanent residency
-                    </TableCell>
-                    <TableCell>Prime central Muscat</TableCell>
-                  </TableRow>
-                </TableBody>
-                <TableCaption className="px-4 pb-4 text-left">
-                  Representative verified figures. A project's exact price
-                  depends on floor, size and payment plan. Al Mouj is excluded
-                  from value picks because it is saturated, with little
-                  capital-growth headroom (June 2026).
-                </TableCaption>
-              </Table>
-            </div>
-          </div>
-
-          {/* Price by type */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-6">
-              Price by property type (Muscat, June 2026)
-            </h2>
-            <ul className="space-y-2 text-foreground">
-              <li>
-                • <strong>Studio:</strong> OMR 37,000 to 55,000 (entry off-plan
-                to ITC beachfront)
-              </li>
-              <li>
-                • <strong>1-Bedroom:</strong> OMR 19,700 (Khoudh) to 70,000
-                (Muscat Hills premium)
-              </li>
-              <li>
-                • <strong>2-Bedroom:</strong> OMR 38,000 (Ghala) to 105,000
-                (Sultan Haitham City premium)
-              </li>
-              <li>
-                • <strong>3-Bedroom / townhouse:</strong> OMR 110,000 to
-                150,000+ (premium ITC and gated communities)
-              </li>
-            </ul>
-          </div>
-
-          {/* Rental yields */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
-              Rental yields, honestly (June 2026)
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Developers advertise high yields. Here is the real picture.
-            </p>
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Yield band</TableHead>
-                    <TableHead>Where it comes from</TableHead>
-                    <TableHead>Trust level</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>5% to 7%</TableCell>
-                    <TableCell>
-                      Standard residential apartment rented long-term
-                    </TableCell>
-                    <TableCell>Realistic, plan around this</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>8% to 11%</TableCell>
-                    <TableCell>
-                      Commercial offices or shops in strong-footfall locations
-                    </TableCell>
-                    <TableCell>Achievable but tenant-dependent</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>13% to 14%</TableCell>
-                    <TableCell>
-                      Furnished short-let (e.g. Salalah khareef season) or
-                      best-case offices
-                    </TableCell>
-                    <TableCell>
-                      Headline only, verify occupancy assumptions
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
-            <p className="text-muted-foreground mt-4 leading-relaxed">
-              <strong className="text-foreground">Bottom line:</strong> for a
-              normal apartment, model about 5% to 7% gross, then subtract
-              service charges, vacancy and maintenance. Anyone quoting a flat
-              double-digit yield on a standard residential flat is selling, not
-              advising.
-            </p>
-          </div>
-
-          {/* Foreigners */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
-              Can foreigners buy property in Oman?
-            </h2>
-            <p className="text-muted-foreground mb-4">
-              Under Royal Decree 29/2018, non-Omanis can own property, but how
-              depends on the zone.
-            </p>
-            <div className="space-y-4">
-              <div className="bg-card border border-border rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gold mb-2">
-                  ITC freehold (all nationalities)
-                </h3>
-                <p className="text-muted-foreground">
-                  Full, permanent ownership plus the right to residency. Zones
-                  include Muscat Hills, Muscat Bay, Al Mouj, Telal Al Qurm, and
-                  select Sultan Haitham City projects. This is what most foreign
-                  investors want.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gold mb-2">
-                  Usufruct (99-year leasehold)
-                </h3>
-                <p className="text-muted-foreground">
-                  Long-term use rights, not permanent title. Common where
-                  foreigners buy outside ITC zones, such as some Ghala projects.
-                  It usually comes with property-linked residency.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gold mb-2">
-                  GCC + Omani only
-                </h3>
-                <p className="text-muted-foreground">
-                  Much of Khoudh, most of Bousher, and Mawalah are restricted to
-                  Gulf nationals and Omanis.
-                </p>
-              </div>
-            </div>
-            <p className="text-muted-foreground mt-4 leading-relaxed">
-              Do not confuse ITC freehold with usufruct. They are legally
-              different things, with different exit, inheritance and residency
-              consequences. Always confirm the exact ownership type in writing
-              before you commit.
-            </p>
-          </div>
-
-          {/* Residency */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
-              Residency through property
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Buying a qualifying ITC freehold property can grant renewable
-              residency. Some projects, such as Telal Al Qurm, advertise
-              permanent lifetime residency for the buyer and first-degree
-              relatives. Thresholds and terms vary by project and change with
-              policy, so verify the current rule for your specific project
-              rather than relying on a generic number. Full guide:{" "}
-              <a
-                href="/oman-residency-by-property"
-                className="text-gold underline underline-offset-2 hover:text-gold-light"
-              >
-                Oman residency by property
-              </a>
-              . For ownership rules see:{" "}
-              <a
-                href="/can-foreigners-buy-property-in-oman"
-                className="text-gold underline underline-offset-2 hover:text-gold-light"
-              >
-                Can foreigners buy property in Oman
-              </a>
-              .
-            </p>
-          </div>
-
-          {/* Escrow */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
-              Is your deposit protected? (escrow law)
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Royal Decree 79/2025 requires developers selling off-plan to hold
-              buyer payments in a dedicated escrow account, released against
-              construction milestones. That protects you if a project stalls. In
-              practice, enforcement is uneven, and some projects are still
-              selling without an active escrow account. Before you pay any
-              off-plan deposit, ask for the escrow account details and confirm
-              they exist. It is the most important check a foreign buyer can
-              make.{" "}
-              <a
-                href="/is-off-plan-property-safe-in-oman"
-                className="text-gold underline underline-offset-2 hover:text-gold-light"
-              >
-                Full guide: is off-plan property safe in Oman?
-              </a>
-            </p>
-          </div>
-
-          {/* FAQ */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-6">
-              Frequently asked questions
-            </h2>
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((f, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`item-${i}`}
-                  className="border-border"
-                >
-                  <AccordionTrigger className="text-left text-foreground hover:text-gold">
-                    {f.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {f.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-
-          {/* CTA */}
-          <div className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-lg p-8 text-center">
-            <h2 className="text-2xl font-bold text-gold mb-4">
-              Need a straight read on a specific project?
-            </h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Prices and availability change weekly, and the cheapest listing is
-              rarely the best buy. If you are a GCC or foreign investor weighing
-              a specific project, I will give you a straight read: ownership
-              type, real yield, escrow status, and whether there is a better
-              option for your budget.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                className="bg-gold text-luxury-dark hover:bg-gold-light"
-              >
-                <a
-                  href="https://wa.me/96879136646?text=Hi%20Waleed%2C%20I%20read%20your%20Oman%20Property%20Prices%202026%20guide%20and%20would%20like%20a%20consultation."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book a consultation
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-                onClick={() => navigate("/#properties")}
-              >
-                View available properties
-              </Button>
-            </div>
+            <p>Four projects is a small sample. It cannot show where the whole market is going.</p>
           </div>
         </div>
-      </section>
 
-      <Footer />
-      <WhatsAppButton />
-    </div>
-  );
-};
+        <WhatsAppOfferBox
+          heading="Looking at one of these projects?"
+          body="Send me the project name and your budget on WhatsApp. I will tell you what I know about its price. You can also send a project you want me to add."
+          message="Hi Waleed, I am looking at this project: ... My budget is: ..."
+        />
+
+        {/* Three reasons */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gold mb-4">A higher price is not always a rise</h2>
+          <p className="text-muted-foreground mb-4 leading-relaxed">
+            When a project's price goes up, I see three different reasons behind it.
+          </p>
+          <ol className="list-decimal pl-6 space-y-3 text-muted-foreground leading-relaxed">
+            <li>
+              <span className="text-foreground font-semibold">The developer raises the list.</span>{" "}
+              Many developers sell in steps. When the first units sell, the next units cost more.
+              This helps an early buyer only if they can sell later at the new price.
+            </li>
+            <li>
+              <span className="text-foreground font-semibold">The cheap units sold out.</span> The
+              "from" price goes up because the small units or the low floors are gone. Nothing got
+              more expensive.
+            </li>
+            <li>
+              <span className="text-foreground font-semibold">The market moved.</span> Similar
+              units in the area now sell for more. This is the only real price rise.
+            </li>
+          </ol>
+          <p className="text-muted-foreground mt-4 leading-relaxed">
+            Every row in the table below says which one it is.
+          </p>
+          <p className="text-muted-foreground mt-4 leading-relaxed">
+            One more thing to check: VAT and furniture. Some 2025 prices exclude 5% VAT. Some 2026
+            prices include it, or include furniture. A 5% jump can be VAT only.
+          </p>
+        </div>
+
+        {/* Table A */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gold mb-4">
+            2025 to 2026: projects with two public prices
+          </h2>
+          <p className="text-muted-foreground mb-6 leading-relaxed">
+            All four are in zones where foreigners can buy. The rules still differ by project, so
+            check my{" "}
+            <a href="/can-foreigners-buy-property-in-oman" className={linkClass}>
+              guide on foreign ownership
+            </a>{" "}
+            before you book.
+          </p>
+          {/* Phones: one card per project, so Change and Reason stay on screen */}
+          <div className="md:hidden space-y-4">
+            {rows.map((r) => (
+              <div key={r.project} className="bg-card border border-border rounded-lg p-5">
+                <div className="flex items-baseline justify-between gap-3 mb-1">
+                  <span className="text-foreground font-semibold">{r.project}</span>
+                  <span className="text-gold font-bold whitespace-nowrap">{r.change}</span>
+                </div>
+                <p className="text-muted-foreground text-sm mb-3">
+                  {r.area} · {r.unit}
+                </p>
+                <p className="text-foreground text-sm leading-relaxed">
+                  2025: {r.before} (<SourceLink s={r.beforeSource} />)
+                </p>
+                <p className="text-foreground text-sm leading-relaxed">
+                  2026: {r.after} (<SourceLink s={r.afterSource} />)
+                </p>
+                <p className="text-muted-foreground text-sm mt-3">{r.reason}</p>
+              </div>
+            ))}
+          </div>
+          <div className="hidden md:block bg-card border border-border rounded-lg overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Project</TableHead>
+                  <TableHead>Unit</TableHead>
+                  <TableHead>2025 price (OMR)</TableHead>
+                  <TableHead>2026 price (OMR)</TableHead>
+                  <TableHead>Change</TableHead>
+                  <TableHead>Reason</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {rows.map((r) => (
+                  <TableRow key={r.project}>
+                    <TableCell>
+                      <span className="text-foreground font-semibold">{r.project}</span>
+                      <br />
+                      <span className="text-muted-foreground text-sm">{r.area}</span>
+                    </TableCell>
+                    <TableCell>{r.unit}</TableCell>
+                    <TableCell>
+                      {r.before}
+                      <br />
+                      <span className="text-sm">
+                        <SourceLink s={r.beforeSource} />
+                      </span>
+                    </TableCell>
+                    <TableCell>
+                      {r.after}
+                      <br />
+                      <span className="text-sm">
+                        <SourceLink s={r.afterSource} />
+                      </span>
+                    </TableCell>
+                    <TableCell className="font-semibold text-foreground">{r.change}</TableCell>
+                    <TableCell>{r.reason}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <p className="text-muted-foreground mt-4 leading-relaxed">
+            All prices are in Omani rials. Most of these prices come from broker pages, not from
+            the developer. Brokers do not always update their pages, so I use the date the page
+            shows.
+          </p>
+          <p className="text-muted-foreground mt-4 leading-relaxed">
+            For Wadi Zaha I compare price per square metre, because the 2026 studio is bigger. One{" "}
+            <a
+              href="https://web.archive.org/web/20250906002422/https://muzn-properties.com/property/wadi-zaha-freehold-apartments/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              broker page
+            </a>{" "}
+            listed the project "from 40,000" in September 2025 and{" "}
+            <a
+              href="https://muzn-properties.com/property/wadi-zaha-freehold-apartments/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              "from 44,000"
+            </a>{" "}
+            in January 2026. That is +10% in four months.
+          </p>
+        </div>
+
+        {/* Not clean */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gold mb-4">
+            Projects I checked but could not compare cleanly
+          </h2>
+          <ul className="list-disc pl-6 space-y-3 text-muted-foreground leading-relaxed">
+            <li>
+              <span className="text-foreground">Sarooj Oasis (Sultan Haitham City):</span> it{" "}
+              <a
+                href="https://www.omanobserver.om/article/1164471/business/economy/sarooj-oasis-launched-at-sultan-haitham-city"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                launched "from 31,600"
+              </a>{" "}
+              in January 2025, but the unit size was not published. So I cannot compare it with a
+              2026 price.
+            </li>
+            <li>
+              <span className="text-foreground">Yenaier (Sultan Haitham City):</span> the 2025
+              price excludes VAT. The 2026 price includes furniture, and the studio is a different
+              size.
+            </li>
+            <li>
+              <span className="text-foreground">Azura (Al Mouj):</span> Phase III and IV start at
+              69,000 plus VAT. Phase II started at 88,000. These are different buildings, so this
+              is not a price drop.
+            </li>
+            <li>
+              <span className="text-foreground">Zen Residences (Muscat Bay):</span> the studios and
+              1-bedrooms are sold out. Only 2-bedrooms are left.
+            </li>
+            <li>
+              <span className="text-foreground">Golf Hills, Solaris and Hay Al Wafa:</span> the
+              public sources disagree, or the units are not the same.
+            </li>
+          </ul>
+        </div>
+
+        {/* NCSI */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gold mb-4">What the official numbers say</h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Oman's statistics centre (NCSI) publishes a real estate index every quarter. The name
+              is confusing, so check what it measures.
+            </p>
+            <p>
+              It measures the <span className="text-foreground font-semibold">value</span> of
+              deals traded. It does not measure the price per square metre.
+            </p>
+            <p>
+              In Q2 2026 the apartment index was 17.2% higher than a year before (NCSI, reported by{" "}
+              <a
+                href="https://timesofoman.com/article/177120-omans-property-price-index-rises-by-227-in-2026-q2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                Times of Oman on 19 September 2026
+              </a>
+              ). That means more money went into apartment deals. It does not mean a flat costs
+              17.2% more.
+            </p>
+          </div>
+        </div>
+
+        {/* Limits */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gold mb-4">What this page does not show</h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Resale prices. This table shows what developers ask for new units. It does not show
+              what an owner gets when they sell later.
+            </p>
+            <p>
+              For most of these projects I have no resale record yet. When I find a real resale
+              price from a public source, I will add it.
+            </p>
+          </div>
+        </div>
+
+        {/* Method */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gold mb-4">How I collect the prices</h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              I only use prices that are public: the developer's own posts, ads or website,
+              newspapers, and broker or portal ads.
+            </p>
+            <p>Each price links to the page where I found it, with the date.</p>
+            <p>I do not publish prices that a sales rep sent me privately.</p>
+            <p>
+              If you see a price here that is wrong or old, tell me on WhatsApp (button above) and
+              I will check it.
+            </p>
+          </div>
+        </div>
+
+        <AuthorProfile variant="full" />
+      </div>
+    </section>
+
+    <Footer />
+    <WhatsAppButton />
+  </div>
+);
 
 export default OmanPropertyPrices2026;
