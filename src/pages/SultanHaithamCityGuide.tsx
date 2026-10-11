@@ -129,7 +129,6 @@ const SultanHaithamCityGuide = () => (
           heading="Looking at Sultan Haitham City?"
           body="Send me your budget and your nationality on WhatsApp. I will tell you which projects you can buy in, and the current price."
           message="Hi Waleed, I am looking at Sultan Haitham City. My budget is: ... My nationality is: ..."
-          showPublications
         />
 
         {/* Status and phases */}
