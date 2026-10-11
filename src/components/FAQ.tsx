@@ -91,7 +91,7 @@ const FAQ = () => {
 
           <div className="mt-8 text-center">
             <p className="text-muted-foreground">
-              Have more questions? <a href="#contact" className="text-gold hover:underline">Send me your question</a>
+              Have more questions? <a href={`https://wa.me/96879136646?text=${encodeURIComponent("Hi Waleed, I have a question: ...")}`} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">Send me your question on WhatsApp</a>
             </p>
           </div>
         </div>

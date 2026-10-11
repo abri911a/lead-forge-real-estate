@@ -7,6 +7,8 @@ const GET_STARTED_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponen
   "Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ...",
 )}`;
 
+const CONTACT_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponent("Hi Waleed, I have a question about property in Oman: ...")}`;
+
 const Header = () => {
   const isHome = useLocation().pathname === "/";
   return (
@@ -54,7 +56,8 @@ const Header = () => {
             <li><a href="/#properties" className="text-foreground hover:text-gold transition-colors">Properties</a></li>
             <li><a href="/#projects" className="text-foreground hover:text-gold transition-colors">Projects</a></li>
             <li><a href="/#about" className="text-foreground hover:text-gold transition-colors">About</a></li>
-            <li><a href="/#contact" className="text-foreground hover:text-gold transition-colors">Contact</a></li>
+            {/* No contact section exists on the site; WhatsApp is the contact channel (counted as whatsapp_tap) */}
+            <li><a href={CONTACT_WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-gold transition-colors">Contact</a></li>
           </ul>
 
           {isHome ? (
