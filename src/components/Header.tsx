@@ -13,7 +13,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-luxury-dark/95 backdrop-blur-sm border-b border-warmGray">
       <div className="container mx-auto px-4">
         {/* Top bar with contact info */}
-        <div className="flex items-center justify-between py-2 text-sm border-b border-warmGray">
+        <div className="hidden md:flex items-center justify-between py-2 text-sm border-b border-warmGray">
           <div className="flex items-center gap-4">
             <a href="tel:+96879136646" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-colors">
               <Phone className="h-4 w-4" />
@@ -31,34 +31,30 @@ const Header = () => {
             </a>
           </div>
           <div className="hidden md:block">
-            <Button 
-              size="sm" 
-              variant="outline" 
+            {/* "/#properties", not "#properties": the section exists only on the home page */}
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
               className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-              onClick={() => {
-                const propertiesSection = document.getElementById("properties");
-                if (propertiesSection) {
-                  propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
-              }}
             >
-              Schedule Viewing
+              <a href="/#properties">Schedule Viewing</a>
             </Button>
           </div>
         </div>
 
         {/* Main navigation */}
-        <nav className="flex items-center justify-between py-4">
-          <a href="/" className="text-2xl font-bold text-gold">
+        <nav className="flex items-center justify-between gap-3 py-3 md:py-4">
+          <a href="/" className="text-lg sm:text-2xl font-bold text-gold whitespace-nowrap">
             WALEED PROPERTY
           </a>
           
           <ul className="hidden md:flex items-center gap-8">
             <li><a href="/" className="text-foreground hover:text-gold transition-colors">Home</a></li>
-            <li><a href="#properties" className="text-foreground hover:text-gold transition-colors">Properties</a></li>
-            <li><a href="#projects" className="text-foreground hover:text-gold transition-colors">Projects</a></li>
-            <li><a href="#about" className="text-foreground hover:text-gold transition-colors">About</a></li>
-            <li><a href="#contact" className="text-foreground hover:text-gold transition-colors">Contact</a></li>
+            <li><a href="/#properties" className="text-foreground hover:text-gold transition-colors">Properties</a></li>
+            <li><a href="/#projects" className="text-foreground hover:text-gold transition-colors">Projects</a></li>
+            <li><a href="/#about" className="text-foreground hover:text-gold transition-colors">About</a></li>
+            <li><a href="/#contact" className="text-foreground hover:text-gold transition-colors">Contact</a></li>
           </ul>
 
           {isHome ? (

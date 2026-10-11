@@ -1,4 +1,4 @@
-import { Instagram, Users, Video, TrendingUp, CheckCircle } from "lucide-react";
+import { Instagram, Video, TrendingUp, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InstagramFeed from "./InstagramFeed";
 
@@ -9,50 +9,15 @@ const SocialProof = () => {
         {/* Trust Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-4 py-2 rounded-full mb-4">
-            <CheckCircle className="h-5 w-5 text-gold" />
-            <span className="text-gold font-semibold">Verified Real Estate Expert</span>
+            <Instagram className="h-5 w-5 text-gold" />
+            <span className="text-gold font-semibold">On Instagram</span>
           </div>
           <h2 className="text-4xl font-bold text-gold mb-4">
-            Expert Insights from Oman's Leading Real Estate Influencer
+            Oman property, explained on Instagram
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Follow @waleedvlogs.om for daily market updates, property tours, investment tips, and exclusive opportunities in Oman's real estate market
+            Follow @waleedvlogs.om for project videos, price updates and buyer tips. Most posts are in Arabic.
           </p>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-          <div className="bg-card border border-gold/20 rounded-lg p-6 text-center">
-            <div className="flex justify-center mb-3">
-              <Instagram className="h-8 w-8 text-gold" />
-            </div>
-            <div className="text-3xl font-bold text-gold mb-1">Growing</div>
-            <div className="text-sm text-muted-foreground">Community</div>
-          </div>
-
-          <div className="bg-card border border-gold/20 rounded-lg p-6 text-center">
-            <div className="flex justify-center mb-3">
-              <Video className="h-8 w-8 text-gold" />
-            </div>
-            <div className="text-3xl font-bold text-gold mb-1">94+</div>
-            <div className="text-sm text-muted-foreground">Property Videos</div>
-          </div>
-
-          <div className="bg-card border border-gold/20 rounded-lg p-6 text-center">
-            <div className="flex justify-center mb-3">
-              <TrendingUp className="h-8 w-8 text-gold" />
-            </div>
-            <div className="text-3xl font-bold text-gold mb-1">Daily</div>
-            <div className="text-sm text-muted-foreground">Content Updates</div>
-          </div>
-
-          <div className="bg-card border border-gold/20 rounded-lg p-6 text-center">
-            <div className="flex justify-center mb-3">
-              <CheckCircle className="h-8 w-8 text-gold" />
-            </div>
-            <div className="text-3xl font-bold text-gold mb-1">Expert</div>
-            <div className="text-sm text-muted-foreground">Market Analysis</div>
-          </div>
         </div>
 
         {/* Instagram Feed Preview */}
@@ -73,30 +38,22 @@ const SocialProof = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gold">@waleedvlogs.om</h3>
-                  <p className="text-muted-foreground">Oman Real Estate Expert & Market Analyst</p>
+                  <p className="text-muted-foreground">Waleed Al Abri, real estate advisor in Muscat</p>
                 </div>
               </div>
               
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
-                  <span className="text-foreground">Daily property tours and market insights</span>
+                  <span className="text-foreground">Videos of projects in Muscat and Sultan Haitham City</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
-                  <span className="text-foreground">Exclusive investment opportunities and off-market deals</span>
+                  <span className="text-foreground">Price updates, with the date and the source</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
-                  <span className="text-foreground">Expert analysis on Oman Vision 2040 developments</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
-                  <span className="text-foreground">Live Q&A sessions with foreign investors</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
-                  <span className="text-foreground">Behind-the-scenes of luxury developments</span>
+                  <span className="text-foreground">Ownership and residency rules, in plain words</span>
                 </li>
               </ul>
 
@@ -125,9 +82,9 @@ const SocialProof = () => {
             <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mb-4">
               <TrendingUp className="h-6 w-6 text-gold" />
             </div>
-            <h3 className="text-xl font-semibold text-gold mb-3">Market Trends First</h3>
+            <h3 className="text-xl font-semibold text-gold mb-3">Numbers, explained</h3>
             <p className="text-muted-foreground">
-              Get real-time updates on Oman's property market, price movements, and emerging investment hotspots before they hit mainstream news.
+              Official numbers and project prices, in simple words. What they show, and what they do not.
             </p>
           </div>
 
@@ -135,9 +92,9 @@ const SocialProof = () => {
             <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mb-4">
               <Video className="h-6 w-6 text-gold" />
             </div>
-            <h3 className="text-xl font-semibold text-gold mb-3">Virtual Property Tours</h3>
+            <h3 className="text-xl font-semibold text-gold mb-3">Project videos</h3>
             <p className="text-muted-foreground">
-              Experience properties through high-quality video tours from Al Mouj to Sultan Haitham City, saving you time and travel costs.
+              Short videos of projects, so you can see a place before you travel to it.
             </p>
           </div>
 
@@ -145,9 +102,9 @@ const SocialProof = () => {
             <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mb-4">
               <CheckCircle className="h-6 w-6 text-gold" />
             </div>
-            <h3 className="text-xl font-semibold text-gold mb-3">Verified Opportunities</h3>
+            <h3 className="text-xl font-semibold text-gold mb-3">Clear about what is not clear</h3>
             <p className="text-muted-foreground">
-              Only genuine, vetted properties and developers featured. No misleading information—just honest insights from years of market experience.
+              If a rule or a price is not confirmed yet, I say so.
             </p>
           </div>
         </div>

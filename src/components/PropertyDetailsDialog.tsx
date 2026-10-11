@@ -6,8 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Bed, Bath, Maximize, MapPin, Phone, Mail, 
-  Calendar, Home, Car, Trees, Wifi, Dumbbell,
-  Shield, Wind, Droplet, Zap, CheckCircle2
+  Calendar, Home, CheckCircle2
 } from "lucide-react";
 import ContactOptionsDialog from "./ContactOptionsDialog";
 import TourBooking from "./TourBooking";
@@ -36,26 +35,10 @@ interface PropertyDetailsDialogProps {
 const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetailsDialogProps) => {
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
   
-  const amenities = [
-    { icon: Wifi, label: "High Speed WiFi" },
-    { icon: Car, label: "2 Parking Spaces" },
-    { icon: Shield, label: "24/7 Security" },
-    { icon: Dumbbell, label: "Fitness Center" },
-    { icon: Trees, label: "Garden & Park" },
-    { icon: Wind, label: "Central A/C" },
-    { icon: Droplet, label: "Swimming Pool" },
-    { icon: Zap, label: "Solar Panels" },
-  ];
-
-  const propertyFeatures = property.features || [
-    "Modern Kitchen with Premium Appliances",
-    "Spacious Master Bedroom with Walk-in Closet",
-    "Private Balcony with Stunning Views",
-    "Premium Marble Flooring Throughout",
-    "Smart Home Automation System",
-    "Energy Efficient Windows",
-    "Built-in Wardrobes in All Bedrooms",
-  ];
+  // Only show what this listing actually has. The old fallback lists (pool, solar panels, marble
+  // floors, 24/7 security...) were shown for EVERY property and read like facts about the unit.
+  const propertyFeatures = property.features?.filter(Boolean) ?? [];
+  const hasFeatures = propertyFeatures.length > 0;
 
   return (
     <>
@@ -135,20 +118,19 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
 
           {/* Tabs for Details */}
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 h-auto">
-              <TabsTrigger value="overview" className="text-xs sm:text-sm px-2 py-2 sm:px-3">Overview</TabsTrigger>
-              <TabsTrigger value="features" className="text-xs sm:text-sm px-2 py-2 sm:px-3">Features</TabsTrigger>
-              <TabsTrigger value="amenities" className="text-xs sm:text-sm px-2 py-2 sm:px-3">Amenities</TabsTrigger>
-            </TabsList>
+            {hasFeatures && (
+              <TabsList className="grid w-full grid-cols-2 h-auto">
+                <TabsTrigger value="overview" className="text-xs sm:text-sm px-2 py-2 sm:px-3">Overview</TabsTrigger>
+                <TabsTrigger value="features" className="text-xs sm:text-sm px-2 py-2 sm:px-3">Features</TabsTrigger>
+              </TabsList>
+            )}
             
             <TabsContent value="overview" className="space-y-4 mt-4">
               <div>
                 <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Property Description</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                  {property.description || `Discover this exceptional ${property.type.toLowerCase()} in the prestigious ${property.location}. 
-                  This stunning property offers ${property.beds} spacious bedrooms and ${property.baths} modern bathrooms 
-                  across ${property.sqft} square feet of meticulously designed living space. 
-                  Perfect for families seeking luxury, comfort, and convenience in one of Oman's most sought-after locations.`}
+                  {property.description ||
+                    `${property.beds} bedrooms, ${property.baths} bathrooms, ${property.sqft} sq ft in ${property.location}. Ask me for the full details and the current price before you decide.`}
                 </p>
               </div>
               
@@ -175,6 +157,7 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
               </div>
             </TabsContent>
 
+            {hasFeatures && (
             <TabsContent value="features" className="space-y-3 mt-4">
               <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Property Features</h3>
               <div className="grid gap-2">
@@ -186,18 +169,8 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
                 ))}
               </div>
             </TabsContent>
+            )}
 
-            <TabsContent value="amenities" className="space-y-3 mt-4">
-              <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Community Amenities</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
-                {amenities.map((amenity, index) => (
-                  <div key={index} className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg border border-border hover:border-gold transition-colors">
-                    <amenity.icon className="h-4 w-4 sm:h-5 sm:w-5 text-gold flex-shrink-0" />
-                    <span className="text-xs sm:text-sm font-medium">{amenity.label}</span>
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
           </Tabs>
 
           <Separator />

@@ -66,7 +66,7 @@ const ContactForm = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
-                  Expert local market knowledge
+                  Local knowledge of Muscat projects
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
@@ -75,10 +75,6 @@ const ContactForm = () => {
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
                   End-to-end support
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
-                  Exclusive off-market listings
                 </li>
               </ul>
             </div>

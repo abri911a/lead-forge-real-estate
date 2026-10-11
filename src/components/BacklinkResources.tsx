@@ -87,12 +87,11 @@ const BacklinkResources = () => {
         <div className="mt-12 p-6 bg-warmGray/10 border border-gold/20 rounded-lg">
           <h3 className="text-xl font-semibold text-gold mb-3">Partner With Us</h3>
           <p className="text-muted-foreground mb-4">
-            Are you a GCC property portal, real estate agency, or investment platform? 
-            We welcome partnership opportunities to expand our network and provide better 
-            service to international investors across the Gulf region.
+            Are you a property portal, an agency or an investment platform in the GCC?
+            Email me at info@waleedproperty.com.
           </p>
-          <Button className="bg-gold text-luxury-dark hover:bg-gold-light">
-            Contact for Partnerships
+          <Button asChild className="bg-gold text-luxury-dark hover:bg-gold-light">
+            <a href="mailto:info@waleedproperty.com?subject=Partnership">Email me about a partnership</a>
           </Button>
         </div>
       </div>

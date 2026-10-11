@@ -52,12 +52,12 @@ const Hero = () => {
       <div className="relative container mx-auto px-4 z-10">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-white drop-shadow-lg">Your Gateway to</span>
-            <span className="block text-gold mt-2 drop-shadow-lg">Premium Real Estate</span>
+            <span className="text-white drop-shadow-lg">Property in Oman</span>
+            <span className="block text-gold mt-2 drop-shadow-lg">for foreign and GCC buyers</span>
           </h1>
           <p className="text-xl text-white/90 mb-8 drop-shadow-md">
-            Discover exclusive properties in Oman's most sought-after locations. 
-            Let us help you find your perfect investment opportunity.
+            I help you check three things before you pay: where you can own,
+            what it really costs, and whether it gives residency.
           </p>
 
           {/* Quick search form */}
@@ -130,7 +130,7 @@ const Hero = () => {
                 }
               }}
             >
-              Talk to Agent
+              Talk to Waleed
             </Button>
           </div>
         </div>

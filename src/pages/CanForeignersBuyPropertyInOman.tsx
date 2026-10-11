@@ -109,7 +109,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
       <Header />
 
-      <section className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
+      <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="mb-8">
             <span className="text-gold text-sm font-semibold uppercase tracking-wide">
@@ -145,10 +145,6 @@ const CanForeignersBuyPropertyInOman = () => {
             message="Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ..."
           />
 
-          {/* Author */}
-          <div className="mb-12">
-            <AuthorProfile variant="full" />
-          </div>
 
           {/* Three meanings */}
           <div className="mb-12">
@@ -496,8 +492,11 @@ const CanForeignersBuyPropertyInOman = () => {
               </Button>
             </div>
           </div>
+          <div className="mt-12">
+            <AuthorProfile variant="full" />
+          </div>
         </div>
-      </section>
+      </main>
 
       <Footer />
       <WhatsAppButton />

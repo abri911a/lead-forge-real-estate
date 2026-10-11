@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold text-gold mb-4">WALEED PROPERTY</h3>
             <p className="text-muted-foreground mb-4">
-              Your gateway to premium real estate investments in Oman
+              Property in Oman for foreign and GCC buyers
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/waleedvlogs.om/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-warmGray p-2 rounded hover:bg-gold hover:text-luxury-dark transition-colors">

@@ -62,7 +62,7 @@ const FeaturedProperties = () => {
             <span className="text-gold">Featured</span> <span className="text-gold">Properties</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
-            Explore our handpicked selection of premium properties across Oman's most desirable locations
+            Some of the properties I can help you buy. Ask me for the current price before you decide.
           </p>
           
           {/* Location Filter */}

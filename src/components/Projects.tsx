@@ -5,19 +5,19 @@ import { useNavigate } from "react-router-dom";
 const guides = [
   {
     name: "Al Mouj Muscat",
-    description: "Luxury Waterfront Living Guide",
+    description: "Prices, ownership and residency",
     path: "/al-mouj-guide",
     image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=70&auto=format"
   },
   {
     name: "Sultan Haitham City",
-    description: "Future Smart City Development",
+    description: "Official facts, prices and the 30% residency rule",
     path: "/sultan-haitham-city-guide",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=70&auto=format"
   },
   {
     name: "Investment in Oman",
-    description: "Complete Foreign Investor Guide",
+    description: "Where you can buy, costs, tax and residency",
     path: "/oman-investment-guide",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=70&auto=format"
   }
@@ -31,7 +31,7 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Expert <span className="text-gold">Guides</span>
+            Buyer <span className="text-gold">Guides</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Comprehensive guides to help you make informed investment decisions

@@ -7,47 +7,48 @@ import {
 import StructuredData from "./StructuredData";
 
 const FAQ = () => {
+  // Rewritten 11 Oct 2026 to match the fact-checked guides (old answers had The Wave as a separate ITC,
+  // OMR 33,250 studios, 6-9% yields, a "municipality" fee and a "10.8% growth" projection: all wrong or unsourced).
   const faqs = [
     {
       question: "Can foreigners buy property in Oman?",
-      answer: "Yes, foreign nationals can purchase property in Oman in designated areas including Integrated Tourism Complexes (ITCs) like Al Mouj Muscat, The Wave, and Special Economic Zones. ITCs are the main zones where foreigners can own property in Oman. Most units are freehold, but some projects offer usufruct instead, so confirm the ownership type per project. A qualifying purchase opens the sponsor-free Property Owner Residency, and from OMR 200,000 you can apply for the 10-year renewable Golden Residency."
+      answer: "Yes, but only in named areas: mainly Integrated Tourism Complexes (ITCs) such as Al Mouj Muscat, Muscat Bay and Jebel Sifah, and some future cities such as Sultan Haitham City. Not every project in these areas gives the same title, so confirm freehold or usufruct per project. A qualifying purchase opens the sponsor-free Owner Residency, and from OMR 200,000 you can apply for the 10-year renewable Golden Residency."
     },
     {
       question: "What are Integrated Tourism Complexes (ITCs) in Oman?",
-      answer: "Integrated Tourism Complexes (ITCs) are government-designated mixed-use developments that allow 100% foreign ownership of residential properties. Major ITCs include Al Mouj Muscat, The Wave, and Jebel Sifah. As of 2025, ITCs offer rental yields of 5-8%, competitive with Dubai and Abu Dhabi but with significantly lower entry costs starting from OMR 80,000 for apartments."
+      answer: "ITCs are licensed developments where non-Omanis can own land or built units, under Royal Decree 12/2006. Examples are Al Mouj Muscat (once called The Wave), Muscat Bay, Jebel Sifah and Hawana Salalah. Ownership has rules: a sale is registered with the Ministry of Housing, and a plot must be built on within 4 years."
     },
     {
       question: "What is the minimum investment required for Oman property?",
-      answer: "Minimum investment varies by property type and location. Studio apartments in Sultan Haitham City start from OMR 33,250, while luxury villas in Al Mouj range from OMR 1,500,000. Entry prices depend on the specific development and property type you're interested in."
+      answer: "There is no single minimum. It depends on the area and the project. As examples with public prices: new Al Mouj apartments start from OMR 69,000 plus VAT (Azura III and IV, February 2026), and a Wadi Zaha studio in Sultan Haitham City was OMR 54,705 for 54 m2 in September 2026. Golden Residency needs OMR 200,000."
     },
     {
       question: "What rental yields can I expect from Oman properties?",
-      answer: "Rental yields in Oman's prime locations average 5-8% gross annually. Al Mouj Muscat properties typically yield 6-7%, while emerging areas like Sultan Haitham City offer potential for 7-9% as infrastructure develops. These yields are competitive with Dubai (4-6%) and Abu Dhabi (5-7%) with lower purchase prices."
+      answer: "It depends a lot on the area, the unit and the price you pay, so I do not give one number for Oman. In Al Mouj, a well-bought resale apartment rents for about 5 to 6% a year before costs, and about 3 to 4.5% after service charges and empty months. New launches yield less at today's prices."
     },
     {
       question: "What residency options come with buying property in Oman?",
-      answer: "A qualifying property purchase opens the sponsor-free Property Owner Residency (ROP Decision 87/2026). From OMR 200,000 of qualifying investment, buyers can apply for the 10-year renewable Golden Residency, which includes family sponsorship and business ownership rights. Contact us for current eligibility requirements."
-
+      answer: "A qualifying property purchase opens the sponsor-free Owner Residency (ROP Decision 87/2026), which lasts while you own the unit. From OMR 200,000 of qualifying investment in a finished unit with a title deed, you can apply for the 10-year renewable Golden Residency, which can cover your family. Sultan Haitham City has its own rule: residency after 30% of the price is paid, before handover."
     },
     {
-      question: "Which areas in Oman offer the best investment opportunities?",
-      answer: "Top investment locations include: (1) Al Mouj Muscat - established waterfront ITC with marina, golf course, and 24/7 security; (2) Sultan Haitham City - Oman's flagship smart city with flexible payment plans and freehold ownership; (3) Duqm Special Economic Zone - industrial and logistics hub with commercial opportunities; (4) Salalah - tourism-driven market with seasonal demand."
+      question: "Which areas in Oman are worth looking at?",
+      answer: "It depends on what you want. Al Mouj Muscat is an established ITC with high rents but slow price growth. Sultan Haitham City is a new government city at an early stage. Duqm is a special economic zone for business use, with usufruct of up to 50 years, not freehold. Send me your budget and goal and I will tell you what fits."
     },
     {
       question: "What are the property purchase costs and fees in Oman?",
-      answer: "Total acquisition costs typically include: property price, 3% municipality registration fee, legal fees (0.5-1% of property value), and agent commission (typically 2-3% paid by seller). Buyer closing costs average 4-5% of purchase price. Annual property tax is minimal. Foreign buyers should budget an additional 5-6% for due diligence and legal advisory."
+      answer: "Registration is 3% of the value, paid to the Ministry of Housing, plus small fixed fees. A developer's first sale of a new residential unit also carries 5% VAT; a resale does not. In total, about 4 to 5% for a resale paid in cash, and about 9 to 12% for a new unit with a mortgage. If you rent the unit out, the landlord pays a 3% lease registration fee on the rent in Muscat."
     },
     {
-      question: "How does Oman Vision 2040 impact real estate investment?",
-      answer: "Oman Vision 2040 is the government's economic diversification strategy targeting tourism, logistics, and manufacturing sectors. For real estate, this means significant infrastructure investment in ITCs and Special Economic Zones, streamlined foreign ownership regulations, and targeted development of smart cities like Sultan Haitham City. The plan projects 10.8% annual real estate market growth through 2030."
+      question: "Is there tax on property income in Oman?",
+      answer: "Not today. From 1 January 2028, Royal Decree 56/2025 brings a 5% personal income tax on income above OMR 42,000 a year. Rental income and gains from selling property can count; your main home is exempt. Check your own case with a tax adviser."
     },
     {
       question: "What financing options are available for foreign buyers?",
-      answer: "Foreign buyers can access mortgage financing from select Omani banks with 20-30% down payment requirements. Interest rates typically range 4-5.5% for conventional mortgages. Some developers offer payment plans: 20% down payment, installments during construction, and 2-year post-handover grace periods. International buyers should verify eligibility requirements with lenders directly."
+      answer: "Some Omani banks lend to expatriates. At National Bank of Oman (June 2026), an expatriate can borrow up to 70% of the value, so at least 30% down, for up to 20 years. Many developers also offer payment plans during construction. Ask the bank and the developer for their current terms before you book."
     },
     {
       question: "What are the differences between freehold and usufruct properties?",
-      answer: "Freehold ownership grants full property rights indefinitely, available in ITCs and designated zones for foreigners. Usufruct rights grant usage rights for 50-99 years without land ownership, common in non-ITC areas. For investment purposes, freehold properties in ITCs offer better resale liquidity, clearer title transfer, and qualification for residency visa programs. Usufruct may have restrictions on modifications and subletting."
+      answer: "Freehold is full, permanent ownership of the unit. Usufruct is a right to use the property for a fixed term, often 50 to 99 years, and it ends. Both are sold to foreigners in Oman. Before you sign, get the ownership type in writing."
     }
   ];
 
@@ -71,7 +72,7 @@ const FAQ = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-muted-foreground text-lg">
-              Expert answers about Oman real estate investment for international buyers
+              Answers about Oman real estate for international buyers
             </p>
           </div>
 
@@ -90,7 +91,7 @@ const FAQ = () => {
 
           <div className="mt-8 text-center">
             <p className="text-muted-foreground">
-              Have more questions? <a href="#contact" className="text-gold hover:underline">Contact our expert advisors</a>
+              Have more questions? <a href="#contact" className="text-gold hover:underline">Send me your question</a>
             </p>
           </div>
         </div>

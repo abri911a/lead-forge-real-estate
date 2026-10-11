@@ -38,7 +38,7 @@ const ContactOptionsDialog = ({ open, onOpenChange }: ContactOptionsDialogProps)
             onClick={() => onOpenChange(false)}
           >
             <Button 
-              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white h-14 text-base"
+              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-[#0B141A] font-semibold h-14 text-base"
             >
               <MessageCircle className="mr-3 h-5 w-5" />
               Chat on WhatsApp
