@@ -68,7 +68,7 @@ async function render(route) {
   const page = await browser.newPage();
   // The site's Google tag also feeds GA4 (G-9SYPLP0KP9, combined in Google's tag settings). Unblocked,
   // every deploy would send 51 fake page views from the build machine into Analytics and Ads.
-  await page.route(/googletagmanager\.com|google-analytics\.com|analytics\.google\.com|doubleclick\.net|googleadservices\.com|google\.[a-z.]+\/(pagead|ccm|rmkt)\//, (r) => r.abort());
+  await page.route(/googletagmanager\.com|google-analytics\.com|analytics\.google\.com|doubleclick\.net|googleadservices\.com|google\.[a-z.]+\/(pagead|ccm|rmkt)\/|clarity\.ms/, (r) => r.abort());
   try {
     try {
       await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 30000 });
@@ -83,7 +83,9 @@ async function render(route) {
     if (rootChildren === 0) throw new Error('root rendered empty');
     // Strip the Google Ads library tag that index.html appends after `load`; otherwise the
     // snapshot bakes it in and the runtime loader adds a second copy (double-counted events).
-    const html = (await page.content()).replace(/<script[^>]*googletagmanager\.com\/gtag\/js[^>]*><\/script>\s*/g, '');
+    const html = (await page.content()).replace(/<script[^>]*googletagmanager\.com\/gtag\/js[^>]*><\/script>\s*/g, '')
+      // Same for Microsoft Clarity (index.html skips it off the live domain anyway; belt and braces).
+      .replace(/<script[^>]*clarity\.ms[^>]*><\/script>\s*/g, '');
     if (route === '/') {
       homeHtml = html;
     } else {

@@ -22,7 +22,7 @@ const WhatsAppOfferBox = ({ heading, body, message, showPublications = false }: 
       href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-5 py-3 rounded-lg transition-colors"
+      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-[#0B141A] font-semibold px-5 py-3 rounded-lg transition-colors"
     >
       <MessageCircle className="h-5 w-5" />
       Send on WhatsApp
