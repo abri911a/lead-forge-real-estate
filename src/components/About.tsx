@@ -42,7 +42,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild className="bg-gold text-luxury-dark hover:bg-gold-light text-base px-8 py-6 font-semibold">
                 <a href="#agent-profile">About Waleed</a>
               </Button>
@@ -60,12 +60,15 @@ const About = () => {
 
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=70&auto=format"
-              alt="Model house and keys"
+              src="/img/waleed-headshot-800.webp"
+              srcSet="/img/waleed-headshot-480.webp 480w, /img/waleed-headshot-800.webp 800w"
+              sizes="(min-width: 1024px) 560px, 92vw"
+              alt="Waleed Al Abri, real estate advisor in Muscat"
               width={800}
-              height={533}
+              height={800}
               loading="lazy"
-              className="rounded-lg shadow-2xl"
+              decoding="async"
+              className="w-full max-w-md lg:max-w-lg mx-auto aspect-square object-cover rounded-lg shadow-2xl"
             />
 
           </div>
