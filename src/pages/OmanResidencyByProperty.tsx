@@ -149,6 +149,7 @@ const OmanResidencyByProperty = () => {
           </div>
 
           <WhatsAppOfferBox
+            showPublications
             heading="Want a property that gives residency?"
             body="Send me your budget and your nationality on WhatsApp. I will reply with 3 projects that qualify for residency."
             message="Hi Waleed, I want a property that gives residency. My budget is: ... My nationality is: ..."

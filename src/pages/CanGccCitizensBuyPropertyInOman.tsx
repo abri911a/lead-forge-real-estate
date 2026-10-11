@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
+import PublishedInStrip from "@/components/PublishedInStrip";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
@@ -134,6 +135,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
               Updated July 2026 · By Waleed Al Abri — Real Estate
               Advisor
             </p>
+            <PublishedInStrip className="mt-2" />
           </div>
 
           {/* Short answer */}

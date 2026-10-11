@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
+import PublishedInStrip from "@/components/PublishedInStrip";
 import Hero from "@/components/Hero";
 import FeaturedProperties from "@/components/FeaturedProperties";
 import SocialProof from "@/components/SocialProof";
@@ -37,6 +38,11 @@ const Index = () => {
       <Header />
       <main>
       <Hero />
+      <section className="bg-luxury-dark">
+        <div className="container mx-auto px-4 py-2">
+          <PublishedInStrip variant="inline" className="sm:justify-center" />
+        </div>
+      </section>
       <SocialProof />
       <FeaturedProperties />
       <section className="bg-luxury-dark border-y border-gold/20 py-6">

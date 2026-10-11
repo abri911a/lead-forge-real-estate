@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
 import SeoHead from "@/components/SeoHead";
 import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
+import PublishedInStrip from "@/components/PublishedInStrip";
 import {
   Table,
   TableBody,
@@ -201,6 +202,7 @@ const OmanPropertyPrices2026 = () => (
           <p className="text-sm text-muted-foreground">
             Updated October 8, 2026 · By Waleed Al Abri, Real Estate Advisor
           </p>
+          <PublishedInStrip className="mt-2" />
         </div>
 
         {/* Short answer */}

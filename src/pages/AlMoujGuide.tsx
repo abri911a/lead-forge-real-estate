@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
+import PublishedInStrip from "@/components/PublishedInStrip";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StructuredData from "@/components/StructuredData";
@@ -60,6 +61,7 @@ const AlMoujGuide = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Last updated: June 23, 2026 | By Waleed Al Abri - Real Estate Advisor
             </p>
+            <PublishedInStrip className="mt-2" />
           </div>
 
           {/* Quick Overview */}

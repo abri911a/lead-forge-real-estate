@@ -30,7 +30,7 @@ const Hero = () => {
     }
   };
   return (
-    <section className="relative h-[90vh] flex items-center justify-center">
+    <section className="relative min-h-[90vh] py-16 md:py-0 flex items-center justify-center">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img

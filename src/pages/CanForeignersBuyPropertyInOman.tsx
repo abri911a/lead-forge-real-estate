@@ -139,6 +139,7 @@ const CanForeignersBuyPropertyInOman = () => {
           </div>
 
           <WhatsAppOfferBox
+            showPublications
             heading="Not sure what you can buy?"
             body="Send me your budget and your nationality on WhatsApp. I will reply with 3 projects you can legally buy."
             message="Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ..."

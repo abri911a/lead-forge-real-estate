@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import PublishedInStrip from "@/components/PublishedInStrip";
 
 // Early WhatsApp ask on the guide pages. The ad landing pages had their only labelled
 // WhatsApp link ~90% down a long page; this puts a small, concrete offer right under the short answer.
@@ -9,9 +10,11 @@ interface WhatsAppOfferBoxProps {
   heading: string;
   body: string;
   message: string;
+  // Ad landing pages: show where Waleed's articles were published, next to the ask.
+  showPublications?: boolean;
 }
 
-const WhatsAppOfferBox = ({ heading, body, message }: WhatsAppOfferBoxProps) => (
+const WhatsAppOfferBox = ({ heading, body, message, showPublications = false }: WhatsAppOfferBoxProps) => (
   <div className="border border-[#25D366]/40 bg-[#25D366]/5 rounded-lg p-6 mb-12">
     <h2 className="text-xl font-bold text-foreground mb-2">{heading}</h2>
     <p className="text-muted-foreground leading-relaxed mb-4">{body}</p>
@@ -24,6 +27,9 @@ const WhatsAppOfferBox = ({ heading, body, message }: WhatsAppOfferBoxProps) => 
       <MessageCircle className="h-5 w-5" />
       Send on WhatsApp
     </a>
+    {showPublications && (
+      <PublishedInStrip variant="inline" className="mt-4 pt-3 border-t border-[#25D366]/20" />
+    )}
   </div>
 );
 

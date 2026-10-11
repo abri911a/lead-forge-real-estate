@@ -1,3 +1,4 @@
+import { publications } from "@/data/publications";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import waleedProfile from "@/assets/waleed-profile.webp";
@@ -12,21 +13,6 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
     "ITC freehold and usufruct",
     "Residency through property",
     "Off-plan escrow"
-  ];
-
-  const publications = [
-    {
-      outlet: "OERLive",
-      date: "15 September 2026",
-      title: "The Sultan Haitham City residency rule most buyers don't know about",
-      url: "https://oerlive.com/news/the-sultan-haitham-city-residency-rule-most-buyers-dont-know-about/"
-    },
-    {
-      outlet: "Muscat Daily",
-      date: "19 August 2026",
-      title: "What foreign buyers get wrong about Oman's new property rules",
-      url: "https://www.muscatdaily.com/2026/08/19/what-foreign-buyers-get-wrong-about-omans-new-property-rules/"
-    }
   ];
 
   if (variant === "compact") {
@@ -86,18 +72,26 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
           </div>
           <div className="mt-4">
             <h4 className="text-sm font-semibold text-foreground mb-2">Published in:</h4>
-            <ul className="space-y-1 text-sm text-muted-foreground">
+            <ul className="space-y-3 text-sm">
               {publications.map((pub) => (
                 <li key={pub.url}>
                   <a
                     href={pub.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gold underline-offset-4 hover:underline"
+                    className="group block"
                   >
-                    {pub.title}
+                    <span className="font-serif text-base font-semibold text-foreground group-hover:text-gold">
+                      {pub.outlet}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {" "}· {pub.date}
+                      {pub.note ? ` · ${pub.note}` : ""}
+                    </span>
+                    <span className="block text-gold underline-offset-4 group-hover:underline">
+                      {pub.title}
+                    </span>
                   </a>
-                  {" "}<span className="text-muted-foreground">— {pub.outlet}, {pub.date}</span>
                 </li>
               ))}
             </ul>
