@@ -122,8 +122,8 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
       <Header />
 
-      <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
+        <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
             <span className="text-gold text-sm font-semibold uppercase tracking-wide">
               GCC Buyer Guide · July 2026
@@ -139,8 +139,8 @@ const CanGccCitizensBuyPropertyInOman = () => {
           </div>
 
           {/* Short answer */}
-          <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
-            <h2 className="text-2xl font-bold text-gold mb-4">Short answer</h2>
+          <div className="bg-card border border-gold/30 rounded-lg p-6 mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Short answer</h2>
             <p className="text-foreground leading-relaxed">
               Yes. Since 2004, citizens of Saudi Arabia, the UAE, Kuwait,
               Qatar and Bahrain can own built property and land across most of
@@ -154,7 +154,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
           {/* The law */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               The law GCC buyers stand on
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -167,7 +167,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
               Economic Agreement in Oman and gives GCC citizens near-national
               treatment on real estate. It is still in force. What it covers:
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • <strong>Who:</strong> GCC individuals, and companies owned
                 100% by GCC nationals.
@@ -196,14 +196,14 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
           {/* Where not */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Where you cannot buy
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Royal Decree 29/2018 closes certain areas to all non-Omanis,
               and GCC citizens fall inside that. The prohibited list:
             </p>
-            <ul className="space-y-2 text-foreground mb-4">
+            <ul className="space-y-2 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>• Musandam, Al Buraimi, Al Dhahirah, and Al Wusta</li>
               <li>• Dhofar, except the wilayat of Salalah</li>
               <li>• The wilayats of Liwa, Shinas, and Masirah</li>
@@ -225,14 +225,14 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
           {/* Land rule */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               The 4-year land rule
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Buying a ready apartment or house is simple: you can resell it
               whenever you want. Vacant land carries conditions:
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • You must develop the land within 4 years of registration.
                 Extensions are possible for genuine cause.
@@ -255,11 +255,11 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
           {/* Comparison table */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               GCC citizen vs non-GCC foreigner
             </h2>
             <div className="border border-border rounded-lg overflow-hidden">
-              <Table>
+              <Table className="[&_td]:align-top [&_td]:p-3 md:[&_td]:p-4 [&_th]:px-3 md:[&_th]:px-4 [&_th]:align-bottom">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="text-gold"></TableHead>
@@ -316,7 +316,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
           {/* Practical */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What buying actually looks like
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -328,7 +328,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
               two tiers in one tower: freehold for Omanis and GCC, long
               usufruct for other foreigners.
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • <strong>Process:</strong> the ministry runs a GCC ownership
                 service through its Amlak platform. The application costs OMR
@@ -362,7 +362,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
           {/* 2026 confusion */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               The 2026 confusion, cleared up
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -382,7 +382,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
 
           {/* FAQ */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Frequently asked questions
             </h2>
             <Accordion type="single" collapsible className="w-full">
@@ -404,15 +404,15 @@ const CanGccCitizensBuyPropertyInOman = () => {
           </div>
 
           {/* CTA */}
-          <div className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-lg p-8 text-center">
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <div className="bg-card border border-gold/30 rounded-lg p-6 md:p-8">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               If you are a GCC national looking at Muscat, your options are
               wider than the property portals suggest. The work is matching
               you to projects that actually sell to GCC buyers, in areas that
               are actually allowed, at prices that are actually current. That
               is what I do.
             </p>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               For current numbers, see:{" "}
               <a
                 href="/oman-property-prices-2026"
@@ -422,7 +422,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
               </a>
               .
             </p>
-            <div className="flex justify-center">
+            <div className="flex">
               <Button
                 asChild
                 className="bg-gold text-luxury-dark hover:bg-gold-light"

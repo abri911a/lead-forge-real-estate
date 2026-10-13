@@ -40,7 +40,7 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
         open={contactDialogOpen} 
         onOpenChange={setContactDialogOpen}
       />
-    <Card className="overflow-hidden group hover:shadow-2xl transition-all duration-300 border-warmGray">
+    <Card className="overflow-hidden border-warmGray transition-colors duration-300 hover:border-gold/60">
       <div className="relative overflow-hidden">
         <img
           src={optimizeImageUrl(image)}
@@ -48,7 +48,8 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
           width={800}
           height={533}
           loading="lazy"
-          className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+          decoding="async"
+          className="w-full h-64 object-cover"
         />
         <div className="absolute top-4 left-4">
           <span className="bg-gold text-luxury-dark px-3 py-1 rounded-full text-sm font-semibold">

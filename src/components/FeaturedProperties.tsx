@@ -50,26 +50,29 @@ const FeaturedProperties = () => {
   const handleSearch = () => {
     setSelectedLocation(tempLocation);
     if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      sectionRef.current.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start",
+      });
     }
   };
 
   return (
     <section ref={sectionRef} id="properties" className="py-20 bg-luxury-dark">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gold">Featured</span> <span className="text-gold">Properties</span>
+        <div className="mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Featured <span className="text-gold">Properties</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-muted-foreground text-lg max-w-2xl mb-6">
             Some of the properties I can help you buy. Ask me for the current price before you decide.
           </p>
           
           {/* Location Filter */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <MapPin className="h-5 w-5 text-gold" />
+          <div className="flex items-center gap-3 mb-4">
+            <MapPin className="h-5 w-5 text-gold flex-shrink-0" />
             <Select value={tempLocation} onValueChange={setTempLocation}>
-              <SelectTrigger aria-label="Filter by location" className="w-[280px] border-gold/30 focus:border-gold">
+              <SelectTrigger aria-label="Filter by location" className="h-11 min-w-0 flex-1 sm:flex-none sm:w-[280px] border-gold/30 focus:border-gold">
                 <SelectValue placeholder="Filter by location" />
               </SelectTrigger>
               <SelectContent>
@@ -83,7 +86,7 @@ const FeaturedProperties = () => {
             </Select>
             <Button 
               onClick={handleSearch}
-              className="bg-gold text-luxury-dark hover:bg-gold-light"
+              className="h-11 bg-gold text-luxury-dark hover:bg-gold-light"
             >
               <Search className="mr-2 h-4 w-4" />
               Search

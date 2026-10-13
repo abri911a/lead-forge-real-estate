@@ -1,4 +1,4 @@
-import { Instagram, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import reelDFvKKXWMEkn from "@/assets/reel-DFvKKXWMEkn.webp";
 import reelDHEP3XIsZCP from "@/assets/reel-DHEP3XIsZCP.webp";
 import reelDHWXkGXAvZw from "@/assets/reel-DHWXkGXAvZw.webp";
@@ -34,23 +34,16 @@ const InstagramFeed = () => {
 
   return (
     <div>
-      {/* Animated Section Title */}
-      <div className="mb-8 text-center">
-        <div className="inline-flex items-center justify-center gap-3 mb-4 animate-fade-in">
-          <div className="relative">
-            <Instagram className="h-10 w-10 text-gold animate-pulse" />
-            <div className="absolute inset-0 bg-gold/20 rounded-full blur-xl animate-pulse" />
-          </div>
-          <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-            Latest Reels
-          </h3>
-        </div>
-        <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
+      <div className="mb-8">
+        <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          Latest Reels
+        </h3>
+        <p className="text-muted-foreground">
           Explore our featured property tours and market insights
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-3xl">
         {REELS.map((reel) => (
           <a
             key={reel.url}
@@ -58,7 +51,7 @@ const InstagramFeed = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Watch on Instagram: ${reel.label}`}
-            className="group relative aspect-[9/16] rounded-xl overflow-hidden border-2 border-gold/30 hover:border-gold transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-2 block bg-black"
+            className="group relative block aspect-[9/16] overflow-hidden rounded-xl border-2 border-gold/30 bg-luxury-darker transition-colors duration-300 hover:border-gold"
           >
             <img
               src={reel.cover}
@@ -66,10 +59,18 @@ const InstagramFeed = () => {
               width={360}
               height={640}
               loading="lazy"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              decoding="async"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-luxury-dark/40">
-              <span className="flex items-center gap-2 bg-gold text-luxury-dark px-4 py-2 rounded-full font-semibold text-sm">
+            {/* Always-visible play badge: the hover overlay below is a desktop extra, not the only cue */}
+            <span
+              aria-hidden="true"
+              className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center rounded-full bg-luxury-dark/80 text-gold"
+            >
+              <Play className="h-4 w-4 fill-current" />
+            </span>
+            <div className="absolute inset-0 flex items-center justify-center bg-luxury-dark/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+              <span className="flex items-center gap-2 whitespace-nowrap bg-gold text-luxury-dark px-4 py-2 rounded-full font-semibold text-sm">
                 <Play className="h-4 w-4" />
                 Watch on Instagram
               </span>
@@ -78,7 +79,7 @@ const InstagramFeed = () => {
         ))}
       </div>
 
-      <p className="text-center text-sm text-muted-foreground mt-6">
+      <p className="text-sm text-muted-foreground mt-6">
         Click any reel to watch on Instagram
       </p>
     </div>

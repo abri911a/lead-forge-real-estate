@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const guides = [
   {
@@ -24,49 +23,45 @@ const guides = [
 ];
 
 const Projects = () => {
-  const navigate = useNavigate();
-
   return (
     <section id="projects" className="py-20 bg-luxury-darker">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Buyer <span className="text-gold">Guides</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl">
             Comprehensive guides to help you make informed investment decisions
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {guides.map((guide, index) => (
-            <Card key={index} className="overflow-hidden group hover:shadow-2xl transition-all duration-300 border-warmGray">
-              <div className="relative overflow-hidden h-64">
-                <img 
-                  src={guide.image}
-                  alt={guide.name}
-                  loading="lazy"
-                  decoding="async"
-                  width={800}
-                  height={533}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-2">{guide.name}</h3>
-                  <p className="text-sm text-gold drop-shadow-md mb-4">{guide.description}</p>
-                  <Button 
-                    size="sm" 
-                    className="bg-gold text-luxury-dark hover:bg-gold-light"
-                    onClick={() => navigate(guide.path)}
-                  >
-                    Read Guide
-                  </Button>
-                </div>
+        {/* A list on phones (thumbnail left, text right), three columns from md up */}
+        <ul className="divide-y divide-border md:grid md:grid-cols-3 md:gap-8 md:divide-y-0">
+          {guides.map((guide) => (
+            <li key={guide.path} className="flex gap-4 py-5 first:pt-0 last:pb-0 md:flex-col md:py-0">
+              <img
+                src={guide.image}
+                alt={guide.name}
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={533}
+                className="h-24 w-24 flex-shrink-0 rounded-md border border-border object-cover sm:h-32 sm:w-32 md:h-48 md:w-full"
+              />
+              <div className="flex min-w-0 flex-col items-start">
+                <h3 className="text-xl font-bold text-foreground mb-1">{guide.name}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{guide.description}</p>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-11 border-gold bg-transparent text-gold hover:bg-gold hover:text-luxury-dark"
+                >
+                  <Link to={guide.path}>Read Guide</Link>
+                </Button>
               </div>
-            </Card>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

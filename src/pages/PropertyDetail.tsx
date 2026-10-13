@@ -96,10 +96,17 @@ const PropertyDetail = () => {
                   </p>
                 </div>
 
-                <img src={property.image_url} alt={property.title} className="w-full rounded-lg object-cover max-h-[560px]" />
+                <img
+                  src={property.image_url}
+                  alt={property.title}
+                  width={1200}
+                  height={800}
+                  decoding="async"
+                  className="w-full h-auto rounded-lg object-cover max-h-[560px]"
+                />
 
                 <Card className="p-6 border-warmGray">
-                  <h2 className="text-2xl font-bold text-gold mb-4">Property Description</h2>
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Property Description</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     {property.description || `Discover this ${property.property_type.toLowerCase()} in ${property.location}, offering ${property.beds} bedrooms, ${property.baths} bathrooms, and ${property.sqft} square feet of living space.`}
                   </p>
@@ -107,7 +114,7 @@ const PropertyDetail = () => {
 
                 {features.length > 0 && (
                   <Card className="p-6 border-warmGray">
-                    <h2 className="text-2xl font-bold text-gold mb-4">Features</h2>
+                    <h2 className="text-2xl font-bold text-foreground mb-4">Features</h2>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {features.map((feature) => (
                         <div key={feature} className="flex gap-3 text-sm">

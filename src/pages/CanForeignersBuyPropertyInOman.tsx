@@ -109,8 +109,8 @@ const CanForeignersBuyPropertyInOman = () => {
 
       <Header />
 
-      <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
+        <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
             <span className="text-gold text-sm font-semibold uppercase tracking-wide">
               Buyer Guide · June 2026
@@ -125,8 +125,8 @@ const CanForeignersBuyPropertyInOman = () => {
           </div>
 
           {/* Short answer */}
-          <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
-            <h2 className="text-2xl font-bold text-gold mb-4">Short answer</h2>
+          <div className="bg-card border border-gold/30 rounded-lg p-6 mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Short answer</h2>
             <p className="text-foreground leading-relaxed">
               Yes. Foreigners can own property in Oman, but where and how
               depends on the zone and your nationality. Non-Omani buyers can
@@ -148,7 +148,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* Three meanings */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               The three things "ownership" can actually mean
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -157,7 +157,7 @@ const CanForeignersBuyPropertyInOman = () => {
               things, and the difference decides your exit, your inheritance,
               and your residency.
             </p>
-            <ul className="space-y-2 text-foreground mb-4">
+            <ul className="space-y-2 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • <strong>Freehold (تملك حر):</strong> full, permanent,
                 transferable ownership of the unit. This is what most foreign
@@ -182,7 +182,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* Where foreigners can buy */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Where foreigners can buy
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -197,7 +197,7 @@ const CanForeignersBuyPropertyInOman = () => {
               Zones where foreigners can currently buy freehold (June 2026)
               include:
             </p>
-            <ul className="space-y-2 text-foreground mb-4">
+            <ul className="space-y-2 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>• Muscat Hills</li>
               <li>• Muscat Bay</li>
               <li>• Al Mouj</li>
@@ -214,7 +214,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* Usufruct route outside ITC - MD 357/2020 */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Buying outside an ITC: the usufruct route
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -263,7 +263,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* 2026 Registry Law + ministry clarification */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What the 2026 Registry Law changed, and what it did not
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -278,7 +278,7 @@ const CanForeignersBuyPropertyInOman = () => {
               of the country. Ownership by non-Omanis stays limited to
               locations already designated under existing law:
             </p>
-            <ul className="space-y-2 text-foreground mb-4">
+            <ul className="space-y-2 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>• Integrated Tourism Complexes</li>
               <li>
                 • Future cities, including Sultan Haitham City, Al Thuraya
@@ -313,7 +313,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* GCC wider rights */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               GCC nationals get wider rights
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -336,14 +336,14 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* Residency */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Buying property as a route to residency
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               A qualifying purchase can give you residency in Oman. There are
               two separate programs, and they are often confused.
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • <strong>Property-investor residency:</strong> granted on a
                 freehold purchase in an ITC zone, with no minimum value. It
@@ -390,13 +390,13 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* Money protection */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Is your money protected?
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Two protections matter most.
             </p>
-            <ul className="space-y-3 text-foreground">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • <strong>Escrow (Royal Decree 79/2025):</strong> developers
                 selling off-plan must hold your payments in a dedicated
@@ -423,7 +423,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* Costs */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What it costs to buy
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -444,7 +444,7 @@ const CanForeignersBuyPropertyInOman = () => {
 
           {/* FAQ */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Frequently asked questions
             </h2>
             <Accordion type="single" collapsible className="w-full">
@@ -466,18 +466,18 @@ const CanForeignersBuyPropertyInOman = () => {
           </div>
 
           {/* CTA */}
-          <div className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-lg p-8 text-center">
+          <div className="bg-card border border-gold/30 rounded-lg p-6 md:p-8">
             <h2 className="text-2xl font-bold text-gold mb-4">
               Talk to an Oman property advisor
             </h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               The rules read simply on a page and get complicated on a
               specific deal: which projects actually offer freehold to your
               nationality, whether the residency path holds for your budget,
               and whether the escrow is real. If you are a GCC or foreign
               buyer, I will give you a straight read on your situation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
                 className="bg-gold text-luxury-dark hover:bg-gold-light"

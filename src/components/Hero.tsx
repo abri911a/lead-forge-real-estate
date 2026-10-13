@@ -8,6 +8,9 @@ const TALK_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponent(
   "Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ...",
 )}`;
 
+const scrollBehavior = (): ScrollBehavior =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+
 const Hero = () => {
   const [location, setLocation] = useState("");
   const [propertyType, setPropertyType] = useState("");
@@ -15,7 +18,7 @@ const Hero = () => {
   const handleSearch = () => {
     const propertiesSection = document.getElementById("properties");
     if (propertiesSection) {
-      propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      propertiesSection.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
       // Dispatch custom event with filter data
       const event = new CustomEvent("hero-filter-search", { 
         detail: { location, propertyType } 
@@ -27,14 +30,14 @@ const Hero = () => {
   const handleViewAll = () => {
     const propertiesSection = document.getElementById("properties");
     if (propertiesSection) {
-      propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      propertiesSection.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
       // Dispatch event to reset filters
       const event = new CustomEvent("hero-filter-reset");
       window.dispatchEvent(event);
     }
   };
   return (
-    <section className="relative min-h-[90vh] py-16 md:py-0 flex items-center justify-center">
+    <section className="relative min-h-[90dvh] py-16 md:py-0 flex items-center justify-center">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
@@ -54,7 +57,9 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative container mx-auto px-4 z-10">
-        <div className="max-w-3xl">
+        {/* Phones: CSS order shows the CTAs above the search form, so they sit above the fold.
+            DOM order (and innerText) is unchanged. */}
+        <div className="max-w-3xl flex flex-col">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-white drop-shadow-lg">Property in Oman</span>
             <span className="block text-gold mt-2 drop-shadow-lg">for foreign and GCC buyers</span>
@@ -65,7 +70,7 @@ const Hero = () => {
           </p>
 
           {/* Quick search form */}
-          <div className="bg-card/95 backdrop-blur-sm p-6 rounded-lg shadow-2xl">
+          <div className="order-2 md:order-none bg-card/95 backdrop-blur-sm p-6 rounded-lg shadow-2xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Select value={propertyType} onValueChange={setPropertyType}>
                 <SelectTrigger aria-label="Property type">
@@ -94,7 +99,7 @@ const Hero = () => {
 
 
               <Button 
-                className="bg-gold text-luxury-dark hover:bg-gold-light w-full"
+                className="h-11 bg-gold text-luxury-dark hover:bg-gold-light w-full"
                 onClick={handleSearch}
               >
                 <Search className="mr-2 h-4 w-4" />
@@ -104,7 +109,7 @@ const Hero = () => {
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-4 mt-8">
+          <div className="order-1 md:order-none flex flex-wrap gap-4 mb-8 md:mb-0 md:mt-8">
             <Button 
               size="lg" 
               className="bg-gold text-luxury-dark hover:bg-gold-light"

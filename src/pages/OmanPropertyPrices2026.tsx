@@ -190,8 +190,8 @@ const OmanPropertyPrices2026 = () => (
 
     <Header />
 
-    <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
+      <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
         <div className="mb-8">
           <span className="text-gold text-sm font-semibold uppercase tracking-wide">
             Price tracker · Updated October 2026
@@ -206,8 +206,8 @@ const OmanPropertyPrices2026 = () => (
         </div>
 
         {/* Short answer */}
-        <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
-          <h2 className="text-2xl font-bold text-gold mb-4">Short answer</h2>
+        <div className="bg-card border border-gold/30 rounded-lg p-6 mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Short answer</h2>
           <div className="space-y-3 text-foreground leading-relaxed">
             <p>
               I found 4 projects with a public price for the same kind of unit in both 2025 and
@@ -233,7 +233,7 @@ const OmanPropertyPrices2026 = () => (
 
         {/* Three reasons */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">A higher price is not always a rise</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">A higher price is not always a rise</h2>
           <p className="text-muted-foreground mb-4 leading-relaxed">
             When a project's price goes up, I see three different reasons behind it.
           </p>
@@ -264,7 +264,7 @@ const OmanPropertyPrices2026 = () => (
 
         {/* Table A */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             2025 to 2026: projects with two public prices
           </h2>
           <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -281,7 +281,7 @@ const OmanPropertyPrices2026 = () => (
               <div key={r.project} className="bg-card border border-border rounded-lg p-5">
                 <div className="flex items-baseline justify-between gap-3 mb-1">
                   <span className="text-foreground font-semibold">{r.project}</span>
-                  <span className="text-gold font-bold whitespace-nowrap">{r.change}</span>
+                  <span className="text-gold font-bold tabular-nums whitespace-nowrap">{r.change}</span>
                 </div>
                 <p className="text-muted-foreground text-sm mb-3">
                   {r.area} · {r.unit}
@@ -297,7 +297,7 @@ const OmanPropertyPrices2026 = () => (
             ))}
           </div>
           <div className="hidden md:block bg-card border border-border rounded-lg overflow-x-auto">
-            <Table>
+            <Table className="tabular-nums">
               <TableHeader>
                 <TableRow>
                   <TableHead>Project</TableHead>
@@ -368,7 +368,7 @@ const OmanPropertyPrices2026 = () => (
 
         {/* Not clean */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Projects I checked but could not compare cleanly
           </h2>
           <ul className="list-disc pl-6 space-y-3 text-muted-foreground leading-relaxed">
@@ -408,7 +408,7 @@ const OmanPropertyPrices2026 = () => (
 
         {/* NCSI */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">What the official numbers say</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">What the official numbers say</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Oman's statistics centre (NCSI) publishes a real estate index every quarter. The name
@@ -436,7 +436,7 @@ const OmanPropertyPrices2026 = () => (
 
         {/* Limits */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">What this page does not show</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">What this page does not show</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Resale prices. This table shows what developers ask for new units. It does not show
@@ -451,7 +451,7 @@ const OmanPropertyPrices2026 = () => (
 
         {/* Method */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">How I collect the prices</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">How I collect the prices</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               I only use prices that are public: the developer's own posts, ads or website,

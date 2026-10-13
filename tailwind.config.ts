@@ -13,7 +13,18 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['"Geist"', '"Geist Fallback"', "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Fraunces"', '"Fraunces Fallback"', "Georgia", "serif"],
+        // font-serif is used by the trust strip and author card: same family as display, so the page stays at two faces
+        serif: ['"Fraunces"', '"Fraunces Fallback"', "Georgia", "serif"],
+      },
       colors: {
+        whatsapp: {
+          DEFAULT: "hsl(var(--whatsapp))",
+          hover: "hsl(var(--whatsapp-hover))",
+          ink: "hsl(var(--whatsapp-ink))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

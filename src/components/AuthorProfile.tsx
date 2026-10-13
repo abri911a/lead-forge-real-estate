@@ -21,6 +21,10 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
         <img 
           src={waleedProfile}
           alt="Waleed Al Abri - Real Estate Advisor"
+          width={64}
+          height={64}
+          loading="lazy"
+          decoding="async"
           className="w-16 h-16 rounded-full object-cover border-2 border-gold"
         />
         <div>
@@ -38,10 +42,14 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
         <img 
           src={waleedProfile}
           alt="Waleed Al Abri - Real Estate Advisor in Oman"
-          className="w-32 h-32 rounded-lg object-cover border-2 border-gold"
+          width={128}
+          height={128}
+          loading="lazy"
+          decoding="async"
+          className="w-32 h-32 flex-shrink-0 rounded-lg object-cover border-2 border-gold"
         />
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-gold mb-2">Waleed Al Abri</h3>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-2xl font-bold text-foreground mb-2">Waleed Al Abri</h3>
           <p className="text-lg text-foreground mb-1">Real Estate Advisor</p>
           <p className="text-sm text-muted-foreground mb-4">
             Waleed Property - Founder & Principal Advisor
@@ -58,8 +66,8 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
             </div>
           </div>
 
-          <div className="prose prose-sm text-muted-foreground">
-            <p className="mb-3">
+          <div className="max-w-prose space-y-3 leading-relaxed text-muted-foreground">
+            <p>
               Waleed works with foreign and GCC buyers in Oman's property market. Most of the work is the 
               part non-Omani buyers get stuck on: which areas allow foreign ownership, the difference between 
               ITC freehold and usufruct, whether a property gets you residency, and how off-plan payments are 

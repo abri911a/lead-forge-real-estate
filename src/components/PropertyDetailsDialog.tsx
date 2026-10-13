@@ -62,7 +62,8 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
         onOpenChange={setContactDialogOpen}
       />
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="max-w-[95vw] sm:max-w-[90vw] md:max-w-3xl lg:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto p-4 sm:p-6">
+        {/* "dark": the dialog renders in a portal outside the page's .dark wrapper */}
+        <DialogContent className="dark bg-luxury-dark text-foreground border-warmGray max-w-[95vw] sm:max-w-[90vw] md:max-w-3xl lg:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto p-4 sm:p-6">
         <DialogHeader>
           <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
             <div className="flex-1 w-full">
@@ -86,6 +87,10 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
             <img 
               src={property.image} 
               alt={property.title}
+              width={800}
+              height={533}
+              loading="lazy"
+              decoding="async"
               className="w-full h-48 sm:h-64 md:h-80 object-cover"
             />
             <div className="absolute top-2 left-2 sm:top-4 sm:left-4">

@@ -53,10 +53,11 @@ const Index = () => {
       <About />
       
       {/* Agent Profile Section */}
-      <section id="agent-profile" className="py-20 bg-background">
+      {/* bg-card: one tonal step up from the luxury-dark/darker sections around it */}
+      <section id="agent-profile" className="py-20 bg-card border-y border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gold mb-8 text-center">Meet Your Real Estate Advisor</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Meet Your Real Estate Advisor</h2>
             <AuthorProfile variant="full" />
           </div>
         </div>

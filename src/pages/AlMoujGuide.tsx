@@ -8,7 +8,6 @@ import StructuredData from "@/components/StructuredData";
 import AuthorProfile from "@/components/AuthorProfile";
 import BacklinkResources from "@/components/BacklinkResources";
 import SeoHead from "@/components/SeoHead";
-import { Home, Waves, MapPin, Scale } from "lucide-react";
 
 // Rewritten 11 Oct 2026 from a claim-by-claim fact-check (13 of 44 claims on the old page were wrong).
 // Every number below has a source in the "Sources" list. Do not add yields, prices or "growth" without one.
@@ -59,8 +58,8 @@ const AlMoujGuide = () => (
 
     <Header />
 
-    <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
+      <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
         <div className="mb-8">
           <span className="text-gold text-sm font-semibold uppercase tracking-wide">
             Area guide · October 2026
@@ -75,8 +74,8 @@ const AlMoujGuide = () => (
         </div>
 
         {/* Short answer */}
-        <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
-          <h2 className="text-2xl font-bold text-gold mb-4">Short answer</h2>
+        <div className="bg-card border border-gold/30 rounded-lg p-6 mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Short answer</h2>
           <div className="space-y-3 text-foreground leading-relaxed">
             <p>
               Al Mouj Muscat is an Integrated Tourism Complex (ITC) on the coast, about 10 minutes
@@ -95,7 +94,7 @@ const AlMoujGuide = () => (
 
         {/* At a glance */}
         <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-6 md:p-8 mb-12">
-          <h2 className="text-2xl font-bold text-gold mb-4">What is there today</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">What is there today</h2>
           <p className="text-foreground leading-relaxed mb-4">
             Al Mouj opened in 2006. It has an 18-hole golf course designed by Greg Norman, a marina,
             more than 90 shops and restaurants, and a 6 km waterfront with a community beach. The
@@ -103,19 +102,19 @@ const AlMoujGuide = () => (
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">266</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">266</div>
               <div className="text-sm text-muted-foreground">Hectares (developer)</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">165</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">165</div>
               <div className="text-sm text-muted-foreground">Marina berths in use (400 planned)</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">10 min</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">10 min</div>
               <div className="text-sm text-muted-foreground">To the airport</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">5–6%</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">5–6%</div>
               <div className="text-sm text-muted-foreground">Gross rent yield, resale</div>
             </div>
           </div>
@@ -129,28 +128,27 @@ const AlMoujGuide = () => (
 
         {/* Prices */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <Home className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             What it costs
           </h2>
           <div className="space-y-6">
             <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gold mb-3">New apartments, from the developer</h3>
-              <ul className="text-muted-foreground space-y-2">
+              <h3 className="text-xl font-semibold text-foreground mb-3">New apartments, from the developer</h3>
+              <ul className="text-muted-foreground space-y-2 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
                 <li>• Azura Beach Residences III and IV: from OMR 69,000 plus VAT (launched February 2026).</li>
                 <li>• Golf Links: from OMR 77,000.</li>
                 <li>• For comparison, Azura Phase II started at OMR 88,000 plus VAT in October 2025.</li>
               </ul>
             </div>
             <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gold mb-3">Resale apartments</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Resale apartments</h3>
               <p className="text-muted-foreground">
                 1-bedroom resale units were asked at about OMR 99,900 to 112,000 in September 2026
                 (Sands of Wealth). These are asking prices, not sold prices.
               </p>
             </div>
             <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gold mb-3">Villas</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Villas</h3>
               <p className="text-muted-foreground">
                 Price depends a lot on the location inside Al Mouj (golf, lake or beach). Ask me for
                 current units. I do not list a price range here because the public numbers disagree
@@ -162,7 +160,7 @@ const AlMoujGuide = () => (
 
         {/* Rent and yield */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">Rent and yield</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Rent and yield</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Al Mouj has some of the highest rents in Muscat. Savills put a 2-bedroom apartment at
@@ -178,7 +176,7 @@ const AlMoujGuide = () => (
 
         {/* Price history */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-4">Will the price go up?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Will the price go up?</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>I have not seen evidence of fast price growth in Al Mouj.</p>
             <p>
@@ -199,11 +197,10 @@ const AlMoujGuide = () => (
 
         {/* Ownership and residency */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <Scale className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             Ownership and residency
           </h2>
-          <ul className="text-muted-foreground space-y-3 leading-relaxed">
+          <ul className="text-muted-foreground space-y-3 leading-relaxed [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
             <li>
               • <strong className="text-foreground">Freehold for all nationalities.</strong> Al Mouj
               is a licensed ITC. Under Royal Decree 12/2006, non-Omanis can own land or built units
@@ -228,14 +225,13 @@ const AlMoujGuide = () => (
 
         {/* Lifestyle */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <Waves className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             Living there
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gold mb-3">Sea and golf</h3>
-              <ul className="text-muted-foreground space-y-2">
+              <h3 className="text-lg font-semibold text-foreground mb-3">Sea and golf</h3>
+              <ul className="text-muted-foreground space-y-2 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
                 <li>• Marina: 400 berths planned, 165 in use today</li>
                 <li>• 6 km waterfront and a community beach</li>
                 <li>• 18-hole golf course designed by Greg Norman</li>
@@ -243,8 +239,8 @@ const AlMoujGuide = () => (
               </ul>
             </div>
             <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gold mb-3">Daily life</h3>
-              <ul className="text-muted-foreground space-y-2">
+              <h3 className="text-lg font-semibold text-foreground mb-3">Daily life</h3>
+              <ul className="text-muted-foreground space-y-2 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
                 <li>• More than 90 shops and restaurants, mostly around The Walk</li>
                 <li>• A supermarket (almeera)</li>
                 <li>• Nurseries on site (Shomoukh, Horizon Kids)</li>
@@ -260,11 +256,10 @@ const AlMoujGuide = () => (
 
         {/* Location */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <MapPin className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             Getting around
           </h2>
-          <ul className="text-muted-foreground space-y-2">
+          <ul className="text-muted-foreground space-y-2 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
             <li>• About 10 minutes to Muscat International Airport</li>
             <li>• Road access from 18th November Street</li>
             <li>• About 25 to 30 minutes by taxi to Muttrah Souq and old Muscat</li>
@@ -273,7 +268,7 @@ const AlMoujGuide = () => (
 
         {/* Sources */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gold mb-4">Sources</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Sources</h2>
           <ol className="list-decimal pl-6 space-y-2 text-sm text-muted-foreground">
             {sources.map((s) => (
               <li key={s.href}>

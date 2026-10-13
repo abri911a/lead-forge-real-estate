@@ -55,7 +55,7 @@ const Header = () => {
 
         {/* Main navigation */}
         <nav className="flex items-center justify-between gap-2 sm:gap-3 py-3 md:py-4">
-          <a href="/" className="text-sm min-[360px]:text-base sm:text-2xl font-bold text-gold whitespace-nowrap">
+          <a href="/" className="font-display text-sm min-[360px]:text-base sm:text-2xl font-semibold tracking-[0.04em] text-gold whitespace-nowrap">
             WALEED PROPERTY
           </a>
           
@@ -74,7 +74,10 @@ const Header = () => {
               onClick={() => {
                 const propertiesSection = document.getElementById("properties");
                 if (propertiesSection) {
-                  propertiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  propertiesSection.scrollIntoView({
+                    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+                    block: "start",
+                  });
                 }
               }}
             >
@@ -98,7 +101,7 @@ const Header = () => {
             </SheetTrigger>
             {/* "dark": the sheet renders in a portal outside the page's .dark wrapper */}
             <SheetContent side="right" className="dark w-72 bg-luxury-dark border-warmGray text-foreground">
-              <SheetTitle className="text-gold">Menu</SheetTitle>
+              <SheetTitle className="text-foreground">Menu</SheetTitle>
               <ul className="mt-6 flex flex-col">
                 {NAV_LINKS.map((l) => (
                   <li key={l.href}>

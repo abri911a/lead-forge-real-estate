@@ -127,7 +127,7 @@ function Pill({
       aria-pressed={on}
       onClick={onClick}
       className={
-        "rounded-full border px-4 py-2 text-sm transition-colors " +
+        "inline-flex min-h-11 items-center rounded-lg border px-4 py-2 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-luxury-dark " +
         (on
           ? "bg-gold text-luxury-dark border-gold font-semibold"
           : "border-border text-foreground hover:border-gold/60")
@@ -161,7 +161,7 @@ const ResidencyRouteFinder = () => {
   };
 
   return (
-    <div className="border border-gold/30 rounded-lg p-6 md:p-8 mb-12 bg-card">
+    <div className="mb-12">
       <p className="text-gold text-sm font-semibold uppercase tracking-wide mb-1">
         Route finder
       </p>
@@ -250,12 +250,12 @@ const ResidencyRouteFinder = () => {
             <div
               key={key}
               className={
-                "rounded-lg border transition-all " +
+                "rounded-lg border transition-[opacity,border-color] " +
                 (active
-                  ? "border-gold bg-gradient-to-br from-gold/15 to-transparent p-5 md:p-6"
+                  ? "border-gold bg-gold/10 p-5 md:p-6"
                   : dimmed
                   ? "border-border/50 px-4 py-2 opacity-50"
-                  : "border-border p-4")
+                  : "border-border/60 p-4")
               }
             >
               <h3 className={"font-bold text-foreground " + (active ? "text-xl mb-3" : "text-base")}>

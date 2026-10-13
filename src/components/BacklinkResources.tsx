@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
@@ -45,48 +44,50 @@ const BacklinkResources = () => {
   return (
     <section className="py-16 bg-luxury-dark">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+        <div className="mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Trusted GCC Property Resources
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground leading-relaxed max-w-[65ch]">
             Connect with leading property portals and market resources across the Gulf region. 
             These platforms provide additional insights into Oman and GCC real estate investments.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {gccPortals.map((portal, index) => (
-            <Card key={index} className="p-6 bg-card border border-border hover:border-gold transition-colors">
-              <div className="flex flex-col h-full">
-                <div className="mb-4">
-                  <span className="text-xs text-gold font-semibold uppercase tracking-wide">
-                    {portal.category}
-                  </span>
-                  <h3 className="text-xl font-semibold text-foreground mt-1 mb-2">
-                    {portal.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {portal.description}
-                  </p>
-                </div>
-                <div className="mt-auto">
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-                    onClick={() => window.open(portal.url, '_blank', 'noopener,noreferrer')}
-                  >
-                    Visit Portal <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </Card>
+        <ul className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12 border-b border-border md:border-b-0">
+          {gccPortals.map((portal) => (
+            <li key={portal.url} className="border-t border-border py-5 md:[&:nth-last-child(-n+2)]:border-b">
+              <span className="text-xs text-gold font-semibold uppercase tracking-wide">
+                {portal.category}
+              </span>
+              <h3 className="text-xl font-semibold text-foreground mt-1 mb-1">
+                <a
+                  href={portal.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold underline-offset-4 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+                >
+                  {portal.name}
+                </a>
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {portal.description}
+              </p>
+              <a
+                href={portal.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light underline-offset-4 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+              >
+                Visit Portal <ExternalLink aria-hidden="true" className="h-4 w-4" />
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="mt-12 p-6 bg-warmGray/10 border border-gold/20 rounded-lg">
-          <h3 className="text-xl font-semibold text-gold mb-3">Partner With Us</h3>
-          <p className="text-muted-foreground mb-4">
+          <h3 className="text-xl font-semibold text-foreground mb-3">Partner With Us</h3>
+          <p className="text-muted-foreground leading-relaxed max-w-[65ch] mb-4">
             Are you a property portal, an agency or an investment platform in the GCC?
             Email me at info@waleedproperty.com.
           </p>

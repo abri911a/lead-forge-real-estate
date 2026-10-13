@@ -8,7 +8,6 @@ import StructuredData from "@/components/StructuredData";
 import AuthorProfile from "@/components/AuthorProfile";
 import BacklinkResources from "@/components/BacklinkResources";
 import SeoHead from "@/components/SeoHead";
-import { MapPin, Home, CalendarClock, Scale } from "lucide-react";
 
 // Rewritten 11 Oct 2026 from a claim-by-claim fact-check: the old page had the wrong size (1,600 ha),
 // population (200K+), location ("30 km south"), phases, "pre-launch" prices, and unsourced yields and
@@ -62,8 +61,8 @@ const SultanHaithamCityGuide = () => (
 
     <Header />
 
-    <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
+      <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
         <div className="mb-8">
           <span className="text-gold text-sm font-semibold uppercase tracking-wide">
             Area guide · October 2026
@@ -78,8 +77,8 @@ const SultanHaithamCityGuide = () => (
         </div>
 
         {/* Short answer */}
-        <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
-          <h2 className="text-2xl font-bold text-gold mb-4">Short answer</h2>
+        <div className="bg-card border border-gold/30 rounded-lg p-6 mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Short answer</h2>
           <div className="space-y-3 text-foreground leading-relaxed">
             <p>
               Sultan Haitham City is a new city the government is building in Al Seeb, west of
@@ -98,22 +97,22 @@ const SultanHaithamCityGuide = () => (
 
         {/* Facts */}
         <div className="bg-warmGray/10 border border-gold/20 rounded-lg p-6 md:p-8 mb-12">
-          <h2 className="text-2xl font-bold text-gold mb-4">The official numbers</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">The official numbers</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">14.8 km²</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">14.8 km²</div>
               <div className="text-sm text-muted-foreground">Area</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">100,000</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">100,000</div>
               <div className="text-sm text-muted-foreground">Residents planned</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">20,000</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">20,000</div>
               <div className="text-sm text-muted-foreground">Homes planned</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gold">2024–2045</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold tabular-nums whitespace-nowrap">2024–2045</div>
               <div className="text-sm text-muted-foreground">Four phases</div>
             </div>
           </div>
@@ -133,11 +132,10 @@ const SultanHaithamCityGuide = () => (
 
         {/* Status and phases */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <CalendarClock className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             Where it stands in 2026
           </h2>
-          <ul className="text-muted-foreground space-y-3 leading-relaxed">
+          <ul className="text-muted-foreground space-y-3 leading-relaxed [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
             <li>
               • Construction started in February 2024. By April 2026, more than 1,700 units were
               sold to buyers from more than 35 nationalities, and investments passed OMR 2.4 billion.
@@ -159,8 +157,7 @@ const SultanHaithamCityGuide = () => (
 
         {/* Prices */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <Home className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             What it costs
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -186,11 +183,10 @@ const SultanHaithamCityGuide = () => (
 
         {/* Ownership and residency */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <Scale className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             Who can buy, and residency
           </h2>
-          <ul className="text-muted-foreground space-y-3 leading-relaxed">
+          <ul className="text-muted-foreground space-y-3 leading-relaxed [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
             <li>
               • <strong className="text-foreground">Foreigners:</strong> only in designated projects.
               In June 2026 the ministry confirmed that foreign ownership stays limited to named
@@ -219,11 +215,10 @@ const SultanHaithamCityGuide = () => (
 
         {/* Location */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gold mb-6 flex items-center gap-3">
-            <MapPin className="h-8 w-8 shrink-0" />
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             Location and transport
           </h2>
-          <ul className="text-muted-foreground space-y-2 leading-relaxed">
+          <ul className="text-muted-foreground space-y-2 leading-relaxed [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
             <li>• In Al Seeb, Muscat Governorate, west of central Muscat</li>
             <li>• Next to the Muscat Expressway and Sultan Qaboos Street</li>
             <li>• About 22 km in a straight line from Muscat International Airport</li>
@@ -236,7 +231,7 @@ const SultanHaithamCityGuide = () => (
 
         {/* Sources */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gold mb-4">Sources</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Sources</h2>
           <ol className="list-decimal pl-6 space-y-2 text-sm text-muted-foreground">
             {sources.map((s) => (
               <li key={s.href}>

@@ -120,8 +120,8 @@ const OmanResidencyByProperty = () => {
 
       <Header />
 
-      <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
+        <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
             <span className="text-gold text-sm font-semibold uppercase tracking-wide">
               Residency Guide · July 2026
@@ -136,8 +136,8 @@ const OmanResidencyByProperty = () => {
           </div>
 
           {/* Short answer */}
-          <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
-            <h2 className="text-2xl font-bold text-gold mb-4">Short answer</h2>
+          <div className="bg-card border border-gold/30 rounded-lg p-6 mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Short answer</h2>
             <p className="text-foreground leading-relaxed">
               Yes, if the property qualifies. Oman ties residency to property
               through two separate programs. Since 22 June 2026 (Royal Oman
@@ -160,14 +160,14 @@ const OmanResidencyByProperty = () => {
 
           {/* Two programs */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Two programs, not one
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Oman has two residency-by-property programs. Buyers mix them up,
               and the difference decides what you actually get.
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • <strong>Property Owner Residency:</strong> comes with a
                 qualifying property purchase. No minimum value is stated in
@@ -192,7 +192,7 @@ const OmanResidencyByProperty = () => {
 
           {/* What changed */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What changed in June 2026
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -200,7 +200,7 @@ const OmanResidencyByProperty = () => {
               Gazette 1653). It amended the residence rules for foreign
               property owners. Three changes matter:
             </p>
-            <ol className="space-y-3 text-foreground mb-4 list-decimal list-inside">
+            <ol className="space-y-3 text-muted-foreground leading-relaxed mb-4 list-decimal pl-6">
               <li>
                 <strong>No sponsor needed.</strong> The owner visa and owner
                 residency are now issued without a local sponsor, on a
@@ -234,11 +234,11 @@ const OmanResidencyByProperty = () => {
 
           {/* Table */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Which permit your purchase gets you
             </h2>
             <div className="border border-border rounded-lg overflow-hidden">
-              <Table>
+              <Table className="[&_td]:align-top [&_td]:p-3 md:[&_td]:p-4 [&_th]:px-3 md:[&_th]:px-4 [&_th]:align-bottom">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="text-gold">You bought</TableHead>
@@ -298,7 +298,7 @@ const OmanResidencyByProperty = () => {
 
           {/* What didn't change */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What the new rules did not change
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -335,13 +335,13 @@ const OmanResidencyByProperty = () => {
 
           {/* Unclear */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What is still unclear
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               These rules are new. Four points are not settled yet:
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • <strong>Usufruct holders.</strong> The rules talk about
                 owning a real estate unit. Whether a 50 to 99 year usufruct
@@ -373,7 +373,7 @@ const OmanResidencyByProperty = () => {
 
           {/* FAQ */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Frequently asked questions
             </h2>
             <Accordion type="single" collapsible className="w-full">
@@ -395,15 +395,15 @@ const OmanResidencyByProperty = () => {
           </div>
 
           {/* CTA */}
-          <div className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-lg p-8 text-center">
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <div className="bg-card border border-gold/30 rounded-lg p-6 md:p-8">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               The rules are new and the paperwork behind them is still
               settling. Whether your budget and nationality get you the owner
               permit or the Golden tier, and whether a specific project
               qualifies at all, is a case-by-case check. I do that check for
               clients before they commit money.
             </p>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               For current market context, see:{" "}
               <a
                 href="/oman-property-prices-2026"
@@ -413,7 +413,7 @@ const OmanResidencyByProperty = () => {
               </a>
               .
             </p>
-            <div className="flex justify-center">
+            <div className="flex">
               <Button
                 asChild
                 className="bg-gold text-luxury-dark hover:bg-gold-light"

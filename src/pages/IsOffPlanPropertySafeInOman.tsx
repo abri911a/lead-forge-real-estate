@@ -123,8 +123,8 @@ const IsOffPlanPropertySafeInOman = () => {
 
       <Header />
 
-      <main className="py-20 bg-gradient-to-br from-luxury-dark via-luxury-dark to-warmGray/10">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
+        <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
             <span className="text-gold text-sm font-semibold uppercase tracking-wide">
               Buyer Protection Guide · July 2026
@@ -140,7 +140,7 @@ const IsOffPlanPropertySafeInOman = () => {
           </div>
 
           {/* Snippet box */}
-          <div className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 rounded-lg p-6 mb-12">
+          <div className="bg-card border border-gold/30 rounded-lg p-6 mb-12">
             <p className="text-foreground leading-relaxed">
               Safer than it used to be, not risk-free. Since 10 March 2026,
               Royal Decree 79/2025 requires every off-plan project to hold
@@ -155,7 +155,7 @@ const IsOffPlanPropertySafeInOman = () => {
 
           {/* Law changed */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               The law changed in March 2026, and most guides missed it
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -172,7 +172,7 @@ const IsOffPlanPropertySafeInOman = () => {
               chain.
             </p>
             <div className="border border-border rounded-lg overflow-hidden">
-              <Table>
+              <Table className="[&_td]:align-top [&_td]:p-3 md:[&_td]:p-4 [&_th]:px-3 md:[&_th]:px-4 [&_th]:align-bottom">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="text-gold"></TableHead>
@@ -231,13 +231,13 @@ const IsOffPlanPropertySafeInOman = () => {
 
           {/* How escrow protects */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               How the escrow protects your money
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               The mechanics are simple, and they matter.
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • Your payments go into an escrow account held in the
                 project's name at a licensed bank. Not into the developer's
@@ -267,7 +267,7 @@ const IsOffPlanPropertySafeInOman = () => {
 
           {/* What escrow does not do */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Escrow protects your money. Registration protects your title.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -296,14 +296,14 @@ const IsOffPlanPropertySafeInOman = () => {
           </div>
 
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What escrow does not do
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               I sell off-plan property, and I will still tell you this
               plainly.
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • Escrow is not a completion guarantee. It controls the flow
                 of money. It does not force a project to finish.
@@ -326,14 +326,14 @@ const IsOffPlanPropertySafeInOman = () => {
 
           {/* 5 checks */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               The 5 checks before you pay any deposit
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               There is no public website yet where you can look up a project's
               escrow status. So you check it the direct way:
             </p>
-            <ol className="space-y-3 text-foreground mb-4 list-decimal list-inside">
+            <ol className="space-y-3 text-muted-foreground leading-relaxed mb-4 list-decimal pl-6">
               <li>
                 Ask the developer for its licence from the Ministry of Housing
                 and Urban Planning, and the project's registration. Both are
@@ -367,13 +367,13 @@ const IsOffPlanPropertySafeInOman = () => {
 
           {/* Still settling */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               What is still settling
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               The law is new. Two things to know:
             </p>
-            <ul className="space-y-3 text-foreground mb-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-4 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
               <li>
                 • The detailed executive regulations are still being written.
                 Until they issue, the 2019 executive rules keep applying.
@@ -409,7 +409,7 @@ const IsOffPlanPropertySafeInOman = () => {
 
           {/* FAQ */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Frequently asked questions
             </h2>
             <Accordion type="single" collapsible className="w-full">
@@ -431,14 +431,14 @@ const IsOffPlanPropertySafeInOman = () => {
           </div>
 
           {/* CTA */}
-          <div className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-lg p-8 text-center">
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <div className="bg-card border border-gold/30 rounded-lg p-6 md:p-8">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               The law reads well on paper. Whether a specific project actually
               has its licence, its registration, and a real escrow account is
               a different question, and it is answerable in a day. Before you
               pay any deposit, I verify those three things for clients.
             </p>
-            <div className="flex justify-center">
+            <div className="flex">
               <Button
                 asChild
                 className="bg-gold text-luxury-dark hover:bg-gold-light"

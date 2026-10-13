@@ -24,39 +24,38 @@ const ContactOptionsDialog = ({ open, onOpenChange }: ContactOptionsDialogProps)
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="dark sm:max-w-md bg-luxury-dark border-warmGray text-foreground">
         <DialogHeader>
-          <DialogTitle className="text-gold">Contact Us</DialogTitle>
+          <DialogTitle className="text-foreground">Contact Us</DialogTitle>
           <DialogDescription className="text-muted-foreground">
             Choose your preferred way to get in touch with us
           </DialogDescription>
         </DialogHeader>
         
         <div className="flex flex-col gap-4 mt-4">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => onOpenChange(false)}
+          <Button
+            asChild
+            className="w-full bg-whatsapp hover:bg-whatsapp-hover text-whatsapp-ink font-semibold h-14 text-base"
           >
-            <Button 
-              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-[#0B141A] font-semibold h-14 text-base"
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => onOpenChange(false)}
             >
               <MessageCircle className="mr-3 h-5 w-5" />
               Chat on WhatsApp
-            </Button>
-          </a>
-          
-          <a
-            href={callUrl}
-            onClick={() => onOpenChange(false)}
+            </a>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            className="w-full border-gold bg-transparent text-gold hover:bg-gold hover:text-luxury-dark h-14 text-base"
           >
-            <Button 
-              variant="outline"
-              className="w-full border-gold text-gold hover:bg-gold hover:text-luxury-dark h-14 text-base"
-            >
+            <a href={callUrl} onClick={() => onOpenChange(false)}>
               <Phone className="mr-3 h-5 w-5" />
               Call {phoneNumber}
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </DialogContent>
     </Dialog>

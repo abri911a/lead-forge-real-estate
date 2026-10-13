@@ -67,11 +67,11 @@ const FAQ = () => {
       
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gold mb-4">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg max-w-2xl">
               Answers about Oman real estate for international buyers
             </p>
           </div>
@@ -79,17 +79,17 @@ const FAQ = () => {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-warmGray/30">
-                <AccordionTrigger className="text-left text-gold/90 hover:text-gold font-medium">
+                <AccordionTrigger className="gap-4 text-left text-lg text-foreground font-medium transition-colors hover:no-underline hover:text-gold">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="mt-2 rounded-lg border border-border bg-card/95 px-6 py-4 text-card-foreground leading-relaxed shadow-sm">
+                <AccordionContent className="pb-5 pr-8 text-base leading-relaxed text-muted-foreground">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-          <div className="mt-8 text-center">
+          <div className="mt-8">
             <p className="text-muted-foreground">
               Have more questions? <a href={`https://wa.me/96879136646?text=${encodeURIComponent("Hi Waleed, I have a question: ...")}`} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">Send me your question on WhatsApp</a>
             </p>

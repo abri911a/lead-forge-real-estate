@@ -14,7 +14,7 @@ const PublishedInStrip = ({ variant = "page", className = "" }: PublishedInStrip
       variant === "page" ? "border-y border-gold/20 py-3" : "py-1"
     } flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 ${className}`}
   >
-    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground whitespace-nowrap">
+    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground whitespace-nowrap">
       My articles in
     </span>
     {/* Phones: names wrap with plain gaps. sm+: one line with gold dots between. */}

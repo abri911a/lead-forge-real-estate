@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Type: Fraunces (display, roman only) + Geist (body). Self-hosted, OFL, subset to Basic Latin + Latin-1 + common punctuation
+   (re-subset if the site ever needs other characters; Arabic falls back to the system font).
+   The fallback faces are metric-matched local fonts, so the swap doesn't shift the layout. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-latin-var.woff2") format("woff2");
+  /* instanced to wght 600-700 at opsz 72: 31 KB instead of 67 KB (the site only uses bold headings) */
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist-latin-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia"), local("Times New Roman");
+  size-adjust: 104%;
+  ascent-override: 94%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial"), local("Helvetica");
+  size-adjust: 105%;
+  ascent-override: 96%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -39,13 +74,17 @@ All colors MUST be HSL.
     --radius: 0.5rem;
     
     /* Custom real estate theme - refined elegant palette */
-    --luxury-dark: 0 0% 8%;
-    --luxury-darker: 0 0% 5%;
+    --luxury-dark: 30 6% 8%;
+    --luxury-darker: 30 6% 5%;
     --gold: 38 85% 62%;
     --gold-light: 40 88% 70%;
     --gold-muted: 38 50% 50%;
     --warm-gray: 30 8% 25%;
     --warm-gray-light: 30 8% 35%;
+    /* WhatsApp brand green; ink = dark text that passes contrast on it (white fails at ~2:1) */
+    --whatsapp: 142 70% 49%;
+    --whatsapp-hover: 142 69% 42%;
+    --whatsapp-ink: 204 38% 7%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -65,14 +104,14 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
+    --background: 30 6% 8%;
+    --foreground: 40 20% 95%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 30 6% 10%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 30 6% 10%;
+    --popover-foreground: 40 20% 95%;
 
     --primary: 38 85% 62%;
     --primary-foreground: 0 0% 10%;
@@ -81,7 +120,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 98%;
 
     --muted: 30 8% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 35 8% 68%;
 
     --accent: 38 85% 62%;
     --accent-foreground: 0 0% 10%;
@@ -115,6 +154,26 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    font-style: normal;
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
   }
 }
