@@ -108,6 +108,12 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  /* clip, not hidden: hidden would break the sticky header */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-background text-foreground;
   }

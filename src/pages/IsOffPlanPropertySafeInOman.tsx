@@ -448,8 +448,7 @@ const IsOffPlanPropertySafeInOman = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book a consultation with Waleed Al Abri, real
-                  estate advisor in Oman
+                  Book a consultation
                 </a>
               </Button>
             </div>

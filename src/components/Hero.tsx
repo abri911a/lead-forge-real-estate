@@ -4,6 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 
+const TALK_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponent(
+  "Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ...",
+)}`;
+
 const Hero = () => {
   const [location, setLocation] = useState("");
   const [propertyType, setPropertyType] = useState("");
@@ -62,7 +66,7 @@ const Hero = () => {
 
           {/* Quick search form */}
           <div className="bg-card/95 backdrop-blur-sm p-6 rounded-lg shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Select value={propertyType} onValueChange={setPropertyType}>
                 <SelectTrigger aria-label="Property type">
                   <SelectValue placeholder="Property Type" />
@@ -88,17 +92,6 @@ const Hero = () => {
                 </SelectContent>
               </Select>
 
-              <Select>
-                <SelectTrigger aria-label="Bedrooms">
-                  <SelectValue placeholder="Bedrooms" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="1">1 Bed</SelectItem>
-                  <SelectItem value="2">2 Beds</SelectItem>
-                  <SelectItem value="3">3 Beds</SelectItem>
-                  <SelectItem value="4">4+ Beds</SelectItem>
-                </SelectContent>
-              </Select>
 
               <Button 
                 className="bg-gold text-luxury-dark hover:bg-gold-light w-full"
@@ -119,18 +112,16 @@ const Hero = () => {
             >
               View All Properties
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            {/* Was a scroll to the bio card, which has no contact action */}
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
               className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
-              onClick={() => {
-                const profileSection = document.getElementById("agent-profile");
-                if (profileSection) {
-                  profileSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
-              }}
             >
-              Talk to Waleed
+              <a href={TALK_WHATSAPP} target="_blank" rel="noopener noreferrer">
+                Talk to Waleed
+              </a>
             </Button>
           </div>
         </div>

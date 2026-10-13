@@ -22,7 +22,7 @@ const ContactOptionsDialog = ({ open, onOpenChange }: ContactOptionsDialogProps)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-luxury-dark border-warmGray">
+      <DialogContent className="dark sm:max-w-md bg-luxury-dark border-warmGray text-foreground">
         <DialogHeader>
           <DialogTitle className="text-gold">Contact Us</DialogTitle>
           <DialogDescription className="text-muted-foreground">

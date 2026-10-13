@@ -39,7 +39,7 @@ const PropertyDetail = () => {
   const features = Array.isArray(property?.features) ? property.features.filter((feature): feature is string => typeof feature === "string") : [];
 
   return (
-    <div className="min-h-screen bg-luxury-dark text-foreground">
+    <div className="dark min-h-screen bg-luxury-dark text-foreground">
       <SeoHead title={title} description={description} canonical={canonical} type="article" image={property?.image_url} />
       <Helmet>
         <title>{title}</title>
