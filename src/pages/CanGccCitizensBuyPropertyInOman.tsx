@@ -12,14 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import ComparisonTable from "@/components/ComparisonTable";
 
 const title =
   "Can GCC Citizens Buy Property in Oman Outside ITCs? 2026 Guide | Waleed Property";
@@ -258,60 +251,15 @@ const CanGccCitizensBuyPropertyInOman = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               GCC citizen vs non-GCC foreigner
             </h2>
-            <div className="border border-border rounded-lg overflow-hidden">
-              <Table className="[&_td]:align-top [&_td]:p-3 md:[&_td]:p-4 [&_th]:px-3 md:[&_th]:px-4 [&_th]:align-bottom">
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="text-gold"></TableHead>
-                    <TableHead className="text-gold">GCC citizen</TableHead>
-                    <TableHead className="text-gold">
-                      Non-GCC foreigner
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-semibold">Where</TableCell>
-                    <TableCell>
-                      Most of Oman, except the prohibited areas above
-                    </TableCell>
-                    <TableCell>
-                      Designated locations only: ITCs, the new cities such as
-                      Sultan Haitham City, and approved neighbourhoods
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold">What</TableCell>
-                    <TableCell>
-                      Built property and land, residence or investment. No
-                      agricultural land.
-                    </TableCell>
-                    <TableCell>
-                      Units in eligible projects. Freehold or usufruct varies
-                      per project.
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold">Land</TableCell>
-                    <TableCell>
-                      Allowed, with the 4-year development rule
-                    </TableCell>
-                    <TableCell>
-                      Generally not available outside designated projects
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold">Residency</TableCell>
-                    <TableCell>
-                      Not needed. GCC citizens already enter and reside freely.
-                    </TableCell>
-                    <TableCell>
-                      Ownership can anchor the sponsor-free Owner Residency
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
+            <ComparisonTable
+              columns={["GCC citizen", "Non-GCC foreigner"]}
+              rows={[
+                { label: "Where", a: "Most of Oman, except the prohibited areas above", b: "Designated locations only: ITCs, the new cities such as Sultan Haitham City, and approved neighbourhoods" },
+                { label: "What", a: "Built property and land, residence or investment. No agricultural land.", b: "Units in eligible projects. Freehold or usufruct varies per project." },
+                { label: "Land", a: "Allowed, with the 4-year development rule", b: "Generally not available outside designated projects" },
+                { label: "Residency", a: "Not needed. GCC citizens already enter and reside freely.", b: "Ownership can anchor the sponsor-free Owner Residency" },
+              ]}
+            />
           </div>
 
           {/* Practical */}

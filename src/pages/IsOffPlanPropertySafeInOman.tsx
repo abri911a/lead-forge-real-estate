@@ -12,14 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import ComparisonTable from "@/components/ComparisonTable";
 
 const title =
   "Is Off-Plan Property Safe in Oman? The 2026 Escrow Law (RD 79/2025) | Waleed Property";
@@ -171,62 +164,16 @@ const IsOffPlanPropertySafeInOman = () => {
               the 1989 apartment ownership law. One law now covers the whole
               chain.
             </p>
-            <div className="border border-border rounded-lg overflow-hidden">
-              <Table className="[&_td]:align-top [&_td]:p-3 md:[&_td]:p-4 [&_th]:px-3 md:[&_th]:px-4 [&_th]:align-bottom">
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="text-gold"></TableHead>
-                    <TableHead className="text-gold">
-                      Old law (RD 30/2018, repealed)
-                    </TableHead>
-                    <TableHead className="text-gold">
-                      New law (RD 79/2025, in force 10 Mar 2026)
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-semibold">Status</TableCell>
-                    <TableCell>Repealed</TableCell>
-                    <TableCell>The law in force today</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold">Scope</TableCell>
-                    <TableCell>Escrow accounts only</TableCell>
-                    <TableCell>
-                      Escrow, brokerage, and apartment ownership in one
-                      framework
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold">
-                      Developer entry
-                    </TableCell>
-                    <TableCell>Open an escrow account</TableCell>
-                    <TableCell>
-                      Licence and financial guarantees required BEFORE
-                      launching a project, plus ongoing disclosures
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold">Contracts</TableCell>
-                    <TableCell>Not covered</TableCell>
-                    <TableCell>
-                      Every off-plan contract must be registered in the real
-                      estate register
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold">Enforcement</TableCell>
-                    <TableCell>Ministry administrative route</TableCell>
-                    <TableCell>
-                      Ministry of Housing with judicial enforcement powers,
-                      criminal penalties, and licence revocation
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
+            <ComparisonTable
+              columns={["Old law (RD 30/2018, repealed)", "New law (RD 79/2025, in force 10 Mar 2026)"]}
+              rows={[
+                { label: "Status", a: "Repealed", b: "The law in force today" },
+                { label: "Scope", a: "Escrow accounts only", b: "Escrow, brokerage, and apartment ownership in one framework" },
+                { label: "Developer entry", a: "Open an escrow account", b: "Licence and financial guarantees required BEFORE launching a project, plus ongoing disclosures" },
+                { label: "Contracts", a: "Not covered", b: "Every off-plan contract must be registered in the real estate register" },
+                { label: "Enforcement", a: "Ministry administrative route", b: "Ministry of Housing with judicial enforcement powers, criminal penalties, and licence revocation" },
+              ]}
+            />
           </div>
 
           {/* How escrow protects */}
