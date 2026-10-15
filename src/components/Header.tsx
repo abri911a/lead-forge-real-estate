@@ -101,7 +101,8 @@ const Header = () => {
             </SheetTrigger>
             {/* "dark": the sheet renders in a portal outside the page's .dark wrapper */}
             <SheetContent side="right" className="dark w-72 bg-luxury-dark border-warmGray text-foreground">
-              <SheetTitle className="text-foreground">Menu</SheetTitle>
+              {/* Visually hidden: the big "Menu" heading drew dead taps (Clarity, 15 Oct). Still announced to screen readers. */}
+              <SheetTitle className="sr-only">Menu</SheetTitle>
               <ul className="mt-6 flex flex-col">
                 {NAV_LINKS.map((l) => (
                   <li key={l.href}>
