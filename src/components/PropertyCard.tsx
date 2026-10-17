@@ -41,7 +41,9 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
         onOpenChange={setContactDialogOpen}
       />
     <Card className="overflow-hidden border-warmGray transition-colors duration-300 hover:border-gold/60">
-      <div className="relative overflow-hidden">
+      {/* Photo + title open the property too: Clarity (17 Oct) showed repeated taps on the photo that did nothing.
+          The photo link is hidden from screen readers so "View Details" stays the one announced link. */}
+      <Link to={`/property/${id}`} tabIndex={-1} aria-hidden="true" className="relative block overflow-hidden">
         <img
           src={optimizeImageUrl(image)}
           alt={title}
@@ -61,10 +63,12 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
             {price}
           </span>
         </div>
-      </div>
+      </Link>
       
       <div className="p-6">
-        <h3 className="text-xl font-bold text-foreground mb-2 line-clamp-2">{title}</h3>
+        <h3 className="text-xl font-bold text-foreground mb-2 line-clamp-2">
+          <Link to={`/property/${id}`} tabIndex={-1} className="hover:text-gold transition-colors">{title}</Link>
+        </h3>
         <div className="flex items-center gap-2 text-muted-foreground mb-4">
           <MapPin className="h-4 w-4" />
           <span className="text-sm">{location}</span>

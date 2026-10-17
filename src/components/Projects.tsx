@@ -39,6 +39,8 @@ const Projects = () => {
         <ul className="divide-y divide-border md:grid md:grid-cols-3 md:gap-8 md:divide-y-0">
           {guides.map((guide) => (
             <li key={guide.path} className="flex gap-4 py-5 first:pt-0 last:pb-0 md:flex-col md:py-0">
+              {/* Photo + title open the guide too (photo taps did nothing before) */}
+              <Link to={guide.path} tabIndex={-1} aria-hidden="true" className="flex-shrink-0 md:w-full">
               <img
                 src={guide.image}
                 alt={guide.name}
@@ -48,8 +50,9 @@ const Projects = () => {
                 height={533}
                 className="h-24 w-24 flex-shrink-0 rounded-md border border-border object-cover sm:h-32 sm:w-32 md:h-48 md:w-full"
               />
+              </Link>
               <div className="flex min-w-0 flex-col items-start">
-                <h3 className="text-xl font-bold text-foreground mb-1">{guide.name}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-1"><Link to={guide.path} tabIndex={-1} className="hover:text-gold transition-colors">{guide.name}</Link></h3>
                 <p className="text-sm text-muted-foreground mb-3">{guide.description}</p>
                 <Button
                   asChild
