@@ -18,6 +18,7 @@ export const OmanInvestmentGuide = page(() => import("./pages/OmanInvestmentGuid
 export const AlMoujGuide = page(() => import("./pages/AlMoujGuide"));
 export const SultanHaithamCityGuide = page(() => import("./pages/SultanHaithamCityGuide"));
 export const OmanPropertyPrices2026 = page(() => import("./pages/OmanPropertyPrices2026"));
+export const PropertyForForeigners = page(() => import("./pages/PropertyForForeigners"));
 export const CanForeignersBuyPropertyInOman = page(() => import("./pages/CanForeignersBuyPropertyInOman"));
 export const OmanResidencyByProperty = page(() => import("./pages/OmanResidencyByProperty"));
 export const IsOffPlanPropertySafeInOman = page(() => import("./pages/IsOffPlanPropertySafeInOman"));
@@ -36,6 +37,7 @@ const byPath: Record<string, Page> = {
   "/al-mouj-guide": AlMoujGuide,
   "/sultan-haitham-city-guide": SultanHaithamCityGuide,
   "/oman-property-prices-2026": OmanPropertyPrices2026,
+  "/property-for-sale-in-oman-for-foreigners": PropertyForForeigners,
   "/can-foreigners-buy-property-in-oman": CanForeignersBuyPropertyInOman,
   "/oman-residency-by-property": OmanResidencyByProperty,
   "/is-off-plan-property-safe-in-oman": IsOffPlanPropertySafeInOman,

@@ -9,7 +9,7 @@ import {
   OmanInvestmentGuide,
   AlMoujGuide,
   SultanHaithamCityGuide,
-  OmanPropertyPrices2026,
+  OmanPropertyPrices2026, PropertyForForeigners,
   CanForeignersBuyPropertyInOman,
   OmanResidencyByProperty,
   IsOffPlanPropertySafeInOman,
@@ -38,6 +38,7 @@ const App = () => (
             <Route path="/al-mouj-guide" element={<AlMoujGuide />} />
             <Route path="/sultan-haitham-city-guide" element={<SultanHaithamCityGuide />} />
             <Route path="/oman-property-prices-2026" element={<OmanPropertyPrices2026 />} />
+            <Route path="/property-for-sale-in-oman-for-foreigners" element={<PropertyForForeigners />} />
             <Route path="/can-foreigners-buy-property-in-oman" element={<CanForeignersBuyPropertyInOman />} />
             <Route path="/oman-residency-by-property" element={<OmanResidencyByProperty />} />
             <Route path="/is-off-plan-property-safe-in-oman" element={<IsOffPlanPropertySafeInOman />} />

@@ -136,7 +136,7 @@ const AlMoujGuide = () => (
               <h3 className="text-xl font-semibold text-foreground mb-3">New apartments, from the developer</h3>
               <ul className="text-muted-foreground space-y-2 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
                 <li>• Azura Beach Residences III and IV: from OMR 69,000 plus VAT (launched February 2026).</li>
-                <li>• Golf Links: from OMR 77,000.</li>
+                <li>• Golf Links sold out in 2024. Its page still shows "from 77,000", but that is not a live offer.</li>
                 <li>• For comparison, Azura Phase II started at OMR 88,000 plus VAT in October 2025.</li>
               </ul>
             </div>
