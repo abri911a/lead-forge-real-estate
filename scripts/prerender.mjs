@@ -36,6 +36,10 @@ const shell = readFileSync(join(DIST, 'index.html'), 'utf8');
 const sitemap = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
 const routes = [...sitemap.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)]
   .map((m) => new URL(m[1]).pathname.replace(/\/$/, '') || '/');
+// Plus the listing pages, which are deliberately not in the sitemap (see property-routes.txt).
+const propertyRoutes = readFileSync(new URL('./property-routes.txt', import.meta.url), 'utf8')
+  .split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
+routes.push(...propertyRoutes);
 if (!routes.includes('/')) routes.unshift('/');
 const unique = [...new Set(routes)];
 
@@ -83,9 +87,15 @@ async function render(route) {
     if (rootChildren === 0) throw new Error('root rendered empty');
     // Strip the Google Ads library tag that index.html appends after `load`; otherwise the
     // snapshot bakes it in and the runtime loader adds a second copy (double-counted events).
-    const html = (await page.content()).replace(/<script[^>]*googletagmanager\.com\/gtag\/js[^>]*><\/script>\s*/g, '')
+    let html = (await page.content()).replace(/<script[^>]*googletagmanager\.com\/gtag\/js[^>]*><\/script>\s*/g, '')
       // Same for Microsoft Clarity (index.html skips it off the live domain anyway; belt and braces).
       .replace(/<script[^>]*clarity\.ms[^>]*><\/script>\s*/g, '');
+    // Listing pages: noindex (links still followed) so Google spends its crawl on the guides.
+    if (route.startsWith('/property/')) {
+      const before = html;
+      html = html.replace(/<meta name="robots" content="[^"]*"\s*\/?>/, '<meta name="robots" content="noindex, follow">');
+      if (html === before) throw new Error('robots meta not found — noindex not applied');
+    }
     if (route === '/') {
       homeHtml = html;
     } else {
