@@ -14,10 +14,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Geist"', '"Geist Fallback"', "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ['"Fraunces"', '"Fraunces Fallback"', "Georgia", "serif"],
+        // Cairo sits right after the Latin face: it only has Arabic glyphs, and it must come before the local
+        // fallbacks (Arial carries Arabic glyphs too and would win otherwise).
+        sans: ['"Geist"', '"Cairo"', '"Geist Fallback"', "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Fraunces"', '"Cairo"', '"Fraunces Fallback"', "Georgia", "serif"],
         // font-serif is used by the trust strip and author card: same family as display, so the page stays at two faces
-        serif: ['"Fraunces"', '"Fraunces Fallback"', "Georgia", "serif"],
+        serif: ['"Fraunces"', '"Cairo"', '"Fraunces Fallback"', "Georgia", "serif"],
       },
       colors: {
         whatsapp: {

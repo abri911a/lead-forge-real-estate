@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* Type: Fraunces (display, roman only) + Geist (body). Self-hosted, OFL, subset to Basic Latin + Latin-1 + common punctuation
-   (re-subset if the site ever needs other characters; Arabic falls back to the system font).
+   (re-subset if the site ever needs other characters). Arabic text uses Cairo (Waleed's choice, 21 Oct 2026): Arabic-only
+   unicode-range, so browsers download it only on pages that show Arabic characters.
    The fallback faces are metric-matched local fonts, so the swap doesn't shift the layout. */
 @font-face {
   font-family: "Fraunces";
@@ -19,6 +20,14 @@
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("/fonts/cairo-arabic-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-08FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE70-FEFC;
 }
 @font-face {
   font-family: "Fraunces Fallback";
