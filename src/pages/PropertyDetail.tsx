@@ -141,7 +141,7 @@ const PropertyDetail = () => {
                     {property.status && <p className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-gold" /> Status: {property.status}</p>}
                   </div>
                   <Button className="w-full bg-gold text-luxury-dark hover:bg-gold-light" onClick={() => setContactOpen(true)}>
-                    <Phone className="mr-2 h-4 w-4" /> Contact Waleed
+                    <Phone className="mr-2 h-4 w-4" /> Ask about this unit
                   </Button>
                 </Card>
               </aside>
@@ -151,7 +151,11 @@ const PropertyDetail = () => {
       </main>
       <Footer />
       <WhatsAppButton />
-      <ContactOptionsDialog open={contactOpen} onOpenChange={setContactOpen} />
+      <ContactOptionsDialog
+        open={contactOpen}
+        onOpenChange={setContactOpen}
+        property={property ? { id: property.id, title: property.title, location: property.location, price: property.price } : undefined}
+      />
     </div>
   );
 };

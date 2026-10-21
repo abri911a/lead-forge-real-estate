@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bed, Bath, Maximize, MapPin, Phone } from "lucide-react";
+import { Bed, Bath, Maximize, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -39,6 +39,7 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
       <ContactOptionsDialog 
         open={contactDialogOpen} 
         onOpenChange={setContactDialogOpen}
+        property={{ id, title, location, price }}
       />
     <Card className="overflow-hidden border-warmGray transition-colors duration-300 hover:border-gold/60">
       {/* Photo + title open the property too: Clarity (17 Oct) showed repeated taps on the photo that did nothing.
@@ -101,8 +102,8 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
             className="bg-gold text-luxury-dark hover:bg-gold-light"
             onClick={() => setContactDialogOpen(true)}
           >
-            <Phone className="mr-2 h-4 w-4" />
-            Contact
+            <MessageCircle className="mr-2 h-4 w-4" />
+            Ask about it
           </Button>
         </div>
       </div>

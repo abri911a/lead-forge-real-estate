@@ -64,7 +64,7 @@ const Header = () => {
               <li key={l.href}><a href={l.href} className="text-foreground hover:text-gold transition-colors">{l.label}</a></li>
             ))}
             {/* No contact section exists on the site; WhatsApp is the contact channel (counted as whatsapp_tap) */}
-            <li><a href={CONTACT_WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-gold transition-colors">Contact</a></li>
+            <li><a href={CONTACT_WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-gold transition-colors">Ask Waleed</a></li>
           </ul>
 
           <div className="flex items-center gap-0.5 sm:gap-1">

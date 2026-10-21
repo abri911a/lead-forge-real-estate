@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
-  Bed, Bath, Maximize, MapPin, Phone, Mail, 
+  Bed, Bath, Maximize, MapPin, MessageCircle,
   Calendar, Home, CheckCircle2
 } from "lucide-react";
 import ContactOptionsDialog from "./ContactOptionsDialog";
@@ -34,6 +34,11 @@ interface PropertyDetailsDialogProps {
 
 const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetailsDialogProps) => {
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
+  const [contactIntent, setContactIntent] = useState<"question" | "viewing">("question");
+  const openContact = (intent: "question" | "viewing") => {
+    setContactIntent(intent);
+    setContactDialogOpen(true);
+  };
   
   // Only show what this listing actually has. The old fallback lists (pool, solar panels, marble
   // floors, 24/7 security...) were shown for EVERY property and read like facts about the unit.
@@ -60,6 +65,8 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
       <ContactOptionsDialog 
         open={contactDialogOpen} 
         onOpenChange={setContactDialogOpen}
+        property={{ id: property.id, title: property.title, location: property.location, price: property.price }}
+        intent={contactIntent}
       />
       <Dialog open={open} onOpenChange={onOpenChange}>
         {/* "dark": the dialog renders in a portal outside the page's .dark wrapper */}
@@ -188,31 +195,24 @@ const PropertyDetailsDialog = ({ open, onOpenChange, property }: PropertyDetails
           {/* Contact Actions */}
           <div className="space-y-3">
             <h3 className="text-base sm:text-lg font-semibold">Interested in this property?</h3>
+            {/* Was "Call Agent" / "Email Inquiry" / "Schedule Viewing", all opening the same WhatsApp-or-call box (no email path exists). */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               <Button 
                 className="bg-gold text-luxury-dark hover:bg-gold-light text-sm sm:text-base"
-                onClick={() => setContactDialogOpen(true)}
+                onClick={() => openContact("question")}
               >
-                <Phone className="mr-2 h-4 w-4" />
-                Call Agent
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Ask about this unit
               </Button>
               <Button 
                 variant="outline" 
                 className="border-gold text-gold hover:bg-gold hover:text-luxury-dark text-sm sm:text-base"
-                onClick={() => setContactDialogOpen(true)}
+                onClick={() => openContact("viewing")}
               >
-                <Mail className="mr-2 h-4 w-4" />
-                Email Inquiry
+                <Calendar className="mr-2 h-4 w-4" />
+                Book a viewing
               </Button>
             </div>
-            <Button 
-              variant="secondary" 
-              className="w-full text-sm sm:text-base"
-              onClick={() => setContactDialogOpen(true)}
-            >
-              <Calendar className="mr-2 h-4 w-4" />
-              Schedule Viewing
-            </Button>
           </div>
         </div>
       </DialogContent>

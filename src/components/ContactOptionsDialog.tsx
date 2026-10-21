@@ -11,12 +11,20 @@ import { Button } from "@/components/ui/button";
 interface ContactOptionsDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  // When set, the WhatsApp text names the unit, so Waleed knows which listing the tap came from.
+  property?: { id: string; title: string; location: string; price: string };
+  intent?: "question" | "viewing";
 }
 
-const ContactOptionsDialog = ({ open, onOpenChange }: ContactOptionsDialogProps) => {
+const ContactOptionsDialog = ({ open, onOpenChange, property, intent = "question" }: ContactOptionsDialogProps) => {
   const phoneNumber = "+968 79136646";
   const whatsappNumber = "96879136646"; // WhatsApp number without special characters
-  const whatsappMessage = "Hi! I'm interested in learning more about your properties.";
+  const unit = property ? `${property.title} (${property.location}, ${property.price}) waleedproperty.com/property/${property.id}` : "";
+  const whatsappMessage = !property
+    ? "Hi Waleed, I have a question about property in Oman: ..."
+    : intent === "viewing"
+      ? `Hi Waleed, I want to book a viewing for ${unit}`
+      : `Hi Waleed, I'm interested in ${unit}`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const callUrl = `tel:${phoneNumber}`;
 
@@ -24,9 +32,11 @@ const ContactOptionsDialog = ({ open, onOpenChange }: ContactOptionsDialogProps)
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="dark sm:max-w-md bg-luxury-dark border-warmGray text-foreground">
         <DialogHeader>
-          <DialogTitle className="text-foreground">Contact Us</DialogTitle>
+          <DialogTitle className="text-foreground">
+            {!property ? "Contact Waleed" : intent === "viewing" ? "Book a viewing" : "Ask about this unit"}
+          </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Choose your preferred way to get in touch with us
+            {property ? property.title : "WhatsApp or call, whichever is easier for you"}
           </DialogDescription>
         </DialogHeader>
         
