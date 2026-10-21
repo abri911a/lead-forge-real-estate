@@ -276,6 +276,9 @@ const PropertyForForeigners = () => (
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+      <link rel="alternate" hrefLang="en" href={canonical} />
+      <link rel="alternate" hrefLang="ar" href="https://waleedproperty.com/ar/property-for-sale-in-oman-for-foreigners" />
+      <link rel="alternate" hrefLang="x-default" href={canonical} />
       <meta property="og:title" content="Property in Oman you can buy as a foreigner: projects and prices" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
@@ -291,6 +294,11 @@ const PropertyForForeigners = () => (
     <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
       <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch]">
         <div className="mb-8">
+          <p className="mb-4 text-sm" dir="rtl" lang="ar">
+            <a href="/ar/property-for-sale-in-oman-for-foreigners" className={linkClass}>
+              اقرأ بالعربية
+            </a>
+          </p>
           <span className="text-gold text-sm font-semibold uppercase tracking-wide">
             Projects for foreign buyers · October 2026
           </span>

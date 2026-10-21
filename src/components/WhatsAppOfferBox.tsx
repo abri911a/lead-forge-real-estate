@@ -12,9 +12,10 @@ interface WhatsAppOfferBoxProps {
   message: string;
   // Ad landing pages: show where Waleed's articles were published, next to the ask.
   showPublications?: boolean;
+  buttonLabel?: string;
 }
 
-const WhatsAppOfferBox = ({ heading, body, message, showPublications = false }: WhatsAppOfferBoxProps) => (
+const WhatsAppOfferBox = ({ heading, body, message, showPublications = false, buttonLabel = "Send on WhatsApp" }: WhatsAppOfferBoxProps) => (
   <div className="border border-whatsapp/40 bg-whatsapp/5 rounded-lg p-6 mb-12">
     <h2 className="text-xl font-bold text-foreground mb-2">{heading}</h2>
     <p className="text-muted-foreground leading-relaxed mb-4">{body}</p>
@@ -25,7 +26,7 @@ const WhatsAppOfferBox = ({ heading, body, message, showPublications = false }: 
       className="inline-flex min-h-11 items-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-whatsapp-ink font-semibold px-5 py-3 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-luxury-dark"
     >
       <MessageCircle className="h-5 w-5" />
-      Send on WhatsApp
+      {buttonLabel}
     </a>
     {showPublications && (
       <PublishedInStrip variant="inline" className="mt-4 pt-3 border-t border-whatsapp/20" />
