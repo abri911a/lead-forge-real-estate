@@ -86,9 +86,11 @@ const Cards = ({ rows }: { rows: { title: string; lines: [string, string][]; src
             </div>
           ))}
         </dl>
-        <p className="text-sm text-muted-foreground mt-3">
-          Source: <Sources list={r.src} />
-        </p>
+        {r.src.length > 0 && (
+          <p className="text-sm text-muted-foreground mt-3">
+            Source: <Sources list={r.src} />
+          </p>
+        )}
       </div>
     ))}
   </div>
@@ -116,7 +118,7 @@ const delivery = [
 ];
 
 const projects: { name: string; units: string; delivery: string; status: string; src: Src[] }[] = [
-  { name: "Sultan Haitham City", units: "about 20,000 (Phase 1: 6,743)", delivery: "Phase 1 2024–2030 (2023 plan); full plan to 2045", status: "1,700+ sold by April 2026", src: [S.shcPlan, S.shcMin, S.shcSold] },
+  { name: "Sultan Haitham City", units: "about 20,000 (Phase 1: 6,743)", delivery: "Phase 1 2024–2030 (2023 plan); full plan to 2045", status: "About 2,100 sold by October 2026 (Ministry of Housing and Urban Planning)", src: [S.shcPlan, S.shcMin, S.shcSold] },
   { name: "Jood and Yamal (Talaat Moustafa)", units: "about 15,600 together; Jood alone 7,746", delivery: "First phase 2030 (developer)", status: "380+ sold in the first half of 2026", src: [S.jood, S.tmg] },
   { name: "Wadi Zaha (inside Sultan Haitham City)", units: "950", delivery: "Not on the source page", status: "On sale", src: [S.wz] },
   { name: "A'Thuraya City", units: "Phase 1: 2,600+ · Phase 2: 3,600", delivery: "No date published", status: "Construction started (Sep 2025)", src: [S.thuraya] },
@@ -140,12 +142,13 @@ const scenarios = [
   { pace: "About +4.7% a year", pop: "2.94 million", extra: "+1.4 million", homes: "about 313,000" },
 ];
 
-const otherWay: { signal: string; value: string; src: Src }[] = [
+const otherWay: { signal: string; value: string; src?: Src }[] = [
   { signal: "Sales contracts, all of Oman", value: "OMR 954.1 million in Jan–Aug 2026, +14.5%", src: S.sales },
   { signal: "Mortgage contracts, all of Oman", value: "15,441 in Jan–Jul 2026, +22.3%. Total value +0.7% only (OMR 864.4 million). So loans got smaller. That fits first-time buyers.", src: S.bulletin },
-  // SHC sales: Waleed's MoHUP contact (Eng. Mohammed) gave ~2,400 sold by Oct 2026, verbal, NOT published.
-  // Swap this row to the 2,400 figure only after Waleed confirms how to credit it. Until then: the published 1,700+.
-  { signal: "Sultan Haitham City", value: "1,700+ units sold by April 2026", src: S.shcSold },
+  // SHC sales: figure given to Waleed by the Ministry (22 Oct 2026), credit to the Ministry approved. No public link;
+  // the Muscat Daily 1,700+ (Apr 2026) stays in the sources as the published reference point.
+  // Any OTHER number from that ministry contact is private to Waleed: never add one to this site.
+  { signal: "Sultan Haitham City", value: "About 2,100 units sold by October 2026 (Ministry of Housing and Urban Planning)" },
   { signal: "Jood and Yamal (Talaat Moustafa)", value: "380+ units sold in the first half of 2026", src: S.tmg },
 ];
 
@@ -476,7 +479,7 @@ const MuscatSupplyDemand2026 = () => (
           <div className={para}>
             <p>Yes. These numbers from 2026 point the other way.</p>
           </div>
-          <Cards rows={otherWay.map((r) => ({ title: r.signal, lines: [["Number", r.value]], src: [r.src] }))} />
+          <Cards rows={otherWay.map((r) => ({ title: r.signal, lines: [["Number", r.value]], src: r.src ? [r.src] : [] }))} />
           {otherWay.length > 0 && (
             <div className={`${tableBox} mt-6 hidden md:block`}>
               <Table>
@@ -492,10 +495,14 @@ const MuscatSupplyDemand2026 = () => (
                       <TableCell className="text-foreground font-semibold">{r.signal}</TableCell>
                       <TableCell>
                         {r.value}
-                        <br />
-                        <span className="text-sm">
-                          <SourceLink s={r.src} />
-                        </span>
+                        {r.src && (
+                          <>
+                            <br />
+                            <span className="text-sm">
+                              <SourceLink s={r.src} />
+                            </span>
+                          </>
+                        )}
                       </TableCell>
                     </TableRow>
                   ))}
