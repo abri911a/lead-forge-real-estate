@@ -24,6 +24,7 @@ export const CanForeignersBuyPropertyInOman = page(() => import("./pages/CanFore
 export const OmanResidencyByProperty = page(() => import("./pages/OmanResidencyByProperty"));
 export const IsOffPlanPropertySafeInOman = page(() => import("./pages/IsOffPlanPropertySafeInOman"));
 export const CanGccCitizensBuyPropertyInOman = page(() => import("./pages/CanGccCitizensBuyPropertyInOman"));
+export const MuscatSupplyDemand2026 = page(() => import("./pages/MuscatSupplyDemand2026"));
 export const PropertyDetail = page(() => import("./pages/PropertyDetail"));
 export const Login = page(() => import("./authPages").then((m) => ({ default: m.Login })));
 export const Signup = page(() => import("./authPages").then((m) => ({ default: m.Signup })));
@@ -44,6 +45,7 @@ const byPath: Record<string, Page> = {
   "/oman-residency-by-property": OmanResidencyByProperty,
   "/is-off-plan-property-safe-in-oman": IsOffPlanPropertySafeInOman,
   "/can-gcc-citizens-buy-property-in-oman": CanGccCitizensBuyPropertyInOman,
+  "/muscat-property-supply-and-demand-2026": MuscatSupplyDemand2026,
   "/login": Login,
   "/signup": Signup,
   "/admin": Admin,

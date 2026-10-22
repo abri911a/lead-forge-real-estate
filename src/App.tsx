@@ -14,6 +14,7 @@ import {
   OmanResidencyByProperty,
   IsOffPlanPropertySafeInOman,
   CanGccCitizensBuyPropertyInOman,
+  MuscatSupplyDemand2026,
   PropertyDetail,
   Login,
   Signup,
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/oman-residency-by-property" element={<OmanResidencyByProperty />} />
             <Route path="/is-off-plan-property-safe-in-oman" element={<IsOffPlanPropertySafeInOman />} />
             <Route path="/can-gcc-citizens-buy-property-in-oman" element={<CanGccCitizensBuyPropertyInOman />} />
+            <Route path="/muscat-property-supply-and-demand-2026" element={<MuscatSupplyDemand2026 />} />
             <Route path="/property/:id" element={<PropertyDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
