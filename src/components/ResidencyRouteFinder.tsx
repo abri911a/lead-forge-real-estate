@@ -144,12 +144,17 @@ const ResidencyRouteFinder = () => {
   const [buy, setBuy] = useState<Buy>();
   const [val, setVal] = useState<Val>();
   const [city, setCity] = useState<City>();
-  const result = resolve(nat, buy, val, city);
+  // A card tapped directly (before the questions are answered). Clarity showed visitors tapping the
+  // idle cards and getting nothing, so a tap now opens that card the same way an answer does.
+  const [picked, setPicked] = useState<RouteKey | null>(null);
+  const answered = resolve(nat, buy, val, city);
+  const result = picked ?? answered;
   const needsCity = nat === "other" && buy === "offplan";
   const needsVal = nat === "other" && (buy === "freehold" || (buy === "offplan" && city === "itc"));
 
   const pick = <T,>(setter: (v: T) => void, v: T, key?: RouteKey | null) => {
     setter(v);
+    setPicked(null);
     if (key) track("residency_tool_result", key);
   };
 
@@ -158,6 +163,12 @@ const ResidencyRouteFinder = () => {
     setBuy(undefined);
     setVal(undefined);
     setCity(undefined);
+    setPicked(null);
+  };
+
+  const openCard = (key: RouteKey) => {
+    setPicked(key);
+    track("residency_tool_card", key);
   };
 
   return (
@@ -169,7 +180,7 @@ const ResidencyRouteFinder = () => {
         Which residency does your purchase give you?
       </h2>
       <p className="text-muted-foreground mb-6">
-        Three or four taps. Seven possible answers, all shown below. Nothing here replaces a
+        Three or four taps, or tap the answer that fits you below. Nothing here replaces a
         check with the competent authority before you pay.
       </p>
 
@@ -246,10 +257,26 @@ const ResidencyRouteFinder = () => {
           const dimmed = result !== null && !active;
           const idle = result === null;
           const showNote = key === "offplan" && val === "over";
+          const tappable = !active;
           return (
             <div
               key={key}
+              role={tappable ? "button" : undefined}
+              tabIndex={tappable ? 0 : undefined}
+              aria-expanded={tappable ? false : undefined}
+              onClick={tappable ? () => openCard(key) : undefined}
+              onKeyDown={
+                tappable
+                  ? (e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openCard(key);
+                      }
+                    }
+                  : undefined
+              }
               className={
+                (tappable ? "cursor-pointer hover:border-gold/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold " : "") +
                 "rounded-lg border transition-[opacity,border-color] " +
                 (active
                   ? "border-gold bg-gold/10 p-5 md:p-6"
