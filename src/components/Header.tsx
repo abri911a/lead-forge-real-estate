@@ -5,10 +5,10 @@ import { Instagram } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const GET_STARTED_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponent(
-  "Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ...",
+  "Hi Waleed, what property can I buy in Oman?",
 )}`;
 
-const CONTACT_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponent("Hi Waleed, I have a question about property in Oman: ...")}`;
+const CONTACT_WHATSAPP = `https://wa.me/96879136646?text=${encodeURIComponent("Hi Waleed, I have a question about property in Oman.")}`;
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },

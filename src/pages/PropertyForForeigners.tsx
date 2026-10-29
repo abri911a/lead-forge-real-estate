@@ -267,7 +267,7 @@ const articleJsonLd = {
 };
 
 const askLink = (project: string) =>
-  WA + encodeURIComponent(`Hi Waleed, I am interested in ${project}. My budget is: ... My nationality is: ...`);
+  WA + encodeURIComponent(`Hi Waleed, what is today's price for ${project}?`);
 
 const PropertyForForeigners = () => (
   <div className="dark min-h-screen bg-luxury-dark text-foreground">
@@ -333,8 +333,8 @@ const PropertyForForeigners = () => (
 
         <WhatsAppOfferBox
           heading="Not sure which one fits?"
-          body="Send me your budget and your nationality on WhatsApp. I will reply with 3 projects you can legally buy, and today's price."
-          message="Hi Waleed, I want to buy property in Oman. My budget is: ... My nationality is: ..."
+          body="Message me on WhatsApp. I ask your budget and nationality, then send you 3 projects you can legally buy, with today's price."
+          message="Hi Waleed, which of these projects can I buy?"
           showPublications
         />
 
