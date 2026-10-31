@@ -169,13 +169,14 @@ const areas: Area[] = [
     note: "مجمع سياحي متكامل على الساحل، حوالي ساعة من مسقط. سوق عطلات وبيت ثانٍ.",
     projects: [
       {
+        // 31 Oct 2026: Muriya sales manager (phone): studios + 1-bedrooms sold out, 2-bedrooms from 80,000.
         name: "Solaris",
         by: "Muriya",
-        unit: "من استوديو إلى غرفتي نوم",
+        unit: "غرفتين نوم (الاستوديو وغرفة النوم الواحدة خلصت)",
         from: true,
-        amount: "50,000",
-        date: "على الصفحة يوم 17 أكتوبر 2026 (المطوّر)",
-        priceSource: { label: "jebelsifah.com", href: "https://jebelsifah.com/real-estate/solaris/" },
+        amount: "80,000",
+        date: "31 أكتوبر 2026 (مبيعات المطوّر، بالهاتف)",
+        priceSource: { label: "فريق مبيعات المطوّر، بالهاتف (صفحة المطوّر ما زالت تقول من 50,000)", href: "https://jebelsifah.com/real-estate/solaris/" },
         whoCanBuy: "تملك حر وإقامة لكل الجنسيات",
         whoSource: { label: "المطوّر", href: "https://jebelsifah.com/real-estate/solaris/" },
       },

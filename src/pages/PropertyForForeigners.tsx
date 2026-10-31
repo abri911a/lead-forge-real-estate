@@ -163,12 +163,14 @@ const areas: Area[] = [
     note: "ITC on the coast about an hour from Muscat. Holiday and second-home market.",
     projects: [
       {
+        // 31 Oct 2026: Muriya sales manager (phone, via Waleed): studios + 1-bedrooms sold out, 2-bedrooms from 80,000.
+        // The developer page still shows "from 50,000"; the label says so, so a reader is not misled by the link.
         name: "Solaris",
         by: "Muriya",
-        unit: "Studio to 2-bedroom",
-        price: "from 50,000",
-        date: "live 17 Oct 2026 (developer)",
-        priceSource: { label: "jebelsifah.com", href: "https://jebelsifah.com/real-estate/solaris/" },
+        unit: "2-bedroom (studios and 1-bedrooms sold out)",
+        price: "from 80,000",
+        date: "31 Oct 2026 (developer sales, by phone)",
+        priceSource: { label: "Muriya sales team, by phone (the developer page still shows from 50,000)", href: "https://jebelsifah.com/real-estate/solaris/" },
         whoCanBuy: "Freehold and residency for all nationalities",
         whoSource: { label: "developer", href: "https://jebelsifah.com/real-estate/solaris/" },
       },
