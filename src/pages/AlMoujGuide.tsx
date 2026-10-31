@@ -20,10 +20,10 @@ const canonical = "https://waleedproperty.com/al-mouj-guide";
 const linkClass = "text-gold underline underline-offset-2 hover:text-gold-light";
 
 const sources = [
-  { label: "Al Mouj Muscat, 20th anniversary brochure (2026)", href: "https://www.almouj.com/20th-anniversary/BrochureEN.pdf" },
-  { label: "Al Mouj Muscat, homepage (checked 11 Oct 2026)", href: "https://www.almouj.com/en/" },
-  { label: "Al Mouj Muscat, Azura III and IV (launched 15 Feb 2026)", href: "https://www.almouj.com/en/azura-iii-iv/" },
-  { label: "Al Mouj Muscat, Golf Links", href: "https://www.almouj.com/en/golf/" },
+  { label: "Al Mouj Muscat, 20th anniversary brochure (2026)" },
+  { label: "Al Mouj Muscat, homepage (checked 11 Oct 2026)" },
+  { label: "Al Mouj Muscat, Azura III and IV (launched 15 Feb 2026)" },
+  { label: "Al Mouj Muscat, Golf Links" },
   { label: "Royal Decree 12/2006, ownership in Integrated Tourism Complexes (Ministry of Housing)", href: "https://www.housing.gov.om/cmsapi/files/content/Royal%20Decree%20-%20Real%20Estate%20Ownership%20Act%20for%20the%20Integrated%20Tourism%20Complexes.pdf" },
   { label: "Times of Oman, legal framework for foreign ownership in ITCs (25 Jul 2026)", href: "https://cdn.timesofoman.com/article/174831-legal-framework-governing-foreign-ownership-in-omans-itcs" },
   { label: "Savills, Muscat residential market (Q2 2025)", href: "https://www.savills.com/research_articles/255800/379696-0" },
@@ -271,10 +271,14 @@ const AlMoujGuide = () => (
           <h2 className="text-2xl font-bold text-foreground mb-4">Sources</h2>
           <ol className="list-decimal pl-6 space-y-2 text-sm text-muted-foreground">
             {sources.map((s) => (
-              <li key={s.href}>
-                <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                  {s.label}
-                </a>
+              <li key={s.label}>
+                {"href" in s && s.href ? (
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    {s.label}
+                  </a>
+                ) : (
+                  <span>{s.label}</span>
+                )}
               </li>
             ))}
           </ol>

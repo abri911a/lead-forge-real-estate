@@ -18,6 +18,16 @@ const description =
   "14 projects in Oman that foreigners can buy, with a public price, the date, and a link to the source. Al Mouj, Muscat Bay, Yiti, Muscat Hills, Jebel Sifah, Salalah and Sultan Haitham City.";
 const canonical = "https://waleedproperty.com/property-for-sale-in-oman-for-foreigners";
 
+// Developer sources are cited as plain text, never linked (Waleed, 31 Oct 2026: a buyer who clicks through goes direct).
+const SrcRef = ({ s }: { s: { label: string; href?: string } }) =>
+  s.href ? (
+    <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+      {s.label}
+    </a>
+  ) : (
+    <span>{s.label}</span>
+  );
+
 const linkClass = "text-gold underline underline-offset-2 hover:text-gold-light";
 const WA = "https://wa.me/96879136646?text=";
 
@@ -28,9 +38,9 @@ type Project = {
   price: string;
   date: string;
   older?: boolean; // price date more than 3 months before 17 Oct 2026
-  priceSource: { label: string; href: string };
+  priceSource: { label: string; href?: string };
   whoCanBuy: string;
-  whoSource: { label: string; href: string };
+  whoSource: { label: string; href?: string };
   handover?: string;
 };
 
@@ -49,7 +59,7 @@ const areas: Area[] = [
         unit: "Apartments, unit type not stated",
         price: "from 69,000 + VAT",
         date: "live 17 Oct 2026",
-        priceSource: { label: "almouj.com", href: "https://www.almouj.com/en/azura-iii-iv/" },
+        priceSource: { label: "developer page" },
         whoCanBuy: "Freehold, all nationalities",
         whoSource: { label: "developer press release (Zawya)", href: "https://www.zawya.com/en/press-release/companies-news/al-mouj-muscat-expands-its-best-selling-oceanfront-portfolio-with-final-release-of-azura-beach-residences-iii-and-iv-361251" },
       },
@@ -89,9 +99,9 @@ const areas: Area[] = [
         unit: "2-bedroom, 133 m² (studios and 1-bedrooms sold out)",
         price: "from 138,000 before VAT",
         date: "live 17 Oct 2026 (broker)",
-        priceSource: { label: "Irfan", href: "https://www.irfaninvest.com/buy/zen-residences" },
+        priceSource: { label: "Irfan" },
         whoCanBuy: "Freehold, any nationality (broker statement)",
-        whoSource: { label: "Irfan", href: "https://www.irfaninvest.com/buy/zen-residences" },
+        whoSource: { label: "Irfan" },
         handover: "handover started 2026",
       },
     ],
@@ -134,7 +144,7 @@ const areas: Area[] = [
         older: true,
         priceSource: { label: "Palmera", href: "https://www.palmera.realestate/oman/guides/aida-yiti/" },
         whoCanBuy: "Freehold, all nationalities",
-        whoSource: { label: "Dar Global", href: "https://darglobal.co.uk/marriott-residences-aida-oman" },
+        whoSource: { label: "Dar Global" },
         handover: "Sep 2029",
       },
     ],
@@ -149,10 +159,10 @@ const areas: Area[] = [
         by: "Al Nama",
         unit: "From-price on the developer page (a studio, before VAT, per a broker)",
         price: "from 44,645",
-        date: "live 17 Oct 2026 (developer)",
-        priceSource: { label: "opalresidence.com", href: "https://opalresidence.com/" },
+        date: "live 31 Oct 2026 (developer)",
+        priceSource: { label: "developer page" },
         whoCanBuy: "Freehold for all nationalities",
-        whoSource: { label: "developer", href: "https://opalresidence.com/" },
+        whoSource: { label: "developer" },
         handover: "Q4 2028",
       },
     ],
@@ -170,9 +180,9 @@ const areas: Area[] = [
         unit: "2-bedroom (studios and 1-bedrooms sold out)",
         price: "from 80,000",
         date: "31 Oct 2026 (developer sales, by phone)",
-        priceSource: { label: "Muriya sales team, by phone (the developer page still shows from 50,000)", href: "https://jebelsifah.com/real-estate/solaris/" },
+        priceSource: { label: "Muriya sales team, by phone (the developer page still shows from 50,000)" },
         whoCanBuy: "Freehold and residency for all nationalities",
-        whoSource: { label: "developer", href: "https://jebelsifah.com/real-estate/solaris/" },
+        whoSource: { label: "developer" },
       },
       {
         name: "Olive Farms Phase 2",
@@ -180,9 +190,9 @@ const areas: Area[] = [
         unit: "1-bedroom farmhouse (a house, not an apartment)",
         price: "from 75,000",
         date: "live 17 Oct 2026 (developer)",
-        priceSource: { label: "jebelsifah.com", href: "https://jebelsifah.com/real-estate/olive-farms/" },
+        priceSource: { label: "developer page" },
         whoCanBuy: "Freehold (developer); all nationalities (broker)",
-        whoSource: { label: "developer", href: "https://jebelsifah.com/real-estate/olive-farms/" },
+        whoSource: { label: "developer" },
       },
     ],
   },
@@ -200,7 +210,7 @@ const areas: Area[] = [
         older: true,
         priceSource: { label: "Palmera", href: "https://www.palmera.realestate/oman/guides/hawana-salalah/" },
         whoCanBuy: "Open to international buyers, residency for all nationalities",
-        whoSource: { label: "developer", href: "https://hawanasalalah.com/real-estate/" },
+        whoSource: { label: "developer" },
       },
     ],
   },
@@ -218,7 +228,7 @@ const areas: Area[] = [
         date: "3 Sep 2026 (broker); other brokers show more",
         priceSource: { label: "Damas Global", href: "https://damas.net/oman/blog/sultan-haitham-city-shc" },
         whoCanBuy: "Sold to foreign buyers (sales site). Title: see note",
-        whoSource: { label: "sales site", href: "https://www.investinoman.co/en_GB" },
+        whoSource: { label: "sales site" },
         handover: "2028 (brokers)",
       },
       {
@@ -270,6 +280,10 @@ const articleJsonLd = {
 
 const askLink = (project: string) =>
   WA + encodeURIComponent(`Hi Waleed, what is today's price for ${project}?`);
+
+// Lowest-price entry, shown right under the short answer (Waleed, 31 Oct 2026). Read from the list itself,
+// so the box can never show a different price from the card. If Opal sells out or is removed, the box disappears.
+const lowest = areas.flatMap((a) => a.projects.map((p) => ({ ...p, areaId: a.id, areaName: a.name }))).find((p) => p.name === "Opal Residence");
 
 const PropertyForForeigners = () => (
   <div className="dark min-h-screen bg-luxury-dark text-foreground">
@@ -332,6 +346,40 @@ const PropertyForForeigners = () => (
             <p>Prices change as units sell. Ask me for today's price before you decide.</p>
           </div>
         </div>
+
+        {lowest && (
+          <div className="bg-card border border-gold/60 rounded-lg p-6 mb-12">
+            <p className="text-gold text-sm font-semibold uppercase tracking-wide mb-1">Lowest entry price on this page</p>
+            <h2 className="text-2xl font-bold text-foreground">{lowest.name}</h2>
+            <p className="text-sm text-muted-foreground">
+              {lowest.by} · {lowest.areaName}
+            </p>
+            <p className="text-3xl font-bold text-gold leading-tight mt-2">
+              {lowest.price.startsWith("from ") ? `From OMR ${lowest.price.slice(5)}` : `OMR ${lowest.price}`}{" "}
+              <span className="text-base font-normal text-muted-foreground">+ VAT</span>
+            </p>
+            <p className="text-foreground mt-3">
+              Studio. {lowest.whoCanBuy}. Handover {lowest.handover}.
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Price date: {lowest.date} ·{" "}
+              <SrcRef s={lowest.priceSource} />
+            </p>
+            <div className="flex flex-wrap gap-3 mt-4">
+              <a
+                href={askLink(lowest.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-md bg-[#25D366] px-5 text-sm font-semibold text-[#0B141A] hover:bg-[#1ebe5b] transition-colors"
+              >
+                Ask about {lowest.name} on WhatsApp
+              </a>
+              <a href={`#${lowest.areaId}`} className={`${linkClass} inline-flex items-center min-h-[44px] text-sm`}>
+                See all projects in {lowest.areaName}
+              </a>
+            </div>
+          </div>
+        )}
 
         <WhatsAppOfferBox
           heading="Not sure which one fits?"
@@ -413,9 +461,7 @@ const PropertyForForeigners = () => (
                       <dt className="inline text-muted-foreground">Price date: </dt>
                       <dd className="inline text-foreground">
                         {p.date} ·{" "}
-                        <a href={p.priceSource.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                          {p.priceSource.label}
-                        </a>
+                        <SrcRef s={p.priceSource} />
                         {p.older && (
                           <span className="ml-2 inline-block rounded bg-gold/15 px-2 py-0.5 text-xs text-gold">
                             older than 3 months
@@ -427,9 +473,7 @@ const PropertyForForeigners = () => (
                       <dt className="inline text-muted-foreground">Who can buy: </dt>
                       <dd className="inline text-foreground">
                         {p.whoCanBuy} ·{" "}
-                        <a href={p.whoSource.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                          {p.whoSource.label}
-                        </a>
+                        <SrcRef s={p.whoSource} />
                       </dd>
                     </div>
                     {p.handover && (

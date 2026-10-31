@@ -21,7 +21,7 @@ const canonical = "https://waleedproperty.com/muscat-property-supply-and-demand-
 
 const linkClass = "text-gold underline underline-offset-2 hover:text-gold-light";
 
-type Src = { label: string; href: string };
+type Src = { label: string; href?: string }; // no href = developer source: cited as plain text, never linked
 const S = {
   yearbook: { label: "NCSI Statistical Year Book 2025", href: "https://api.ncsi.gov.om/uploads/pdfs/publicationpdf1759647084.pdf" },
   bulletin: { label: "NCSI Monthly Statistical Bulletin, August 2026", href: "https://api.ncsi.gov.om/uploads/pdfs/monthly_statistical_bulletin___august_2026_1787557374.pdf" },
@@ -33,7 +33,7 @@ const S = {
   shcPlan: { label: "Oman Observer, Sultan Haitham City plan (20 Jun 2023)", href: "https://www.omanobserver.om/article/1139059/oman/sultan-haitham-city-first-phase-in-6-years" },
   shcMin: { label: "Oman Observer, Housing Minister on Sultan Haitham City (24 Feb 2026)", href: "https://www.omanobserver.om/article/1184978/business/economy/sultan-haitham-citys-first-phase-to-launch-this-year" },
   jood: { label: "Ministry of Housing and Urban Planning, Jood", href: "https://mohup.gov.om/en/projects/neighborhood/a02q9z428xxwuhdkqn4guujy" },
-  tmg: { label: "Talaat Moustafa Group, investor presentation (Sep 2026)", href: "https://talaatmoustafa.com/Upload/TMGH%20IRP%20-%201H%202026.pdf" },
+  tmg: { label: "Talaat Moustafa Group, investor presentation (Sep 2026)" },
   wz: { label: "Osoul Misr, Wadi Zaha (12 Mar 2026, Arabic)", href: "https://www.osoulmisrmagazine.com/432504" },
   thuraya: { label: "Times of Oman, A'Thuraya City (27 Sep 2025)", href: "https://timesofoman.com/article/163221-construction-work-for-athuraya-city-begins" },
   khuwair: { label: "Oman Observer, Al Khuwair Downtown (26 Sep 2026)", href: "https://www.omanobserver.om/article/1196793/business/al-khuwair-downtown-nears-next-phase-as-50-plus-firms-show-interest" },
@@ -55,16 +55,19 @@ const S = {
   mm: { label: "Muscat Municipality open data (construction permits)", href: "https://www.mm.gov.om/opendata.aspx" },
 } satisfies Record<string, Src>;
 
-const SourceLink = ({ s }: { s: Src }) => (
-  <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-    {s.label}
-  </a>
-);
+const SourceLink = ({ s }: { s: Src }) =>
+  s.href ? (
+    <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+      {s.label}
+    </a>
+  ) : (
+    <span>{s.label}</span>
+  );
 
 const Sources = ({ list }: { list: Src[] }) => (
   <>
     {list.map((s, i) => (
-      <span key={s.href}>
+      <span key={s.label}>
         {i > 0 && " · "}
         <SourceLink s={s} />
       </span>
@@ -659,7 +662,7 @@ const MuscatSupplyDemand2026 = () => (
           <h2 className="text-2xl font-bold text-foreground mb-4">Sources</h2>
           <ol className="list-decimal pl-6 space-y-2 text-sm text-muted-foreground">
             {sources.map((s) => (
-              <li key={s.href}>
+              <li key={s.label}>
                 <SourceLink s={s} />
               </li>
             ))}

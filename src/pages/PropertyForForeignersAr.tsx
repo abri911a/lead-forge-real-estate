@@ -17,6 +17,16 @@ const description =
 const canonical = "https://waleedproperty.com/ar/property-for-sale-in-oman-for-foreigners";
 const englishUrl = "https://waleedproperty.com/property-for-sale-in-oman-for-foreigners";
 
+// Developer sources are cited as plain text, never linked (Waleed, 31 Oct 2026: a buyer who clicks through goes direct).
+const SrcRef = ({ s }: { s: { label: string; href?: string } }) =>
+  s.href ? (
+    <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+      {s.label}
+    </a>
+  ) : (
+    <span>{s.label}</span>
+  );
+
 const linkClass = "text-gold underline underline-offset-2 hover:text-gold-light";
 const WA = "https://wa.me/96879136646?text=";
 
@@ -29,9 +39,9 @@ type Project = {
   priceNote?: string;
   date: string;
   older?: boolean; // price date more than 3 months before 17 Oct 2026
-  priceSource: { label: string; href: string };
+  priceSource: { label: string; href?: string };
   whoCanBuy: string;
-  whoSource: { label: string; href: string };
+  whoSource: { label: string; href?: string };
   handover?: string;
 };
 
@@ -51,7 +61,7 @@ const areas: Area[] = [
         amount: "69,000",
         priceNote: "+ ضريبة القيمة المضافة",
         date: "على الصفحة يوم 17 أكتوبر 2026",
-        priceSource: { label: "almouj.com", href: "https://www.almouj.com/en/azura-iii-iv/" },
+        priceSource: { label: "صفحة المطوّر" },
         whoCanBuy: "تملك حر، لكل الجنسيات",
         whoSource: { label: "بيان صحفي من المطوّر (Zawya)", href: "https://www.zawya.com/en/press-release/companies-news/al-mouj-muscat-expands-its-best-selling-oceanfront-portfolio-with-final-release-of-azura-beach-residences-iii-and-iv-361251" },
       },
@@ -94,9 +104,9 @@ const areas: Area[] = [
         amount: "138,000",
         priceNote: "قبل الضريبة",
         date: "على الصفحة يوم 17 أكتوبر 2026 (وسيط)",
-        priceSource: { label: "Irfan", href: "https://www.irfaninvest.com/buy/zen-residences" },
+        priceSource: { label: "Irfan" },
         whoCanBuy: "تملك حر، أي جنسية (حسب الوسيط)",
-        whoSource: { label: "Irfan", href: "https://www.irfaninvest.com/buy/zen-residences" },
+        whoSource: { label: "Irfan" },
         handover: "بدأ التسليم في 2026",
       },
     ],
@@ -139,7 +149,7 @@ const areas: Area[] = [
         older: true,
         priceSource: { label: "Palmera", href: "https://www.palmera.realestate/oman/guides/aida-yiti/" },
         whoCanBuy: "تملك حر، لكل الجنسيات",
-        whoSource: { label: "Dar Global", href: "https://darglobal.co.uk/marriott-residences-aida-oman" },
+        whoSource: { label: "Dar Global" },
         handover: "سبتمبر 2029",
       },
     ],
@@ -155,10 +165,10 @@ const areas: Area[] = [
         unit: "سعر البداية من صفحة المطوّر (استوديو، قبل الضريبة، حسب وسيط)",
         from: true,
         amount: "44,645",
-        date: "على الصفحة يوم 17 أكتوبر 2026 (المطوّر)",
-        priceSource: { label: "opalresidence.com", href: "https://opalresidence.com/" },
+        date: "على الصفحة يوم 31 أكتوبر 2026 (المطوّر)",
+        priceSource: { label: "صفحة المطوّر" },
         whoCanBuy: "تملك حر لكل الجنسيات",
-        whoSource: { label: "المطوّر", href: "https://opalresidence.com/" },
+        whoSource: { label: "المطوّر" },
         handover: "الربع الرابع 2028",
       },
     ],
@@ -176,9 +186,9 @@ const areas: Area[] = [
         from: true,
         amount: "80,000",
         date: "31 أكتوبر 2026 (مبيعات المطوّر، بالهاتف)",
-        priceSource: { label: "فريق مبيعات المطوّر، بالهاتف (صفحة المطوّر ما زالت تقول من 50,000)", href: "https://jebelsifah.com/real-estate/solaris/" },
+        priceSource: { label: "فريق مبيعات المطوّر، بالهاتف (صفحة المطوّر ما زالت تقول من 50,000)" },
         whoCanBuy: "تملك حر وإقامة لكل الجنسيات",
-        whoSource: { label: "المطوّر", href: "https://jebelsifah.com/real-estate/solaris/" },
+        whoSource: { label: "المطوّر" },
       },
       {
         name: "Olive Farms Phase 2",
@@ -187,9 +197,9 @@ const areas: Area[] = [
         from: true,
         amount: "75,000",
         date: "على الصفحة يوم 17 أكتوبر 2026 (المطوّر)",
-        priceSource: { label: "jebelsifah.com", href: "https://jebelsifah.com/real-estate/olive-farms/" },
+        priceSource: { label: "صفحة المطوّر" },
         whoCanBuy: "تملك حر (المطوّر)؛ كل الجنسيات (وسيط)",
-        whoSource: { label: "المطوّر", href: "https://jebelsifah.com/real-estate/olive-farms/" },
+        whoSource: { label: "المطوّر" },
       },
     ],
   },
@@ -208,7 +218,7 @@ const areas: Area[] = [
         older: true,
         priceSource: { label: "Palmera", href: "https://www.palmera.realestate/oman/guides/hawana-salalah/" },
         whoCanBuy: "مفتوح للمشترين من خارج عُمان، وإقامة لكل الجنسيات",
-        whoSource: { label: "المطوّر", href: "https://hawanasalalah.com/real-estate/" },
+        whoSource: { label: "المطوّر" },
       },
     ],
   },
@@ -225,7 +235,7 @@ const areas: Area[] = [
         date: "3 سبتمبر 2026 (وسيط)؛ وسطاء آخرون يعرضون سعراً أعلى",
         priceSource: { label: "Damas Global", href: "https://damas.net/oman/blog/sultan-haitham-city-shc" },
         whoCanBuy: "يُباع للمشترين الأجانب (موقع المبيعات). الملكية: انظر الملاحظة",
-        whoSource: { label: "موقع المبيعات", href: "https://www.investinoman.co/en_GB" },
+        whoSource: { label: "موقع المبيعات" },
         handover: "2028 (حسب الوسطاء)",
       },
       {
@@ -421,9 +431,7 @@ const PropertyForForeignersAr = () => (
                       <dt className="inline text-muted-foreground">تاريخ السعر: </dt>
                       <dd className="inline text-foreground">
                         {p.date} ·{" "}
-                        <a href={p.priceSource.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                          {p.priceSource.label}
-                        </a>
+                        <SrcRef s={p.priceSource} />
                         {p.older && (
                           <span className="mr-2 inline-block rounded bg-gold/15 px-2 py-0.5 text-xs text-gold">
                             مضى عليه أكثر من 3 أشهر
@@ -435,9 +443,7 @@ const PropertyForForeignersAr = () => (
                       <dt className="inline text-muted-foreground">من يحق له الشراء: </dt>
                       <dd className="inline text-foreground">
                         {p.whoCanBuy} ·{" "}
-                        <a href={p.whoSource.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                          {p.whoSource.label}
-                        </a>
+                        <SrcRef s={p.whoSource} />
                       </dd>
                     </div>
                     {p.handover && (

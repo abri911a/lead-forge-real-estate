@@ -69,7 +69,7 @@ const faqJsonLd = {
   })),
 };
 
-type Source = { label: string; date: string; href: string };
+type Source = { label: string; date: string; href?: string }; // no href = developer source, cited as plain text (never link developers)
 type Row = {
   project: string;
   area: string;
@@ -89,9 +89,8 @@ const rows: Row[] = [
     unit: "1-bedroom, 59.6 m²",
     before: "95,390",
     beforeSource: {
-      label: "Omran Real Estate",
+      label: "Omran Real Estate, developer page (archived)",
       date: "Jan 2025",
-      href: "https://web.archive.org/web/20250518161442/https://omran-realestate.com/property/aida-the-great-escape-2-apartment/",
     },
     after: "125,605",
     afterSource: {
@@ -164,9 +163,15 @@ const rows: Row[] = [
 const linkClass = "text-gold underline underline-offset-2 hover:text-gold-light";
 
 const SourceLink = ({ s }: { s: Source }) => (
-  <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-    {s.label}, {s.date}
-  </a>
+  s.href ? (
+    <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+      {s.label}, {s.date}
+    </a>
+  ) : (
+    <span>
+      {s.label}, {s.date}
+    </span>
+  )
 );
 
 const OmanPropertyPrices2026 = () => (
