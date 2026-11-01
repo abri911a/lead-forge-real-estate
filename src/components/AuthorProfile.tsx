@@ -6,8 +6,6 @@ interface AuthorProfileProps {
   variant?: "compact" | "full";
 }
 
-const textLink = "text-gold underline underline-offset-2 hover:text-gold-light";
-
 const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
   // Each tag opens the guide on that topic. They look like buttons, and visitors tap them
   // (Clarity, 31 Oct: 12 dead + 2 rage taps on these tags on the projects page).
@@ -74,16 +72,11 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
           </div>
 
           <div className="max-w-prose space-y-3 leading-relaxed text-muted-foreground">
-            {/* Topic words link to their guides: visitors tapped this paragraph (Clarity, 1 Nov). */}
             <p>
-              Waleed works with{" "}
-              <a href="/can-gcc-citizens-buy-property-in-oman" className={textLink}>foreign and GCC buyers</a> in
-              Oman's property market. Most of the work is the part non-Omani buyers get stuck on:{" "}
-              <a href="/can-foreigners-buy-property-in-oman" className={textLink}>which areas allow foreign ownership</a>,
-              the difference between{" "}
-              <a href="/can-foreigners-buy-property-in-oman" className={textLink}>ITC freehold and usufruct</a>,{" "}
-              <a href="/oman-residency-by-property" className={textLink}>whether a property gets you residency</a>, and{" "}
-              <a href="/is-off-plan-property-safe-in-oman" className={textLink}>how off-plan payments are protected</a>.
+              Waleed works with foreign and GCC buyers in Oman's property market. Most of the work is the 
+              part non-Omani buyers get stuck on: which areas allow foreign ownership, the difference between 
+              ITC freehold and usufruct, whether a property gets you residency, and how off-plan payments are 
+              protected.
             </p>
             <p>
               <strong className="text-foreground">Covers:</strong> Al Mouj Muscat, Sultan Haitham City, 
