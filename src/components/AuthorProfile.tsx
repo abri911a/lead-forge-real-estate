@@ -1,5 +1,4 @@
 import { publications } from "@/data/publications";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import waleedProfile from "@/assets/waleed-profile.webp";
 
@@ -8,11 +7,13 @@ interface AuthorProfileProps {
 }
 
 const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
+  // Each tag opens the guide on that topic. They look like buttons, and visitors tap them
+  // (Clarity, 31 Oct: 12 dead + 2 rage taps on these tags on the projects page).
   const focusAreas = [
-    "Foreign ownership rules",
-    "ITC freehold and usufruct",
-    "Residency through property",
-    "Off-plan escrow"
+    { label: "Foreign ownership rules", href: "/can-foreigners-buy-property-in-oman" },
+    { label: "ITC freehold and usufruct", href: "/can-foreigners-buy-property-in-oman" },
+    { label: "Residency through property", href: "/oman-residency-by-property" },
+    { label: "Off-plan escrow", href: "/is-off-plan-property-safe-in-oman" },
   ];
 
   if (variant === "compact") {
@@ -58,10 +59,14 @@ const AuthorProfile = ({ variant = "compact" }: AuthorProfileProps) => {
           <div className="mb-4">
             <h4 className="text-sm font-semibold text-foreground mb-2">Focus areas:</h4>
             <div className="flex flex-wrap gap-2">
-              {focusAreas.map((area, index) => (
-                <Badge key={index} variant="outline" className="border-gold text-gold">
-                  {area}
-                </Badge>
+              {focusAreas.map((area) => (
+                <a
+                  key={area.label}
+                  href={area.href}
+                  className="inline-flex min-h-11 items-center rounded-full border border-gold px-3 text-xs font-semibold text-gold transition-colors hover:bg-gold hover:text-luxury-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                >
+                  {area.label}
+                </a>
               ))}
             </div>
           </div>
