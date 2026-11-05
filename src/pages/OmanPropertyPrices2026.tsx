@@ -20,11 +20,11 @@ import {
 // Never add prices from rep WhatsApp sheets, client deals or this site itself.
 
 const title =
-  "Oman Off-Plan Prices 2025 to 2026: What Changed, With Sources | Waleed Property";
+  "Oman Property Prices 2026: What Changed Since 2025 | Waleed Property";
 const description =
-  "Public off-plan prices for Oman projects in 2025 and 2026, with sources. Which projects went up, which stayed flat, and why a higher price is not always a rise.";
+  "Oman off-plan prices for 2025 and 2026, each with its source. Which projects went up, which stayed flat, and what the official index really measures.";
 const canonical = "https://waleedproperty.com/oman-property-prices-2026";
-const ogTitle = "Off-Plan Prices in Oman: What Changed From 2025 to 2026";
+const ogTitle = "Oman Property Prices 2026: What Changed Since 2025";
 const ogDescription =
   "Four projects with public prices in both years. Two went up a lot, two stayed flat. Every price links to its source.";
 

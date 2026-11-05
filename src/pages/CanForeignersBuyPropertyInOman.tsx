@@ -14,12 +14,12 @@ import {
 } from "@/components/ui/accordion";
 
 const title =
-  "Can Foreigners Buy Property in Oman? 2026 Ownership & Residency Guide | Waleed Property";
+  "Can Foreigners Buy Property in Oman? 2026 Rules | Waleed Property";
 const description =
-  "Yes, foreigners can buy property in Oman. A 2026 guide to ITC freehold vs usufruct, which zones allow foreign ownership, residency by property, and the escrow law. By an Oman property advisor.";
+  "Yes, but only in named areas: tourism complexes (ITCs) and some new cities. Freehold vs 99-year use, residency, and the escrow law, with sources.";
 const canonical =
   "https://waleedproperty.com/can-foreigners-buy-property-in-oman";
-const ogTitle = "Can Foreigners Buy Property in Oman? A 2026 Guide";
+const ogTitle = "Can Foreigners Buy Property in Oman? 2026 Rules";
 const ogDescription =
   "Where foreigners can own, freehold vs usufruct, residency by property, and how your money is protected.";
 
