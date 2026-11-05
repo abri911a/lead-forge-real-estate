@@ -90,6 +90,11 @@ async function render(route) {
     let html = (await page.content()).replace(/<script[^>]*googletagmanager\.com\/gtag\/js[^>]*><\/script>\s*/g, '')
       // Same for Microsoft Clarity (index.html skips it off the live domain anyway; belt and braces).
       .replace(/<script[^>]*clarity\.ms[^>]*><\/script>\s*/g, '');
+    // The home hero image is preloaded in index.html. Only the home page shows it; on every other page the
+    // preload downloads ~92 KB for nothing and competes with that page's own first paint (measured 5 Nov 2026).
+    if (route !== '/') {
+      html = html.replace(/<link rel="preload" as="image" href="\/hero\/[^>]*>\s*/, '');
+    }
     // Listing pages: noindex (links still followed) so Google spends its crawl on the guides.
     if (route.startsWith('/property/')) {
       const before = html;
