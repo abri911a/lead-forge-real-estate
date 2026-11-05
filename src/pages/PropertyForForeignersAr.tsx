@@ -424,6 +424,9 @@ const PropertyForForeignersAr = () => (
                     {p.from ? "يبدأ من " : ""}
                     {p.amount} ر.ع.
                   </p>
+                  <p className="text-sm text-muted-foreground" dir="ltr" style={{ textAlign: "right" }}>
+                    (≈ ${(Math.round((Number(p.amount.replace(/,/g, "")) * 2.6008) / 100) * 100).toLocaleString("en-US")})
+                  </p>
                   {p.priceNote && <p className="text-sm text-muted-foreground">{p.priceNote}</p>}
                   <p className="text-sm text-muted-foreground mb-3">{p.unit}</p>
                   <dl className="text-sm space-y-1.5 mb-4">

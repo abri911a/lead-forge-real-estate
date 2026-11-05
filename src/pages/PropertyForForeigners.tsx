@@ -278,6 +278,15 @@ const articleJsonLd = {
   publisher: { "@type": "Organization", name: "Waleed Property" },
 };
 
+// The rial is pegged at 2.6008 US dollars, so the dollar figure never drifts from the OMR price.
+// Shown under every OMR price for foreign buyers (Waleed, 5 Nov 2026). Rounded to the nearest 100.
+const usd = (price: string) => {
+  const m = price.match(/[\d,]+/);
+  if (!m) return null;
+  const n = Math.round((Number(m[0].replace(/,/g, "")) * 2.6008) / 100) * 100;
+  return `about $${n.toLocaleString("en-US")}`;
+};
+
 const askLink = (project: string) =>
   WA + encodeURIComponent(`Hi Waleed, what is today's price for ${project}?`);
 
@@ -358,6 +367,7 @@ const PropertyForForeigners = () => (
               {lowest.price.startsWith("from ") ? `From OMR ${lowest.price.slice(5)}` : `OMR ${lowest.price}`}{" "}
               <span className="text-base font-normal text-muted-foreground">+ VAT</span>
             </p>
+            <p className="text-sm text-muted-foreground">({usd(lowest.price)})</p>
             <p className="text-foreground mt-3">
               Studio. {lowest.whoCanBuy}. Handover {lowest.handover}.
             </p>
@@ -455,6 +465,7 @@ const PropertyForForeigners = () => (
                   <p className="text-2xl font-bold text-gold leading-tight">
                     {p.price.startsWith("from ") ? `From OMR ${p.price.slice(5)}` : `OMR ${p.price}`}
                   </p>
+                  {usd(p.price) && <p className="text-sm text-muted-foreground">({usd(p.price)})</p>}
                   <p className="text-sm text-muted-foreground mb-3">{p.unit}</p>
                   <dl className="text-sm space-y-1.5 mb-4">
                     <div>
