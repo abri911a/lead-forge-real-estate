@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
 import SeoHead from "@/components/SeoHead";
@@ -33,7 +34,7 @@ const articleJsonLd = {
     jobTitle: "Real Estate Advisor",
   },
   datePublished: "2026-06-23",
-  dateModified: "2026-08-28",
+  dateModified: "2026-11-08",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
   about: "Foreign property ownership and residency rules in Oman in 2026",
@@ -58,7 +59,7 @@ const faqs = [
   },
   {
     q: "Does buying property in Oman give me residency?",
-    a: "A freehold purchase in an ITC zone grants property-investor residency with no minimum value, tied to ownership and covering family. From OMR 200,000 of qualifying investment you can apply for the 10-year renewable Golden Residency. The old 250,000 and 500,000 tiers were replaced in September 2025. A June 2026 reform also lets off-plan buyers start an owner visa before handover.",
+    a: "A freehold purchase in an ITC zone grants property-investor residency with no minimum value, tied to ownership and covering family. From OMR 200,000 of qualifying investment you can apply for the 10-year renewable Golden Residency. This single tier started in September 2025. Older guides show other amounts. They are out of date. A June 2026 reform also lets off-plan buyers start an owner visa before handover.",
   },
   {
     q: "Which areas in Oman can foreigners buy in?",
@@ -112,15 +113,11 @@ const CanForeignersBuyPropertyInOman = () => {
       <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
         <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
-            <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-              Buyer Guide · June 2026
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6">
               Can Foreigners Buy Property in Oman? A 2026 Guide
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Updated June 2026 · By Waleed Al Abri — Real Estate
-              Advisor
+              Updated 8 November 2026 · By Waleed Al Abri, real estate advisor
             </p>
           </div>
 
@@ -133,8 +130,7 @@ const CanForeignersBuyPropertyInOman = () => {
               own in designated Integrated Tourism Complex (ITC) zones and
               other eligible areas, usually as freehold but sometimes only as
               usufruct, under Royal Decree 29/2018. Buying a qualifying
-              freehold also opens a path to residency. Updated June 2026 by
-              Waleed Al Abri, a real estate advisor in Oman.
+              freehold also opens a path to residency.
             </p>
           </div>
 
@@ -354,8 +350,8 @@ const CanForeignersBuyPropertyInOman = () => {
               <li>
                 • <strong>Golden Residency:</strong> the premium tier. From
                 OMR 200,000 of qualifying investment you can apply for the
-                10-year renewable Golden Residency. The old 250,000 and
-                500,000 tiers were replaced in September 2025.
+                10-year renewable Golden Residency. This single tier started in
+                September 2025. Older guides show other amounts. They are out of date.
               </li>
             </ul>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -497,6 +493,8 @@ const CanForeignersBuyPropertyInOman = () => {
           </div>
         </div>
       </main>
+
+      <NextGuide />
 
       <Footer />
       <WhatsAppButton />

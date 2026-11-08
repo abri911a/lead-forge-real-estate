@@ -31,7 +31,8 @@ const PropertySchema = ({ property }: PropertySchemaProps) => {
       "@type": "Apartment",
       "@id": `https://waleedproperty.com/property/${property.id}`,
       name: property.title,
-      description: property.description || `${property.beds} bedroom, ${property.baths} bathroom ${property.type.toLowerCase()} in ${property.location}`,
+      // Plain generated text only: developer copy (e.g. "Freehold for All Nationalities") must not become a structured claim.
+      description: `${property.beds} bedroom, ${property.baths} bathroom ${property.type.toLowerCase()} in ${property.location}`,
       url: `https://waleedproperty.com/property/${property.id}`,
       image: property.image,
       address: {
@@ -65,12 +66,11 @@ const PropertySchema = ({ property }: PropertySchemaProps) => {
         availability: property.status === "Available" 
           ? "https://schema.org/InStock" 
           : "https://schema.org/OutOfStock",
-        priceValidUntil: new Date(new Date().setMonth(new Date().getMonth() + 6)).toISOString().split('T')[0],
         seller: {
           "@type": "RealEstateAgent",
           name: "Waleed Property",
           url: "https://waleedproperty.com",
-          telephone: "+968-YOUR-PHONE"
+          telephone: "+96879136646"
         }
       },
       ...(property.status && {

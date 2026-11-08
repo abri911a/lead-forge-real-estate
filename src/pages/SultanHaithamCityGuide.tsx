@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import PublishedInStrip from "@/components/PublishedInStrip";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import StructuredData from "@/components/StructuredData";
@@ -55,7 +56,7 @@ const SultanHaithamCityGuide = () => (
         title: "Sultan Haitham City Buyer Guide (2026): Facts, Prices, Residency",
         description,
         datePublished: "2025-01-19",
-        dateModified: "2026-10-11",
+        dateModified: "2026-11-08",
       }}
     />
 
@@ -71,7 +72,7 @@ const SultanHaithamCityGuide = () => (
             Sultan Haitham City: A Buyer's Guide
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
-            Updated October 11, 2026 · By Waleed Al Abri, Real Estate Advisor
+            Updated November 8, 2026 · By Waleed Al Abri, Real Estate Advisor
           </p>
           <PublishedInStrip className="mt-2" />
         </div>
@@ -174,6 +175,26 @@ const SultanHaithamCityGuide = () => (
               </a>
               .
             </p>
+            <p className="text-foreground font-semibold">
+              Lowest public prices I could check, by neighbourhood (checked 8 November 2026):
+            </p>
+            <ul className="space-y-2 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
+              <li>
+                • <strong className="text-foreground">Wadi Zaha:</strong> studio, 54 m², OMR 54,705
+                (about $142,000). Broker listing, September 2026.
+              </li>
+              <li>
+                • <strong className="text-foreground">Yenaier Residences:</strong> studio, 64 m², OMR
+                53,550 with VAT (about $139,000). Broker listing, 19 October 2026.
+              </li>
+              <li>
+                • <strong className="text-foreground">Sarooj Oasis (Azha):</strong> 1 bedroom, 70 m²,
+                OMR 60,765 (about $158,000). Broker listing, 9 June 2026, so it may be out of date.
+              </li>
+            </ul>
+            <p>
+              Prices change as units sell. Ask me for today's price before you decide.
+            </p>
             <p>
               I do not list rental yields for Sultan Haitham City. Very few units are finished and
               rented, so any yield today is a guess.
@@ -202,9 +223,17 @@ const SultanHaithamCityGuide = () => (
               projects: once 30% of the price is paid, the buyer can apply for a two-year renewable
               residency, before handover. At OMR 50,000 or less it covers the buyer only; above OMR
               50,000 it covers first-degree family too. It needs a separate security clearance, so
-              ownership does not guarantee it. Ask before paying the 30%. I could not find the
-              official text online; the rule is reported by trade press and by developers. Full
-              guide:{" "}
+              ownership does not guarantee it. Ask before paying the 30%. The Ministry of Housing published this rule in a short guide,{" "}
+              <a
+                href="https://cms.mohup.gov.om/uploads/alyt_tmlk_ghyr_alemanyyn_ENG_7e62d9f9e8.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                Mechanism for Non-Omani Ownership (PDF)
+              </a>
+              . It does not say if the title is freehold or usufruct, so ask the developer which one
+              you get. Full guide:{" "}
               <a href="/oman-residency-by-property" className={linkClass}>
                 Oman residency by property
               </a>
@@ -254,6 +283,8 @@ const SultanHaithamCityGuide = () => (
     </main>
 
     <BacklinkResources />
+
+    <NextGuide />
 
     <Footer />
     <WhatsAppButton />

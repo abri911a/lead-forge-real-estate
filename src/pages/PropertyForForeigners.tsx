@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import AuthorProfile from "@/components/AuthorProfile";
@@ -37,7 +38,7 @@ type Project = {
   unit: string;
   price: string;
   date: string;
-  older?: boolean; // price date more than 3 months before 17 Oct 2026
+  older?: boolean; // price date more than 3 months before the last check (8 Nov 2026)
   priceSource: { label: string; href?: string };
   whoCanBuy: string;
   whoSource: { label: string; href?: string };
@@ -58,7 +59,7 @@ const areas: Area[] = [
         by: "Al Mouj Muscat (developer)",
         unit: "Apartments, unit type not stated",
         price: "from 69,000 + VAT",
-        date: "live 17 Oct 2026",
+        date: "live 8 Nov 2026",
         priceSource: { label: "developer page" },
         whoCanBuy: "Freehold, all nationalities",
         whoSource: { label: "developer press release (Zawya)", href: "https://www.zawya.com/en/press-release/companies-news/al-mouj-muscat-expands-its-best-selling-oceanfront-portfolio-with-final-release-of-azura-beach-residences-iii-and-iv-361251" },
@@ -68,7 +69,7 @@ const areas: Area[] = [
         by: "LEO Developments",
         unit: "1-bedroom, about 66 m²",
         price: "from 140,316",
-        date: "live 17 Oct 2026 (broker)",
+        date: "live 8 Nov 2026 (broker)",
         priceSource: { label: "Palmera", href: "https://www.palmera.realestate/oman/property/vistal-by-victoria-swarovski/" },
         whoCanBuy: "Freehold, with residency for foreign buyers",
         whoSource: { label: "Oman Observer", href: "https://www.omanobserver.om/article/1180942/business/first-victoria-swarovski-branded-residential-project-launched-at-al-mouj-muscat" },
@@ -98,7 +99,7 @@ const areas: Area[] = [
         by: "Muscat Bay",
         unit: "2-bedroom, 133 m² (studios and 1-bedrooms sold out)",
         price: "from 138,000 before VAT",
-        date: "live 17 Oct 2026 (broker)",
+        date: "live 8 Nov 2026 (broker)",
         priceSource: { label: "Irfan" },
         whoCanBuy: "Freehold, any nationality (broker statement)",
         whoSource: { label: "Irfan" },
@@ -159,7 +160,7 @@ const areas: Area[] = [
         by: "Al Nama",
         unit: "From-price on the developer page (a studio, before VAT, per a broker)",
         price: "from 44,645",
-        date: "live 31 Oct 2026 (developer)",
+        date: "live 8 Nov 2026 (developer)",
         priceSource: { label: "developer page" },
         whoCanBuy: "Freehold for all nationalities",
         whoSource: { label: "developer" },
@@ -189,7 +190,7 @@ const areas: Area[] = [
         by: "Muriya",
         unit: "1-bedroom farmhouse (a house, not an apartment)",
         price: "from 75,000",
-        date: "live 17 Oct 2026 (developer)",
+        date: "live 8 Nov 2026 (developer)",
         priceSource: { label: "developer page" },
         whoCanBuy: "Freehold (developer); all nationalities (broker)",
         whoSource: { label: "developer" },
@@ -226,7 +227,7 @@ const areas: Area[] = [
         unit: "Studio, 54 m²",
         price: "54,705",
         date: "3 Sep 2026 (broker); other brokers show more",
-        priceSource: { label: "Damas Global", href: "https://damas.net/oman/blog/sultan-haitham-city-shc" },
+        priceSource: { label: "Damas Global", href: "https://damas.net/en/oman/guides/sultan-haitham-city-shc" },
         whoCanBuy: "Sold to foreign buyers (sales site). Title: see note",
         whoSource: { label: "sales site" },
         handover: "2028 (brokers)",
@@ -234,11 +235,10 @@ const areas: Area[] = [
       {
         name: "Yenaier Residences",
         by: "Adanté Realty",
-        unit: "Studio, 65 m²",
-        price: "52,500",
-        date: "13 Jul 2026 price list (broker)",
-        older: true,
-        priceSource: { label: "Damas Global", href: "https://damas.net/en/oman/muscat/sultan-haitham-city/yenaier" },
+        unit: "Studio, 64 m²",
+        price: "53,550 (VAT included)",
+        date: "checked 8 Nov 2026 (broker; price list reviewed 19 Oct 2026)",
+        priceSource: { label: "ISKAN", href: "https://iskanco.com/property/yenaier-building-101-studio-l2-sd-01/" },
         whoCanBuy: "Described as open to all nationalities (press). Title: see note",
         whoSource: { label: "Gulf News", href: "https://gulfnews.com/world/gulf/adante-realty-launches-yenaier-residences-in-oman-1.500017306" },
         handover: "second half of 2027 (broker)",
@@ -273,7 +273,7 @@ const articleJsonLd = {
   headline: "Property for Sale in Oman for Foreigners: Projects You Can Buy, With Prices",
   author: { "@type": "Person", name: "Waleed Al Abri", jobTitle: "Real Estate Advisor" },
   datePublished: "2026-10-17",
-  dateModified: "2026-10-17",
+  dateModified: "2026-11-08",
   inLanguage: "en",
   publisher: { "@type": "Organization", name: "Waleed Property" },
 };
@@ -325,13 +325,13 @@ const PropertyForForeigners = () => (
             </a>
           </p>
           <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-            Projects for foreign buyers · October 2026
+            Projects for foreign buyers · November 2026
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
             Property in Oman You Can Buy as a Foreigner: Projects and Prices
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
-            Updated October 17, 2026 · By Waleed Al Abri, Real Estate Advisor
+            Updated November 8, 2026 · By Waleed Al Abri, Real Estate Advisor
           </p>
           <PublishedInStrip className="mt-2" />
         </div>
@@ -552,7 +552,7 @@ const PropertyForForeigners = () => (
             ))}
           </ol>
           <p className="text-sm text-muted-foreground mt-4">
-            Each project's price and ownership source is linked on its card. Checked 17 October
+            Each project's price and ownership source is linked on its card. Checked 8 November
             2026. If you see a price that is wrong or old, tell me on WhatsApp and I will check it.
           </p>
         </div>
@@ -562,6 +562,8 @@ const PropertyForForeigners = () => (
         </div>
       </div>
     </main>
+
+    <NextGuide />
 
     <Footer />
     <WhatsAppButton />

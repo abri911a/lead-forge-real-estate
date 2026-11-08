@@ -8,6 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 
 const FeaturedProperties = () => {
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
+  // 8 Nov 2026: 9 cards were ~5,300 px on a phone (about 6 screens). Show 3, the rest on tap.
+  const [showAll, setShowAll] = useState(false);
   const [selectedPropertyType, setSelectedPropertyType] = useState<string>("all");
   const [tempLocation, setTempLocation] = useState<string>("all");
   const sectionRef = useRef<HTMLElement>(null);
@@ -95,7 +97,7 @@ const FeaturedProperties = () => {
 
           {data && (
             <p className="text-muted-foreground text-sm mt-2">
-              Showing {Math.min(9, data.totalCount)} of {data.totalCount} properties
+              Showing {showAll ? Math.min(9, data.totalCount) : Math.min(3, data.totalCount)} of {data.totalCount} properties
               {selectedLocation !== "all" && ` in ${selectedLocation}`}
             </p>
           )}
@@ -122,7 +124,7 @@ const FeaturedProperties = () => {
         {data && data.properties.length > 0 && (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {data.properties.map((property) => (
+              {(showAll ? data.properties : data.properties.slice(0, 3)).map((property) => (
                 <PropertyCard
                   key={property.id}
                   id={property.id}
@@ -141,6 +143,17 @@ const FeaturedProperties = () => {
                 />
               ))}
             </div>
+            {!showAll && data.properties.length > 3 && (
+              <div className="mt-8 text-center">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowAll(true)}
+                  className="h-11 border-gold/60 text-gold hover:bg-gold/10"
+                >
+                  Show {data.properties.length - 3} more properties
+                </Button>
+              </div>
+            )}
           </>
         )}
 

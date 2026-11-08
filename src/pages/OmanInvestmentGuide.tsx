@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import PublishedInStrip from "@/components/PublishedInStrip";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import StructuredData from "@/components/StructuredData";
@@ -55,7 +56,7 @@ const OmanInvestmentGuide = () => (
         title: "Investing in Oman Property (2026): Where, Costs, Tax, Residency",
         description,
         datePublished: "2025-01-19",
-        dateModified: "2026-10-11",
+        dateModified: "2026-11-08",
       }}
     />
 
@@ -71,7 +72,7 @@ const OmanInvestmentGuide = () => (
             Investing in Oman Property: What You Need to Know
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
-            Updated October 11, 2026 · By Waleed Al Abri, Real Estate Advisor
+            Updated November 8, 2026 · By Waleed Al Abri, Real Estate Advisor
           </p>
           <PublishedInStrip className="mt-2" />
         </div>
@@ -210,8 +211,8 @@ const OmanInvestmentGuide = () => (
               • <strong className="text-foreground">Golden Residency:</strong> from OMR 200,000 of
               qualifying investment, 10 years, renewable, and it can cover your family. For the
               property route, the unit must be finished, with a title deed. It is a separate
-              application from the owner visa. The old 250,000 and 500,000 tiers were replaced in September
-              2025.
+              application from the owner visa. This single tier started in September 2025. Older guides show other
+              amounts. They are out of date.
             </li>
           </ul>
           <p className="text-muted-foreground mt-4 leading-relaxed">
@@ -302,6 +303,8 @@ const OmanInvestmentGuide = () => (
     </main>
 
     <BacklinkResources />
+
+    <NextGuide />
 
     <Footer />
     <WhatsAppButton />

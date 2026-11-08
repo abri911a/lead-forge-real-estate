@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import AuthorProfile from "@/components/AuthorProfile";
 import PublishedInStrip from "@/components/PublishedInStrip";
@@ -678,6 +679,8 @@ const MuscatSupplyDemand2026 = () => (
         </div>
       </div>
     </main>
+
+    <NextGuide />
 
     <Footer />
   </div>

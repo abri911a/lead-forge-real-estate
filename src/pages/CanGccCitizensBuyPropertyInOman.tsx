@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import PublishedInStrip from "@/components/PublishedInStrip";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
 import SeoHead from "@/components/SeoHead";
@@ -118,15 +119,11 @@ const CanGccCitizensBuyPropertyInOman = () => {
       <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
         <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
-            <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-              GCC Buyer Guide · July 2026
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6">
               Can GCC Citizens Buy Property in Oman Outside ITCs?
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Updated July 2026 · By Waleed Al Abri — Real Estate
-              Advisor
+              Updated 16 July 2026 · By Waleed Al Abri, real estate advisor
             </p>
             <PublishedInStrip className="mt-2" />
           </div>
@@ -139,8 +136,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
               Qatar and Bahrain can own built property and land across most of
               Oman, close to how Omanis do. No ITC needed. Two exceptions
               matter: a list of prohibited areas, and agricultural land. And
-              vacant land must be built on within 4 years. Updated July 2026
-              by Waleed Al Abri, a real estate advisor in Oman.
+              vacant land must be built on within 4 years.
             </p>
           </div>
 
@@ -390,6 +386,8 @@ const CanGccCitizensBuyPropertyInOman = () => {
           </div>
         </div>
       </main>
+
+      <NextGuide />
 
       <Footer />
       <WhatsAppButton />

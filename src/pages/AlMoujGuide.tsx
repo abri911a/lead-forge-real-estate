@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import PublishedInStrip from "@/components/PublishedInStrip";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppOfferBox from "@/components/WhatsAppOfferBox";
 import StructuredData from "@/components/StructuredData";
@@ -295,6 +296,8 @@ const AlMoujGuide = () => (
     </main>
 
     <BacklinkResources />
+
+    <NextGuide />
 
     <Footer />
     <WhatsAppButton />

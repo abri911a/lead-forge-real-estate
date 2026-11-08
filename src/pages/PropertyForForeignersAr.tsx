@@ -38,7 +38,7 @@ type Project = {
   amount: string;
   priceNote?: string;
   date: string;
-  older?: boolean; // price date more than 3 months before 17 Oct 2026
+  older?: boolean; // price date more than 3 months before the last check (8 Nov 2026)
   priceSource: { label: string; href?: string };
   whoCanBuy: string;
   whoSource: { label: string; href?: string };
@@ -60,7 +60,7 @@ const areas: Area[] = [
         from: true,
         amount: "69,000",
         priceNote: "+ ضريبة القيمة المضافة",
-        date: "على الصفحة يوم 17 أكتوبر 2026",
+        date: "على الصفحة يوم 8 نوفمبر 2026",
         priceSource: { label: "صفحة المطوّر" },
         whoCanBuy: "تملك حر، لكل الجنسيات",
         whoSource: { label: "بيان صحفي من المطوّر (Zawya)", href: "https://www.zawya.com/en/press-release/companies-news/al-mouj-muscat-expands-its-best-selling-oceanfront-portfolio-with-final-release-of-azura-beach-residences-iii-and-iv-361251" },
@@ -71,7 +71,7 @@ const areas: Area[] = [
         unit: "غرفة نوم واحدة، حوالي 66 م²",
         from: true,
         amount: "140,316",
-        date: "على الصفحة يوم 17 أكتوبر 2026 (وسيط)",
+        date: "على الصفحة يوم 8 نوفمبر 2026 (وسيط)",
         priceSource: { label: "Palmera", href: "https://www.palmera.realestate/oman/property/vistal-by-victoria-swarovski/" },
         whoCanBuy: "تملك حر، مع إقامة للمشتري الأجنبي",
         whoSource: { label: "Oman Observer", href: "https://www.omanobserver.om/article/1180942/business/first-victoria-swarovski-branded-residential-project-launched-at-al-mouj-muscat" },
@@ -103,7 +103,7 @@ const areas: Area[] = [
         from: true,
         amount: "138,000",
         priceNote: "قبل الضريبة",
-        date: "على الصفحة يوم 17 أكتوبر 2026 (وسيط)",
+        date: "على الصفحة يوم 8 نوفمبر 2026 (وسيط)",
         priceSource: { label: "Irfan" },
         whoCanBuy: "تملك حر، أي جنسية (حسب الوسيط)",
         whoSource: { label: "Irfan" },
@@ -165,7 +165,7 @@ const areas: Area[] = [
         unit: "سعر البداية من صفحة المطوّر (استوديو، قبل الضريبة، حسب وسيط)",
         from: true,
         amount: "44,645",
-        date: "على الصفحة يوم 31 أكتوبر 2026 (المطوّر)",
+        date: "على الصفحة يوم 8 نوفمبر 2026 (المطوّر)",
         priceSource: { label: "صفحة المطوّر" },
         whoCanBuy: "تملك حر لكل الجنسيات",
         whoSource: { label: "المطوّر" },
@@ -196,7 +196,7 @@ const areas: Area[] = [
         unit: "بيت مزرعة بغرفة نوم واحدة (بيت وليس شقة)",
         from: true,
         amount: "75,000",
-        date: "على الصفحة يوم 17 أكتوبر 2026 (المطوّر)",
+        date: "على الصفحة يوم 8 نوفمبر 2026 (المطوّر)",
         priceSource: { label: "صفحة المطوّر" },
         whoCanBuy: "تملك حر (المطوّر)؛ كل الجنسيات (وسيط)",
         whoSource: { label: "المطوّر" },
@@ -233,7 +233,7 @@ const areas: Area[] = [
         unit: "استوديو، 54 م²",
         amount: "54,705",
         date: "3 سبتمبر 2026 (وسيط)؛ وسطاء آخرون يعرضون سعراً أعلى",
-        priceSource: { label: "Damas Global", href: "https://damas.net/oman/blog/sultan-haitham-city-shc" },
+        priceSource: { label: "Damas Global", href: "https://damas.net/ar/oman/guides/sultan-haitham-city-shc" },
         whoCanBuy: "يُباع للمشترين الأجانب (موقع المبيعات). الملكية: انظر الملاحظة",
         whoSource: { label: "موقع المبيعات" },
         handover: "2028 (حسب الوسطاء)",
@@ -241,11 +241,11 @@ const areas: Area[] = [
       {
         name: "Yenaier Residences",
         by: "Adanté Realty",
-        unit: "استوديو، 65 م²",
-        amount: "52,500",
-        date: "قائمة أسعار 13 يوليو 2026 (وسيط)",
-        older: true,
-        priceSource: { label: "Damas Global", href: "https://damas.net/en/oman/muscat/sultan-haitham-city/yenaier" },
+        unit: "استوديو، 64 م²",
+        amount: "53,550",
+        priceNote: "شامل الضريبة",
+        date: "تم التحقق 8 نوفمبر 2026 (وسيط؛ قائمة أسعار رُوجعت 19 أكتوبر 2026)",
+        priceSource: { label: "ISKAN", href: "https://iskanco.com/property/yenaier-building-101-studio-l2-sd-01/" },
         whoCanBuy: "موصوف بأنه مفتوح لكل الجنسيات (الصحافة). الملكية: انظر الملاحظة",
         whoSource: { label: "Gulf News", href: "https://gulfnews.com/world/gulf/adante-realty-launches-yenaier-residences-in-oman-1.500017306" },
         handover: "النصف الثاني من 2027 (وسيط)",
@@ -280,7 +280,7 @@ const articleJsonLd = {
   headline: "عقارات في عُمان يمكن للأجنبي شراؤها: المشاريع والأسعار",
   author: { "@type": "Person", name: "Waleed Al Abri", jobTitle: "Real Estate Advisor" },
   datePublished: "2026-10-21",
-  dateModified: "2026-10-21",
+  dateModified: "2026-11-08",
   inLanguage: "ar",
   publisher: { "@type": "Organization", name: "Waleed Property" },
 };
@@ -320,12 +320,12 @@ const PropertyForForeignersAr = () => (
               Read in English
             </a>
           </p>
-          <span className="text-gold text-sm font-semibold">مشاريع للمشترين الأجانب · أكتوبر 2026</span>
+          <span className="text-gold text-sm font-semibold">مشاريع للمشترين الأجانب · نوفمبر 2026</span>
           <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6 leading-tight">
             عقارات في عُمان يمكن للأجنبي شراؤها: المشاريع والأسعار
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
-            الأسعار من صفحات تم التحقق منها في 17 أكتوبر 2026 · وليد العبري، مستشار عقاري
+            الأسعار من صفحات تم التحقق منها في 8 نوفمبر 2026 · وليد العبري، مستشار عقاري
           </p>
           <PublishedInStrip className="mt-2" />
         </div>
@@ -514,7 +514,7 @@ const PropertyForForeignersAr = () => (
             ))}
           </ol>
           <p className="text-sm text-muted-foreground mt-4">
-            مصدر السعر والملكية لكل مشروع موجود على بطاقته. تم التحقق في 17 أكتوبر 2026. إذا رأيت
+            مصدر السعر والملكية لكل مشروع موجود على بطاقته. تم التحقق في 8 نوفمبر 2026. إذا رأيت
             سعراً خاطئاً أو قديماً، أخبرني على واتساب وسأتحقق منه.
           </p>
         </div>

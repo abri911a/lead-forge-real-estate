@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import PublishedInStrip from "@/components/PublishedInStrip";
 import Footer from "@/components/Footer";
+import NextGuide from "@/components/NextGuide";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuthorProfile from "@/components/AuthorProfile";
 import SeoHead from "@/components/SeoHead";
@@ -119,15 +120,11 @@ const IsOffPlanPropertySafeInOman = () => {
       <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
         <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
-            <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-              Buyer Protection Guide · July 2026
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6">
               Is Off-Plan Property Safe in Oman? The 2026 Escrow Law Explained
             </h1>
             <p className="text-sm text-muted-foreground mb-4">
-              Updated July 2026 · By Waleed Al Abri — Real Estate
-              Advisor
+              Updated 16 August 2026 · By Waleed Al Abri, real estate advisor
             </p>
             <PublishedInStrip className="mt-2" />
           </div>
@@ -140,8 +137,7 @@ const IsOffPlanPropertySafeInOman = () => {
               buyer payments in an escrow account at a licensed bank, released
               only against certified construction progress. The protection is
               real, but it is not a completion guarantee. Verify the escrow
-              before you pay. Updated July 2026 by Waleed Al Abri, a real
-              estate advisor in Oman.
+              before you pay.
             </p>
           </div>
 
@@ -405,6 +401,8 @@ const IsOffPlanPropertySafeInOman = () => {
           </div>
         </div>
       </main>
+
+      <NextGuide />
 
       <Footer />
       <WhatsAppButton />

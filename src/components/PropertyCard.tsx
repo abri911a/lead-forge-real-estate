@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import PropertyDetailsDialog from "./PropertyDetailsDialog";
 import ContactOptionsDialog from "./ContactOptionsDialog";
-import PropertySchema from "./PropertySchema";
 import { optimizeImageUrl } from "@/lib/utils";
 
 interface PropertyCardProps {
@@ -30,7 +29,7 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
 
   return (
     <>
-      <PropertySchema property={{ id, image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }} />
+      {/* No listing schema here (8 Nov 2026): the home cards hold Nov-2025 prices + stock photos; schema made them look like current facts. */}
       <PropertyDetailsDialog 
         open={dialogOpen} 
         onOpenChange={setDialogOpen}
@@ -64,6 +63,14 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
             {price}
           </span>
         </div>
+        {/* 8 Nov 2026: these images are Unsplash stock, not the project. Say so on the photo. */}
+        {/unsplash\.com/.test(image) && (
+          <div className="absolute bottom-3 left-3">
+            <span className="bg-luxury-dark/85 text-foreground px-2 py-0.5 rounded text-xs">
+              Stock photo, not this project
+            </span>
+          </div>
+        )}
       </Link>
       
       <div className="p-6">
