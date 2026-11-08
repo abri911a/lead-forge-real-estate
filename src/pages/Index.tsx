@@ -33,7 +33,6 @@ const Index = () => {
         <meta name="twitter:url" content={canonical} />
       </Helmet>
       <StructuredData type="organization" />
-      <StructuredData type="localBusiness" />
       
       <Header />
       <main>

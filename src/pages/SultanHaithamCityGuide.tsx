@@ -65,10 +65,7 @@ const SultanHaithamCityGuide = () => (
     <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
       <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
         <div className="mb-8">
-          <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-            Area guide · October 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6">
             Sultan Haitham City: A Buyer's Guide
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
@@ -271,7 +268,8 @@ const SultanHaithamCityGuide = () => (
             ))}
           </ol>
           <p className="text-sm text-muted-foreground mt-4">
-            Checked 11 October 2026. If you see something here that is wrong or old, tell me on
+            Sources checked 11 October 2026; prices and the Ministry PDF on 8 November
+            2026. If you see something here that is wrong or old, tell me on
             WhatsApp and I will check it.
           </p>
         </div>

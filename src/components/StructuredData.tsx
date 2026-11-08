@@ -1,32 +1,30 @@
 import { useEffect } from 'react';
 
 interface StructuredDataProps {
-  type: 'organization' | 'localBusiness' | 'faqPage' | 'article';
+  type: 'organization' | 'faqPage' | 'article';
   data?: any;
 }
 
 const StructuredData = ({ type, data }: StructuredDataProps) => {
   useEffect(() => {
-    const scripts = document.querySelectorAll('script[type="application/ld+json"]');
-    scripts.forEach(script => {
-      if (script.getAttribute('data-component') === 'structured-data') {
-        script.remove();
-      }
-    });
+    // 8 Nov 2026: each block now replaces only ITSELF. Before, every block deleted all the others,
+    // so the home page kept only the last one (FAQPage) and Google never saw the business block.
+    const id = `structured-data-${type}`;
+    document.getElementById(id)?.remove();
 
     const structuredData = getStructuredData(type, data);
-    
+
     if (structuredData) {
       const script = document.createElement('script');
       script.type = 'application/ld+json';
+      script.id = id;
       script.setAttribute('data-component', 'structured-data');
       script.text = JSON.stringify(structuredData);
       document.head.appendChild(script);
     }
 
     return () => {
-      const cleanupScripts = document.querySelectorAll('script[data-component="structured-data"]');
-      cleanupScripts.forEach(s => s.remove());
+      document.getElementById(id)?.remove();
     };
   }, [type, data]);
 
@@ -42,29 +40,16 @@ const getStructuredData = (type: string, data?: any) => {
         "@context": "https://schema.org",
         "@type": "RealEstateAgent",
         "name": "Waleed Property",
-        "description": "Premium real estate investment advisory specializing in Oman's Integrated Tourism Complexes (ITCs), freehold properties, and foreign investment opportunities. Expert guidance for international buyers in Muscat, Al Mouj, and Special Economic Zones.",
+        "description": "Independent advice for foreign and GCC buyers of property in Oman: where you can own, what it costs, and which homes give residency. Buyers pay nothing; the developer pays the broker commission.",
         "url": baseUrl,
         "logo": `${baseUrl}/logo.png`,
-        "telephone": "+968-79136646",
+        "telephone": "+96879136646",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Muscat",
           "addressCountry": "OM"
         },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Muscat"
-          },
-          {
-            "@type": "City",
-            "name": "Duqm"
-          },
-          {
-            "@type": "City",
-            "name": "Salalah"
-          }
-        ],
+        "areaServed": { "@type": "Country", "name": "Oman" },
         "serviceType": [
           "Integrated Tourism Complex Investment",
           "Freehold Property Sales",
@@ -80,35 +65,15 @@ const getStructuredData = (type: string, data?: any) => {
           "Property Owner Residency (ROP Decision 87/2026)",
           "Al Mouj Muscat Properties",
           "Oman Vision 2040",
-          "Special Economic Zone Investment",
           "GCC Property Markets"
         ],
+        "founder": { "@type": "Person", "name": "Waleed Al Abri", "jobTitle": "Real Estate Advisor" },
         "sameAs": [
           "https://www.instagram.com/waleedvlogs.om/"
         ]
       };
 
 
-    case 'localBusiness':
-      return {
-        "@context": "https://schema.org",
-        "@type": "RealEstateAgent",
-        "name": "Waleed Property",
-        "image": `${baseUrl}/logo.png`,
-        "priceRange": "$$$$",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Muscat",
-          "addressCountry": "OM"
-        },
-        "telephone": "+968-79136646",
-        "openingHours": "Mo-Su 09:00-18:00",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "23.5880",
-          "longitude": "58.3829"
-        }
-      };
 
 
     case 'faqPage':
@@ -143,8 +108,7 @@ const getStructuredData = (type: string, data?: any) => {
 
             "GCC Real Estate Investment",
             "Al Mouj Muscat Properties",
-            "Sultan Haitham City Development",
-            "Special Economic Zone Investment"
+            "Sultan Haitham City Development"
           ]
         },
         "publisher": {

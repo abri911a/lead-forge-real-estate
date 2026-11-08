@@ -62,10 +62,7 @@ const AlMoujGuide = () => (
     <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
       <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
         <div className="mb-8">
-          <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-            Area guide · October 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6">
             Al Mouj Muscat: A Buyer's Guide
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
