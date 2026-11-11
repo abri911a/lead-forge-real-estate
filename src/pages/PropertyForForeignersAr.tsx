@@ -27,6 +27,11 @@ const SrcRef = ({ s }: { s: { label: string; href?: string } }) =>
     <span>{s.label}</span>
   );
 
+// Each project card has an id, so an ad price card can land on that exact project
+// (e.g. #opal-residence) instead of the top of the page (11 Nov 2026).
+const slugOf = (name: string) =>
+  name.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
 const linkClass = "text-gold underline underline-offset-2 hover:text-gold-light";
 const WA = "https://wa.me/96879136646?text=";
 
@@ -415,7 +420,7 @@ const PropertyForForeignersAr = () => (
 
             <div className="grid gap-4 md:grid-cols-2">
               {area.projects.map((p) => (
-                <article key={p.name} className="bg-card border border-border rounded-lg p-5 flex flex-col">
+                <article key={p.name} id={slugOf(p.name)} className="bg-card border border-border rounded-lg p-5 flex flex-col scroll-mt-24">
                   <h3 className="text-lg font-semibold text-foreground" dir="ltr" lang="en" style={{ textAlign: "right" }}>
                     {p.name}
                   </h3>
