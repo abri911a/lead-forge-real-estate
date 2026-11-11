@@ -53,7 +53,7 @@ const AlMoujGuide = () => (
         title: "Al Mouj Muscat Buyer Guide (2026): Prices, Ownership, Residency",
         description,
         datePublished: "2025-01-19",
-        dateModified: "2026-10-11",
+        dateModified: "2026-11-11",
       }}
     />
 
@@ -66,7 +66,7 @@ const AlMoujGuide = () => (
             Al Mouj Muscat: A Buyer's Guide
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
-            Updated October 11, 2026 · By Waleed Al Abri, Real Estate Advisor
+            Updated November 11, 2026 · By Waleed Al Abri, Real Estate Advisor
           </p>
           <PublishedInStrip className="mt-2" />
         </div>
@@ -129,6 +129,29 @@ const AlMoujGuide = () => (
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             What it costs
           </h2>
+          {/* Dated price box (11 Nov 2026): ChatGPT quoted live prices and "OMR per m²" from portals for Al Mouj
+              and listed this guide only as a secondary source. Developer figures only, cited as plain text
+              (never link a developer site). The per-m² figure is our own calculation and says so. */}
+          <div className="bg-card border border-gold/60 rounded-lg p-6 mb-6">
+            <h3 className="text-xl font-semibold text-foreground mb-1">Al Mouj prices, November 2026</h3>
+            <p className="text-sm text-muted-foreground mb-4">Checked 11 November 2026</p>
+            <ul className="text-muted-foreground space-y-2 [&>li]:pl-[0.56em] [&>li]:-indent-[0.56em]">
+              <li>
+                • New apartments (Azura Beach Residences III and IV): <strong>from OMR 69,000 + VAT</strong>{" "}
+                (about $179,500). Source: Al Mouj developer page.
+              </li>
+              <li>
+                • Smallest apartment in the Azura III and IV brochures: 1-bedroom, 62 to 63 m² inside,
+                70 to 71 m² in total. Source: Al Mouj brochures, February 2026.
+              </li>
+              <li>
+                • If the from-price is for that smallest unit, it is about <strong>OMR 1,100 per m²</strong>{" "}
+                of inside area, or about OMR 980 per m² of total area. This is my calculation, not a
+                developer figure.
+              </li>
+              <li>• The developer does not publish a price for each unit. Ask me for the units that are free now.</li>
+            </ul>
+          </div>
           <div className="space-y-6">
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold text-foreground mb-3">New apartments, from the developer</h3>
