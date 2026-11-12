@@ -62,7 +62,7 @@ const Hero = () => {
         <div className="max-w-3xl flex flex-col">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-white drop-shadow-lg">Property in Oman</span>
-            <span className="block text-gold mt-2 drop-shadow-lg">for foreign and GCC buyers</span>
+            <span className="block text-white mt-2 drop-shadow-lg">for foreign and GCC buyers</span>
           </h1>
           <p className="text-xl text-white/90 mb-8 drop-shadow-md">
             I help you check three things before you pay: where you can own,
@@ -99,7 +99,8 @@ const Hero = () => {
 
 
               <Button 
-                className="h-11 bg-gold text-luxury-dark hover:bg-gold-light w-full"
+                variant="outline"
+                className="h-11 border-border bg-transparent text-foreground hover:bg-foreground/10 hover:text-foreground w-full"
                 onClick={handleSearch}
               >
                 <Search className="mr-2 h-4 w-4" />
@@ -110,23 +111,23 @@ const Hero = () => {
 
           {/* CTA buttons */}
           <div className="order-1 md:order-none flex flex-wrap gap-4 mb-8 md:mb-0 md:mt-8">
-            <Button 
-              size="lg" 
-              className="bg-gold text-luxury-dark hover:bg-gold-light"
-              onClick={handleViewAll}
-            >
-              View All Properties
-            </Button>
-            {/* Was a scroll to the bio card, which has no contact action */}
+            {/* 12 Nov 2026: one filled gold button per screen. The WhatsApp talk is the main action. */}
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
+              className="bg-gold text-luxury-dark hover:bg-gold-light"
             >
               <a href={TALK_WHATSAPP} target="_blank" rel="noopener noreferrer">
                 Talk to Waleed
               </a>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+              onClick={handleViewAll}
+            >
+              View All Properties
             </Button>
           </div>
         </div>

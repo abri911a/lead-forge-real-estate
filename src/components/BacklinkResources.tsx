@@ -57,10 +57,7 @@ const BacklinkResources = () => {
         <ul className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12 border-b border-border md:border-b-0">
           {gccPortals.map((portal) => (
             <li key={portal.url} className="border-t border-border py-5 md:[&:nth-last-child(-n+2)]:border-b">
-              <span className="text-xs text-gold font-semibold uppercase tracking-wide">
-                {portal.category}
-              </span>
-              <h3 className="text-xl font-semibold text-foreground mt-1 mb-1">
+              <h3 className="text-xl font-semibold text-foreground mb-1">
                 <a
                   href={portal.url}
                   target="_blank"
@@ -71,7 +68,7 @@ const BacklinkResources = () => {
                 </a>
               </h3>
               <p className="text-sm text-muted-foreground">
-                {portal.description}
+                {portal.category}. {portal.description}
               </p>
               <a
                 href={portal.url}

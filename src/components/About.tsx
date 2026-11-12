@@ -8,7 +8,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              How I help <span className="text-gold">buyers in Oman</span>
+              How I help buyers in Oman
             </h2>
             <p className="text-white/90 text-xl leading-relaxed mb-10 font-medium">
               I work with international buyers and GCC citizens who want property in Oman.
@@ -43,10 +43,10 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-gold text-luxury-dark hover:bg-gold-light text-base px-8 py-6 font-semibold">
+              <Button asChild variant="outline" className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white text-base px-8 py-6 font-semibold">
                 <a href="#agent-profile">About Waleed</a>
               </Button>
-              <Button asChild variant="outline" className="border-2 border-gold text-gold hover:bg-gold hover:text-luxury-dark text-base px-8 py-6 font-semibold">
+              <Button asChild className="bg-gold text-luxury-dark hover:bg-gold-light text-base px-8 py-6 font-semibold">
                 <a
                   href={`https://wa.me/96879136646?text=${encodeURIComponent("Hi Waleed, I want to book a consultation. My budget is: ... My nationality is: ...")}`}
                   target="_blank"

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import PropertyDetailsDialog from "./PropertyDetailsDialog";
 import ContactOptionsDialog from "./ContactOptionsDialog";
-import { optimizeImageUrl } from "@/lib/utils";
 
 interface PropertyCardProps {
   id: string;
@@ -21,11 +20,17 @@ interface PropertyCardProps {
   features?: string[];
   yearBuilt?: number;
   status?: string;
+  /** ISO date of the last price update in the database */
+  updatedAt?: string;
 }
 
-const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status }: PropertyCardProps) => {
+const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, type, description, features, yearBuilt, status, updatedAt }: PropertyCardProps) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
+  const isStock = !image || /unsplash\.com/.test(image);
+  const priceDate = updatedAt
+    ? new Date(updatedAt).toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" })
+    : "";
 
   return (
     <>
@@ -41,37 +46,40 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
         property={{ id, title, location, price }}
       />
     <Card className="overflow-hidden border-warmGray transition-colors duration-300 hover:border-gold/60">
-      {/* Photo + title open the property too: Clarity (17 Oct) showed repeated taps on the photo that did nothing.
-          The photo link is hidden from screen readers so "View Details" stays the one announced link. */}
-      <Link to={`/property/${id}`} tabIndex={-1} aria-hidden="true" className="relative block overflow-hidden">
-        <img
-          src={optimizeImageUrl(image)}
-          alt={title}
-          width={800}
-          height={533}
-          loading="lazy"
-          decoding="async"
-          className="w-full h-64 object-cover"
-        />
-        <div className="absolute top-4 left-4">
-          <span className="bg-gold text-luxury-dark px-3 py-1 rounded-full text-sm font-semibold">
-            {type}
-          </span>
+      {/* 12 Nov 2026: a stock photo under a real project name hurt trust ("Stock photo, not this project"),
+          and the card was an empty box on networks that block Unsplash. No real photo = no photo:
+          the card leads with the price and says how old that price is. A real (non-Unsplash) photo still shows. */}
+      {isStock ? (
+        <div className="px-6 pt-6">
+          <p className="text-sm text-muted-foreground mb-2">{type}</p>
+          <p className="text-3xl font-bold text-gold [font-variant-numeric:tabular-nums]">{price}</p>
+          <p className="text-sm text-muted-foreground mt-1">
+            {priceDate ? `Price from ${priceDate}. ` : ""}Ask me for today's price.
+          </p>
         </div>
-        <div className="absolute top-4 right-4">
-          <span className="bg-luxury-dark/90 text-gold px-4 py-1 rounded-full text-lg font-bold">
-            {price}
-          </span>
-        </div>
-        {/* 8 Nov 2026: these images are Unsplash stock, not the project. Say so on the photo. */}
-        {/unsplash\.com/.test(image) && (
-          <div className="absolute bottom-3 left-3">
-            <span className="bg-luxury-dark/85 text-foreground px-2 py-0.5 rounded text-xs">
-              Stock photo, not this project
+      ) : (
+        <Link to={`/property/${id}`} tabIndex={-1} aria-hidden="true" className="relative block overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            width={800}
+            height={533}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-64 object-cover"
+          />
+          <div className="absolute top-4 left-4">
+            <span className="bg-luxury-dark/90 text-foreground px-3 py-1 rounded-md text-sm font-semibold">
+              {type}
             </span>
           </div>
-        )}
-      </Link>
+          <div className="absolute top-4 right-4">
+            <span className="bg-luxury-dark/90 text-gold px-4 py-1 rounded-md text-lg font-bold">
+              {price}
+            </span>
+          </div>
+        </Link>
+      )}
       
       <div className="p-6">
         <h3 className="text-xl font-bold text-foreground mb-2 line-clamp-2">
@@ -101,7 +109,7 @@ const PropertyCard = ({ id, image, title, location, price, beds, baths, sqft, ty
           <Button 
             asChild
             variant="outline" 
-            className="border-gold text-gold hover:bg-gold hover:text-luxury-dark"
+            className="border-border bg-transparent text-foreground hover:bg-foreground/10 hover:text-foreground"
           >
             <Link to={`/property/${id}`} aria-label={`View details: ${title}`}>View Details</Link>
           </Button>

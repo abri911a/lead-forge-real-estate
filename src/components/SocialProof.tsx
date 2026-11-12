@@ -26,10 +26,6 @@ const SocialProof = () => {
       <div className="container mx-auto px-4">
         {/* Trust Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-2 mb-4 text-gold font-semibold tracking-[0.06em] [font-variant-caps:all-small-caps]">
-            <Instagram className="h-4 w-4" />
-            <span>On Instagram</span>
-          </div>
           <h2 className="text-4xl font-bold text-foreground mb-4">
             Oman property, explained on Instagram
           </h2>
@@ -74,7 +70,7 @@ const SocialProof = () => {
               </li>
             </ul>
 
-            <Button asChild size="lg" className="bg-gold text-luxury-dark hover:bg-gold-light">
+            <Button asChild size="lg" variant="outline" className="border-border bg-transparent text-foreground hover:bg-foreground/10 hover:text-foreground">
               <a href="https://www.instagram.com/waleedvlogs.om/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="mr-2 h-5 w-5" />
                 Follow on Instagram

@@ -181,6 +181,12 @@ All colors MUST be HSL.
     min-width: 0;
   }
 
+  /* 12 Nov 2026: Fraunces letters collide at 16-20 px with negative tracking.
+     h3 is the small heading level here (FAQ questions, card titles). */
+  h3 {
+    letter-spacing: 0;
+  }
+
   p,
   li {
     text-wrap: pretty;

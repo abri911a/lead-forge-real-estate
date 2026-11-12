@@ -119,7 +119,7 @@ const CanGccCitizensBuyPropertyInOman = () => {
       <main className="pt-8 pb-16 md:py-20 bg-luxury-dark">
         <div className="container mx-auto px-4 max-w-4xl [&_p]:max-w-[65ch] [&_li]:max-w-[65ch] [&_strong]:text-foreground">
           <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Can GCC Citizens Buy Property in Oman Outside ITCs?
             </h1>
             <p className="text-sm text-muted-foreground mb-4">

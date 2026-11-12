@@ -64,7 +64,7 @@ const FeaturedProperties = () => {
       <div className="container mx-auto px-4">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Featured <span className="text-gold">Properties</span>
+            Featured Properties
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mb-6">
             Some of the properties I can help you buy. Ask me for the current price before you decide.
@@ -88,7 +88,8 @@ const FeaturedProperties = () => {
             </Select>
             <Button 
               onClick={handleSearch}
-              className="h-11 bg-gold text-luxury-dark hover:bg-gold-light"
+              variant="outline"
+              className="h-11 border-border bg-transparent text-foreground hover:bg-foreground/10 hover:text-foreground"
             >
               <Search className="mr-2 h-4 w-4" />
               Search
@@ -107,7 +108,7 @@ const FeaturedProperties = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(9)].map((_, index) => (
               <div key={index} className="space-y-4">
-                <Skeleton className="h-64 w-full" />
+                <Skeleton className="h-24 w-full" />
                 <Skeleton className="h-4 w-3/4" />
                 <Skeleton className="h-4 w-1/2" />
               </div>
@@ -140,6 +141,7 @@ const FeaturedProperties = () => {
                   features={property.features || undefined}
                   yearBuilt={property.year_built || undefined}
                   status={property.status || undefined}
+                  updatedAt={property.updated_at}
                 />
               ))}
             </div>
@@ -148,7 +150,7 @@ const FeaturedProperties = () => {
                 <Button
                   variant="outline"
                   onClick={() => setShowAll(true)}
-                  className="h-11 border-gold/60 text-gold hover:bg-gold/10"
+                  className="h-11 border-border bg-transparent text-foreground hover:bg-foreground/10 hover:text-foreground"
                 >
                   Show {data.properties.length - 3} more properties
                 </Button>

@@ -5,20 +5,17 @@ const guides = [
   {
     name: "Al Mouj Muscat",
     description: "Prices, ownership and residency",
-    path: "/al-mouj-guide",
-    image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=70&auto=format"
+    path: "/al-mouj-guide"
   },
   {
     name: "Sultan Haitham City",
     description: "Official facts, prices and the 30% residency rule",
-    path: "/sultan-haitham-city-guide",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=70&auto=format"
+    path: "/sultan-haitham-city-guide"
   },
   {
     name: "Investment in Oman",
     description: "Where you can buy, costs, tax and residency",
-    path: "/oman-investment-guide",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=70&auto=format"
+    path: "/oman-investment-guide"
   }
 ];
 
@@ -28,36 +25,24 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Buyer <span className="text-gold">Guides</span>
+            Buyer Guides
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
             Comprehensive guides to help you make informed investment decisions
           </p>
         </div>
 
-        {/* A list on phones (thumbnail left, text right), three columns from md up */}
-        <ul className="divide-y divide-border md:grid md:grid-cols-3 md:gap-8 md:divide-y-0">
+        {/* 12 Nov 2026: no stock photos. Plain rows on phones, three columns split by hairlines from md up */}
+        <ul className="divide-y divide-border border-t border-border md:grid md:grid-cols-3 md:divide-y-0 md:divide-x">
           {guides.map((guide) => (
-            <li key={guide.path} className="flex gap-4 py-5 first:pt-0 last:pb-0 md:flex-col md:py-0">
-              {/* Photo + title open the guide too (photo taps did nothing before) */}
-              <Link to={guide.path} tabIndex={-1} aria-hidden="true" className="flex-shrink-0 md:w-full">
-              <img
-                src={guide.image}
-                alt={guide.name}
-                loading="lazy"
-                decoding="async"
-                width={800}
-                height={533}
-                className="h-24 w-24 flex-shrink-0 rounded-md border border-border object-cover sm:h-32 sm:w-32 md:h-48 md:w-full"
-              />
-              </Link>
+            <li key={guide.path} className="py-6 md:px-6 md:first:pl-0 md:last:pr-0">
               <div className="flex min-w-0 flex-col items-start">
                 <h3 className="text-xl font-bold text-foreground mb-1"><Link to={guide.path} tabIndex={-1} className="hover:text-gold transition-colors">{guide.name}</Link></h3>
                 <p className="text-sm text-muted-foreground mb-3">{guide.description}</p>
                 <Button
                   asChild
                   variant="outline"
-                  className="h-11 border-gold bg-transparent text-gold hover:bg-gold hover:text-luxury-dark"
+                  className="h-11 border-border bg-transparent text-foreground hover:bg-foreground/10 hover:text-foreground"
                 >
                   <Link to={guide.path}>Read Guide</Link>
                 </Button>

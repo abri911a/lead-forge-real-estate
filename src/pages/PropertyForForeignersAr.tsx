@@ -325,8 +325,7 @@ const PropertyForForeignersAr = () => (
               Read in English
             </a>
           </p>
-          <span className="text-gold text-sm font-semibold">مشاريع للمشترين الأجانب · نوفمبر 2026</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-[1.4] tracking-normal">
             عقارات في عُمان يمكن للأجنبي شراؤها: المشاريع والأسعار
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
