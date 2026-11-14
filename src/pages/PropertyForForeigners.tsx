@@ -299,6 +299,25 @@ const askLink = (project: string) =>
 // so the box can never show a different price from the card. If Opal sells out or is removed, the box disappears.
 const lowest = areas.flatMap((a) => a.projects.map((p) => ({ ...p, areaId: a.id, areaName: a.name }))).find((p) => p.name === "Opal Residence");
 
+// First-screen price rows (14 Nov 2026). The "Buy" ad promises projects with prices, but the first phone screen
+// showed only the title, and the first project card sat 4 screens down. These are three of the four projects on the
+// ad price cards (a fourth row would sit under the floating WhatsApp button on a phone).
+// Every row is read from the list, so it can never show a different price or date from its card.
+// A project that is removed from the list drops out of the rows by itself.
+const quickRows = [
+  { name: "Opal Residence", unit: "Studio", vat: "+ VAT" },
+  { name: "Azura Beach Residences III & IV", unit: "Apartment", vat: "+ VAT" },
+  { name: "Solaris", unit: "2-bedroom", vat: "" },
+].flatMap((q) => {
+  const area = areas.find((a) => a.projects.some((p) => p.name === q.name));
+  const p = area?.projects.find((x) => x.name === q.name);
+  const amount = p?.price.match(/^from ([\d,]+)/)?.[1];
+  if (!area || !p || !amount) return [];
+  const checked = p.date.match(/\d{1,2} \w{3} \d{4}/)?.[0] ?? "";
+  return [{ ...q, areaName: area.name.replace(" Muscat", ""), amount, dollars: usd(p.price), checked }];
+});
+const quickDates = [...new Set(quickRows.map((r) => r.checked).filter(Boolean))].join(" and ");
+
 const PropertyForForeigners = () => (
   <div className="dark min-h-screen bg-luxury-dark text-foreground">
     <SeoHead title={title} description={description} canonical={canonical} type="article" />
@@ -329,15 +348,48 @@ const PropertyForForeigners = () => (
               اقرأ بالعربية
             </a>
           </p>
-          <span className="text-gold text-sm font-semibold uppercase tracking-wide">
-            Projects for foreign buyers · November 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gold mt-2 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gold mb-4">
             Property in Oman You Can Buy as a Foreigner: Projects and Prices
           </h1>
           <p className="text-sm text-muted-foreground mb-4">
             Updated November 8, 2026 · By Waleed Al Abri, Real Estate Advisor
           </p>
+          {quickRows.length > 0 && (
+            <div className="mb-6">
+              <p className="text-base text-foreground mb-2">{count} projects on this page. Three starting prices:</p>
+              <ul className="border-t border-gold/30">
+                {quickRows.map((r) => (
+                  <li key={r.name} className="border-b border-gold/30">
+                    <a
+                      href={`#${slugOf(r.name)}`}
+                      className="flex items-center justify-between gap-3 min-h-[52px] py-1.5 hover:text-gold transition-colors"
+                    >
+                      <span className="min-w-0">
+                        <span className="block font-semibold text-foreground leading-snug">
+                          {r.unit}, {r.areaName}
+                        </span>
+                        <span className="block truncate text-sm text-muted-foreground leading-snug">{r.name}</span>
+                      </span>
+                      <span className="shrink-0 text-right whitespace-nowrap">
+                        <span className="block font-bold text-gold leading-snug">
+                          OMR {r.amount}
+                          {r.vat && <span className="text-sm font-normal text-muted-foreground"> {r.vat}</span>}
+                        </span>
+                        <span className="block text-sm text-muted-foreground leading-snug">{r.dollars}</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm text-muted-foreground mt-2 pr-16">
+                Prices checked {quickDates}. Tap a row for the source, or{" "}
+                <a href={`#${areas[0].id}`} className={linkClass}>
+                  see all {count} projects
+                </a>
+                .
+              </p>
+            </div>
+          )}
           <PublishedInStrip className="mt-2" />
         </div>
 
